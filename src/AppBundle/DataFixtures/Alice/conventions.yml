@@ -1,0 +1,5 @@
+\AppBundle\Entity\Convention:
+  convention{1..5}:
+    name: <company()>
+    startsAt: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+    endsAt: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>

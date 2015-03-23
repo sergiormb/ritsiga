@@ -16,12 +16,13 @@ default:
             files_path: features/images
         Behat\Symfony2Extension: ~
     suites:
-        symfony:
+        asambleas:
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\CoreContext
+                - AppBundle\Behat\ConventionContext
             filters:
-                tags: "@symfony"
+                tags: "@asambleas"
 
 javascript:
     gherkin:
