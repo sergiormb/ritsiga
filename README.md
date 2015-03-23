@@ -1,7 +1,20 @@
-# sf2-behat-skel
+# RITSIGA
 
-Proyecto plantilla que tiene configurada una pequeña prueba con Behat.
+Facilitar la gestión y organización de las asambleas RITSI, 
+ayundando en el proceso de inscripción del participante aprovechando 
+además el sistema de identificación federada RedIRIS (SIR)  con 
+el que el usuario se identificará con las credenciales de su Universidad.
 
-Se puede usar como base para desarrollar otros proyectos basados en Behay y Symfony2.
-Por el momento se está preparando para que funcione con la futura versión 2.6 así que
-puede resultar inestable.
+
+Autor
+-------------
+Sergio Pino Márquez
+
+Directores
+-------------
+Ezequiel Herruzo Gómez
+Sergio Gómez Bachiller
+
+# Instalación
+
+En construcción...
