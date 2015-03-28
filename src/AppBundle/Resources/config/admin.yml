@@ -1,0 +1,12 @@
+# Acme/DemoBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: AppBundle\Admin\ConventionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Conventions", label: "Convention" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Convention
+            - ~
+        calls:
+            - [ setTranslationDomain, [AcmeDemoBundle]]
