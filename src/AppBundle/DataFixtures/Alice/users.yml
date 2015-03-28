@@ -1,0 +1,13 @@
+\Application\Sonata\UserBundle\Entity\User:
+    admin:
+        username: admin
+        email: admin@localhost.local
+        plainPassword: admin
+        enabled: 1
+        roles: ['ROLE_SUPER_ADMIN']
+    users{1..10}:
+        username: <username()>
+        email: <email()>
+        plainPassword: secret
+        enabled: 1
+        roles: ['ROLE_USER']

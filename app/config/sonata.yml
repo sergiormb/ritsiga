@@ -23,3 +23,7 @@ sonata_user:
             handler:            sonata.user.profile.form.handler.default
             name:               sonata_user_profile_form
             validation_groups:  [Profile]
+
+sonata_admin:
+    title:      ritsiGA
+    title_logo: bundles/app/img/logo_ritsi.png

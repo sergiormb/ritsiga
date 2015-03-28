@@ -23,7 +23,14 @@ default:
                 - AppBundle\Behat\ConventionContext
             filters:
                 tags: "@asambleas"
-
+        usuarios:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\CoreContext
+                - AppBundle\Behat\UserContext
+                - AppBundle\Behat\WebContext
+            filters:
+                tags: "@usuarios"
 javascript:
     gherkin:
         filters:
