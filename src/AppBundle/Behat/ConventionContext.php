@@ -11,8 +11,9 @@ namespace AppBundle\Behat;
 
 use AppBundle\Entity\Convention;
 use Behat\Gherkin\Node\TableNode;
+use Sylius\Bundle\ResourceBundle\Behat\DefaultContext;
 
-class ConventionContext extends CoreContext
+class ConventionContext extends DefaultContext
 {
 
     /**
@@ -26,6 +27,7 @@ class ConventionContext extends CoreContext
             $convention->setName($conventionHash['nombre']);
             $convention->setStartsAt(new \DateTime( $conventionHash['fechaInicio'] ));
             $convention->setEndsAt(new \DateTime( $conventionHash['fechaFin'] ));
+            $convention->setEmail($this->faker->email);
             $this->getEntityManager()->persist($convention);
         }
         $this->getEntityManager()->flush();

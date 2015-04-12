@@ -9,7 +9,9 @@
 namespace AppBundle\Behat;
 
 
-class WebContext extends CoreContext
+use Sylius\Bundle\ResourceBundle\Behat\DefaultContext;
+
+class WebContext extends DefaultContext
 {
     /**
      * @Given que estoy en la página del dashboard
@@ -17,6 +19,14 @@ class WebContext extends CoreContext
     public function iAmOnDashboard()
     {
         $this->getSession()->visit($this->generatePageUrl('sonata_admin_dashboard'));
+    }
+
+    /**
+     * @Given que estoy en la página del listado de usuarios
+     */
+    public function iAmOnUserListPage()
+    {
+        $this->getSession()->visit($this->generatePageUrl('admin_app_user_list'));
     }
 
     /**

@@ -10,23 +10,23 @@ namespace AppBundle\Behat;
 
 use AppBundle\Entity\User;
 use Behat\Gherkin\Node\TableNode;
+use Sylius\Bundle\ResourceBundle\Behat\DefaultContext;
 
-class UserContext  extends CoreContext
+class UserContext  extends DefaultContext
 {
     /**
      * @Given /^que existen los siguientes usuarios:$/
      */
     public function createUser(TableNode $tableNode)
     {
-        $em = $this->getEntityManager();
         foreach ($tableNode->getHash() as $userHash) {
             $user = new User();
             $user->setUsername($userHash['username']);
             $user->setEmail($userHash['email']);
-            $user->setPlainPassword($userHash['role']);
-            $em->persist($user);
+            $user->setPlainPassword($userHash['password']);
+            $this->getEntityManager()->persist($user);
         }
-        $em->flush();
+        $this->getEntityManager()->flush();
     }
 
     /**
