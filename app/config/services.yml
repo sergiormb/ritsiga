@@ -7,3 +7,17 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+     ritsiga.site.manager:
+         class: AppBundle\Site\SiteManager
+
+     ritsiga.site.listener:
+         class: AppBundle\EventListener\CurrentSiteListener
+         arguments:
+             - "@ritsiga.site.manager"
+             - "@doctrine.orm.default_entity_manager"
+             - "%base_host%"
+         tags:
+             -
+                 name: kernel.event_listener
+                 method: onKernelRequest
+                 event: kernel.request
