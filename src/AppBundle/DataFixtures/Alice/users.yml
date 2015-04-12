@@ -1,4 +1,4 @@
-\Application\Sonata\UserBundle\Entity\User:
+\AppBundle\Entity\User:
     admin:
         username: admin
         email: admin@localhost.local
