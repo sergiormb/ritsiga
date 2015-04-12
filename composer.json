@@ -20,8 +20,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
 
         "friendsofsymfony/rest-bundle":                 "~1.5",
-        "knplabs/knp-menu-bundle":                      "~1.1",
-        "sonata-project/admin-bundle":                  "~2.3",
+        "knplabs/knp-menu-bundle":                      "~2.0",
+        "sonata-project/admin-bundle":                  "~2.4@dev",
         "sonata-project/doctrine-orm-admin-bundle":     "~2.3",
         "sonata-project/easy-extends-bundle":           "~2.1",
         "sonata-project/user-bundle":                   "~2.2",

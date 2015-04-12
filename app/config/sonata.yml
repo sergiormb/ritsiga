@@ -14,8 +14,14 @@ sonata_user:
     manager_type: orm # can be orm or mongodb
 
     class:
-        user:         Application\Sonata\UserBundle\Entity\User
-        group:        Application\Sonata\UserBundle\Entity\Group
+        user:         AppBundle\Entity\User
+        group:        AppBundle\Entity\Group
+
+    admin:
+        user:
+            class:        AppBundle\Admin\UserAdmin
+        group:
+            class:        AppBundle\Admin\GroupAdmin
 
     profile:  # Profile Form (firstname, lastname, etc ...)
         form:
@@ -27,3 +33,5 @@ sonata_user:
 sonata_admin:
     title:      ritsiGA
     title_logo: bundles/app/img/logo_ritsi.png
+
+
