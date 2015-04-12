@@ -13,7 +13,7 @@ use Sonata\UserBundle\Entity\BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\UserRepository")
- * @ORM\Table(name="User")
+ * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
 {
@@ -23,5 +23,44 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Convention", mappedBy="administrators")
+     */
+    private $admin_conventions;
+
+
+    /**
+     * @return mixed
+     */
+    public function getAdminConventions()
+    {
+        return $this->admin_conventions;
+    }
+
+    /**
+     * @param mixed $admin_conventions
+     */
+    public function setAdminConventions($admin_conventions)
+    {
+        $this->admin_conventions = $admin_conventions;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
 
 }
