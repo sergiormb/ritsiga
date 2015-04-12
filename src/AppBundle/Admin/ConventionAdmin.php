@@ -9,6 +9,7 @@
 
 namespace AppBundle\Admin;
 
+use Doctrine\ORM\QueryBuilder;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -16,15 +17,32 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class ConventionAdmin extends Admin
 {
-    protected $baseRouteName = "ritsi_convention";
-    protected $baseRoutePattern = 'ritsiGA/conventions';
+    /**
+     * {@inheritdoc}
+     */
+    public function createQuery($context = 'list')
+    {
+        $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
+        /** @var QueryBuilder $query */
+        $query = parent::createQuery($context);
+        $alias = current($query->getRootAliases());
+        $query->andWhere($query->expr()->eq( $alias . '.id', $convention->getId() ));
+        return $query;
+    }
+
 
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('organization', null, array(
+                'label' => 'Organization',
+                'help' => 'help.organization',
+                'required' => true,
+            ))
             ->add('name', 'text', array('label' => 'Name'))
             ->add('startsAt', 'date', array('label' => 'Start Date'))
             ->add('endsAt', 'date', array('label' => 'End Date'))
+            ->add('email', 'email', array('label' => 'Email'))
         ;
     }
 
@@ -35,6 +53,7 @@ class ConventionAdmin extends Admin
             ->add('name')
             ->add('startsAt')
             ->add('endsAt')
+            ->add('email')
         ;
     }
 
@@ -42,9 +61,20 @@ class ConventionAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->add('organization.name', null, array(
+                'label' => 'Organization'
+            ))
             ->add('name')
             ->add('startsAt')
             ->add('endsAt')
+            ->add('email')
+            ->add('web')
+            ->add('domain')
+            ->add('_action', 'actions', array(
+            'actions' => array(
+                'edit' => array(),
+                'show' => array(),
+            )))
         ;
     }
 }

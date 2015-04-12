@@ -8,14 +8,9 @@
 
 namespace AppBundle\Admin;
 
+use Sonata\UserBundle\Admin\Entity\UserAdmin as BaseUserAdmin;
 
-class UserAdmin extends Admin {
-    /**
-     * {@inheritdoc}
-     */
-    protected $baseRouteName = "ritsiGA_user";
-    /**
-     * {@inheritdoc}
-     */
-    protected $baseRoutePattern = 'ritsiGA/user';
+class UserAdmin extends BaseUserAdmin
+{
+
 }
