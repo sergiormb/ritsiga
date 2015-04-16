@@ -14,6 +14,6 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $conventions = $this->getDoctrine()->getRepository('AppBundle:Convention')->findConventionsAvailables();
-	    return $this->render('Default/index.html.twig', array('conventions' => $conventions));
+	    return $this->render('Conventions/list_convetions.html.twig', array('conventions' => $conventions));
     }
 }

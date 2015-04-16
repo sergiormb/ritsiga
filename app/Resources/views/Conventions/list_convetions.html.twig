@@ -1,12 +1,33 @@
 {%  extends "base.html.twig" %}
-{% block body %}
+{% block header %}
 
-    <ul>
-        {% for convention in conventions %}
-            <li class="convention">{{ convention.name }}</li>
-        {% else %}
-            <li>No hay datos</li>
-        {% endfor %}
-    </ul>
+    <header class="intro-header" style="background-image: url({{ asset('bundles/app/img/bg_index.jpg') }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>RITSI Asambleas</h1>
+                        <hr class="small">
+                        <span class="subheading">Bienvenido a la aplicación «RITSI | Asambleas» de gestión de inscripciones</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+{% block body %}
+    <div class="container" >
+    {% for convention in conventions %}
+    <div class="panel panel-default" id="convention_{{ convention.name }}">
+        <div class="row">
+            <div class="col-md-10"><h3>{{ convention.name }}</h3> <h5>Fecha: {{ convention.startsAt|date('d-m-Y') }} - {{ convention.endsAt|date('d-m-Y') }}</h5></div>
+            <div class="col-md-2"><button type="button" class="btn btn-danger" align="right">Inscribirse</button></div>
+        </div>
+    </div>
+    {% else %}
+        <h3>No hay asambleas</h3>
+    {% endfor %}
+    </div>
+
 
 {% endblock %}
