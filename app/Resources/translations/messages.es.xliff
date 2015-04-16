@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="0">
+                <source>label.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>label.startsAt</source>
+                <target>Fecha de comienzo</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>label.endsAt</source>
+                <target>Fecha de finalización</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>label.email</source>
+                <target>Email</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

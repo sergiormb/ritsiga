@@ -50,10 +50,10 @@ class ConventionAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-            ->add('startsAt')
-            ->add('endsAt')
-            ->add('email')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('startsAt', null, array('label' => 'label.startsAt'))
+            ->add('endsAt', null, array('label' => 'label.endsAt'))
+            ->add('email', null, array('label' => 'label.email'))
         ;
     }
 
