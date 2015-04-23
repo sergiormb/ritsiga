@@ -1,0 +1,876 @@
+\AppBundle\Entity\University:
+  university1:
+    nombre: "Mondragon Unibertsitatea (Universidad de Mondragón)"
+    direccion: "Loramendi, 4"
+    ciudad: "Mondragón"
+    provincia: "Guipuzcua"
+    cod_postal: 20500
+    telefono: 943712185
+    fax: 943712193
+    web: "www.mondragon.edu"
+    cif: "F20045241"
+    tipo: "Privada"
+    slug: "mondragon"
+  university2:
+    nombre: "Universidad Alfonso X El Sabio"
+    direccion: "Avenida Universidad, 1."
+    ciudad: "Villanueva de la Cañada"
+    provincia: "Madrid"
+    cod_postal: 28691
+    telefono: 902100868
+    fax: 918109102
+    web: "http://www.uax.es"
+    cif: "A78518529"
+    tipo: "Privada"
+    slug: "uax"
+  university3:
+    nombre: "Universitat de Barcelona"
+    direccion: "Gran Vía de les Corts Catalanes, 585."
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08007
+    telefono: 934021100
+    fax: 934035357
+    web: "www.ub.edu"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q0818001J"
+    tipo: "Pública"
+    slug: "universitat-de-barcelona"
+  university4:
+    nombre: "Universidad Católica de San Antonio"
+    direccion: "Campus de los Jerónimos, s/n."
+    ciudad: "Guadalupe"
+    provincia: "Murcia"
+    cod_postal: 30107
+    telefono: 968278801
+    web: "http://www.ucam.edu"
+    cif: "G30626303"
+    tipo: "Privada"
+    slug: "ucam"
+  university5:
+    nombre: "Universidad Católica de Ávila"
+    direccion: "C/ Canteros, 5"
+    ciudad: "Ávila"
+    provincia: "Ávila"
+    cod_postal: 05005
+    telefono: 920251020
+    fax: 920251030
+    web: "www.ucavila.es"
+    cif: "ucavila"
+    tipo: "Privada"
+    slug: "ucavila"
+  university6:
+    nombre: "Universitat Cardenal Herrera-CEU"
+    direccion: "Avenida Seminario, s/n."
+    ciudad: "Moncada"
+    provincia: "Valencia"
+    cod_postal: 46113
+    telefono: 961369000
+    fax: 961395272
+    web: "http://www.uch.ceu.es"
+    cif: "G2842327"
+    tipo: "Privada"
+    slug: "uchceu"
+  university7:
+    nombre: "Universitat de Girona"
+    direccion: "Pl. Sant Domènech 3"
+    ciudad: "Girona"
+    provincia: "Girona"
+    cod_postal: 17071
+    telefono: 972418011
+    fax: 972418031
+    web: "http://www.udg.edu"
+    cif: "Q6750002E"
+    tipo: "Pública"
+    slug: "udg"
+  university8:
+    nombre: "Universidad a Distancia de Madrid"
+    direccion: "Camino de la Fonda 20"
+    ciudad: "Collado Villalba"
+    provincia: "Madrid"
+    cod_postal: 28400
+    telefono: 902020003
+    fax: 918561697
+    web: "http://www.udima.es"
+    cif: "A81618894"
+    tipo: "Privada"
+    slug: "udima"
+  university9:
+    nombre: "Universidad Europea de Madrid"
+    direccion: "Calle Tajo, s/n. \r\nUrb. El Bosque. \r\n"
+    ciudad: "Villaviciosa de Odón"
+    provincia: "Madrid"
+    cod_postal: 28670
+    telefono: 902232350
+    fax: 916168256
+    web: "http://www.uem.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "A79122305"
+    tipo: "Pública"
+    slug: "universidad-europea-de-madrid"
+  university10:
+    nombre: "Universidad Europea Miguel de Cervantes"
+    direccion: "C/Padre Julio Chevalier, 2"
+    ciudad: "Valladolid"
+    provincia: "Valladolid"
+    cod_postal: 47012
+    telefono: 983001000
+    fax: 983278958
+    web: "www.uemc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "B47511431"
+    tipo: "Pública"
+    slug: "universidad-europea-miguel-de-cervantes"
+  university11:
+    nombre: "Universidad Francisco de Vitoria"
+    direccion: "Ctra. Pozuelo - Majadahonda, km.1800"
+    ciudad: "Pozuelo de Alarcón"
+    provincia: "Madrid"
+    cod_postal: 28223
+    telefono: 917091400
+    fax: 913511716
+    web: "http://www.ufv.es"
+    cif: "G80480197"
+    tipo: "Privada"
+    slug: "ufv"
+  university12:
+    nombre: "Universitat de Les Illes Balears"
+    direccion: "Ctra. de Valldemossa, km. 7,5"
+    ciudad: "Palma de Mallorca"
+    provincia: "Mallorca"
+    cod_postal: 3666
+    telefono: 971173000
+    fax: 971172852
+    web: "www.uib.cat"
+    cif: "Q0718001A"
+    tipo: "Pública"
+    slug: "uib"
+  university13:
+    nombre: "Universitat Jaume I"
+    direccion: "Avenida Sos Baynat, s/n"
+    ciudad: "Castellón de la Plana"
+    provincia: "Castellón"
+    cod_postal: 12071
+    telefono: 964728000
+    fax: 964728838
+    web: "http://www.uji.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q6250003H"
+    tipo: "Pública"
+    slug: "universitat-jaume-i"
+  university14:
+    nombre: "Universidad de Las Palmas de Gran Canaria"
+    direccion: "Calle Juan de Quesada, 30"
+    ciudad: "Las Palmas de Gran Canaria"
+    provincia: "Las Palmas"
+    cod_postal: 35001
+    telefono: 928451000
+    fax: 928451006
+    web: "http://www.ulpgc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q3518001G"
+    tipo: "Pública"
+    slug: "universidad-de-las-palmas-de-gran-canaria"
+  university15:
+    nombre: "Universidad Pública de Navarra"
+    direccion: "Campus de Arrosadía."
+    ciudad: "Pamplona"
+    provincia: "Navarra"
+    cod_postal: 31006
+    telefono: 948169000
+    fax: 948169004
+    web: "http://www.unavarra.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q3150012G"
+    tipo: "Pública"
+    slug: "universidad-publica-de-navarra"
+  university16:
+    nombre: "Universitat Oberta de Catalunya"
+    direccion: "Avenida Tibidabo, 39 - 43"
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08035
+    telefono: 932532300
+    fax: 934176495
+    web: "http://www.uoc.edu"
+    cif: "G60667813"
+    tipo: "Privada"
+    slug: "uoc"
+  university17:
+    nombre: "Universitat Pompeu Fabra"
+    direccion: "Plaça de la Mercè, 10-12."
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08002
+    telefono: 935422000
+    fax: 935422002
+    web: "http://www.upf.edu"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q5850017D"
+    tipo: "Pública"
+    slug: "universitat-pompeu-fabra"
+  university18:
+    nombre: "Universidad Pontificia de Salamanca"
+    direccion: "C/ Compañía, 5"
+    ciudad: "Salamanca"
+    provincia: "Salamanca"
+    cod_postal: 37002
+    telefono: 923277100
+    fax: 923277101
+    web: "www.upsa.es"
+    cif: "upsa"
+    tipo: "Privada"
+    slug: "upsa"
+  university19:
+    nombre: "Universitat Rovira i Virgili"
+    direccion: "Calle de l´Escorxador, s/n."
+    ciudad: "Tarragona"
+    provincia: "Tarragona"
+    cod_postal: 43003
+    telefono: 902337878
+    fax: 977558022
+    web: "http://www.urv.cat"
+    cif: "Q9350003A"
+    tipo: "Pública"
+    slug: "urv"
+  university20:
+    nombre: "Universidade de Santiago de Compostela"
+    direccion: "Praza do Obradoiro, s/n"
+    ciudad: "Santiago de Compostela"
+    provincia: "A Coruña"
+    cod_postal: 15782
+    telefono: 981563100
+    web: "www.usc.es"
+    cif: "Q1518001A"
+    tipo: "Pública"
+    slug: "usc"
+  university21:
+    nombre: "Universidad de San Jorge"
+    direccion: "Auto. A23 Zaragoza- Huesca, Km. 510"
+    ciudad: "Villanueva de Gállego"
+    provincia: "Zaragoza"
+    cod_postal: 50830
+    telefono: 976060100
+    fax: 976077581
+    web: "www.usj.es"
+    cif: "G99047672"
+    tipo: "Privada"
+    slug: "usj"
+  university22:
+    nombre: "Universidad San Pablo Ceu"
+    direccion: "Calle Julián Romea, 18."
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28003
+    telefono: 915362727
+    fax: 915539265
+    web: "http://www.uspceu.com"
+    cif: "G28423275"
+    tipo: "Privada"
+    slug: "uspceu"
+  university23:
+    nombre: "Universitat de Vic"
+    direccion: "Calle Sagrada Familia, 7."
+    ciudad: "Vic"
+    provincia: "Barcelona"
+    cod_postal: 320
+    telefono: 938861222
+    fax: 938891063
+    web: "www.uvic.cat"
+    cif: "G58020124"
+    tipo: "Privada"
+    slug: "uvic"
+  university24:
+    nombre: "Universidad de Deusto"
+    direccion: "Avenida de las Universidades 24,"
+    ciudad: "Bilbao"
+    provincia: "Vizcaya"
+    cod_postal: 48007
+    telefono: 944139000
+    fax: ""
+    web: "www.deusto.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "R4868004E"
+    tipo: "Pública"
+    slug: "universidad-de-deusto"
+  university25:
+    nombre: "Euskal Herriko Unibertsitatea (Univ. del País Vasco)"
+    direccion: "Barrio Sarriena s/n."
+    ciudad: "Leioa"
+    provincia: "Bizkaia"
+    cod_postal: 48940
+    telefono: "94 601 20 20"
+    fax: ""
+    web: "www.ehu.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q4818001B"
+    tipo: "Pública"
+    slug: "euskal-herriko-unibertsitatea-univ-del-pais-vasco"
+  university26:
+    nombre: "Universitat d'Alacant/Universidad de Alicante"
+    direccion: "Campus de Sant Vicent del Raspeig.\r\nApartat 99\r\n"
+    ciudad: "San Vicente del Raspeig"
+    provincia: "Alicante"
+    cod_postal: 03080
+    telefono: 965903400
+    fax: ""
+    web: "www.eps.ua.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q0332001G"
+    tipo: "Pública"
+    slug: "universitat-d-alacant-universidad-de-alicante"
+  university27:
+    nombre: "Universitat Autónoma de Barcelona"
+    direccion: "Campus Universitario UAB"
+    ciudad: "Bellaterra (Cerdanyola del Vallés)"
+    provincia: "Barcelona"
+    cod_postal: 08193
+    telefono: 935811111
+    fax: 935812000
+    web: "http://www.uab.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q0818002H"
+    tipo: "Pública"
+    slug: "universitat-autonoma-de-barcelona"
+  university28:
+    nombre: "Universidad de Alcalá"
+    direccion: "Plaza San Diego s/n"
+    ciudad: "Alcalá de Henares"
+    provincia: "Madrid"
+    cod_postal: 28805
+    telefono: 918854000
+    fax: ""
+    web: "www.uah.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2818018J"
+    tipo: "Pública"
+    slug: "universidad-de-alcala"
+  university29:
+    nombre: "Universidad de Almería"
+    direccion: "Ctra. Sacramento, s/n"
+    ciudad: "La Cañada de San Urbano"
+    provincia: "Almería"
+    cod_postal: 2128
+    telefono: 950015000
+    web: "http://www.ual.es"
+    cif: "Q5450008G"
+    tipo: "Pública"
+    slug: "ual"
+  university30:
+    nombre: "Universidad Autónoma de Madrid"
+    direccion: "Ciudad Universitaria de Cantoblanco"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 29049
+    telefono: 914975100
+    fax: ""
+    web: "www.uam.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2818013A"
+    tipo: "Pública"
+    slug: "universidad-autonoma-de-madrid"
+  university31:
+    nombre: "Universidad de Burgos"
+    direccion: "Hospital del Rey"
+    ciudad: "Burgos"
+    provincia: "Burgos"
+    cod_postal: 09001
+    telefono: ""
+    fax: ""
+    web: "www.ubu.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q0968272E"
+    tipo: "Pública"
+    slug: "universidad-de-burgos"
+  university32:
+    nombre: "Universidad Carlos III de Madrid"
+    direccion: "Avda. de la Universidad, 30"
+    ciudad: "Leganés"
+    provincia: "Madrid"
+    cod_postal: 28911
+    telefono: 916249500
+    fax: 916249430
+    web: "www.uc3m.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2818029G"
+    tipo: "Pública"
+    slug: "universidad-carlos-iii-de-madrid"
+  university33:
+    nombre: "Universidad de Cádiz"
+    direccion: "C/ Ancha, 16"
+    ciudad: "Cádiz"
+    provincia: "Cádiz"
+    cod_postal: 11001
+    telefono: 956015350
+    fax: 956225282
+    web: "http://www.uca.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q1132001G"
+    tipo: "Pública"
+    slug: "universidad-de-cadiz"
+  university34:
+    nombre: "Universidad de Castilla-La Mancha"
+    direccion: "Calle Altagracia número 50"
+    ciudad: "Ciudad Real"
+    provincia: "Ciudad Real"
+    cod_postal: 13071
+    telefono: "902 204 100"
+    fax: "902 204 130"
+    web: "http://www.uclm.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q1368009E"
+    tipo: "Pública"
+    slug: "universidad-de-castilla-la-mancha"
+  university35:
+    nombre: "Universidad Complutense de Madrid"
+    direccion: "Avda. de Séneca, 2\r\nCiudad Universitaria\r\n28040 MADRID"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28040
+    telefono: "91 452 0400"
+    fax: ""
+    web: "www.ucm.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2818014I"
+    tipo: "Pública"
+    slug: "universidad-complutense-de-madrid"
+  university36:
+    nombre: "Universidad de Córdoba"
+    direccion: "Av Medina Azahara s/n"
+    ciudad: "Córdoba"
+    provincia: "Córdoba"
+    cod_postal: 14071
+    telefono: 957218000
+    fax: 957218030
+    web: "http://www.uco.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q1418001B"
+    tipo: "Pública"
+    slug: "universidad-de-cordoba"
+  university37:
+    nombre: "Universidade da Coruña"
+    direccion: "Rua da Maestranza, 9"
+    ciudad: "A Coruña"
+    provincia: "A Coruña"
+    cod_postal: 15001
+    telefono: 981167000
+    fax: 981167011
+    web: "www.udc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q6550005J"
+    tipo: "Pública"
+    slug: "universidade-da-coruna"
+  university38:
+    nombre: "Universitat de Lleida"
+    direccion: "C/ Jaume II 67 bis"
+    ciudad: "Lleida"
+    provincia: "Lleida"
+    cod_postal: 25001
+    telefono: "973 702 710"
+    fax: "973 003 591"
+    web: "http://www.udl.cat"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q7550001G"
+    tipo: "Pública"
+    slug: "universitat-de-lleida"
+  university39:
+    nombre: "Universidad de Granada"
+    direccion: "Hospital Real.\r\nCuesta del Hospicio, s/n\r\n"
+    ciudad: "Granada"
+    provincia: "Granada"
+    cod_postal: 18071
+    telefono: 954243025
+    fax: ""
+    web: "http://www.ugr.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q1818002F"
+    tipo: "Pública"
+    slug: "universidad-de-granada"
+  university40:
+    nombre: "Universidad de Huelva"
+    direccion: "C/ Dr. Cantero Cuadrado, 6"
+    ciudad: "Huelva"
+    provincia: "Huelva"
+    cod_postal: 21071
+    telefono: 959218000
+    fax: ""
+    web: "http://www.uhu.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q7150008F"
+    tipo: "Pública"
+    slug: "universidad-de-huelva"
+  university41:
+    nombre: "Universidad de Jaén"
+    direccion: "Campus Las Lagunillas s/n"
+    ciudad: "Jaén"
+    provincia: "Jaén"
+    cod_postal: 23071
+    telefono: 953212121
+    fax: 953212239
+    web: "http://www.ujaen.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q7350006H"
+    tipo: "Pública"
+    slug: "universidad-de-jaen"
+  university42:
+    nombre: "Universidad de La Laguna"
+    direccion: "Molinos de Agua, s/n"
+    ciudad: "La Laguna"
+    provincia: "Tenerife"
+    cod_postal: 38207
+    telefono: 922319000
+    fax: 922319544
+    web: "www.ull.es"
+    cif: "Q3818001D"
+    tipo: "Pública"
+    slug: "ull"
+  university43:
+    nombre: "Universidad de Murcia"
+    direccion: "Av. Teniente Flomesta, 5"
+    ciudad: "Murcia"
+    provincia: "Murcia"
+    cod_postal: 30003
+    telefono: 968883000
+    fax: ""
+    web: "http://www.um.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q3018001B"
+    tipo: "Pública"
+    slug: "universidad-de-murcia"
+  university44:
+    nombre: "Universidad de Málaga"
+    direccion: "Bulevar Louis Pasteur"
+    ciudad: "Málaga"
+    provincia: "Málaga"
+    cod_postal: 29071
+    telefono: 952133306
+    fax: ""
+    web: "http://www.uma.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2918001E"
+    tipo: "Pública"
+    slug: "universidad-de-malaga"
+  university45:
+    nombre: "Universidad Miguel Hernández de Elche"
+    direccion: "Avenida de la Universidad, s/n."
+    ciudad: "Elche"
+    provincia: "Alicante"
+    cod_postal: 03202
+    telefono: 966658563
+    fax: ""
+    web: "http://www.umh.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q5350015C"
+    tipo: "Pública"
+    slug: "universidad-miguel-hernandez-de-elche"
+  university46:
+    nombre: "Universidad Nacional de Educación a Distancia-UNED"
+    direccion: "C/ BRAVO MURILLO, 38"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28015
+    telefono: "913 988 267"
+    fax: ""
+    web: "www.uned.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2818016D"
+    tipo: "Pública"
+    slug: "universidad-nacional-de-educacion-a-distancia-uned"
+  university47:
+    nombre: "Universidad de Extremadura"
+    direccion: "Avda. de Elvas, s/n"
+    ciudad: "Badajoz"
+    provincia: "Badajoz"
+    cod_postal: 06006
+    telefono: 924289369
+    fax: 924276367
+    web: "www.unex.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q0618001B"
+    tipo: "Pública"
+    slug: "universidad-de-extremadura"
+  university48:
+    nombre: "Universidad de Cantabria"
+    direccion: "Avda. de los Castros S/N"
+    ciudad: "Santander"
+    provincia: "Cantabria"
+    cod_postal: 39005
+    telefono: 942201411
+    fax: 942201402
+    web: "http://www.unican.es/centros/ciencias"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q3918001C"
+    tipo: "Pública"
+    slug: "universidad-de-cantabria"
+  university49:
+    nombre: "Universidad de León"
+    direccion: "Escuela de Ingenierías. Edificio Tecnológico\r\nCampus de Vegazana, s/n\r\n"
+    ciudad: "León"
+    provincia: "León"
+    cod_postal: 24071
+    telefono: 987291782
+    fax: 987291782
+    web: "http://www3.unileon.es/ce/eii/index.php"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2432001B"
+    tipo: "Pública"
+    slug: "universidad-de-leon"
+  university50:
+    nombre: "Universidad de Oviedo"
+    direccion: "C/ San Francisco, 3"
+    ciudad: "Oviedo"
+    provincia: "Asturias"
+    cod_postal: 33003
+    telefono: 985104058
+    fax: 985227126
+    web: "www.uniovi.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q3318001I"
+    tipo: "Pública"
+    slug: "universidad-de-oviedo"
+  university51:
+    nombre: "Universidad de La Rioja"
+    direccion: "Avda. de La Paz 93"
+    ciudad: "Logroño"
+    provincia: "La Rioja"
+    cod_postal: 26006
+    telefono: 941299100
+    web: "www.unirioja.es"
+    cif: "Q2618002F"
+    tipo: "Pública"
+    slug: "unirioja"
+  university52:
+    nombre: "Universidad de Zaragoza"
+    direccion: "C/ Pedro Cerbuna, 12"
+    ciudad: "Zaragoza"
+    provincia: "Zaragoza"
+    cod_postal: 50009
+    telefono: 976761000
+    fax: ""
+    web: "www.unizar.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q50180001G"
+    tipo: "Pública"
+    slug: "universidad-de-zaragoza"
+  university53:
+    nombre: "Universitat Politécnica de Catalunya"
+    direccion: "Calle Jordi Girona, 31."
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08034
+    telefono: 934016200
+    fax: 934016894
+    web: "http://www.upc.edu"
+    cif: "Q0818003F"
+    tipo: "Pública"
+    slug: "upc"
+  university54:
+    nombre: "Universidad Politécnica de Madrid"
+    direccion: "Avd. Ramiro de Maeztu 7"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28040
+    telefono: 913366000
+    fax: 913363814
+    web: "www.upm.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2818015F"
+    tipo: "Pública"
+    slug: "universidad-politecnica-de-madrid"
+  university55:
+    nombre: "Universidad Pablo de Olavide"
+    direccion: "Ctra. de Utrera, km. 1"
+    ciudad: "Sevilla"
+    provincia: "Sevilla"
+    cod_postal: 41013
+    telefono: 954349200
+    fax: ""
+    web: "http://www.upo.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q9150016E"
+    tipo: "Pública"
+    slug: "universidad-pablo-de-olavide"
+  university56:
+    nombre: "Universitat Politècnica de València"
+    direccion: "CL. Camino de Vera, S/N"
+    ciudad: "Valencia"
+    provincia: "Valencia"
+    cod_postal: 46022
+    telefono: 963877408
+    fax: "963877908 "
+    web: "www.upv.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q4618002B"
+    tipo: "Pública"
+    slug: "universitat-politecnica-de-valencia"
+  university57:
+    nombre: "Universidad Rey Juan Carlos"
+    direccion: "C/ Tulipán s/n"
+    ciudad: "Móstoles"
+    provincia: "Madrid"
+    cod_postal: 28933
+    telefono: 916655060
+    fax: ""
+    web: "www.urjc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q2803011B"
+    tipo: "Pública"
+    slug: "universidad-rey-juan-carlos"
+  university58:
+    nombre: "Universitat Ramón Llull"
+    direccion: "Rectorado. C/ Claravall, 1-3"
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08022
+    telefono: 902053010
+    fax: 936022249
+    web: "http://www.url.edu"
+    cif: "G60643558"
+    tipo: "Privada"
+    slug: "url"
+  university59:
+    nombre: "Universidad de Sevilla"
+    direccion: "C/ San Fernando, 4"
+    ciudad: "Sevilla"
+    provincia: "Sevilla"
+    cod_postal: 41004
+    telefono: 954551000
+    web: "http://www.us.es"
+    cif: "Q4118001I"
+    tipo: "Pública"
+    slug: "us"
+  university60:
+    nombre: "Universidad de Salamanca"
+    direccion: "Patio de escuelas, 1"
+    ciudad: "Salamanca"
+    provincia: "Salamanca"
+    cod_postal: 37008
+    telefono: 923294400
+    fax: 923294502
+    web: "www.usal.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q3718001E"
+    tipo: "Pública"
+    slug: "universidad-de-salamanca"
+  university61:
+    nombre: "Universitat de València"
+    direccion: "Avda. Blasco Ibáñez, 13."
+    ciudad: "València."
+    provincia: "València."
+    cod_postal: 46010
+    telefono: "963 86 41 00"
+    fax: ""
+    web: "http://www.uv.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q4618001D"
+    tipo: "Pública"
+    slug: "universitat-de-valencia"
+  university62:
+    nombre: "Universidad de Valladolid"
+    direccion: "Plaza de Santa Cruz, 8"
+    ciudad: "Valladolid"
+    provincia: "Valladolid"
+    cod_postal: 47002
+    telefono: 983423000
+    fax: 983184481
+    web: "www.uva.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q4718001C"
+    tipo: "Pública"
+    slug: "universidad-de-valladolid"
+  university63:
+    nombre: "Universidade de Vigo"
+    direccion: "Campus Universitario"
+    ciudad: "Vigo"
+    provincia: "Pontevedra"
+    cod_postal: 36310
+    telefono: 988387036
+    fax: ""
+    web: "www.uvigo.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    cif: "Q8350002B"
+    tipo: "Pública"
+    slug: "universidade-de-vigo"
+

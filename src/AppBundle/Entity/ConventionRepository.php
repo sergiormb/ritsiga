@@ -23,4 +23,6 @@ class ConventionRepository extends EntityRepository
 
         return $consulta->getResult();
     }
+
+
 }

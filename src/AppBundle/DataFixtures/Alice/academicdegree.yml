@@ -1,0 +1,29 @@
+\AppBundle\Entity\AcademicDegree:
+  academicdegree1:
+    nombre: "Grado en Ingeniería en Informática"
+    categoria: "Grado"
+    slug: "gi"
+  academicdegree2:
+    nombre: "Grado en Sistemas de Información"
+    categoria: "Grado"
+    slug: "gsi"
+  academicdegree3:
+    nombre: "Grado en Tecnologías de la Información"
+    categoria: "Grado"
+    slug: "gti"
+  academicdegree4:
+    nombre: "Máster en Ingeniería Informática"
+    categoria: "Máster"
+    slug: "mii"
+  academicdegree5:
+    nombre: "Grado en Ingeniería del Software"
+    categoria: "Grado"
+    slug: "gis"
+  academicdegree6:
+    nombre: "Grado en Ingeniería de Computadores"
+    categoria: "Grado"
+    slug: "gic"
+  academicdegree7:
+    nombre: "Grado en Computación"
+    categoria: "Grado"
+    slug: "gc"

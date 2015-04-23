@@ -10,4 +10,15 @@
  */
 class OrganizationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findOrganization($word)
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('
+        SELECT o
+        FROM AppBundle:Organization o
+        WHERE o.name LIKE :word');
+
+        $query->setParameter('word','%'.$word.'%');
+        return $query->getResult();
+    }
 }

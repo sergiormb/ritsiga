@@ -1,0 +1,941 @@
+\AppBundle\Entity\College:
+  college1:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Loramendi, 4"
+    ciudad: "Mondragón"
+    provincia: "Guipuzcua"
+    cod_postal: 20500
+    telefono: 943739630
+    fax: 943791536
+    web: "http://www.mondragon.edu/es/eps"
+    universidad: 1
+    slug: "eps-mondragon"
+  college2:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Avenida Universidad, 1."
+    ciudad: "Villanueva de la Cañada"
+    provincia: "Madrid"
+    cod_postal: 28691
+    universidad: 2
+    slug: "eps-uax"
+  college3:
+    nombre: "Facultad de Matemáticas"
+    direccion: "Gran Vía de les Corts Catalanes, 585."
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08007
+    telefono: 934021597
+    fax: 934021601
+    web: "http://www.mat.ub.edu/es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 3
+    slug: "fm-ub"
+  college4:
+    nombre: "Escuela Universitaria Politécnica"
+    direccion: "Campus de los Jerónimos, s/n."
+    ciudad: "Guadalupe"
+    provincia: "Murcia"
+    cod_postal: 30107
+    universidad: 4
+    slug: "eup-ucam"
+  college5:
+    nombre: "Facultad de Ciencias y Artes"
+    direccion: "C/ Canteros, 5"
+    ciudad: "Ávila"
+    provincia: "Ávila"
+    cod_postal: 05005
+    telefono: 920251020
+    fax: 920251030
+    universidad: 5
+    slug: "fca-ucavila"
+  college6:
+    nombre: "Escuela Superior de Enseñanzas Técnicas"
+    direccion: "C/ San Bartolomé, 55"
+    ciudad: "Alfara del Patriarca"
+    provincia: "Valencia"
+    cod_postal: 46115
+    universidad: 6
+    slug: "eset-uchceu"
+  college7:
+    nombre: "Escola Politècnica Superior"
+    direccion: "Campus de Montilivi\nC/ Mª Aurèlia Capmany, 61 \n"
+    ciudad: "Girona"
+    provincia: "Girona"
+    cod_postal: 17071
+    telefono: 972418400
+    fax: 972418399
+    web: "http://www.udg.edu/eps/"
+    universidad: 7
+    slug: "eps-udg"
+  college8:
+    nombre: "Universidad a Distancia de Madrid"
+    direccion: "Camino de la Fonda 20"
+    ciudad: "Collado Villalba"
+    provincia: "Madrid"
+    cod_postal: 28400
+    universidad: 8
+    slug: "udima"
+  college9:
+    nombre: "Escuela Politécnica"
+    direccion: "Calle Tajo, s/n. \r\nUrb. El Bosque. \r\n"
+    ciudad: "Villaviciosa de Odón"
+    provincia: "Madrid"
+    cod_postal: 28670
+    telefono: ""
+    fax: ""
+    web: ""
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 9
+    slug: "ep-uem"
+  college10:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "C/Padre Julio Chevalier, 2"
+    ciudad: "Valladolid"
+    provincia: "Valladolid"
+    cod_postal: 47012
+    telefono: 983001000
+    fax: 983278958
+    web: "www.uemc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 10
+    slug: "eps-uemc"
+  college11:
+    nombre: "Escuela de Ingeniería Informática"
+    direccion: "Ctra. Pozuelo - Majadahonda, km.1800"
+    ciudad: "Pozuelo de Alarcón"
+    provincia: "Madrid"
+    cod_postal: 28223
+    telefono: 913511566
+    web: "http://www.ingenieriaufv.com/"
+    universidad: 11
+    slug: "eii-ufv"
+  college12:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Ctra. de Valldemossa, km. 7,5"
+    ciudad: "Palma de Mallorca"
+    provincia: "Mallorca"
+    cod_postal: 29241
+    telefono: 971173013
+    fax: 971173003
+    web: "http://eps.uib.es/"
+    universidad: 12
+    slug: "eps-uib"
+  college13:
+    nombre: "Escola Superior de Tecnologia i Ciències Experimentals"
+    direccion: "Avenida Sos Baynat, s/n"
+    ciudad: "Castellón de la Plana"
+    provincia: "Castellón"
+    cod_postal: 12071
+    telefono: 964728452
+    fax: 964728451
+    web: "http://www.uji.es/CA/centres/estce/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 13
+    slug: "estce-uji"
+  college14:
+    nombre: "Escuela de Ingeniería Informática"
+    direccion: "Campus Universitario de Tarifa"
+    ciudad: "Las Palmas de Gran Canaria"
+    provincia: "Las Palmas"
+    cod_postal: 35071
+    telefono: 928458719
+    fax: 928458760
+    web: "http://www.eii.ulpgc.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 14
+    slug: "eii-ulpgc"
+  college15:
+    nombre: "Escuela Técnica Superior de Ingenieros Industriales y de Telecomunicación"
+    direccion: "Campus de Arrosadía. Edificio de los Tejos, planta baja."
+    ciudad: "Pamplona"
+    provincia: "Navarra"
+    cod_postal: 31006
+    telefono: 948169330
+    fax: 948169169
+    web: "http://www1.unavarra.es/ets-industrialesytelecos"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 15
+    slug: "etsiit-unavarra"
+  college16:
+    nombre: "Universitat Oberta de Catalunya"
+    direccion: "Avenida Tibidabo, 39 - 43"
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08035
+    telefono: 932532300
+    fax: 934176495
+    web: "http://www.uoc.edu"
+    universidad: 16
+    slug: "uoc-uoc"
+  college17:
+    nombre: "Escola Superior Politècnica"
+    direccion: "Campus de la Comunicació-Poblenou\r\nEdifici Roc Boronat\r\nRoc Boronat, 138\r\n"
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08018
+    telefono: 935422518
+    fax: 935422451
+    web: "http://www.upf.edu/esup/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 17
+    slug: "eps-upf"
+  college18:
+    nombre: "Facultad de Informática"
+    direccion: "C/ Compañía, 5"
+    ciudad: "Salamanca"
+    provincia: "Salamanca"
+    cod_postal: 37002
+    telefono: 923277119
+    fax: 923277101
+    web: "http://www.upsa.es/facultades/facultadesycentros/finformatica/ficha.php"
+    universidad: 18
+    slug: "fi-upsa"
+  college19:
+    nombre: "Escola Tècnica Superior d'Enginyeria"
+    direccion: "Campus Sescelades\nAv. Països Catalans 26\n"
+    ciudad: "Sant Pere i Sant Pau"
+    provincia: "Tarragona"
+    cod_postal: 43007
+    telefono: 977559700
+    fax: 977559699
+    web: "http://www.etse.urv.cat/"
+    universidad: 19
+    slug: "etse-urv"
+  college20:
+    nombre: "Escola Técnica Superior de Enxeñaría"
+    direccion: "Rúa Lope Gómez de Marzoa s/n. Campus Sur"
+    ciudad: "Santiago de Compostela"
+    provincia: "A Coruña"
+    cod_postal: 15782
+    telefono: 981528033
+    fax: 981528041
+    web: "http://www.usc.es/ets"
+    universidad: 20
+    slug: "etse-usc"
+  college21:
+    nombre: "Escuela de Ingeniería Informática"
+    direccion: "Parque Tecnológico Walqa\nEdificio Félix de Azara\n"
+    ciudad: "Huesca"
+    provincia: "Huesca"
+    cod_postal: 22197
+    telefono: 902502622
+    web: "http://informatica.usj.es/"
+    universidad: 21
+    slug: "eii-usj"
+  college22:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Urbanización Montepríncipe, S/N"
+    ciudad: "Boadilla del Monte"
+    provincia: "Madrid"
+    cod_postal: 28668
+    telefono: 913724035
+    fax: 913724049
+    web: "http://eps.uspceu.es/"
+    universidad: 22
+    slug: "eps-uspceu"
+  college23:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "C. de la Laura, 13"
+    ciudad: "Vic"
+    provincia: "Barcelona"
+    cod_postal: 320
+    telefono: 938815519
+    web: "http://www.uvic.cat/es/node/717"
+    universidad: 23
+    slug: "eps-uvic"
+  college24:
+    nombre: "Facultad de Ingeniería"
+    direccion: "Avenida de las Universidades 24,"
+    ciudad: "Bilbao"
+    provincia: "Vizcaya"
+    cod_postal: 48007
+    telefono: 944139064
+    fax: 944139101
+    web: "http://www.ingenieria.deusto.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 24
+    slug: "fi-deusto"
+  college25:
+    nombre: "Escuela Universitaria de Ingenieria Técnica Industrial de Bilbao"
+    direccion: "Calle de Rafael Moreno Pichichi, 3"
+    ciudad: "Bilbao"
+    provincia: "Vizcaya"
+    cod_postal: 48013
+    telefono: "94 601 4434"
+    fax: 944441625
+    web: "http://www.bp.ehu.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 25
+    slug: "etsib-ehu"
+  college26:
+    nombre: "Facultad de Informática de San Sebastian"
+    direccion: "Paseo Manuel de Lardizábal, 1"
+    ciudad: "San Sebastián"
+    provincia: "Guipúzcoa"
+    cod_postal: 20018
+    telefono: 943018000
+    fax: 943015590
+    web: "http://www.informatika.ehu.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 25
+    slug: "fi-ehu"
+  college27:
+    nombre: "Escuela Universitaria de Ingenieria de Vitoria"
+    direccion: "C/ Nieves Cano, 12"
+    ciudad: "Vitoria"
+    provincia: "Álava"
+    cod_postal: 01006
+    telefono: 94501320
+    fax: 94501270
+    web: "http://www.ingeniaritza-gasteiz.ehu.es/"
+    universidad: 25
+    slug: "euiv-ehu"
+  college28:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Campus de San Vicente del Raspeig\r\nApartado 99\r\n"
+    ciudad: "Alicante"
+    provincia: "Alicante"
+    cod_postal: 03080
+    telefono: 965909409
+    fax: ""
+    web: "www.eps.ua.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 26
+    slug: "eps-ua"
+  college29:
+    nombre: "Escola d'Enginyeria (Campus Bellaterra)"
+    direccion: "Campus Bellaterra UAB"
+    ciudad: "Cerdanyola del Vallès"
+    provincia: "Barcelona"
+    cod_postal: 08193
+    telefono: 935811111
+    fax: 935812000
+    web: "http://www.uab.es/escola-enginyeria/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 27
+    slug: "bellaterra-uab"
+  college30:
+    nombre: "Escola d'Enginyeria (Campus Sabadell)"
+    direccion: "Campus de Sabadell\nc/ Emprius, 2\n"
+    ciudad: "Sabadell"
+    provincia: "Barcelona"
+    cod_postal: 08202
+    telefono: 937287700
+    fax: 937287726
+    web: "http://www.uab.es/escola-enginyeria/"
+    universidad: 27
+    slug: "sabadell-uab"
+  college31:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Carretera Madrid-Bcn Km 33.600 Edificio Politécnico, Campus Externo"
+    ciudad: "Alcalá de Henares"
+    provincia: "Madrid"
+    cod_postal: 28871
+    telefono: 918856971
+    fax: ""
+    web: "http://uah.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 28
+    slug: "ets-uah"
+  college32:
+    nombre: "Escuela Técnica Superior de Ingeniería"
+    direccion: "Ctra. Sacramento s/n"
+    ciudad: "La Cañada de San Urbano"
+    provincia: "Jaén"
+    cod_postal: 2128
+    telefono: 950015095
+    fax: 950015096
+    universidad: 29
+    slug: "etsi-ual"
+  college33:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Ciudad Universitaria de Cantoblanco\r\nCalle Francisco Tomás y Valiente, 11\r\n"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28049
+    telefono: 914972220
+    fax: ""
+    web: "www.ii.uam.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 30
+    slug: "eps-uam"
+  college34:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Avd. Francisco de Vitoria s/n Edif C. EPS"
+    ciudad: "Burgos"
+    provincia: "Burgos"
+    cod_postal: 09006
+    telefono: 947258900
+    fax: 947258910
+    web: "http://www.ubu.es/ubu/cm/eps"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 31
+    slug: "eps-ubu"
+  college35:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Avda. de la Universidad, 30"
+    ciudad: "Leganés"
+    provincia: "Madrid"
+    cod_postal: 28911
+    telefono: 916249473
+    fax: 916249430
+    web: "www.uc3m.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 32
+    slug: "eps-uc3m"
+  college36:
+    nombre: "Escuela Superior de Ingeniería"
+    direccion: "Avda. de la Universidad de Cádiz, nº10"
+    ciudad: "Puerto Real"
+    provincia: "Cádiz"
+    cod_postal: 11519
+    telefono: 956483200
+    fax: 956483201
+    web: "http://esingenieria.uca.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 33
+    slug: "esi-uca"
+  college37:
+    nombre: "Escuela Superior de Ingeniería Informática"
+    direccion: "Paseo de los Estudiantes s/n"
+    ciudad: "Albacete"
+    provincia: "Albacete"
+    cod_postal: 02006
+    telefono: 967599200
+    fax: 967599224
+    web: "http://www.esiiab.uclm.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 34
+    slug: "esii-uclm"
+  college38:
+    nombre: "Escuela Superior de Informática"
+    direccion: "Paseo de la Universidad, 4"
+    ciudad: "Ciudad Real"
+    provincia: "Ciudad Real"
+    cod_postal: 13071
+    telefono: 925295300
+    fax: ""
+    web: "www.esi.uclm.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 34
+    slug: "cr-uclm"
+  college39:
+    nombre: "Facultad de Informática"
+    direccion: "C/ Profesor José García Santesmases, 9\r\nCiudad Universitaria"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28040
+    telefono: 913947501
+    fax: ""
+    web: "http://informatica.ucm.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 35
+    slug: "fi-ucm"
+  college40:
+    nombre: "Escuela Politécnica Superior de Córdoba"
+    direccion: "Paraninfo - Planta 1\r\nCampus de Rabanales\r\n"
+    ciudad: "Córdoba"
+    provincia: "Córdoba"
+    cod_postal: 14071
+    telefono: 957218315
+    fax: 957218315
+    web: "http://www.uco.es/eps"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 36
+    slug: "eps-uco"
+  college41:
+    nombre: "Facultade de Informática"
+    direccion: "Campus de Elviña"
+    ciudad: "A Coruña"
+    provincia: "A Coruña"
+    cod_postal: 15008
+    telefono: 981167000
+    fax: 981167060
+    web: "www.fi.udc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 37
+    slug: "fi-udc"
+  college42:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "C/ Jaume II 69"
+    ciudad: "Lleida"
+    provincia: "Lleida"
+    cod_postal: 25001
+    telefono: "973 702 710"
+    fax: ""
+    web: "http://www.eps.udl.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 38
+    slug: "eps-udl"
+  college43:
+    nombre: "Escuela Técnica Superior de Ingenierias Informática y de Telecomunicación"
+    direccion: "Calle Periodista Daniel Saucedo Aranda, S/N"
+    ciudad: "Granada"
+    provincia: "Granada"
+    cod_postal: 18071
+    telefono: 958242802
+    fax: 958242801
+    web: "http://etsiit.ugr.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 39
+    slug: "ets-ugr"
+  college44:
+    nombre: "Escuela Técnica Superior de Ingeniería"
+    direccion: "Campus de «La Rábida»\r\nCarretera Palos de La Frontera s/n\r\n"
+    ciudad: "Palos de La Frontera"
+    provincia: "Huelva"
+    cod_postal: 21819
+    telefono: 959217305
+    fax: ""
+    web: "http://www.uhu.es/etsi"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 40
+    slug: "escuela-tecnica-superior-de-ingenieria"
+  college45:
+    nombre: "Escuela Politécnica Superior de Jaén"
+    direccion: "Campus Las Lagunillas s/n"
+    ciudad: "Jaén"
+    provincia: "Jaén"
+    cod_postal: 23071
+    telefono: 953212424
+    fax: 953212400
+    web: "http://eps.ujaen.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 41
+    slug: "eps-ujaen"
+  college46:
+    nombre: "Escuela Técnica Superior de Ingeniería Informática"
+    direccion: "Camino San Francisco de Paula, s/n"
+    ciudad: "La Laguna"
+    provincia: "Tenerife"
+    cod_postal: 38271
+    telefono: 922845059
+    web: "http://www.ull.es/view/centros/etsii/"
+    universidad: 42
+    slug: "etsii-ull"
+  college47:
+    nombre: "Facultad de Informática"
+    direccion: "Campus Universitario de Espinardo, 32"
+    ciudad: "Espinardo (Murcia)"
+    provincia: "Murcia"
+    cod_postal: 30100
+    telefono: 868884311
+    fax: 868884151
+    web: "http://www.um.es/informatica/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 43
+    slug: "fi-um"
+  college48:
+    nombre: "Escuela Técnica Superior de ingeniería Informática"
+    direccion: "Campus de Teatinos"
+    ciudad: "Málaga"
+    provincia: "Málaga"
+    cod_postal: 29017
+    telefono: 952133306
+    fax: 952132673
+    web: "http://www.informatica.uma.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 44
+    slug: "etsi-uma"
+  college49:
+    nombre: "Escuela Politécnica Superior de Elche"
+    direccion: "Avenida de la Universidad S/N"
+    ciudad: "Elche"
+    provincia: "Alicante"
+    cod_postal: 03202
+    telefono: 966749600
+    fax: 966749619
+    web: "http://epse.umh.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 45
+    slug: "epso-umh"
+  college50:
+    nombre: "Escuela Técnica Superior de Informática"
+    direccion: "C/ Juan del Rosal, 16"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28040
+    telefono: 913987304
+    fax: ""
+    web: "http://portal.uned.es/portal/page?_pageid=93,161725&_dad=portal&_schema=PORTAL"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 46
+    slug: "etsi-uned"
+  college51:
+    nombre: "Centro Universitario de Mérida"
+    direccion: "Avda. Santa Teresa de Jornet, 38"
+    ciudad: "Mérida"
+    provincia: "Badajoz"
+    cod_postal: 384
+    telefono: 924387068
+    fax: 924301212
+    universidad: 47
+    slug: "cum-unex"
+  college52:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Avda. de la Universidad s/n"
+    ciudad: "Cáceres"
+    provincia: "Cáceres"
+    cod_postal: 10004
+    telefono: "927257000 Ext 57188"
+    fax: ""
+    web: "http://epcc.unex.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 47
+    slug: "eps-unex"
+  college53:
+    nombre: "Facultad de Ciencias"
+    direccion: "Avda los Castros S/N"
+    ciudad: "Santander"
+    provincia: "Cantabria"
+    cod_postal: 39005
+    telefono: 942201411
+    fax: 942201402
+    web: "http://www.unican.es/Centros/ciencias/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 48
+    slug: "facultad-de-ciencias"
+  college54:
+    nombre: "Escuela de ingenierías industrial e informática"
+    direccion: "Campus Universitario de Vegazana"
+    ciudad: "León"
+    provincia: "León"
+    cod_postal: 24071
+    telefono: 987291766
+    fax: 987291787
+    web: ""
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 49
+    slug: "eiii-unileon"
+  college55:
+    nombre: "Escuela de Ingenieria Informatica"
+    direccion: "Calle Valdes Salas S/N"
+    ciudad: "Oviedo"
+    provincia: "Asturias"
+    cod_postal: 33007
+    telefono: 985103286
+    fax: ""
+    web: "http://www.ingenieriainformatica.uniovi.es/"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 50
+    slug: "oviedo-uniovi"
+  college56:
+    nombre: "Escuela Universitaria de Ingeniería Técnica Informática de Gijón (EUITIG)"
+    direccion: "Campus de Viesques (Aulario Norte) CARRETERA DE VILLAVICIOSA s/n"
+    ciudad: "Gijón"
+    provincia: "Asturias"
+    cod_postal: 33203
+    telefono: 985182322
+    fax: ""
+    web: "www.inforg.uniovi.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 50
+    slug: "gijon-uniovi"
+  college57:
+    nombre: "La Facultad de Ciencias, Estudios Agroalimentarios e Informática"
+    direccion: "C/Madre de Dios, 51"
+    ciudad: "Logroño"
+    provincia: "La Rioja"
+    cod_postal: 26006
+    telefono: 941299607
+    fax: 941299611
+    web: "www.unirioja.es"
+    universidad: 51
+    slug: "fc-unirioja"
+  college58:
+    nombre: "Escuela de Ingeniería y Arquitectura"
+    direccion: "C/María de la Luna, 3"
+    ciudad: "Zaragoza"
+    provincia: "Zaragoza"
+    cod_postal: 50018
+    telefono: 976761864
+    fax: ""
+    web: "eina.unizar.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 52
+    slug: "zaragoza-unizar"
+  college59:
+    nombre: "Escuela Universitaria Politécnica"
+    direccion: "Ciudad Escolar s/n"
+    ciudad: "Teruel"
+    provincia: "Teruel"
+    cod_postal: 44003
+    telefono: 978618158
+    web: "http://eupt.unizar.es"
+    universidad: 52
+    slug: "teruel-unizar"
+  college60:
+    nombre: "Escuela Universitaria Politécnica de La Almunia"
+    direccion: "C/ La Almunia Mayor s/n"
+    ciudad: "La Almunia"
+    provincia: "Zaragoza"
+    cod_postal: 50100
+    telefono: 976600883
+    web: "http://eupla.unizar.es"
+    universidad: 52
+    slug: "almunia-unizar"
+  college61:
+    nombre: "Facultad de Informática de Barcelona"
+    direccion: "Campus Diagonal Nord. Edificio B6.\nC. Jordi Girona, 1-3. \n"
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08034
+    telefono: 934017000
+    fax: 934017113
+    web: "http://www.fib.upc.edu"
+    universidad: 53
+    slug: "fib-upc"
+  college62:
+    nombre: "Escuela Universitaria Politécnica de Mataró"
+    direccion: "Edificio EUPMT. \nAv. Ernest Lluch, s/n (El Rengle).\n"
+    ciudad: "Mataró"
+    provincia: "Barcelona"
+    cod_postal: 08302
+    telefono: 937574404
+    fax: 937570524
+    web: "http://www.eupmt.cat"
+    universidad: 53
+    slug: "eup-upc"
+  college63:
+    nombre: "Escuela Técnica Superior de Ingenieros Informáticos - UPM"
+    direccion: "Campus de Montegancedo"
+    ciudad: "Boadilla del Monte"
+    provincia: "Madrid"
+    cod_postal: 28660
+    telefono: 913367399
+    fax: 913367412
+    web: "www.etsiinf.upm.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 54
+    slug: "fi-upm"
+  college64:
+    nombre: "Escuela Universitaria de Informática"
+    direccion: "Campus Sur\nCarretera de Valencia, Km 7\n"
+    ciudad: "Madrid"
+    provincia: "Madrid"
+    cod_postal: 28031
+    telefono: 913367903
+    web: "http://www.eui.upm.es"
+    universidad: 54
+    slug: "eui-upm"
+  college65:
+    nombre: "Escuela Politécnica Superior"
+    direccion: "Universidad Pablo de Olavide\r\nEdificio 2 Planta Baja\r\nCarretera de Utrera, km.1\r\n"
+    ciudad: "Sevilla"
+    provincia: "Sevilla"
+    cod_postal: 41013
+    telefono: 954977939
+    fax: 954348689
+    web: "http://www.upo.es/eps"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 55
+    slug: "eps-upo"
+  college66:
+    nombre: "Escuela Técnica Superior de Ingeniería Informática"
+    direccion: "Camí de vera s/n"
+    ciudad: "Valencia"
+    provincia: "Valencia"
+    cod_postal: 46022
+    telefono: 963877200
+    fax: ""
+    web: "http://www.etsinf.upv.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 56
+    slug: "ets-upv"
+  college67:
+    nombre: "Escuela Técnica Superior de Ingeniería Informática (ETSII)"
+    direccion: "C/ Tulipán s/n"
+    ciudad: "Móstoles"
+    provincia: "Madrid"
+    cod_postal: 28933
+    telefono: 916655060
+    fax: ""
+    web: "www.urjc.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 57
+    slug: "fi-urjc"
+  college68:
+    nombre: "Universitat Ramón Llull"
+    direccion: "Rectorado. C/ Claravall, 1-3"
+    ciudad: "Barcelona"
+    provincia: "Barcelona"
+    cod_postal: 08022
+    telefono: 902053010
+    fax: 936022249
+    web: "http://www.url.edu"
+    universidad: 58
+    slug: "url-url"
+  college69:
+    nombre: "Escuela Técnica Superior de Ingeniería Informática"
+    direccion: "Reina Mercedes s/n"
+    ciudad: "Sevilla"
+    provincia: "Sevilla"
+    cod_postal: 41012
+    telefono: 954556817
+    web: "http://www.informatica.us.es"
+    universidad: 59
+    slug: "ets-us"
+  college70:
+    nombre: "Facultad de Ciencias"
+    direccion: "Plaza de los caidos S/N"
+    ciudad: "Salamanca"
+    provincia: "Salamanca"
+    cod_postal: 37008
+    telefono: 923294452
+    fax: 923294514
+    web: "http://fciencias.usal.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 60
+    slug: "fc-usal"
+  college71:
+    nombre: "Escuela Técnica Superior de Ingeniería"
+    direccion: "Avenida de la Universidad s/n"
+    ciudad: "Burjassot"
+    provincia: "Valencia"
+    cod_postal: 46100
+    telefono: "963543210 / 963543211"
+    fax: 963543207
+    web: "www.uv.es/etse"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 61
+    slug: "ets-uv"
+  college72:
+    nombre: "E.T.S.I. Informática"
+    direccion: "Escuela Técnica Superior de Ingeniería Informática\r\nEdificio de Tecnologías de la Información y las Telecomunicaciones\r\nCampus Miguel Delibes\r\nPaseo de Belén, 15"
+    ciudad: "Valladolid"
+    provincia: "Valladolid"
+    cod_postal: 47011
+    telefono: 983423660
+    fax: ""
+    web: "http://www.fi.uva.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 62
+    slug: "etsi-uva"
+  college73:
+    nombre: "Escuela Superior de Ingenería Informática"
+    direccion: "As Lagoas s/n"
+    ciudad: "Ourense"
+    provincia: "Ourense"
+    cod_postal: 32004
+    telefono: 988387000
+    fax: 988387000
+    web: "www.ei.uvigo.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 63
+    slug: "esii-uvigo"
+  college74:
+    nombre: "Escuela Politécnica Superior de Alcoy"
+    direccion: "Plaza Ferrándiz y Carbonell, s/n "
+    ciudad: "Alcoy"
+    provincia: "Alicante"
+    cod_postal: 03801
+    telefono: 966528401
+    fax: 966528484
+    web: "http://www.epsa.upv.es"
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 56
+    slug: "escuela-politecnica-superior-de-alcoy"
+  college75:
+    nombre: "Universidad Europea de Madrid"
+    direccion: ""
+    ciudad: ""
+    provincia: ""
+    cod_postal: ""
+    telefono: ""
+    fax: ""
+    web: ""
+    email: ""
+    facebook: ""
+    twitter: ""
+    universidad: 9
+    slug: "universidad-europea-de-madrid"

@@ -228,4 +228,9 @@ class Convention
     {
         $this->domain = $domain;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
