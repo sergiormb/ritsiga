@@ -1,0 +1,11 @@
+{% if is_granted("ROLE_USER") %}
+<div class="pull-left image">
+    <img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50" class="img-circle" alt="User Image" />
+</div>
+<div class="pull-left info">
+    <p>{{ app.user.firstname }} {{ app.user.lastname }}</p>
+
+    <p><h6>Universidad de Córdoba</h6></p>
+    <a href="{{ path('sonata_user_profile_edit')}}">Editar mi perfil</a>
+</div>
+{% endif %}

@@ -1,0 +1,92 @@
+{%  extends "base.html.twig" %}
+{% block title_page %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">{{ convention.name }}</h3>
+            </div>
+            <div class="box-body pad table-responsive">
+                Del  {{ convention.startsAt|date('d-m-Y') }} al  {{ convention.endsAt|date('d-m-Y') }}
+            </div><!-- /.box -->
+        </div>
+    </div><!-- /.col -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{{ asset('bundles/app/img/123180774_8132753b1c_o.jpg') }}">
+                                <div class="carousel-caption">
+                                    First Slide
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                                <div class="carousel-caption">
+                                    Second Slide
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+                                <div class="carousel-caption">
+                                    Third Slide
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="fa fa-angle-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    </div>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+
+        <div class="col-md-4">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                   Información
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <p><i class="fa fa-desktop"></i> <a href="{{ convention.web }}" target="_blank">{{ convention.web }}</a></p>
+                    <p><i class="fa fa-envelope-o"></i>  {{ convention.email }}</p>
+                </div>
+            </div>
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    En las redes
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+                    <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+                    <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="box box-solid">
+                <div class="box-body">
+                    {% if is_granted("ROLE_USER") %}
+                        <a href="{{ url('registration') }}" class="btn btn-block btn-warning">Inscribirse</a></center>
+                        {% else %}
+                        Debe de estar logueado para inscribirse
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+
+    </div><!-- /.row -->
+{% endblock %}

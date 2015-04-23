@@ -1,0 +1,7 @@
+{%  extends "base.html.twig" %}
+
+{% block content %}
+<h1>Segundo paso</h1>
+<a href="{{ path('sylius_flow_display', {'scenarioAlias': 'sylius_flow', 'stepName': 'first'}) }}" class="btn btn-success"><i class="icon-backward icon-white"></i> back</a>
+<a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'sylius_flow', 'stepName': 'second'}) }}" class="btn btn-success">forward <i class="icon-forward icon-white"></i></a>
+{% endblock %}
