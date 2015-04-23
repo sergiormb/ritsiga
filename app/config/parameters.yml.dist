@@ -20,3 +20,7 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     base_host:        ~
+
+    # Google auth
+    google_app_id:      ~
+    google_app_secret:  ~

@@ -30,8 +30,27 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+sylius_flow:
+    resource: "@SyliusFlowBundle/Resources/config/routing.yml"
+    prefix: /inscription
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
     prefix:   /
 
+#HWIOAuthBundle routes
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /login
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /login
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /login
+
+google_login:
+    pattern: /login/check-google

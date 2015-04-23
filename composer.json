@@ -18,14 +18,15 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-
+        "hwi/oauth-bundle":                     "~0.4@dev",
         "friendsofsymfony/rest-bundle":                 "~1.5",
-        "knplabs/knp-menu-bundle":                      "~2.0",
-        "sonata-project/admin-bundle":                  "~2.4@dev",
-        "sonata-project/doctrine-orm-admin-bundle":     "~2.3",
-        "sonata-project/easy-extends-bundle":           "~2.1",
-        "sonata-project/user-bundle":                   "~2.2",
-        "sylius/resource-bundle":                       "0.12.*"
+        "sonata-project/admin-bundle": "~2.4@dev",
+        "sonata-project/datagrid-bundle": "~2.2@dev",
+        "sonata-project/doctrine-orm-admin-bundle": "~2.3",
+        "sonata-project/easy-extends-bundle": "~2.1",
+        "sonata-project/user-bundle": "~2.3@dev",
+        "sylius/resource-bundle":                       "0.12.*",
+        "sylius/flow-bundle": "0.13.*"
     },
     "require-dev": {
         "sensio/generator-bundle":              "~2.4",
