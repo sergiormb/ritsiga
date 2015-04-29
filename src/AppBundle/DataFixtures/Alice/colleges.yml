@@ -8,7 +8,7 @@
     telefono: 943739630
     fax: 943791536
     web: "http://www.mondragon.edu/es/eps"
-    universidad: 1
+    universidad: @university1
     slug: "eps-mondragon"
   college2:
     nombre: "Escuela Politécnica Superior"
@@ -16,7 +16,7 @@
     ciudad: "Villanueva de la Cañada"
     provincia: "Madrid"
     cod_postal: 28691
-    universidad: 2
+    universidad: @university2
     slug: "eps-uax"
   college3:
     nombre: "Facultad de Matemáticas"
@@ -30,7 +30,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 3
+    universidad: @university3
     slug: "fm-ub"
   college4:
     nombre: "Escuela Universitaria Politécnica"
@@ -38,7 +38,7 @@
     ciudad: "Guadalupe"
     provincia: "Murcia"
     cod_postal: 30107
-    universidad: 4
+    universidad: @university4
     slug: "eup-ucam"
   college5:
     nombre: "Facultad de Ciencias y Artes"
@@ -48,7 +48,7 @@
     cod_postal: 05005
     telefono: 920251020
     fax: 920251030
-    universidad: 5
+    universidad: @university5
     slug: "fca-ucavila"
   college6:
     nombre: "Escuela Superior de Enseñanzas Técnicas"
@@ -56,7 +56,7 @@
     ciudad: "Alfara del Patriarca"
     provincia: "Valencia"
     cod_postal: 46115
-    universidad: 6
+    universidad: @university6
     slug: "eset-uchceu"
   college7:
     nombre: "Escola Politècnica Superior"
@@ -67,7 +67,7 @@
     telefono: 972418400
     fax: 972418399
     web: "http://www.udg.edu/eps/"
-    universidad: 7
+    universidad: @university7
     slug: "eps-udg"
   college8:
     nombre: "Universidad a Distancia de Madrid"
@@ -75,7 +75,7 @@
     ciudad: "Collado Villalba"
     provincia: "Madrid"
     cod_postal: 28400
-    universidad: 8
+    universidad: @university8
     slug: "udima"
   college9:
     nombre: "Escuela Politécnica"
@@ -89,7 +89,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 9
+    universidad: @university9
     slug: "ep-uem"
   college10:
     nombre: "Escuela Politécnica Superior"
@@ -103,7 +103,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 10
+    universidad: @university10
     slug: "eps-uemc"
   college11:
     nombre: "Escuela de Ingeniería Informática"
@@ -113,7 +113,7 @@
     cod_postal: 28223
     telefono: 913511566
     web: "http://www.ingenieriaufv.com/"
-    universidad: 11
+    universidad: @university11
     slug: "eii-ufv"
   college12:
     nombre: "Escuela Politécnica Superior"
@@ -124,7 +124,7 @@
     telefono: 971173013
     fax: 971173003
     web: "http://eps.uib.es/"
-    universidad: 12
+    universidad: @university12
     slug: "eps-uib"
   college13:
     nombre: "Escola Superior de Tecnologia i Ciències Experimentals"
@@ -138,7 +138,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 13
+    universidad: @university13
     slug: "estce-uji"
   college14:
     nombre: "Escuela de Ingeniería Informática"
@@ -152,7 +152,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 14
+    universidad: @university14
     slug: "eii-ulpgc"
   college15:
     nombre: "Escuela Técnica Superior de Ingenieros Industriales y de Telecomunicación"
@@ -166,7 +166,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 15
+    universidad: @university15
     slug: "etsiit-unavarra"
   college16:
     nombre: "Universitat Oberta de Catalunya"
@@ -177,7 +177,7 @@
     telefono: 932532300
     fax: 934176495
     web: "http://www.uoc.edu"
-    universidad: 16
+    universidad: @university16
     slug: "uoc-uoc"
   college17:
     nombre: "Escola Superior Politècnica"
@@ -191,7 +191,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 17
+    universidad: @university17
     slug: "eps-upf"
   college18:
     nombre: "Facultad de Informática"
@@ -202,7 +202,7 @@
     telefono: 923277119
     fax: 923277101
     web: "http://www.upsa.es/facultades/facultadesycentros/finformatica/ficha.php"
-    universidad: 18
+    universidad: @university18
     slug: "fi-upsa"
   college19:
     nombre: "Escola Tècnica Superior d'Enginyeria"
@@ -213,7 +213,7 @@
     telefono: 977559700
     fax: 977559699
     web: "http://www.etse.urv.cat/"
-    universidad: 19
+    universidad: @university19
     slug: "etse-urv"
   college20:
     nombre: "Escola Técnica Superior de Enxeñaría"
@@ -224,7 +224,7 @@
     telefono: 981528033
     fax: 981528041
     web: "http://www.usc.es/ets"
-    universidad: 20
+    universidad: @university20
     slug: "etse-usc"
   college21:
     nombre: "Escuela de Ingeniería Informática"
@@ -234,7 +234,7 @@
     cod_postal: 22197
     telefono: 902502622
     web: "http://informatica.usj.es/"
-    universidad: 21
+    universidad: @university21
     slug: "eii-usj"
   college22:
     nombre: "Escuela Politécnica Superior"
@@ -245,7 +245,7 @@
     telefono: 913724035
     fax: 913724049
     web: "http://eps.uspceu.es/"
-    universidad: 22
+    universidad: @university22
     slug: "eps-uspceu"
   college23:
     nombre: "Escuela Politécnica Superior"
@@ -255,7 +255,7 @@
     cod_postal: 320
     telefono: 938815519
     web: "http://www.uvic.cat/es/node/717"
-    universidad: 23
+    universidad: @university23
     slug: "eps-uvic"
   college24:
     nombre: "Facultad de Ingeniería"
@@ -269,7 +269,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 24
+    universidad: @university24
     slug: "fi-deusto"
   college25:
     nombre: "Escuela Universitaria de Ingenieria Técnica Industrial de Bilbao"
@@ -283,7 +283,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 25
+    universidad: @university25
     slug: "etsib-ehu"
   college26:
     nombre: "Facultad de Informática de San Sebastian"
@@ -297,7 +297,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 25
+    universidad: @university25
     slug: "fi-ehu"
   college27:
     nombre: "Escuela Universitaria de Ingenieria de Vitoria"
@@ -308,7 +308,7 @@
     telefono: 94501320
     fax: 94501270
     web: "http://www.ingeniaritza-gasteiz.ehu.es/"
-    universidad: 25
+    universidad: @university25
     slug: "euiv-ehu"
   college28:
     nombre: "Escuela Politécnica Superior"
@@ -322,7 +322,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 26
+    universidad: @university26
     slug: "eps-ua"
   college29:
     nombre: "Escola d'Enginyeria (Campus Bellaterra)"
@@ -336,7 +336,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 27
+    universidad: @university27
     slug: "bellaterra-uab"
   college30:
     nombre: "Escola d'Enginyeria (Campus Sabadell)"
@@ -347,7 +347,7 @@
     telefono: 937287700
     fax: 937287726
     web: "http://www.uab.es/escola-enginyeria/"
-    universidad: 27
+    universidad: @university27
     slug: "sabadell-uab"
   college31:
     nombre: "Escuela Politécnica Superior"
@@ -361,7 +361,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 28
+    universidad: @university28
     slug: "ets-uah"
   college32:
     nombre: "Escuela Técnica Superior de Ingeniería"
@@ -371,7 +371,7 @@
     cod_postal: 2128
     telefono: 950015095
     fax: 950015096
-    universidad: 29
+    universidad: @university29
     slug: "etsi-ual"
   college33:
     nombre: "Escuela Politécnica Superior"
@@ -385,7 +385,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 30
+    universidad: @university30
     slug: "eps-uam"
   college34:
     nombre: "Escuela Politécnica Superior"
@@ -399,7 +399,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 31
+    universidad: @university31
     slug: "eps-ubu"
   college35:
     nombre: "Escuela Politécnica Superior"
@@ -413,7 +413,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 32
+    universidad: @university32
     slug: "eps-uc3m"
   college36:
     nombre: "Escuela Superior de Ingeniería"
@@ -427,7 +427,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 33
+    universidad: @university33
     slug: "esi-uca"
   college37:
     nombre: "Escuela Superior de Ingeniería Informática"
@@ -441,7 +441,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 34
+    universidad: @university34
     slug: "esii-uclm"
   college38:
     nombre: "Escuela Superior de Informática"
@@ -455,7 +455,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 34
+    universidad: @university34
     slug: "cr-uclm"
   college39:
     nombre: "Facultad de Informática"
@@ -469,7 +469,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 35
+    universidad: @university35
     slug: "fi-ucm"
   college40:
     nombre: "Escuela Politécnica Superior de Córdoba"
@@ -483,7 +483,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 36
+    universidad: @university36
     slug: "eps-uco"
   college41:
     nombre: "Facultade de Informática"
@@ -497,7 +497,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 37
+    universidad: @university37
     slug: "fi-udc"
   college42:
     nombre: "Escuela Politécnica Superior"
@@ -511,7 +511,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 38
+    universidad: @university38
     slug: "eps-udl"
   college43:
     nombre: "Escuela Técnica Superior de Ingenierias Informática y de Telecomunicación"
@@ -525,7 +525,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 39
+    universidad: @university39
     slug: "ets-ugr"
   college44:
     nombre: "Escuela Técnica Superior de Ingeniería"
@@ -539,7 +539,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 40
+    universidad: @university40
     slug: "escuela-tecnica-superior-de-ingenieria"
   college45:
     nombre: "Escuela Politécnica Superior de Jaén"
@@ -553,7 +553,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 41
+    universidad: @university41
     slug: "eps-ujaen"
   college46:
     nombre: "Escuela Técnica Superior de Ingeniería Informática"
@@ -563,7 +563,7 @@
     cod_postal: 38271
     telefono: 922845059
     web: "http://www.ull.es/view/centros/etsii/"
-    universidad: 42
+    universidad: @university42
     slug: "etsii-ull"
   college47:
     nombre: "Facultad de Informática"
@@ -577,7 +577,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 43
+    universidad: @university43
     slug: "fi-um"
   college48:
     nombre: "Escuela Técnica Superior de ingeniería Informática"
@@ -591,7 +591,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 44
+    universidad: @university44
     slug: "etsi-uma"
   college49:
     nombre: "Escuela Politécnica Superior de Elche"
@@ -605,7 +605,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 45
+    universidad: @university45
     slug: "epso-umh"
   college50:
     nombre: "Escuela Técnica Superior de Informática"
@@ -619,7 +619,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 46
+    universidad: @university46
     slug: "etsi-uned"
   college51:
     nombre: "Centro Universitario de Mérida"
@@ -629,7 +629,7 @@
     cod_postal: 384
     telefono: 924387068
     fax: 924301212
-    universidad: 47
+    universidad: @university47
     slug: "cum-unex"
   college52:
     nombre: "Escuela Politécnica Superior"
@@ -643,7 +643,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 47
+    universidad: @university47
     slug: "eps-unex"
   college53:
     nombre: "Facultad de Ciencias"
@@ -657,7 +657,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 48
+    universidad: @university48
     slug: "facultad-de-ciencias"
   college54:
     nombre: "Escuela de ingenierías industrial e informática"
@@ -671,7 +671,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 49
+    universidad: @university49
     slug: "eiii-unileon"
   college55:
     nombre: "Escuela de Ingenieria Informatica"
@@ -685,7 +685,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 50
+    universidad: @university50
     slug: "oviedo-uniovi"
   college56:
     nombre: "Escuela Universitaria de Ingeniería Técnica Informática de Gijón (EUITIG)"
@@ -699,7 +699,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 50
+    universidad: @university50
     slug: "gijon-uniovi"
   college57:
     nombre: "La Facultad de Ciencias, Estudios Agroalimentarios e Informática"
@@ -710,7 +710,7 @@
     telefono: 941299607
     fax: 941299611
     web: "www.unirioja.es"
-    universidad: 51
+    universidad: @university51
     slug: "fc-unirioja"
   college58:
     nombre: "Escuela de Ingeniería y Arquitectura"
@@ -724,7 +724,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 52
+    universidad: @university52
     slug: "zaragoza-unizar"
   college59:
     nombre: "Escuela Universitaria Politécnica"
@@ -734,7 +734,7 @@
     cod_postal: 44003
     telefono: 978618158
     web: "http://eupt.unizar.es"
-    universidad: 52
+    universidad: @university52
     slug: "teruel-unizar"
   college60:
     nombre: "Escuela Universitaria Politécnica de La Almunia"
@@ -744,7 +744,7 @@
     cod_postal: 50100
     telefono: 976600883
     web: "http://eupla.unizar.es"
-    universidad: 52
+    universidad: @university52
     slug: "almunia-unizar"
   college61:
     nombre: "Facultad de Informática de Barcelona"
@@ -755,7 +755,7 @@
     telefono: 934017000
     fax: 934017113
     web: "http://www.fib.upc.edu"
-    universidad: 53
+    universidad: @university53
     slug: "fib-upc"
   college62:
     nombre: "Escuela Universitaria Politécnica de Mataró"
@@ -766,7 +766,7 @@
     telefono: 937574404
     fax: 937570524
     web: "http://www.eupmt.cat"
-    universidad: 53
+    universidad: @university53
     slug: "eup-upc"
   college63:
     nombre: "Escuela Técnica Superior de Ingenieros Informáticos - UPM"
@@ -780,7 +780,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 54
+    universidad: @university54
     slug: "fi-upm"
   college64:
     nombre: "Escuela Universitaria de Informática"
@@ -790,7 +790,7 @@
     cod_postal: 28031
     telefono: 913367903
     web: "http://www.eui.upm.es"
-    universidad: 54
+    universidad: @university54
     slug: "eui-upm"
   college65:
     nombre: "Escuela Politécnica Superior"
@@ -804,7 +804,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 55
+    universidad: @university55
     slug: "eps-upo"
   college66:
     nombre: "Escuela Técnica Superior de Ingeniería Informática"
@@ -818,7 +818,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 56
+    universidad: @university56
     slug: "ets-upv"
   college67:
     nombre: "Escuela Técnica Superior de Ingeniería Informática (ETSII)"
@@ -832,7 +832,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 57
+    universidad: @university57
     slug: "fi-urjc"
   college68:
     nombre: "Universitat Ramón Llull"
@@ -843,7 +843,7 @@
     telefono: 902053010
     fax: 936022249
     web: "http://www.url.edu"
-    universidad: 58
+    universidad: @university58
     slug: "url-url"
   college69:
     nombre: "Escuela Técnica Superior de Ingeniería Informática"
@@ -853,7 +853,7 @@
     cod_postal: 41012
     telefono: 954556817
     web: "http://www.informatica.us.es"
-    universidad: 59
+    universidad: @university59
     slug: "ets-us"
   college70:
     nombre: "Facultad de Ciencias"
@@ -867,7 +867,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 60
+    universidad: @university60
     slug: "fc-usal"
   college71:
     nombre: "Escuela Técnica Superior de Ingeniería"
@@ -881,7 +881,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 61
+    universidad: @university61
     slug: "ets-uv"
   college72:
     nombre: "E.T.S.I. Informática"
@@ -895,7 +895,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 62
+    universidad: @university62
     slug: "etsi-uva"
   college73:
     nombre: "Escuela Superior de Ingenería Informática"
@@ -909,7 +909,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 63
+    universidad: @university63
     slug: "esii-uvigo"
   college74:
     nombre: "Escuela Politécnica Superior de Alcoy"
@@ -923,7 +923,7 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 56
+    universidad: @university56
     slug: "escuela-politecnica-superior-de-alcoy"
   college75:
     nombre: "Universidad Europea de Madrid"
@@ -937,5 +937,5 @@
     email: ""
     facebook: ""
     twitter: ""
-    universidad: 9
+    universidad: @university9
     slug: "universidad-europea-de-madrid"

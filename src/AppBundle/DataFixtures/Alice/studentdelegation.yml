@@ -5,7 +5,7 @@
     ciudad: "Mondragón"
     provincia: "Guipuzcua"
     cod_postal: 20500
-    centro: 1
+    centro: @college1
     slug: "da-eps-mondragon"
   studentdelegation2:
     nombre: "Delegación de alumnos desconocida"
@@ -13,7 +13,7 @@
     ciudad: "Villanueva de la Cañada"
     provincia: "Madrid"
     cod_postal: 28691
-    centro: 2
+    centro: @college2
     slug: "da-eps-uax"
   studentdelegation3:
     nombre: "Consell d'Alumnes d'Informàtica"
@@ -27,7 +27,7 @@
     email: "guillermo.blasco.jimenez@gmail.com"
     facebook: ""
     twitter: ""
-    centro: 3
+    centro: @college3
     slug: "da-fm-ub"
   studentdelegation4:
     nombre: "Delegación de alumnos desconocida"
@@ -35,7 +35,7 @@
     ciudad: "Guadalupe"
     provincia: "Murcia"
     cod_postal: 30107
-    centro: 4
+    centro: @college4
     slug: "da-eup-ucam"
   studentdelegation5:
     nombre: "Delegación de alumnos desconocida"
@@ -43,7 +43,7 @@
     ciudad: "Ávila"
     provincia: "Ávila"
     cod_postal: 05005
-    centro: 5
+    centro: @college5
     slug: "da-fca-ucavila"
   studentdelegation6:
     nombre: "Delegación de alumnos"
@@ -53,7 +53,7 @@
     cod_postal: 46115
     telefono: "961 369 007 (extensión 2188)"
     email: "midelegacion@uch.ceu.es"
-    centro: 6
+    centro: @college6
     slug: "da-eset-uchceu"
   studentdelegation7:
     nombre: "Associació d'Estudiants d'Informàtica de Girona"
@@ -62,7 +62,7 @@
     provincia: "Girona"
     cod_postal: 17071
     web: "http://www.aeigi.org/"
-    centro: 7
+    centro: @college7
     slug: "aeigi-udg"
   studentdelegation8:
     nombre: "Delegación de alumnos desconocida"
@@ -70,7 +70,7 @@
     ciudad: "Collado Villalba"
     provincia: "Madrid"
     cod_postal: 28400
-    centro: 8
+    centro: @college8
     slug: "da-udima"
   studentdelegation9:
     nombre: "Delegación de la Escuela politécnica"
@@ -84,7 +84,7 @@
     email: "21029846@live.uem.es"
     facebook: ""
     twitter: ""
-    centro: 9
+    centro: @college9
     slug: "da-ep-uem"
   studentdelegation10:
     nombre: "Delegación de alumnos"
@@ -98,7 +98,7 @@
     email: "epolitecnica@uemc.es"
     facebook: ""
     twitter: ""
-    centro: 10
+    centro: @college10
     slug: "da-eps-uemc"
   studentdelegation11:
     nombre: "Delegación de alumnos desconocida"
@@ -106,7 +106,7 @@
     ciudad: "Pozuelo de Alarcón"
     provincia: "Madrid"
     cod_postal: 28223
-    centro: 11
+    centro: @college11
     slug: "da-eii-ufv"
   studentdelegation12:
     nombre: "Delegación de alumnos desconocida"
@@ -114,7 +114,7 @@
     ciudad: "Palma de Mallorca"
     provincia: "Mallorca"
     cod_postal: 29241
-    centro: 12
+    centro: @college12
     slug: "da-uib"
   studentdelegation13:
     nombre: "Escola Superior de Tecnologia i Ciències Experimentals"
@@ -128,7 +128,7 @@
     email: "al259555@uji.es"
     facebook: ""
     twitter: ""
-    centro: 13
+    centro: @college13
     slug: "da-estce-uji"
   studentdelegation14:
     nombre: "Delegación de Alumnos de Informática"
@@ -142,7 +142,7 @@
     email: "deii@eii.ulpgc.es"
     facebook: ""
     twitter: ""
-    centro: 14
+    centro: @college14
     slug: "da-ulgpc"
   studentdelegation15:
     nombre: "Consejo de Estudiantes"
@@ -156,7 +156,7 @@
     email: "vocal.ingenieria.ce@unavarra.es"
     facebook: ""
     twitter: "\@ceupna"
-    centro: 15
+    centro: @college15
     slug: "da-etsiit-unavarra"
   studentdelegation16:
     nombre: "Delegación de alumnos desconocida"
@@ -164,7 +164,7 @@
     ciudad: "Barcelona"
     provincia: "Barcelona"
     cod_postal: 08035
-    centro: 16
+    centro: @college16
     slug: "da-uoc"
   studentdelegation17:
     nombre: "Consell d'estudiants"
@@ -179,7 +179,7 @@
     facebook: "www.facebook.com/estudiantsesup"
     twitter: ""
     cif: "Q5850017D"
-    centro: 17
+    centro: @college17
     slug: "da-eps-upf"
   studentdelegation18:
     nombre: "Delegación de alumnos desconocida"
@@ -188,7 +188,7 @@
     provincia: "Salamanca"
     cod_postal: 37002
     email: "info.alumno@upsa.es"
-    centro: 18
+    centro: @college18
     slug: "da-fi-upsa"
   studentdelegation19:
     nombre: "Delegación de Alumnos desconocida"
@@ -196,7 +196,7 @@
     ciudad: "Sant Pere i Sant Pau"
     provincia: "Tarragona"
     cod_postal: 43007
-    centro: 19
+    centro: @college19
     slug: "da-etse-urv"
   studentdelegation20:
     nombre: "Delegación de alumnos"
@@ -207,7 +207,7 @@
     telefono: 881816722
     web: "http://www.usc.es/etse/gl/category/3/14/56"
     email: "mariaiglez@hotmail.com"
-    centro: 20
+    centro: @college20
     slug: "da-etse-usc"
   studentdelegation21:
     nombre: "Delegación de alumnos desconocida"
@@ -215,7 +215,7 @@
     ciudad: "Huesca"
     provincia: "Huesca"
     cod_postal: 22197
-    centro: 21
+    centro: @college21
     slug: "da-usj"
   studentdelegation22:
     nombre: "Delegación de alumnos desconocida"
@@ -223,7 +223,7 @@
     ciudad: "Boadilla del Monte"
     provincia: "Madrid"
     cod_postal: 28668
-    centro: 22
+    centro: @college22
     slug: "da-eps-uspceu"
   studentdelegation23:
     nombre: "Delegación de alumnos desconocida"
@@ -231,7 +231,7 @@
     ciudad: "Vic"
     provincia: "Barcelona"
     cod_postal: 320
-    centro: 23
+    centro: @college23
     slug: "da-eps-uvic"
   studentdelegation24:
     nombre: "Delegación de alumnos"
@@ -246,7 +246,7 @@
     facebook: ""
     twitter: ""
     cif: "R4868004E"
-    centro: 24
+    centro: @college24
     slug: "da-fi-deusto"
   studentdelegation25:
     nombre: "Consejo de estudiantes"
@@ -261,7 +261,7 @@
     facebook: "http://www.facebook.com/consejoestudiantes.euitibilbao"
     twitter: "\@CEUITIBi"
     cif: "Q4818001B"
-    centro: 25
+    centro: @college25
     slug: "da-etsib-ehu"
   studentdelegation26:
     nombre: "Consejo de Estudiantes"
@@ -275,7 +275,7 @@
     email: "informatika.fak.zik@ehu.es"
     facebook: "https://www.facebook.com/InforKontseilua"
     twitter: "\@InforKontseilua"
-    centro: 26
+    centro: @college26
     slug: "da-fi-ehu"
   studentdelegation27:
     nombre: "Consejo de Estudiantes"
@@ -286,7 +286,7 @@
     telefono: 945014065
     fax: 945013270
     email: "delegacionfiss@gmail.com"
-    centro: 27
+    centro: @college27
     slug: "da-euiv-ehu"
   studentdelegation28:
     nombre: "Delegación de Alumnos de la Escuela Politécnica Superior"
@@ -301,7 +301,7 @@
     facebook: "http://www.facebook.com/home.php#!/DAEPS"
     twitter: "\@daeps"
     cif: "Q-0332001G"
-    centro: 28
+    centro: @college28
     slug: "eps-ua"
   studentdelegation29:
     nombre: "Consell d'Estudiants de l'Escola d'Enginyeria"
@@ -315,7 +315,7 @@
     email: "consell.estudiants.enginyeria@uab.cat"
     facebook: "https://www.facebook.com/ceenginyeria"
     twitter: "https://twitter.com/EE_Estudiants"
-    centro: 29
+    centro: @college29
     slug: "da-bellaterra-uab"
   studentdelegation30:
     nombre: "Consell d'Estudiants de l'Escola d'Enginyeria"
@@ -325,7 +325,7 @@
     cod_postal: 08202
     telefono: 937287737
     email: "consell.estudiants.eui@uab.cat"
-    centro: 30
+    centro: @college30
     slug: "da-sabadell-uab"
   studentdelegation31:
     nombre: "Delegación de Estudiantes de Informática"
@@ -340,7 +340,7 @@
     facebook: ""
     twitter: "https://twitter.com/deiuah"
     cif: "Q2818018J"
-    centro: 31
+    centro: @college31
     slug: "de-uah"
   studentdelegation32:
     nombre: "Asociación de Universitarios Informáticos de Almería (UNIA)"
@@ -351,7 +351,7 @@
     telefono: 950015592
     web: "http://asocia.ual.es/?q=category/asociacion/unia"
     email: "unia@ual.es"
-    centro: 32
+    centro: @college32
     slug: "unia-ual"
   studentdelegation33:
     nombre: "DEISI"
@@ -365,7 +365,7 @@
     email: "deisi.eps@gmail.com"
     facebook: ""
     twitter: "\@deisieps"
-    centro: 33
+    centro: @college33
     slug: "deisi-uam"
   studentdelegation34:
     nombre: "Delegación"
@@ -379,7 +379,7 @@
     email: "info@abi2burgos.es"
     facebook: ""
     twitter: "\@Abi2burgos"
-    centro: 34
+    centro: @college34
     slug: "delegacion"
   studentdelegation35:
     nombre: "Delegación de Estudiantes EPS"
@@ -393,7 +393,7 @@
     email: "delegest@uc3m.es"
     facebook: "Delegación de Estudiantes EPS UC3M"
     twitter: "delegacionEPS"
-    centro: 35
+    centro: @college35
     slug: "de-uc3m"
   studentdelegation36:
     nombre: "Delegación de alumnos"
@@ -407,7 +407,7 @@
     email: "alumnos.esi@uca.es"
     facebook: "https://www.facebook.com/DelegacionESI.UCA"
     twitter: "dele_alumnosESI"
-    centro: 36
+    centro: @college36
     slug: "da-uca"
   studentdelegation37:
     nombre: "Delegación de alumnos ESII"
@@ -421,7 +421,7 @@
     email: "delalumnos.informatica.ab@uclm.es"
     facebook: "Delegación Informática Albacete"
     twitter: "\@da_esii"
-    centro: 37
+    centro: @college37
     slug: "delegacion-de-alumnos"
   studentdelegation38:
     nombre: "Delegación de Alumnos de Informática"
@@ -435,7 +435,7 @@
     email: "David.Ruiz20@alu.uclm.es"
     facebook: ""
     twitter: "\@DaiESICR"
-    centro: 38
+    centro: @college38
     slug: "delegacion-de-alumnos-de-informatica"
   studentdelegation39:
     nombre: "Delegacion de Alumnos"
@@ -449,7 +449,7 @@
     email: "delegacionfdi@fdi.ucm.es"
     facebook: "https://www.facebook.com/delegacionfdi?ref=hl"
     twitter: "https://twitter.com/DelegacionFDI"
-    centro: 39
+    centro: @college39
     slug: "de-ucm"
   studentdelegation40:
     nombre: "CEEPS - Consejo de Estudiantes de la EPSC"
@@ -464,7 +464,7 @@
     facebook: "http://www.facebook.com/ConsejoEPS"
     twitter: "http://twitter.com/ConsejoEPS"
     cif: "Q1418001B"
-    centro: 40
+    centro: @college40
     slug: "ceeps-uco"
   studentdelegation41:
     nombre: "Delegación de Alumnos"
@@ -478,7 +478,7 @@
     email: "alumnos@ceu.fi.udc.es"
     facebook: ""
     twitter: ""
-    centro: 41
+    centro: @college41
     slug: "da-udc"
   studentdelegation42:
     nombre: "Consell de l'Estudiantat de l'EPS"
@@ -492,7 +492,7 @@
     email: "eps@estudiantat.udl.es"
     facebook: ""
     twitter: ""
-    centro: 42
+    centro: @college42
     slug: "da-eps-udl"
   studentdelegation43:
     nombre: "Delegación de Estudiantes ETSIIT"
@@ -506,7 +506,7 @@
     email: "deiit@ugr.es"
     facebook: "https://www.facebook.com/delegaetsiit"
     twitter: "\@deiit"
-    centro: 43
+    centro: @college43
     slug: "da-ugr"
   studentdelegation44:
     nombre: "Delegación de alumnos de IT Informática"
@@ -520,7 +520,7 @@
     email: "delegacion.itinformatica@alu.uhu.es"
     facebook: ""
     twitter: ""
-    centro: 44
+    centro: @college44
     slug: "da-uhu"
   studentdelegation45:
     nombre: "Asociación de alumnos Joaquín Garrido (DELAL)"
@@ -534,7 +534,7 @@
     email: "delal@ujaen.es"
     facebook: "delal.universidaddejaen"
     twitter: "DelAlEPSuja"
-    centro: 45
+    centro: @college45
     slug: "da-ujaen"
   studentdelegation46:
     nombre: "Delegación de alumnos"
@@ -545,7 +545,7 @@
     web: "http://sites.google.com/site/daiilalaguna/"
     email: "dai@etsii.ull.es"
     facebook: "http://www.facebook.com/pages/Delegacion-de-Alumnos-de-Ingenieria-Informatica-ULL/414299488760"
-    centro: 46
+    centro: @college46
     slug: "da-ull"
   studentdelegation47:
     nombre: "Delegación de Alumnos"
@@ -559,7 +559,7 @@
     email: "dafi@um.es"
     facebook: ""
     twitter: "dafi_um"
-    centro: 47
+    centro: @college47
     slug: "da-um"
   studentdelegation48:
     nombre: "Consejo de estudiantes"
@@ -573,7 +573,7 @@
     email: "consejoinfuma@gmail.com"
     facebook: "https://www.facebook.com/ConsejoInfUMA"
     twitter: "http://twitter.com/ConsejoInfUMA"
-    centro: 48
+    centro: @college48
     slug: "da-uma"
   studentdelegation49:
     nombre: "Delegación de Estudiantes EPSE"
@@ -587,7 +587,7 @@
     email: "aeiou.epse@delegacion.umh.es"
     facebook: "http://www.facebook.com/group.php?gid=148062668567430&ref=ts"
     twitter: ""
-    centro: 49
+    centro: @college49
     slug: "da-epso-umh"
   studentdelegation50:
     nombre: "Delegación de Estudiantes"
@@ -601,7 +601,7 @@
     email: "delegadoestudiantes@informatica.uned.es"
     facebook: ""
     twitter: ""
-    centro: 50
+    centro: @college50
     slug: "da-etsi-uned"
   studentdelegation51:
     nombre: "Consejo de Estudiantes EPCC"
@@ -615,7 +615,7 @@
     email: "conalupoli@unex.es"
     facebook: ""
     twitter: "\@EstudiantesEPCC"
-    centro: 52
+    centro: @college52
     slug: "ce-merida-unex"
   studentdelegation52:
     nombre: "Consejo de Estudiantes"
@@ -627,7 +627,7 @@
     fax: 927257188
     web: "http://consejoepcc.blogspot.com/"
     email: "consejoepcc@gmail.com"
-    centro: 52
+    centro: @college52
     slug: "ca-caceres-unex"
   studentdelegation53:
     nombre: "Delegación de Alumnos de la Facultad de Ciencias"
@@ -641,7 +641,7 @@
     email: "da_ciencias@alumnos.unican.es"
     facebook: "https://www.facebook.com/dafcuc"
     twitter: "DAFCUC"
-    centro: 53
+    centro: @college53
     slug: "delegacion-de-ciencias"
   studentdelegation54:
     nombre: "Delegación de alumnos de industriales, informática y aeronaútica"
@@ -655,7 +655,7 @@
     email: "eiiialumnos@unileon.es"
     facebook: "Delegación Ingenierías León"
     twitter: "\@DelegacionEIIIA"
-    centro: 54
+    centro: @college54
     slug: "da-unileon"
   studentdelegation55:
     nombre: "Delegacion de Estudiantes de EII"
@@ -669,7 +669,7 @@
     email: "delegacion.eii@uniovi.es"
     facebook: "https://www.facebook.com/ddeeiioviedo"
     twitter: "delegacion_eii"
-    centro: 55
+    centro: @college55
     slug: "euitio-uniovi"
   studentdelegation56:
     nombre: "Deelgación EUITIG"
@@ -683,7 +683,7 @@
     email: "dainfortel@uniovi.es"
     facebook: ""
     twitter: ""
-    centro: 56
+    centro: @college56
     slug: "euitig-uniovi"
   studentdelegation57:
     nombre: "Consejo de Estudiantes"
@@ -694,7 +694,7 @@
     telefono: 941299209
     web: "http://www.unirioja.es/ceur/"
     email: "consejo.estudiantes@unirioja.es"
-    centro: 57
+    centro: @college57
     slug: "ce-unirioja"
   studentdelegation58:
     nombre: "Delegación de Alumnos"
@@ -708,7 +708,7 @@
     email: "ddaeina@unizar.es"
     facebook: "https://www.facebook.com/dda.eina"
     twitter: "https://twitter.com/DelegacionEINA"
-    centro: 58
+    centro: @college58
     slug: "da-zaragoza-unizar"
   studentdelegation59:
     nombre: "Delegacion de Alumnos"
@@ -718,7 +718,7 @@
     cod_postal: 44003
     web: "http://eupt.unizar.es/delegacion_alumnos.html"
     email: "cterdel@posta.unizar.es"
-    centro: 59
+    centro: @college59
     slug: "da-teruel-unizar"
   studentdelegation60:
     nombre: "Delegación de Alumnos"
@@ -730,7 +730,7 @@
     fax: 976600883
     web: "http://www.eupla.es/alumnos/delegacion.html"
     email: "delegacion@eupla.es"
-    centro: 60
+    centro: @college60
     slug: "da-almunia-unizar"
   studentdelegation61:
     nombre: "Delegació d’alumnes de la Facultat d’Informàtica de Barcelona (DAFIB)"
@@ -741,7 +741,7 @@
     telefono: 934137596
     web: "http://dafib.upc.edu"
     email: "dafib@fib.upc.edu"
-    centro: 61
+    centro: @college61
     slug: "dafib-upc"
   studentdelegation62:
     nombre: "Asociación de alumnos de la EUPMT"
@@ -753,7 +753,7 @@
     email: "associac@eupmt.upc.edu"
     facebook: "http://www.facebook.com/group.php?gid=184574998502"
     cif: "G59961540"
-    centro: 62
+    centro: @college62
     slug: "da-eup-upc"
   studentdelegation63:
     nombre: "Delegación de Alumnos ETSI Informáticos"
@@ -768,7 +768,7 @@
     facebook: "http://www.facebook.com/pages/Delegaci%C3%B3n-de-Alumnos-FI-UPM/108653329219932"
     twitter: "\@daetsiinf"
     cif: "G28970366"
-    centro: 63
+    centro: @college63
     slug: "da-upm"
   studentdelegation64:
     nombre: "Delegación de Alumnos EUI-UPM"
@@ -781,7 +781,7 @@
     web: "http://www.dalum.eui.upm.es/"
     email: "dalum@eui.upm.es"
     twitter: "http://twitter.com/dalumeui"
-    centro: 64
+    centro: @college64
     slug: "da-eui-upm"
   studentdelegation65:
     nombre: "Delegación de Alumnos de la Escuela Politécnica Superior"
@@ -795,7 +795,7 @@
     email: "deleeps@upo.es"
     facebook: ""
     twitter: ""
-    centro: 65
+    centro: @college65
     slug: "da-upo"
   studentdelegation66:
     nombre: "Delegación de Alumnos ETSINF"
@@ -809,7 +809,7 @@
     email: "etsinfdai@inf.upv.es"
     facebook: "http://facebook.com/dai.etsinf"
     twitter: "dai_etsinf"
-    centro: 66
+    centro: @college66
     slug: "da-uvp"
   studentdelegation67:
     nombre: "Delegación Estudiantes ETSII"
@@ -823,7 +823,7 @@
     email: "delegacionestudiantes.etsii@urjc.es"
     facebook: ""
     twitter: "DelegacionETSII"
-    centro: 67
+    centro: @college67
     slug: "de-urjc"
   studentdelegation68:
     nombre: "Delegación de alumnos LaSalle"
@@ -834,7 +834,7 @@
     telefono: 932902400
     web: "http://delegacion-alumnos.informacion-estudiantes.lasalle.tel/"
     email: "dalumnes@salle.url.edu"
-    centro: 68
+    centro: @college68
     slug: "da-url-url"
   studentdelegation69:
     nombre: "Delegación de Alumnos"
@@ -845,7 +845,7 @@
     telefono: 954552762
     web: "http://talika.eii.us.es"
     email: "delegacion_etsii@us.es"
-    centro: 69
+    centro: @college69
     slug: "da-us"
   studentdelegation70:
     nombre: "Delegación de Estudiantes de la Facultad de Ciencias"
@@ -859,7 +859,7 @@
     email: "delg.fc@usal.es"
     facebook: "www.facebook.com/DelCienUsal"
     twitter: "www.twitter.com/delcienusal"
-    centro: 70
+    centro: @college70
     slug: "de-usal"
   studentdelegation71:
     nombre: "ADR ETSE"
@@ -873,7 +873,7 @@
     email: "adretse@uv.es"
     facebook: "http://www.facebook.com/pages/ADR-ETSE-UV/119836211388705"
     twitter: "\@adr_etse_uv"
-    centro: 71
+    centro: @college71
     slug: "da-uv"
   studentdelegation72:
     nombre: "Delegación de Estudiantes de Ingeniería Informática"
@@ -887,7 +887,7 @@
     email: "delalum@inf.uva.es"
     facebook: "http://www.facebook.com/DelETSII"
     twitter: "https://twitter.com/DelAlumInforUva"
-    centro: 72
+    centro: @college72
     slug: "de-uva"
   studentdelegation73:
     nombre: "Delegación de Alumnos Escuela Superior de Ingeniería en Informatica"
@@ -901,7 +901,7 @@
     email: "eseida@ei.uvigo.es"
     facebook: "eseida UVigo"
     twitter: ""
-    centro: 73
+    centro: @college73
     slug: "da-uvigo"
   studentdelegation74:
     nombre: "Delegación de Alumnos Campus UPV de Alcoy"
@@ -916,5 +916,5 @@
     facebook: "Delegación Alumnes Campus Alcoy"
     twitter: "\@DAEPSA"
     cif: "Q4618002B"
-    centro: 74
+    centro: @college74
     slug: "upv-dele-alcoy"
