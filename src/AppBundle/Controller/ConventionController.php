@@ -20,7 +20,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class ConventionController extends Controller
 {
     /**
-     * @Route("/", name="convention")
+     * @Route("/", name="convention", host="{hostname}.%base_host%")
      */
     public function showConvention()
     {
