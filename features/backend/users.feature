@@ -8,7 +8,7 @@ Característica: Administrar usuarios
 Antecedentes:
     Dado que estoy autenticado como administrador
     Y que existen los siguientes usuarios:
-    | username  | password  | email                 | role        |
+    | username  | plainPassword  | email                 | role        |
     | admin     | adminpw   | admin@secret.com      | ROLE_ADMIN  |
     | sergio    | sergiopw  | sergio@secret.com     | ROLE_USER   |
     | johndoe   | johndoepw | johndoe@secret.com    | ROLE_ADMIN_CONVENTION  |

@@ -27,6 +27,8 @@ class ConventionContext extends DefaultContext
             $convention->setName($conventionHash['nombre']);
             $convention->setStartsAt(new \DateTime( $conventionHash['fechaInicio'] ));
             $convention->setEndsAt(new \DateTime( $conventionHash['fechaFin'] ));
+            $convention->setDomain($conventionHash['dominio']);
+            $convention->setWeb($this->faker->url);
             $convention->setEmail($this->faker->email);
             $this->getEntityManager()->persist($convention);
         }

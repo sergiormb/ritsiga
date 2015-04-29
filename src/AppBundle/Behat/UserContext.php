@@ -23,7 +23,7 @@ class UserContext  extends DefaultContext
             $user = new User();
             $user->setUsername($userHash['username']);
             $user->setEmail($userHash['email']);
-            $user->setPlainPassword($userHash['password']);
+            $user->setPlainPassword($userHash['plainPassword']);
             $this->getEntityManager()->persist($user);
         }
         $this->getEntityManager()->flush();

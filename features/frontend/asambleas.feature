@@ -7,10 +7,11 @@ Característica: Comprobar el funcionamiento de asambleas
 
 Antecedentes:
     Dado existen las asambleas:
-      | nombre  | fechaInicio | fechaFin  |
-      | Cádiz   | now         | +3 days        |
-      | Málaga  | now         | +3 days       |
-      | Córdoba | -3 days          | -1 days        |
+      | nombre  | fechaInicio | fechaFin       |   dominio      |
+      | Cádiz   | now         | +3 days        |   cadiz2014    |
+      | Málaga  | now         | +3 days        |   malaga2016   |
+      | Córdoba | -3 days     | -1 days        |   cordoba2013  |
+    Y estoy en el sitio de cordoba2013
 
     Escenario: Mostrar listado de asambleas
         Dado estoy en la página de inicio

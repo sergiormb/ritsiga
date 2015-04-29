@@ -8,6 +8,7 @@
 
 namespace AppBundle\Behat;
 
+use AppBundle\Entity\Convention;
 use AppBundle\Entity\User;
 use Sylius\Bundle\ResourceBundle\Behat\DefaultContext;
 
@@ -19,7 +20,19 @@ class CoreContext extends DefaultContext
     public function iAmLoggedInAsAdministrator()
     {
         $this->iAmLoggedInAsRole('ROLE_ADMIN');
-        var_dump($this->getSession()->getCurrentUrl());
+    }
+
+    /**
+     * @Given estoy en el sitio de :domain
+     */
+    public function iAmOnConventionSite($domain)
+    {
+        $siteManager = $this->getContainer()->get('ritsiga.site.manager');
+        $site = $this->getEntityManager()->getRepository('AppBundle:Convention')->findOneBy(['domain' => $domain]);
+        if (false === $site instanceof Convention) {
+            throw new \Exception("Site not found: $domain");
+        }
+        $siteManager->setCurrentSite($site);
     }
 
     /**
@@ -34,7 +47,7 @@ class CoreContext extends DefaultContext
         $this->getSession()->visit($this->generatePageUrl('sonata_user_admin_security_login'));
         $this->fillField('username', $username);
         $this->fillField('password', 'password');
-        $this->pressButton('_submit');
+        $this->pressButton('Entrar');
     }
 
     /**
