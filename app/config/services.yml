@@ -16,6 +16,7 @@ services:
              - "@ritsiga.site.manager"
              - "@doctrine.orm.default_entity_manager"
              - "%base_host%"
+             - "@kernel"
          tags:
              -
                  name: kernel.event_listener
