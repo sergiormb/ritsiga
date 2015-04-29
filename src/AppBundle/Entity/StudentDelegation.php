@@ -58,7 +58,7 @@ class StudentDelegation {
     /**
      * @var integer
      *
-     * @ORM\Column(name="telefono", type="integer", length=20)
+     * @ORM\Column(name="telefono", type="integer", length=20, nullable=true)
      */
     private $telefono;
     /**
@@ -94,7 +94,7 @@ class StudentDelegation {
     /**
      * @var string
      *
-     * @ORM\Column(name="cif", type="string", length=9)
+     * @ORM\Column(name="cif", type="string", length=9, nullable=true)
      */
     private $cif;
     /**
@@ -104,7 +104,11 @@ class StudentDelegation {
      */
     private $slug;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\College", inversedBy="delegations") */
+    /**
+     * @var College
+     *
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\College", inversedBy="delegations")
+     */
     private $centro;
 
     /**
@@ -323,7 +327,7 @@ class StudentDelegation {
     }
 
     /**
-     * @return mixed
+     * @return College
      */
     public function getCentro()
     {
@@ -331,9 +335,9 @@ class StudentDelegation {
     }
 
     /**
-     * @param mixed $centro
+     * @param College $centro
      */
-    public function setCentro($centro)
+    public function setCentro(College $centro)
     {
         $this->centro = $centro;
     }

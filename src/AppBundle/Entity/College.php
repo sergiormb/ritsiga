@@ -99,7 +99,11 @@ class College {
      */
     private $slug;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\University", inversedBy="colleges") */
+    /**
+     * @var University
+     *
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\University", inversedBy="colleges")
+     */
     private $universidad;
 
     /**
@@ -303,20 +307,18 @@ class College {
     }
 
     /**
-     * @return mixed
+     * @return University
      */
     public function getUniversidad()
     {
-        return $this->$universidad;
+        return $this->universidad;
     }
 
     /**
-     * @param mixed $university_id
+     * @param University $universidad
      */
-    public function setUniversidad($universidad)
+    public function setUniversidad(University $universidad)
     {
-        $this->$universidad = $universidad;
+        $this->universidad = $universidad;
     }
-
-
 }
