@@ -1,0 +1,12 @@
+{
+  "name": "ritsiGA",
+  "private": true,
+  "dependencies": {
+    "admin-lte": "~2.0.5",
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.3.0",
+    "ionicons": "~2.0.1",
+    "jquery": "~2.1.4",
+    "select2": "~3.5"
+  }
+}
