@@ -107,6 +107,28 @@ class College {
     private $universidad;
 
     /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\AcademicDegree", mappedBy="colleges")
+     */
+    private $academic_degrees;
+
+    /**
+     * @return mixed
+     */
+    public function getAcademicDegrees()
+    {
+        return $this->academic_degrees;
+    }
+
+    /**
+     * @param mixed $academic_degrees
+     */
+    public function setAcademicDegrees($academic_degrees)
+    {
+        $this->academic_degrees = $academic_degrees;
+    }
+
+
+    /**
      * @return int
      */
     public function getId()

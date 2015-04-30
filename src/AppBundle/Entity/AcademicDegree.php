@@ -42,6 +42,28 @@ class AcademicDegree {
      * @ORM\Column(name="slug", type="string", length=100)
      */
     private $slug;
+
+    /**
+     * @return mixed
+     */
+    public function getColleges()
+    {
+        return $this->colleges;
+    }
+
+    /**
+     * @param mixed $colleges
+     */
+    public function setColleges($colleges)
+    {
+        $this->colleges = $colleges;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\College", mappedBy="academic_degrees")
+     */
+    private $colleges;
+
     /**
      * @return int
      */
