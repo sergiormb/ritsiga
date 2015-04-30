@@ -3,27 +3,34 @@
     nombre: "Grado en Ingeniería en Informática"
     categoria: "Grado"
     slug: "gi"
+    colleges: [@college2 ,@college3 ,@college9 ,@college10, @college12, @college13, @college14, @college15, @college16, @college17, @college18, @college21, @college24, @college26, @college28, @college29, @college31, @college33, @college34, @college35, @college37, @college38, @college39, @college40, @college41, @college42, @college43, @college44, @college45, @college46, @college47, @college48, @college50, @college53, @college54, @college58, @college61, @college62, @college63, @college66, @college67, @college70, @college71, @college72, @college73, @college74, @college75]
   academicdegree2:
     nombre: "Grado en Sistemas de Información"
     categoria: "Grado"
     slug: "gsi"
+    colleges: [@college2 ,@college5 ,@college6 ,@college22, @college25, @college31, @college36, @college45, @college58, @college65, @college66]
   academicdegree3:
     nombre: "Grado en Tecnologías de la Información"
     categoria: "Grado"
     slug: "gti"
+    colleges: [@college36, @college45, @college49, @college50, @college56, @college58, @college66]
   academicdegree4:
     nombre: "Máster en Ingeniería Informática"
     categoria: "Máster"
     slug: "mii"
+    colleges: [@college15, @college24, @college28, @college33, @college34, @college35, @college37, @college38, @college42, @college43, @college44, @college45, @college48, @college50, @college52, @college54, @college56, @college58, @college63, @college66, @college67, @college71, @college72]
   academicdegree5:
     nombre: "Grado en Ingeniería del Software"
     categoria: "Grado"
     slug: "gis"
+    colleges: [@college36, @college39, @college40, @college45, @college48, @college52, @college55, @college58, @college66, @college67]
   academicdegree6:
     nombre: "Grado en Ingeniería de Computadores"
     categoria: "Grado"
     slug: "gic"
+    colleges: [@college31, @college36, @college39, @college40, @college48, @college52, @college58, @college66, @college67]
   academicdegree7:
     nombre: "Grado en Computación"
     categoria: "Grado"
     slug: "gc"
+    colleges: [@college36, @college40, @college58, @college66]
