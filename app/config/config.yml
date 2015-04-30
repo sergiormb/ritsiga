@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: sonata.yml }
-    - { resource: @AppBundle/Resources/config/admin.yml }
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
