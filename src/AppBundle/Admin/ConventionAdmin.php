@@ -22,11 +22,16 @@ class ConventionAdmin extends Admin
      */
     public function createQuery($context = 'list')
     {
-        $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
-        /** @var QueryBuilder $query */
         $query = parent::createQuery($context);
         $alias = current($query->getRootAliases());
-        $query->andWhere($query->expr()->eq( $alias . '.id', $convention->getId() ));
+        $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
+        if($convention != '')
+        {
+            $query->andWhere($query->expr()->eq( $alias . '.id', $convention->getId() ));
+        }
+        /** @var QueryBuilder $query */
+
+
         return $query;
     }
 

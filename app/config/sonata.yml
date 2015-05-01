@@ -32,6 +32,6 @@ sonata_user:
 
 sonata_admin:
     title:      ritsiGA
-    title_logo: bundles/app/img/logo-asambleas.png
+    title_logo: bundles/app/img/logo_ritsi.png
 
 
