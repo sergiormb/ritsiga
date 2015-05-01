@@ -2,15 +2,6 @@
 {% block title_page %}
 <div class="row">
     <div class="col-md-12">
-        {% for message in app.session.flashbag.get('info') %}
-            <div class="alert alert-info alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <p>{{ message }}</p>
-            </div>
-        {% endfor %}
         <div class="box box-danger">
     {% if is_granted("ROLE_USER") %}
         <div class="username"  id="username"  name="username">

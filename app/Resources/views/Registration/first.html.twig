@@ -1,7 +1,12 @@
 {%  extends "base.html.twig" %}
 
 {% block content %}
-<h1>Rellena los siguientes datos</h1>
-    {{ form(form) }}
-<a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': 'second'}) }}" class="btn btn-success">forward <i class="icon-forward icon-white"></i></a>
+    <h1> Iniciar inscripción</h1>
+    <div>Antes de proceder con su inscripción, acepta las siguientes condiciones:</div>
+    <p>1. Que Vd es representante legal de la asocicación/delegación/consejo de estudiantes del siguiente centro: </p>
+    <p>2. Que cuenta con autorización para realizar este proceso </p>
+    <p>3. Que todos los datos que va a indicar son auténticos </p>
+
+    <a href="{{ path('homepage') }}" class="btn btn-success"><i class="icon-backward icon-white"></i> Cancelar</a>
+    <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': 'first'}) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
 {% endblock %}
