@@ -2,10 +2,18 @@
 {% block title_page %}
 <div class="row">
     <div class="col-md-12">
+        {% for message in app.session.flashbag.get('info') %}
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
         <div class="box box-danger">
     {% if is_granted("ROLE_USER") %}
         <div class="username"  id="username"  name="username">
-            {{ user.username }}
             </div>
             {% endif %}
             <div class="box-header">
@@ -83,7 +91,7 @@
             <div class="box box-solid">
                 <div class="box-body">
                     {% if is_granted("ROLE_USER") %}
-                        <a href="{{ url('registration') }}" class="btn btn-block btn-warning">Inscribirse</a></center>
+                        <a href="{{ url('sylius_flow_start', {'scenarioAlias': 'asamblea'}) }}" class="btn btn-block btn-warning">Inscribirse</a></center>
                         {% else %}
                         Debe de estar logueado para inscribirse
                     {% endif %}

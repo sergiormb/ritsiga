@@ -1,7 +1,7 @@
 {%  extends "base.html.twig" %}
 
 {% block content %}
-<h1>Rellena los datos</h1>
-
-<a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'sylius_flow', 'stepName': 'second'}) }}" class="btn btn-success">Next <i class="icon-forward icon-white"></i></a>
+<h1>Rellena los siguientes datos</h1>
+    {{ form(form) }}
+<a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': 'second'}) }}" class="btn btn-success">forward <i class="icon-forward icon-white"></i></a>
 {% endblock %}
