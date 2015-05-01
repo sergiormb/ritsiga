@@ -2,6 +2,11 @@
 
 {% block content %}
     <div class="container" >
+        {% if is_granted("ROLE_USER") %}
+            <div class="username"  id="username"  name="username">
+                {{ user.username }}
+            </div>
+        {% endif %}
     {% for convention in conventions %}
     <div class="panel panel-default" id="convention_{{ convention.name }}">
         <div class="convention row">

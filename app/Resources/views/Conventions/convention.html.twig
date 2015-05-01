@@ -3,6 +3,11 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box box-danger">
+    {% if is_granted("ROLE_USER") %}
+        <div class="username"  id="username"  name="username">
+            {{ user.username }}
+            </div>
+            {% endif %}
             <div class="box-header">
                 <h3 class="box-title">{{ convention.name }}</h3>
             </div>
