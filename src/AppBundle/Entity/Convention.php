@@ -67,6 +67,29 @@ class Convention
     private $organization;
 
     /**
+     * @return string
+     */
+    public function getRegistrations()
+    {
+        return $this->registrations;
+    }
+
+    /**
+     * @param string $registrations
+     */
+    public function setRegistrations($registrations)
+    {
+        $this->registrations = $registrations;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Registration",mappedBy="convention")
+     */
+    private $registrations;
+
+    /**
      * @return mixed
      */
     public function getAdministrators()

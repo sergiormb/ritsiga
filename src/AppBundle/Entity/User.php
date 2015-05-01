@@ -29,6 +29,24 @@ class User extends BaseUser
      */
     private $admin_conventions;
 
+    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\StudentDelegation", inversedBy="users") */
+    private $student_delegation;
+
+    /**
+     * @return mixed
+     */
+    public function getStudentDelegation()
+    {
+        return $this->student_delegation;
+    }
+
+    /**
+     * @param mixed $student_delegation
+     */
+    public function setStudentDelegation($student_delegation)
+    {
+        $this->student_delegation = $student_delegation;
+    }
 
     /**
      * @return mixed

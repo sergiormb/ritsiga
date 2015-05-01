@@ -112,6 +112,52 @@ class StudentDelegation {
     private $centro;
 
     /**
+     * @return string
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param string $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStudents()
+    {
+        return $this->students;
+    }
+
+    /**
+     * @param string $students
+     */
+    public function setStudents($students)
+    {
+        $this->students = $students;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="User",mappedBy="student_delegation")
+     */
+    private $users;
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Registration",mappedBy="student_delegation")
+     */
+    private $students;
+
+    /**
      * @return int
      */
     public function getId()
@@ -340,5 +386,10 @@ class StudentDelegation {
     public function setCentro(College $centro)
     {
         $this->centro = $centro;
+    }
+
+    public function __toString()
+    {
+        return $this->getNombre();
     }
 }
