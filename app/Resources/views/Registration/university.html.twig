@@ -1,0 +1,12 @@
+{%  extends "base.html.twig" %}
+
+{% block content %}
+<h1>Su Universidad</h1>
+    <p>Compruebe que los datos son correctos. El CIF es necesario para realizar las facturas. Si las facturas tienen
+    que ir a un CIF distinto podrá indicarlo más adelante. Aquí indique el de su universidad</p>
+    {{ form(form) }}
+    <div class="form-actions">
+        <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': 'welcome'}) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
+        <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': 'university'}) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
+    </div>
+{% endblock %}

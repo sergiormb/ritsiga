@@ -1,0 +1,10 @@
+{%  extends "base.html.twig" %}
+
+{% block content %}
+    <h1>Su Centro</h1>
+    {{ form(form) }}
+    <div class="form-actions">
+        <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': 'university'}) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
+        <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': 'college'}) }}" class="btn btn-lg btn-default">Siguiente</a> &nbsp;
+    </div>
+{% endblock %}

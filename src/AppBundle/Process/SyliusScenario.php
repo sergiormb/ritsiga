@@ -19,8 +19,10 @@ class SyliusScenario extends ContainerAware implements ProcessScenarioInterface
     public function build(ProcessBuilderInterface $builder)
     {
         $builder
-            ->add('first', new Step\FirstStep())
-            ->add('second', new Step\SecondStep())
+            ->add('welcome', new Step\WelcomeStep())
+            ->add('university', new Step\UniversityStep())
+            ->add('college', new Step\CollegeStep())
+            ->add('fourth', new Step\FourthStep())
             ->setRedirect('homepage')
         ;
     }

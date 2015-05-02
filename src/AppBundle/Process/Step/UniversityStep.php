@@ -7,12 +7,12 @@
  */
 
 namespace AppBundle\Process\Step;
-use AppBundle\Entity\Registration;
-use AppBundle\Form\RegistrationType;
+
+use AppBundle\Form\UniversityType;
 use Sylius\Bundle\FlowBundle\Process\Context\ProcessContextInterface;
 use Sylius\Bundle\FlowBundle\Process\Step\ControllerStep;
 
-class FirstStep extends ControllerStep
+class UniversityStep extends ControllerStep
 {
     public function displayAction(ProcessContextInterface $context)
     {
@@ -20,13 +20,14 @@ class FirstStep extends ControllerStep
         $request = $context->getRequest();
         $siteManager = $this->container->get('ritsiga.site.manager');
         $convention = $siteManager->getCurrentSite();
-        $student_delegation = $user->getStudentDelegation();
+        $university=$user->getStudentDelegation()->getCollege()->getUniversity();
+        $form = $this->createForm(new UniversityType(), $university);
 
 
-        return $this->render(':Registration:first.html.twig', array(
+        return $this->render(':Registration:university.html.twig', array(
             'convention' => $convention,
+            'form' => $form->createView(),
             'user' => $user,
-            'student_delegation' => $student_delegation,
             'context' => $context
         ));
     }
