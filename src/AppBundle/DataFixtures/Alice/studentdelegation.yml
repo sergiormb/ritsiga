@@ -1,920 +1,920 @@
 \AppBundle\Entity\StudentDelegation:
   studentdelegation1:
-    nombre: "Escuela Politécnica Superior"
-    direccion: "Loramendi, 4"
-    ciudad: "Mondragón"
-    provincia: "Guipuzcua"
-    cod_postal: 20500
-    centro: @college1
+    name: "Escuela Politécnica Superior"
+    address: "Loramendi, 4"
+    city: "Mondragón"
+    province: "Guipuzcua"
+    postcode: 20500
+    college: @college1
     slug: "da-eps-mondragon"
   studentdelegation2:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Avenida Universidad, 1."
-    ciudad: "Villanueva de la Cañada"
-    provincia: "Madrid"
-    cod_postal: 28691
-    centro: @college2
+    name: "Delegación de alumnos desconocida"
+    address: "Avenida Universidad, 1."
+    city: "Villanueva de la Cañada"
+    province: "Madrid"
+    postcode: 28691
+    college: @college2
     slug: "da-eps-uax"
   studentdelegation3:
-    nombre: "Consell d'Alumnes d'Informàtica"
-    direccion: "Gran Vía de les Corts Catalanes, 585."
-    ciudad: "Barcelona"
-    provincia: "Barcelona"
-    cod_postal: 08007
-    telefono: 648755195
+    name: "Consell d'Alumnes d'Informàtica"
+    address: "Gran Vía de les Corts Catalanes, 585."
+    city: "Barcelona"
+    province: "Barcelona"
+    postcode: 08007
+    phone: 648755195
     fax: ""
     web: ""
     email: "guillermo.blasco.jimenez@gmail.com"
     facebook: ""
     twitter: ""
-    centro: @college3
+    college: @college3
     slug: "da-fm-ub"
   studentdelegation4:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Campus de los Jerónimos, s/n."
-    ciudad: "Guadalupe"
-    provincia: "Murcia"
-    cod_postal: 30107
-    centro: @college4
+    name: "Delegación de alumnos desconocida"
+    address: "Campus de los Jerónimos, s/n."
+    city: "Guadalupe"
+    province: "Murcia"
+    postcode: 30107
+    college: @college4
     slug: "da-eup-ucam"
   studentdelegation5:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "C/ Canteros, 5"
-    ciudad: "Ávila"
-    provincia: "Ávila"
-    cod_postal: 05005
-    centro: @college5
+    name: "Delegación de alumnos desconocida"
+    address: "C/ Canteros, 5"
+    city: "Ávila"
+    province: "Ávila"
+    postcode: 05005
+    college: @college5
     slug: "da-fca-ucavila"
   studentdelegation6:
-    nombre: "Delegación de alumnos"
-    direccion: "C/ San Bartolomé, 55"
-    ciudad: "Alfara del Patriarca"
-    provincia: "Valencia"
-    cod_postal: 46115
-    telefono: "961 369 007 (extensión 2188)"
+    name: "Delegación de alumnos"
+    address: "C/ San Bartolomé, 55"
+    city: "Alfara del Patriarca"
+    province: "Valencia"
+    postcode: 46115
+    phone: "961 369 007 (extensión 2188)"
     email: "midelegacion@uch.ceu.es"
-    centro: @college6
+    college: @college6
     slug: "da-eset-uchceu"
   studentdelegation7:
-    nombre: "Associació d'Estudiants d'Informàtica de Girona"
-    direccion: "Campus de Montilivi\nC/ Mª Aurèlia Capmany, 61 \n"
-    ciudad: "Girona"
-    provincia: "Girona"
-    cod_postal: 17071
+    name: "Associació d'Estudiants d'Informàtica de Girona"
+    address: "Campus de Montilivi\nC/ Mª Aurèlia Capmany, 61 \n"
+    city: "Girona"
+    province: "Girona"
+    postcode: 17071
     web: "http://www.aeigi.org/"
-    centro: @college7
+    college: @college7
     slug: "aeigi-udg"
   studentdelegation8:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Camino de la Fonda 20"
-    ciudad: "Collado Villalba"
-    provincia: "Madrid"
-    cod_postal: 28400
-    centro: @college8
+    name: "Delegación de alumnos desconocida"
+    address: "Camino de la Fonda 20"
+    city: "Collado Villalba"
+    province: "Madrid"
+    postcode: 28400
+    college: @college8
     slug: "da-udima"
   studentdelegation9:
-    nombre: "Delegación de la Escuela politécnica"
-    direccion: "Calle Tajo, s/n. \r\nUrb. El Bosque. \r\n"
-    ciudad: "Villaviciosa de Odón"
-    provincia: ""
-    cod_postal: 28670
-    telefono: ""
+    name: "Delegación de la Escuela politécnica"
+    address: "Calle Tajo, s/n. \r\nUrb. El Bosque. \r\n"
+    city: "Villaviciosa de Odón"
+    province: ""
+    postcode: 28670
+    phone: ""
     fax: ""
     web: ""
     email: "21029846@live.uem.es"
     facebook: ""
     twitter: ""
-    centro: @college9
+    college: @college9
     slug: "da-ep-uem"
   studentdelegation10:
-    nombre: "Delegación de alumnos"
-    direccion: "C/Padre Julio Chevalier, 2"
-    ciudad: "Valladolid"
-    provincia: "Valladolid"
-    cod_postal: 47012
-    telefono: ""
+    name: "Delegación de alumnos"
+    address: "C/Padre Julio Chevalier, 2"
+    city: "Valladolid"
+    province: "Valladolid"
+    postcode: 47012
+    phone: ""
     fax: ""
     web: ""
     email: "epolitecnica@uemc.es"
     facebook: ""
     twitter: ""
-    centro: @college10
+    college: @college10
     slug: "da-eps-uemc"
   studentdelegation11:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Ctra. Pozuelo - Majadahonda, km.1800"
-    ciudad: "Pozuelo de Alarcón"
-    provincia: "Madrid"
-    cod_postal: 28223
-    centro: @college11
+    name: "Delegación de alumnos desconocida"
+    address: "Ctra. Pozuelo - Majadahonda, km.1800"
+    city: "Pozuelo de Alarcón"
+    province: "Madrid"
+    postcode: 28223
+    college: @college11
     slug: "da-eii-ufv"
   studentdelegation12:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Ctra. de Valldemossa, km. 7,5"
-    ciudad: "Palma de Mallorca"
-    provincia: "Mallorca"
-    cod_postal: 29241
-    centro: @college12
+    name: "Delegación de alumnos desconocida"
+    address: "Ctra. de Valldemossa, km. 7,5"
+    city: "Palma de Mallorca"
+    province: "Mallorca"
+    postcode: 29241
+    college: @college12
     slug: "da-uib"
   studentdelegation13:
-    nombre: "Escola Superior de Tecnologia i Ciències Experimentals"
-    direccion: "Avenida Sos Baynat, s/n"
-    ciudad: "Castellón de la Plana"
-    provincia: "Castellón"
-    cod_postal: 12071
-    telefono: 964728452
+    name: "Escola Superior de Tecnologia i Ciències Experimentals"
+    address: "Avenida Sos Baynat, s/n"
+    city: "Castellón de la Plana"
+    province: "Castellón"
+    postcode: 12071
+    phone: 964728452
     fax: 964728451
     web: "http://www.uji.es/CA/centres/estce/"
     email: "al259555@uji.es"
     facebook: ""
     twitter: ""
-    centro: @college13
+    college: @college13
     slug: "da-estce-uji"
   studentdelegation14:
-    nombre: "Delegación de Alumnos de Informática"
-    direccion: "Campus Universitario de Tarifa"
-    ciudad: "Las Palmas de Gran Canaria"
-    provincia: "Las Palmas"
-    cod_postal: 35071
-    telefono: 928458780
+    name: "Delegación de Alumnos de Informática"
+    address: "Campus Universitario de Tarifa"
+    city: "Las Palmas de Gran Canaria"
+    province: "Las Palmas"
+    postcode: 35071
+    phone: 928458780
     fax: ""
     web: ""
     email: "deii@eii.ulpgc.es"
     facebook: ""
     twitter: ""
-    centro: @college14
+    college: @college14
     slug: "da-ulgpc"
   studentdelegation15:
-    nombre: "Consejo de Estudiantes"
-    direccion: "Campus de Arrosadía. Edificio Aulario. Aula 07."
-    ciudad: "Pamplona"
-    provincia: "Navarra"
-    cod_postal: 31006
-    telefono: 948166254
+    name: "Consejo de Estudiantes"
+    address: "Campus de Arrosadía. Edificio Aulario. Aula 07."
+    city: "Pamplona"
+    province: "Navarra"
+    postcode: 31006
+    phone: 948166254
     fax: ""
     web: "http://www.unavarra.es/consejoestudiantes/"
     email: "vocal.ingenieria.ce@unavarra.es"
     facebook: ""
     twitter: "\@ceupna"
-    centro: @college15
+    college: @college15
     slug: "da-etsiit-unavarra"
   studentdelegation16:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Avenida Tibidabo, 39 - 43"
-    ciudad: "Barcelona"
-    provincia: "Barcelona"
-    cod_postal: 08035
-    centro: @college16
+    name: "Delegación de alumnos desconocida"
+    address: "Avenida Tibidabo, 39 - 43"
+    city: "Barcelona"
+    province: "Barcelona"
+    postcode: 08035
+    college: @college16
     slug: "da-uoc"
   studentdelegation17:
-    nombre: "Consell d'estudiants"
-    direccion: "Campus de la Comunicació-Poblenou\r\nRoc Boronat, 138\r\nDespatx 52.p07\r\n"
-    ciudad: "Barcelona"
-    provincia: "Barcelona"
-    cod_postal: 08018
-    telefono: 935422338
+    name: "Consell d'estudiants"
+    address: "Campus de la Comunicació-Poblenou\r\nRoc Boronat, 138\r\nDespatx 52.p07\r\n"
+    city: "Barcelona"
+    province: "Barcelona"
+    postcode: 08018
+    phone: 935422338
     fax: ""
     web: "upf.edu/ceupf"
     email: "ceupf@upf.edu"
     facebook: "www.facebook.com/estudiantsesup"
     twitter: ""
     cif: "Q5850017D"
-    centro: @college17
+    college: @college17
     slug: "da-eps-upf"
   studentdelegation18:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "C/ Compañía, 5"
-    ciudad: "Salamanca"
-    provincia: "Salamanca"
-    cod_postal: 37002
+    name: "Delegación de alumnos desconocida"
+    address: "C/ Compañía, 5"
+    city: "Salamanca"
+    province: "Salamanca"
+    postcode: 37002
     email: "info.alumno@upsa.es"
-    centro: @college18
+    college: @college18
     slug: "da-fi-upsa"
   studentdelegation19:
-    nombre: "Delegación de Alumnos desconocida"
-    direccion: "Campus Sescelades\nAv. Països Catalans 26\n"
-    ciudad: "Sant Pere i Sant Pau"
-    provincia: "Tarragona"
-    cod_postal: 43007
-    centro: @college19
+    name: "Delegación de Alumnos desconocida"
+    address: "Campus Sescelades\nAv. Països Catalans 26\n"
+    city: "Sant Pere i Sant Pau"
+    province: "Tarragona"
+    postcode: 43007
+    college: @college19
     slug: "da-etse-urv"
   studentdelegation20:
-    nombre: "Delegación de alumnos"
-    direccion: "Rúa Lope Gómez de Marzoa s/n. Campus Sur"
-    ciudad: "Santiago de Compostela"
-    provincia: "A Coruña"
-    cod_postal: 15782
-    telefono: 881816722
+    name: "Delegación de alumnos"
+    address: "Rúa Lope Gómez de Marzoa s/n. Campus Sur"
+    city: "Santiago de Compostela"
+    province: "A Coruña"
+    postcode: 15782
+    phone: 881816722
     web: "http://www.usc.es/etse/gl/category/3/14/56"
     email: "mariaiglez@hotmail.com"
-    centro: @college20
+    college: @college20
     slug: "da-etse-usc"
   studentdelegation21:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Parque Tecnológico Walqa\nEdificio Félix de Azara\n"
-    ciudad: "Huesca"
-    provincia: "Huesca"
-    cod_postal: 22197
-    centro: @college21
+    name: "Delegación de alumnos desconocida"
+    address: "Parque Tecnológico Walqa\nEdificio Félix de Azara\n"
+    city: "Huesca"
+    province: "Huesca"
+    postcode: 22197
+    college: @college21
     slug: "da-usj"
   studentdelegation22:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "Urbanización Montepríncipe, S/N"
-    ciudad: "Boadilla del Monte"
-    provincia: "Madrid"
-    cod_postal: 28668
-    centro: @college22
+    name: "Delegación de alumnos desconocida"
+    address: "Urbanización Montepríncipe, S/N"
+    city: "Boadilla del Monte"
+    province: "Madrid"
+    postcode: 28668
+    college: @college22
     slug: "da-eps-uspceu"
   studentdelegation23:
-    nombre: "Delegación de alumnos desconocida"
-    direccion: "C. de la Laura, 13"
-    ciudad: "Vic"
-    provincia: "Barcelona"
-    cod_postal: 320
-    centro: @college23
+    name: "Delegación de alumnos desconocida"
+    address: "C. de la Laura, 13"
+    city: "Vic"
+    province: "Barcelona"
+    postcode: 320
+    college: @college23
     slug: "da-eps-uvic"
   studentdelegation24:
-    nombre: "Delegación de alumnos"
-    direccion: "Avenida de las Universidades 24,"
-    ciudad: "Bilbao"
-    provincia: "Vizcaya"
-    cod_postal: 48007
-    telefono: 944139064
+    name: "Delegación de alumnos"
+    address: "Avenida de las Universidades 24,"
+    city: "Bilbao"
+    province: "Vizcaya"
+    postcode: 48007
+    phone: 944139064
     fax: ""
     web: "http://delegacionalumnos.deusto.es/"
     email: "delegacion.alumnos@deusto.es"
     facebook: ""
     twitter: ""
     cif: "R4868004E"
-    centro: @college24
+    college: @college24
     slug: "da-fi-deusto"
   studentdelegation25:
-    nombre: "Consejo de estudiantes"
-    direccion: "Calle de Rafael Moreno Pichichi, 3"
-    ciudad: "Bilbao"
-    provincia: "Vizcaya"
-    cod_postal: 48013
-    telefono: 946014429
+    name: "Consejo de estudiantes"
+    address: "Calle de Rafael Moreno Pichichi, 3"
+    city: "Bilbao"
+    province: "Vizcaya"
+    postcode: 48013
+    phone: 946014429
     fax: 944441625
     web: "www.ehu.es"
     email: "bi-iitue.zik@ehu.es"
     facebook: "http://www.facebook.com/consejoestudiantes.euitibilbao"
     twitter: "\@CEUITIBi"
     cif: "Q4818001B"
-    centro: @college25
+    college: @college25
     slug: "da-etsib-ehu"
   studentdelegation26:
-    nombre: "Consejo de Estudiantes"
-    direccion: "Paseo Manuel de Lardizábal, 1"
-    ciudad: "San Sebastián"
-    provincia: "Guipúzcoa"
-    cod_postal: 20018
-    telefono: 943018017
+    name: "Consejo de Estudiantes"
+    address: "Paseo Manuel de Lardizábal, 1"
+    city: "San Sebastián"
+    province: "Guipúzcoa"
+    postcode: 20018
+    phone: 943018017
     fax: ""
     web: ""
     email: "informatika.fak.zik@ehu.es"
     facebook: "https://www.facebook.com/InforKontseilua"
     twitter: "\@InforKontseilua"
-    centro: @college26
+    college: @college26
     slug: "da-fi-ehu"
   studentdelegation27:
-    nombre: "Consejo de Estudiantes"
-    direccion: "Plaza de la Casilla, 3"
-    ciudad: "Bilbao"
-    provincia: "Vizcaya"
-    cod_postal: 48012
-    telefono: 945014065
+    name: "Consejo de Estudiantes"
+    address: "Plaza de la Casilla, 3"
+    city: "Bilbao"
+    province: "Vizcaya"
+    postcode: 48012
+    phone: 945014065
     fax: 945013270
     email: "delegacionfiss@gmail.com"
-    centro: @college27
+    college: @college27
     slug: "da-euiv-ehu"
   studentdelegation28:
-    nombre: "Delegación de Alumnos de la Escuela Politécnica Superior"
-    direccion: "Campus de San Vicente del Raspeig\r\nApartado 99\r\n"
-    ciudad: "Alicante"
-    provincia: "Alicante"
-    cod_postal: 03080
-    telefono: 965909409
+    name: "Delegación de Alumnos de la Escuela Politécnica Superior"
+    address: "Campus de San Vicente del Raspeig\r\nApartado 99\r\n"
+    city: "Alicante"
+    province: "Alicante"
+    postcode: 03080
+    phone: 965909409
     fax: ""
     web: "~ blogs.ua.es/daeps"
     email: "delegacion.alumnos@eps.ua.es"
     facebook: "http://www.facebook.com/home.php#!/DAEPS"
     twitter: "\@daeps"
     cif: "Q-0332001G"
-    centro: @college28
+    college: @college28
     slug: "eps-ua"
   studentdelegation29:
-    nombre: "Consell d'Estudiants de l'Escola d'Enginyeria"
-    direccion: "Campus Bellaterra UAB"
-    ciudad: "Cerdanyola del Vallès"
-    provincia: "Barcelona"
-    cod_postal: 08193
-    telefono: 695402282
+    name: "Consell d'Estudiants de l'Escola d'Enginyeria"
+    address: "Campus Bellaterra UAB"
+    city: "Cerdanyola del Vallès"
+    province: "Barcelona"
+    postcode: 08193
+    phone: 695402282
     fax: ""
     web: ""
     email: "consell.estudiants.enginyeria@uab.cat"
     facebook: "https://www.facebook.com/ceenginyeria"
     twitter: "https://twitter.com/EE_Estudiants"
-    centro: @college29
+    college: @college29
     slug: "da-bellaterra-uab"
   studentdelegation30:
-    nombre: "Consell d'Estudiants de l'Escola d'Enginyeria"
-    direccion: "Campus de Sabadell\nc/ Emprius, 2\n"
-    ciudad: "Sabadell"
-    provincia: "Barcelona"
-    cod_postal: 08202
-    telefono: 937287737
+    name: "Consell d'Estudiants de l'Escola d'Enginyeria"
+    address: "Campus de Sabadell\nc/ Emprius, 2\n"
+    city: "Sabadell"
+    province: "Barcelona"
+    postcode: 08202
+    phone: 937287737
     email: "consell.estudiants.eui@uab.cat"
-    centro: @college30
+    college: @college30
     slug: "da-sabadell-uab"
   studentdelegation31:
-    nombre: "Delegación de Estudiantes de Informática"
-    direccion: "Carretera Madrid-Barcelona km 33,600 Edificio Politécnico, Campus Externo"
-    ciudad: "Alcalá de Henares"
-    provincia: "Madrid"
-    cod_postal: 28871
-    telefono: 918856536
+    name: "Delegación de Estudiantes de Informática"
+    address: "Carretera Madrid-Barcelona km 33,600 Edificio Politécnico, Campus Externo"
+    city: "Alcalá de Henares"
+    province: "Madrid"
+    postcode: 28871
+    phone: 918856536
     fax: ""
     web: "http://dei.uah.es"
     email: "dei@uah.es"
     facebook: ""
     twitter: "https://twitter.com/deiuah"
     cif: "Q2818018J"
-    centro: @college31
+    college: @college31
     slug: "de-uah"
   studentdelegation32:
-    nombre: "Asociación de Universitarios Informáticos de Almería (UNIA)"
-    direccion: "Edificio del Centro de Atención al Estudiantes (CAE) \nDespacho 23 \nCtra. Sacramento s/n\n"
-    ciudad: "La Cañada de San Urbano"
-    provincia: "Jaén"
-    cod_postal: 2128
-    telefono: 950015592
+    name: "Asociación de Universitarios Informáticos de Almería (UNIA)"
+    address: "Edificio del college de Atención al Estudiantes (CAE) \nDespacho 23 \nCtra. Sacramento s/n\n"
+    city: "La Cañada de San Urbano"
+    province: "Jaén"
+    postcode: 2128
+    phone: 950015592
     web: "http://asocia.ual.es/?q=category/asociacion/unia"
     email: "unia@ual.es"
-    centro: @college32
+    college: @college32
     slug: "unia-ual"
   studentdelegation33:
-    nombre: "DEISI"
-    direccion: "Ciudad Universitaria de Cantoblanco\r\nCalle Francisco Tomás y Valiente, 11\r\n"
-    ciudad: "Madrid"
-    provincia: "Madrid"
-    cod_postal: 28049
-    telefono: ""
+    name: "DEISI"
+    address: "city Universitaria de Cantoblanco\r\nCalle Francisco Tomás y Valiente, 11\r\n"
+    city: "Madrid"
+    province: "Madrid"
+    postcode: 28049
+    phone: ""
     fax: ""
     web: "www.deisi.es"
     email: "deisi.eps@gmail.com"
     facebook: ""
     twitter: "\@deisieps"
-    centro: @college33
+    college: @college33
     slug: "deisi-uam"
   studentdelegation34:
-    nombre: "Delegación"
-    direccion: "Avd. Francisco de Vitoria s/n Edif C. EPS"
-    ciudad: "Burgos"
-    provincia: "Burgos"
-    cod_postal: 09006
-    telefono: 947259071
+    name: "Delegación"
+    address: "Avd. Francisco de Vitoria s/n Edif C. EPS"
+    city: "Burgos"
+    province: "Burgos"
+    postcode: 09006
+    phone: 947259071
     fax: ""
     web: ""
     email: "info@abi2burgos.es"
     facebook: ""
     twitter: "\@Abi2burgos"
-    centro: @college34
+    college: @college34
     slug: "delegacion"
   studentdelegation35:
-    nombre: "Delegación de Estudiantes EPS"
-    direccion: "Calle Butarque, 15"
-    ciudad: "Leganés"
-    provincia: "Madrid"
-    cod_postal: 28911
-    telefono: 916249473
+    name: "Delegación de Estudiantes EPS"
+    address: "Calle Butarque, 15"
+    city: "Leganés"
+    province: "Madrid"
+    postcode: 28911
+    phone: 916249473
     fax: 916249430
     web: "delegacion.uc3m.es"
     email: "delegest@uc3m.es"
     facebook: "Delegación de Estudiantes EPS UC3M"
     twitter: "delegacionEPS"
-    centro: @college35
+    college: @college35
     slug: "de-uc3m"
   studentdelegation36:
-    nombre: "Delegación de alumnos"
-    direccion: "Módulo P04\r\nAvda. de la Universidad de Cádiz, nº10"
-    ciudad: "Cádiz"
-    provincia: "Cádiz"
-    cod_postal: 11003
-    telefono: 956483204
+    name: "Delegación de alumnos"
+    address: "Módulo P04\r\nAvda. de la Universidad de Cádiz, nº10"
+    city: "Cádiz"
+    province: "Cádiz"
+    postcode: 11003
+    phone: 956483204
     fax: ""
-    web: "http://www.uca.es/centro/1C11/alumnos/delegacion"
+    web: "http://www.uca.es/college/1C11/alumnos/delegacion"
     email: "alumnos.esi@uca.es"
     facebook: "https://www.facebook.com/DelegacionESI.UCA"
     twitter: "dele_alumnosESI"
-    centro: @college36
+    college: @college36
     slug: "da-uca"
   studentdelegation37:
-    nombre: "Delegación de alumnos ESII"
-    direccion: "Avda. de España s/n"
-    ciudad: "Albacete"
-    provincia: "Albacete"
-    cod_postal: 02071
-    telefono: "967 59 92 00 ext:2409"
+    name: "Delegación de alumnos ESII"
+    address: "Avda. de España s/n"
+    city: "Albacete"
+    province: "Albacete"
+    postcode: 02071
+    phone: "967 59 92 00 ext:2409"
     fax: ""
     web: "http://delegacion.albacete.org/"
     email: "delalumnos.informatica.ab@uclm.es"
     facebook: "Delegación Informática Albacete"
     twitter: "\@da_esii"
-    centro: @college37
+    college: @college37
     slug: "delegacion-de-alumnos"
   studentdelegation38:
-    nombre: "Delegación de Alumnos de Informática"
-    direccion: "Paseo de la Universidad, 4"
-    ciudad: "Ciudad Real"
-    provincia: "Ciudad Real"
-    cod_postal: 13071
-    telefono: 629683655
+    name: "Delegación de Alumnos de Informática"
+    address: "Paseo de la Universidad, 4"
+    city: "city Real"
+    province: "city Real"
+    postcode: 13071
+    phone: 629683655
     fax: ""
     web: "http://www.esi.uclm.es/dai/"
     email: "David.Ruiz20@alu.uclm.es"
     facebook: ""
     twitter: "\@DaiESICR"
-    centro: @college38
+    college: @college38
     slug: "delegacion-de-alumnos-de-informatica"
   studentdelegation39:
-    nombre: "Delegacion de Alumnos"
-    direccion: "Facultad de Informática UCM\r\nC/ Profesor José García Santesmases, 9\r\nCiudad Universitaria"
-    ciudad: "Madrid"
-    provincia: "Madrid"
-    cod_postal: 28040
-    telefono: 913947597
+    name: "Delegacion de Alumnos"
+    address: "Facultad de Informática UCM\r\nC/ Profesor José García Santesmases, 9\r\ncity Universitaria"
+    city: "Madrid"
+    province: "Madrid"
+    postcode: 28040
+    phone: 913947597
     fax: ""
     web: "http://delegacionfdi.fdi.ucm.es/"
     email: "delegacionfdi@fdi.ucm.es"
     facebook: "https://www.facebook.com/delegacionfdi?ref=hl"
     twitter: "https://twitter.com/DelegacionFDI"
-    centro: @college39
+    college: @college39
     slug: "de-ucm"
   studentdelegation40:
-    nombre: "CEEPS - Consejo de Estudiantes de la EPSC"
-    direccion: "Aulario Averroes\r\nCampus de Rabanales\r\n"
-    ciudad: "Córdoba"
-    provincia: "Córdoba"
-    cod_postal: 14071
-    telefono: 957211053
+    name: "CEEPS - Consejo de Estudiantes de la EPSC"
+    address: "Aulario Averroes\r\nCampus de Rabanales\r\n"
+    city: "Córdoba"
+    province: "Córdoba"
+    postcode: 14071
+    phone: 957211053
     fax: 957211053
     web: "http://consejo-eps.uco.es"
     email: "info@consejo-eps.uco.es"
     facebook: "http://www.facebook.com/ConsejoEPS"
     twitter: "http://twitter.com/ConsejoEPS"
     cif: "Q1418001B"
-    centro: @college40
+    college: @college40
     slug: "ceeps-uco"
   studentdelegation41:
-    nombre: "Delegación de Alumnos"
-    direccion: "Campus de Elviña"
-    ciudad: "A Coruña"
-    provincia: "A Corúña"
-    cod_postal: 15008
-    telefono: "981167000 Ext. 1304"
+    name: "Delegación de Alumnos"
+    address: "Campus de Elviña"
+    city: "A Coruña"
+    province: "A Corúña"
+    postcode: 15008
+    phone: "981167000 Ext. 1304"
     fax: 98116760
     web: "http://www.delegacion-fic.udc.es"
     email: "alumnos@ceu.fi.udc.es"
     facebook: ""
     twitter: ""
-    centro: @college41
+    college: @college41
     slug: "da-udc"
   studentdelegation42:
-    nombre: "Consell de l'Estudiantat de l'EPS"
-    direccion: "C/ Jaume II 69"
-    ciudad: "Lleida"
-    provincia: "Lleida"
-    cod_postal: 25001
-    telefono: 973702710
+    name: "Consell de l'Estudiantat de l'EPS"
+    address: "C/ Jaume II 69"
+    city: "Lleida"
+    province: "Lleida"
+    postcode: 25001
+    phone: 973702710
     fax: 973702702
     web: "http://www.consell-eps.udl.cat/"
     email: "eps@estudiantat.udl.es"
     facebook: ""
     twitter: ""
-    centro: @college42
+    college: @college42
     slug: "da-eps-udl"
   studentdelegation43:
-    nombre: "Delegación de Estudiantes ETSIIT"
-    direccion: "Calle Periodista Daniel Saucedo Aranda, S/N"
-    ciudad: "Granada"
-    provincia: "Granada"
-    cod_postal: 18071
-    telefono: 958242808
+    name: "Delegación de Estudiantes ETSIIT"
+    address: "Calle Periodista Daniel Saucedo Aranda, S/N"
+    city: "Granada"
+    province: "Granada"
+    postcode: 18071
+    phone: 958242808
     fax: ""
     web: "http://etsiit.ugr.es/pages/delegacionestudiantes"
     email: "deiit@ugr.es"
     facebook: "https://www.facebook.com/delegaetsiit"
     twitter: "\@deiit"
-    centro: @college43
+    college: @college43
     slug: "da-ugr"
   studentdelegation44:
-    nombre: "Delegación de alumnos de IT Informática"
-    direccion: "Campus de «La Rábida»\r\nCarretera Palos de La Frontera s/n\r\nDespacho 16 Ed. Álvaro Alonso Barba \r\n"
-    ciudad: "Palos de La Frontera"
-    provincia: "Huelva"
-    cod_postal: 21819
-    telefono: 959217551
+    name: "Delegación de alumnos de IT Informática"
+    address: "Campus de «La Rábida»\r\nCarretera Palos de La Frontera s/n\r\nDespacho 16 Ed. Álvaro Alonso Barba \r\n"
+    city: "Palos de La Frontera"
+    province: "Huelva"
+    postcode: 21819
+    phone: 959217551
     fax: ""
     web: ""
     email: "delegacion.itinformatica@alu.uhu.es"
     facebook: ""
     twitter: ""
-    centro: @college44
+    college: @college44
     slug: "da-uhu"
   studentdelegation45:
-    nombre: "Asociación de alumnos Joaquín Garrido (DELAL)"
-    direccion: "Campus Las Lagunillas s/n\r\nEdificio Bachiller Pérez de Moya (C-2), departamento 308\r\n"
-    ciudad: "Jaén"
-    provincia: "Jaén"
-    cod_postal: 23071
-    telefono: 953212410
+    name: "Asociación de alumnos Joaquín Garrido (DELAL)"
+    address: "Campus Las Lagunillas s/n\r\nEdificio Bachiller Pérez de Moya (C-2), departamento 308\r\n"
+    city: "Jaén"
+    province: "Jaén"
+    postcode: 23071
+    phone: 953212410
     fax: ""
     web: "http://www.delalepsj.org/"
     email: "delal@ujaen.es"
     facebook: "delal.universidaddejaen"
     twitter: "DelAlEPSuja"
-    centro: @college45
+    college: @college45
     slug: "da-ujaen"
   studentdelegation46:
-    nombre: "Delegación de alumnos"
-    direccion: "Camino San Francisco de Paula, s/n"
-    ciudad: "La Laguna"
-    provincia: "Tenerife"
-    cod_postal: 38271
+    name: "Delegación de alumnos"
+    address: "Camino San Francisco de Paula, s/n"
+    city: "La Laguna"
+    province: "Tenerife"
+    postcode: 38271
     web: "http://sites.google.com/site/daiilalaguna/"
     email: "dai@etsii.ull.es"
     facebook: "http://www.facebook.com/pages/Delegacion-de-Alumnos-de-Ingenieria-Informatica-ULL/414299488760"
-    centro: @college46
+    college: @college46
     slug: "da-ull"
   studentdelegation47:
-    nombre: "Delegación de Alumnos"
-    direccion: "Facultad de Informática, planta baja\r\nCampus Universitario de Espinardo, 32"
-    ciudad: "Espinardo"
-    provincia: "Murcia"
-    cod_postal: 30100
-    telefono: 868884831
+    name: "Delegación de Alumnos"
+    address: "Facultad de Informática, planta baja\r\nCampus Universitario de Espinardo, 32"
+    city: "Espinardo"
+    province: "Murcia"
+    postcode: 30100
+    phone: 868884831
     fax: 868884151
     web: "http://dafi.inf.um.es/"
     email: "dafi@um.es"
     facebook: ""
     twitter: "dafi_um"
-    centro: @college47
+    college: @college47
     slug: "da-um"
   studentdelegation48:
-    nombre: "Consejo de estudiantes"
-    direccion: "Campus de Teatinos"
-    ciudad: "Málaga"
-    provincia: "Málaga"
-    cod_postal: 29017
-    telefono: 952133300
+    name: "Consejo de estudiantes"
+    address: "Campus de Teatinos"
+    city: "Málaga"
+    province: "Málaga"
+    postcode: 29017
+    phone: 952133300
     fax: ""
     web: "http://consejoinfuma.com/"
     email: "consejoinfuma@gmail.com"
     facebook: "https://www.facebook.com/ConsejoInfUMA"
     twitter: "http://twitter.com/ConsejoInfUMA"
-    centro: @college48
+    college: @college48
     slug: "da-uma"
   studentdelegation49:
-    nombre: "Delegación de Estudiantes EPSE"
-    direccion: "Avenida de la Universidad S/N"
-    ciudad: "Elche"
-    provincia: "Alicante"
-    cod_postal: 03202
-    telefono: 966658563
+    name: "Delegación de Estudiantes EPSE"
+    address: "Avenida de la Universidad S/N"
+    city: "Elche"
+    province: "Alicante"
+    postcode: 03202
+    phone: 966658563
     fax: ""
     web: "epse.es"
     email: "aeiou.epse@delegacion.umh.es"
     facebook: "http://www.facebook.com/group.php?gid=148062668567430&ref=ts"
     twitter: ""
-    centro: @college49
+    college: @college49
     slug: "da-epso-umh"
   studentdelegation50:
-    nombre: "Delegación de Estudiantes"
-    direccion: "C/ Juan del Rosal, 16"
-    ciudad: "Madrid"
-    provincia: "Madrid"
-    cod_postal: 28040
-    telefono: ""
+    name: "Delegación de Estudiantes"
+    address: "C/ Juan del Rosal, 16"
+    city: "Madrid"
+    province: "Madrid"
+    postcode: 28040
+    phone: ""
     fax: ""
     web: ""
     email: "delegadoestudiantes@informatica.uned.es"
     facebook: ""
     twitter: ""
-    centro: @college50
+    college: @college50
     slug: "da-etsi-uned"
   studentdelegation51:
-    nombre: "Consejo de Estudiantes EPCC"
-    direccion: "Escuela Politécnica\r\nAv Universidad s/n"
-    ciudad: "Caceres"
-    provincia: "Caceres"
-    cod_postal: 10004
-    telefono: "927257000 Ext 57188"
+    name: "Consejo de Estudiantes EPCC"
+    address: "Escuela Politécnica\r\nAv Universidad s/n"
+    city: "Caceres"
+    province: "Caceres"
+    postcode: 10004
+    phone: "927257000 Ext 57188"
     fax: ""
     web: "http://epcc.unex.es"
     email: "conalupoli@unex.es"
     facebook: ""
     twitter: "\@EstudiantesEPCC"
-    centro: @college52
+    college: @college52
     slug: "ce-merida-unex"
   studentdelegation52:
-    nombre: "Consejo de Estudiantes"
-    direccion: "Avda. de la Universidad s/n"
-    ciudad: "Cáceres"
-    provincia: "Cáceres"
-    cod_postal: 10071
-    telefono: 927257185
+    name: "Consejo de Estudiantes"
+    address: "Avda. de la Universidad s/n"
+    city: "Cáceres"
+    province: "Cáceres"
+    postcode: 10071
+    phone: 927257185
     fax: 927257188
     web: "http://consejoepcc.blogspot.com/"
     email: "consejoepcc@gmail.com"
-    centro: @college52
+    college: @college52
     slug: "ca-caceres-unex"
   studentdelegation53:
-    nombre: "Delegación de Alumnos de la Facultad de Ciencias"
-    direccion: "Avda. Los Castros s/n"
-    ciudad: "Santander"
-    provincia: "Cantabria"
-    cod_postal: 39005
-    telefono: 942201407
+    name: "Delegación de Alumnos de la Facultad de Ciencias"
+    address: "Avda. Los Castros s/n"
+    city: "Santander"
+    province: "Cantabria"
+    postcode: 39005
+    phone: 942201407
     fax: 942201402
     web: ""
     email: "da_ciencias@alumnos.unican.es"
     facebook: "https://www.facebook.com/dafcuc"
     twitter: "DAFCUC"
-    centro: @college53
+    college: @college53
     slug: "delegacion-de-ciencias"
   studentdelegation54:
-    nombre: "Delegación de alumnos de industriales, informática y aeronaútica"
-    direccion: "Campus Universitario de Vegazana"
-    ciudad: "León"
-    provincia: "León"
-    cod_postal: 24071
-    telefono: 987291782
+    name: "Delegación de alumnos de industriales, informática y aeronaútica"
+    address: "Campus Universitario de Vegazana"
+    city: "León"
+    province: "León"
+    postcode: 24071
+    phone: 987291782
     fax: 987291782
     web: "http://www3.unileon.es/estud/est_ing/enlaces/enlaces.htm"
     email: "eiiialumnos@unileon.es"
     facebook: "Delegación Ingenierías León"
     twitter: "\@DelegacionEIIIA"
-    centro: @college54
+    college: @college54
     slug: "da-unileon"
   studentdelegation55:
-    nombre: "Delegacion de Estudiantes de EII"
-    direccion: "Despacho D-B-04 Calle Valdes Salas S/N"
-    ciudad: "Oviedo"
-    provincia: "Asturias"
-    cod_postal: 33007
-    telefono: 985102894
+    name: "Delegacion de Estudiantes de EII"
+    address: "Despacho D-B-04 Calle Valdes Salas S/N"
+    city: "Oviedo"
+    province: "Asturias"
+    postcode: 33007
+    phone: 985102894
     fax: ""
     web: "http://dainformatica.uniovi.es"
     email: "delegacion.eii@uniovi.es"
     facebook: "https://www.facebook.com/ddeeiioviedo"
     twitter: "delegacion_eii"
-    centro: @college55
+    college: @college55
     slug: "euitio-uniovi"
   studentdelegation56:
-    nombre: "Deelgación EUITIG"
-    direccion: "Campus de Viesques (Aulario Norte) CARRETERA DE VILLAVICIOSA s/n"
-    ciudad: "Gijón"
-    provincia: "Asturias"
-    cod_postal: 33203
-    telefono: 985182339
+    name: "Deelgación EUITIG"
+    address: "Campus de Viesques (Aulario Norte) CARRETERA DE VILLAVICIOSA s/n"
+    city: "Gijón"
+    province: "Asturias"
+    postcode: 33203
+    phone: 985182339
     fax: ""
     web: ""
     email: "dainfortel@uniovi.es"
     facebook: ""
     twitter: ""
-    centro: @college56
+    college: @college56
     slug: "euitig-uniovi"
   studentdelegation57:
-    nombre: "Consejo de Estudiantes"
-    direccion: "C/ San Jose de Calasanz"
-    ciudad: "Logroño"
-    provincia: "La Rioja"
-    cod_postal: 26006
-    telefono: 941299209
+    name: "Consejo de Estudiantes"
+    address: "C/ San Jose de Calasanz"
+    city: "Logroño"
+    province: "La Rioja"
+    postcode: 26006
+    phone: 941299209
     web: "http://www.unirioja.es/ceur/"
     email: "consejo.estudiantes@unirioja.es"
-    centro: @college57
+    college: @college57
     slug: "ce-unirioja"
   studentdelegation58:
-    nombre: "Delegación de Alumnos"
-    direccion: "C/María de la Luna, 3"
-    ciudad: "Zaragoza"
-    provincia: "Zaragoza"
-    cod_postal: 50018
-    telefono: 976761866
+    name: "Delegación de Alumnos"
+    address: "C/María de la Luna, 3"
+    city: "Zaragoza"
+    province: "Zaragoza"
+    postcode: 50018
+    phone: 976761866
     fax: ""
     web: "https://eina.unizar.es/delegacion/"
     email: "ddaeina@unizar.es"
     facebook: "https://www.facebook.com/dda.eina"
     twitter: "https://twitter.com/DelegacionEINA"
-    centro: @college58
+    college: @college58
     slug: "da-zaragoza-unizar"
   studentdelegation59:
-    nombre: "Delegacion de Alumnos"
-    direccion: "Ciudad Escolar s/n"
-    ciudad: "Teruel"
-    provincia: "Teruel"
-    cod_postal: 44003
+    name: "Delegacion de Alumnos"
+    address: "city Escolar s/n"
+    city: "Teruel"
+    province: "Teruel"
+    postcode: 44003
     web: "http://eupt.unizar.es/delegacion_alumnos.html"
     email: "cterdel@posta.unizar.es"
-    centro: @college59
+    college: @college59
     slug: "da-teruel-unizar"
   studentdelegation60:
-    nombre: "Delegación de Alumnos"
-    direccion: "C/ La Almunia Mayor s/n"
-    ciudad: "La Almunia"
-    provincia: "Zaragoza"
-    cod_postal: 50100
-    telefono: "976600813 Ext. 105"
+    name: "Delegación de Alumnos"
+    address: "C/ La Almunia Mayor s/n"
+    city: "La Almunia"
+    province: "Zaragoza"
+    postcode: 50100
+    phone: "976600813 Ext. 105"
     fax: 976600883
     web: "http://www.eupla.es/alumnos/delegacion.html"
     email: "delegacion@eupla.es"
-    centro: @college60
+    college: @college60
     slug: "da-almunia-unizar"
   studentdelegation61:
-    nombre: "Delegació d’alumnes de la Facultat d’Informàtica de Barcelona (DAFIB)"
-    direccion: "Edificio EUPMT. \nAv. Ernest Lluch, s/n (El Rengle).\n"
-    ciudad: "Mataró"
-    provincia: "Barcelona"
-    cod_postal: 08302
-    telefono: 934137596
+    name: "Delegació d’alumnes de la Facultat d’Informàtica de Barcelona (DAFIB)"
+    address: "Edificio EUPMT. \nAv. Ernest Lluch, s/n (El Rengle).\n"
+    city: "Mataró"
+    province: "Barcelona"
+    postcode: 08302
+    phone: 934137596
     web: "http://dafib.upc.edu"
     email: "dafib@fib.upc.edu"
-    centro: @college61
+    college: @college61
     slug: "dafib-upc"
   studentdelegation62:
-    nombre: "Asociación de alumnos de la EUPMT"
-    direccion: "Colegio Mayor\nPuig I Cadafalch 101\n"
-    ciudad: "Mataró"
-    provincia: "Barcelona"
-    cod_postal: 08303
-    telefono: 937996848
+    name: "Asociación de alumnos de la EUPMT"
+    address: "Colegio Mayor\nPuig I Cadafalch 101\n"
+    city: "Mataró"
+    province: "Barcelona"
+    postcode: 08303
+    phone: 937996848
     email: "associac@eupmt.upc.edu"
     facebook: "http://www.facebook.com/group.php?gid=184574998502"
     cif: "G59961540"
-    centro: @college62
+    college: @college62
     slug: "da-eup-upc"
   studentdelegation63:
-    nombre: "Delegación de Alumnos ETSI Informáticos"
-    direccion: "Campus de Montegancedo"
-    ciudad: "Boadilla del Monte"
-    provincia: "Madrid"
-    cod_postal: 28660
-    telefono: 913367410
+    name: "Delegación de Alumnos ETSI Informáticos"
+    address: "Campus de Montegancedo"
+    city: "Boadilla del Monte"
+    province: "Madrid"
+    postcode: 28660
+    phone: 913367410
     fax: 913367410
     web: "www.da.fi.upm.es"
     email: "delegacion@da.fi.upm.es"
     facebook: "http://www.facebook.com/pages/Delegaci%C3%B3n-de-Alumnos-FI-UPM/108653329219932"
     twitter: "\@daetsiinf"
     cif: "G28970366"
-    centro: @college63
+    college: @college63
     slug: "da-upm"
   studentdelegation64:
-    nombre: "Delegación de Alumnos EUI-UPM"
-    direccion: "Campus Sur\nCarretera de Valencia, Km 7\n"
-    ciudad: "Madrid"
-    provincia: "Madrid"
-    cod_postal: 28031
-    telefono: 913367899
+    name: "Delegación de Alumnos EUI-UPM"
+    address: "Campus Sur\nCarretera de Valencia, Km 7\n"
+    city: "Madrid"
+    province: "Madrid"
+    postcode: 28031
+    phone: 913367899
     fax: "91 336 78 99"
     web: "http://www.dalum.eui.upm.es/"
     email: "dalum@eui.upm.es"
     twitter: "http://twitter.com/dalumeui"
-    centro: @college64
+    college: @college64
     slug: "da-eui-upm"
   studentdelegation65:
-    nombre: "Delegación de Alumnos de la Escuela Politécnica Superior"
-    direccion: "Universidad Pablo de Olavide\r\nEd. Celestino Mutis 1ª planta\r\nCtra. Utrera, Km. 1, 41013 - Sevilla, España\r\n"
-    ciudad: "Sevilla"
-    provincia: "Sevilla"
-    cod_postal: 41013
-    telefono: ""
+    name: "Delegación de Alumnos de la Escuela Politécnica Superior"
+    address: "Universidad Pablo de Olavide\r\nEd. Celestino Mutis 1ª planta\r\nCtra. Utrera, Km. 1, 41013 - Sevilla, España\r\n"
+    city: "Sevilla"
+    province: "Sevilla"
+    postcode: 41013
+    phone: ""
     fax: ""
     web: ""
     email: "deleeps@upo.es"
     facebook: ""
     twitter: ""
-    centro: @college65
+    college: @college65
     slug: "da-upo"
   studentdelegation66:
-    nombre: "Delegación de Alumnos ETSINF"
-    direccion: "Camino de Vera S/N"
-    ciudad: "Valencia"
-    provincia: "Valencia"
-    cod_postal: 46022
-    telefono: 963877218
+    name: "Delegación de Alumnos ETSINF"
+    address: "Camino de Vera S/N"
+    city: "Valencia"
+    province: "Valencia"
+    postcode: 46022
+    phone: 963877218
     fax: ""
     web: "www.dai.upv.es"
     email: "etsinfdai@inf.upv.es"
     facebook: "http://facebook.com/dai.etsinf"
     twitter: "dai_etsinf"
-    centro: @college66
+    college: @college66
     slug: "da-uvp"
   studentdelegation67:
-    nombre: "Delegación Estudiantes ETSII"
-    direccion: "C/ Tulipán s/n"
-    ciudad: "Móstoles"
-    provincia: "Madrid"
-    cod_postal: 28933
-    telefono: 914887170
+    name: "Delegación Estudiantes ETSII"
+    address: "C/ Tulipán s/n"
+    city: "Móstoles"
+    province: "Madrid"
+    postcode: 28933
+    phone: 914887170
     fax: ""
     web: "http://www.uacm.es/"
     email: "delegacionestudiantes.etsii@urjc.es"
     facebook: ""
     twitter: "DelegacionETSII"
-    centro: @college67
+    college: @college67
     slug: "de-urjc"
   studentdelegation68:
-    nombre: "Delegación de alumnos LaSalle"
-    direccion: "C/ Quatre Camins 30"
-    ciudad: "Barcelona"
-    provincia: "Barcelona"
-    cod_postal: 08022
-    telefono: 932902400
+    name: "Delegación de alumnos LaSalle"
+    address: "C/ Quatre Camins 30"
+    city: "Barcelona"
+    province: "Barcelona"
+    postcode: 08022
+    phone: 932902400
     web: "http://delegacion-alumnos.informacion-estudiantes.lasalle.tel/"
     email: "dalumnes@salle.url.edu"
-    centro: @college68
+    college: @college68
     slug: "da-url-url"
   studentdelegation69:
-    nombre: "Delegación de Alumnos"
-    direccion: "Reina Mercedes s/n"
-    ciudad: "Sevilla"
-    provincia: "Sevilla"
-    cod_postal: 41012
-    telefono: 954552762
+    name: "Delegación de Alumnos"
+    address: "Reina Mercedes s/n"
+    city: "Sevilla"
+    province: "Sevilla"
+    postcode: 41012
+    phone: 954552762
     web: "http://talika.eii.us.es"
     email: "delegacion_etsii@us.es"
-    centro: @college69
+    college: @college69
     slug: "da-us"
   studentdelegation70:
-    nombre: "Delegación de Estudiantes de la Facultad de Ciencias"
-    direccion: "Plaza de los caidos S/N"
-    ciudad: "Salamanca"
-    provincia: "Salamanca"
-    cod_postal: 37008
-    telefono: ""
+    name: "Delegación de Estudiantes de la Facultad de Ciencias"
+    address: "Plaza de los caidos S/N"
+    city: "Salamanca"
+    province: "Salamanca"
+    postcode: 37008
+    phone: ""
     fax: ""
     web: "www.usal.es/~delcien"
     email: "delg.fc@usal.es"
     facebook: "www.facebook.com/DelCienUsal"
     twitter: "www.twitter.com/delcienusal"
-    centro: @college70
+    college: @college70
     slug: "de-usal"
   studentdelegation71:
-    nombre: "ADR ETSE"
-    direccion: "Avenida de la Universidad s/n"
-    ciudad: "Burjassot"
-    provincia: "Valencia"
-    cod_postal: 46100
-    telefono: 963543192
+    name: "ADR ETSE"
+    address: "Avenida de la Universidad s/n"
+    city: "Burjassot"
+    province: "Valencia"
+    postcode: 46100
+    phone: 963543192
     fax: ""
     web: "http://www.uv.es/adretse"
     email: "adretse@uv.es"
     facebook: "http://www.facebook.com/pages/ADR-ETSE-UV/119836211388705"
     twitter: "\@adr_etse_uv"
-    centro: @college71
+    college: @college71
     slug: "da-uv"
   studentdelegation72:
-    nombre: "Delegación de Estudiantes de Ingeniería Informática"
-    direccion: "Delegación de Estudiantes de Ingeniería Informática\r\nEscuela Técnica Superior de Ingeniería Informática\r\nEdificio de Tecnologías de la Información y las Telecomunicaciones\r\nCampus Miguel Delibes\r\nPaseo de Belén, 15"
-    ciudad: "Valladolid"
-    provincia: "Valadolid"
-    cod_postal: 47011
-    telefono: "983423000 ext 5716"
+    name: "Delegación de Estudiantes de Ingeniería Informática"
+    address: "Delegación de Estudiantes de Ingeniería Informática\r\nEscuela Técnica Superior de Ingeniería Informática\r\nEdificio de Tecnologías de la Información y las Telecomunicaciones\r\nCampus Miguel Delibes\r\nPaseo de Belén, 15"
+    city: "Valladolid"
+    province: "Valadolid"
+    postcode: 47011
+    phone: "983423000 ext 5716"
     fax: ""
     web: "https://delalum.blogs.inf.uva.es/"
     email: "delalum@inf.uva.es"
     facebook: "http://www.facebook.com/DelETSII"
     twitter: "https://twitter.com/DelAlumInforUva"
-    centro: @college72
+    college: @college72
     slug: "de-uva"
   studentdelegation73:
-    nombre: "Delegación de Alumnos Escuela Superior de Ingeniería en Informatica"
-    direccion: "As Lagoas s/n"
-    ciudad: "Ourense"
-    provincia: "Ourense"
-    cod_postal: 32004
-    telefono: 988387036
+    name: "Delegación de Alumnos Escuela Superior de Ingeniería en Informatica"
+    address: "As Lagoas s/n"
+    city: "Ourense"
+    province: "Ourense"
+    postcode: 32004
+    phone: 988387036
     fax: 988387036
     web: "www.eseida.ei.uvigo.es"
     email: "eseida@ei.uvigo.es"
     facebook: "eseida UVigo"
     twitter: ""
-    centro: @college73
+    college: @college73
     slug: "da-uvigo"
   studentdelegation74:
-    nombre: "Delegación de Alumnos Campus UPV de Alcoy"
-    direccion: "Plaza Ferrándiz y Carbonell S/N"
-    ciudad: "Alcoy"
-    provincia: "Alicante"
-    cod_postal: 03801
-    telefono: 966528532
+    name: "Delegación de Alumnos Campus UPV de Alcoy"
+    address: "Plaza Ferrándiz y Carbonell S/N"
+    city: "Alcoy"
+    province: "Alicante"
+    postcode: 03801
+    phone: 966528532
     fax: 966528532
     web: "da.epsa.upv.es"
     email: "da@epsa.upv.es"
     facebook: "Delegación Alumnes Campus Alcoy"
     twitter: "\@DAEPSA"
     cif: "Q4618002B"
-    centro: @college74
+    college: @college74
     slug: "upv-dele-alcoy"

@@ -3,6 +3,7 @@
         username: admin
         email: admin@localhost.local
         plainPassword: admin
+        student_delegation: @studentdelegation1
         enabled: 1
         roles: ['ROLE_SUPER_ADMIN']
     users{1..10}:
