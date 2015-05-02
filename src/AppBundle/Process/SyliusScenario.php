@@ -22,7 +22,7 @@ class SyliusScenario extends ContainerAware implements ProcessScenarioInterface
             ->add('welcome', new Step\WelcomeStep())
             ->add('university', new Step\UniversityStep())
             ->add('college', new Step\CollegeStep())
-            ->add('fourth', new Step\FourthStep())
+            ->add('responsible', new Step\ResponsibleStep())
             ->setRedirect('homepage')
         ;
     }

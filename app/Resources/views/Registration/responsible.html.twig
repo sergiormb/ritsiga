@@ -1,0 +1,10 @@
+{%  extends "base.html.twig" %}
+
+{% block content %}
+    <h1>Responsable</h1>
+    {{ form(form) }}
+    <div class="form-actions">
+        <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': 'college'}) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
+        <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': 'responsible'}) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
+    </div>
+{% endblock %}

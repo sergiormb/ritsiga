@@ -22,7 +22,6 @@ class CollegeStep extends ControllerStep
         $college=$user->getStudentDelegation()->getCollege();
         $form = $this->createForm(new CollegeType(), $college);
 
-
         return $this->render(':Registration:college.html.twig', array(
             'convention' => $convention,
             'form' => $form->createView(),
