@@ -15,8 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\Doctrine\ORM\AcademicDegreeRepository")
  */
-class AcademicDegree
-{
+class AcademicDegree {
     /**
      * @var integer
      *
@@ -173,10 +172,5 @@ class AcademicDegree
     public function getColleges()
     {
         return $this->colleges;
-    }
-
-    public function __toString()
-    {
-        return (string) $this->getName();
     }
 }

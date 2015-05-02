@@ -119,4 +119,28 @@ class User extends BaseUser
     }
 
 
+
+    /**
+     * Add adminConvention
+     *
+     * @param \AppBundle\Entity\Convention $adminConvention
+     *
+     * @return User
+     */
+    public function addAdminConvention(\AppBundle\Entity\Convention $adminConvention)
+    {
+        $this->admin_conventions[] = $adminConvention;
+
+        return $this;
+    }
+
+    /**
+     * Remove adminConvention
+     *
+     * @param \AppBundle\Entity\Convention $adminConvention
+     */
+    public function removeAdminConvention(\AppBundle\Entity\Convention $adminConvention)
+    {
+        $this->admin_conventions->removeElement($adminConvention);
+    }
 }

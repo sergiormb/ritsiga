@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * University
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\UniversityRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\UniversityRepository")
  */
 class University {
     /**
@@ -27,39 +27,39 @@ class University {
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100)
+     * @ORM\Column(name="name", type="string", length=100)
      */
-    private $nombre;
+    private $name;
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="text")
+     * @ORM\Column(name="address", type="string", length=200)
      */
-    private $direccion;
+    private $address;
     /**
      * @var string
      *
-     * @ORM\Column(name="ciudad", type="text")
+     * @ORM\Column(name="city", type="string", length=100)
      */
-    private $ciudad;
+    private $city;
     /**
      * @var string
      *
-     * @ORM\Column(name="provincia", type="text")
+     * @ORM\Column(name="province", type="string", length=100)
      */
-    private $provincia;
+    private $province;
     /**
      * @var integer
      *
-     * @ORM\Column(name="cod_postal", type="integer", length=5)
+     * @ORM\Column(name="postcode", type="integer", length=5)
      */
-    private $cod_postal;
+    private $postcode;
     /**
      * @var integer
      *
-     * @ORM\Column(name="telefono", type="integer", length=20)
+     * @ORM\Column(name="phone", type="integer", length=20, nullable=true)
      */
-    private $telefono;
+    private $phone;
     /**
      * @var integer
      *
@@ -99,9 +99,9 @@ class University {
     /**
      * @var string
      *
-     * @ORM\Column(name="tipo", type="text")
+     * @ORM\Column(name="type",  type="string", length=100)
      */
-    private $tipo;
+    private $type;
     /**
      * @var string
      *
@@ -110,7 +110,24 @@ class University {
     private $slug;
 
     /**
-     * @return int
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="College",mappedBy="university")
+     */
+    private $colleges;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->colleges = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -118,103 +135,167 @@ class University {
     }
 
     /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return University
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
      * @return string
      */
-    public function getNombre()
+    public function getName()
     {
-        return $this->nombre;
+        return $this->name;
     }
 
     /**
-     * @param string $nombre
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return University
      */
-    public function setNombre($nombre)
+    public function setAddress($address)
     {
-        $this->nombre = $nombre;
+        $this->address = $address;
+
+        return $this;
     }
 
     /**
+     * Get address
+     *
      * @return string
      */
-    public function getDireccion()
+    public function getAddress()
     {
-        return $this->direccion;
+        return $this->address;
     }
 
     /**
-     * @param string $direccion
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return University
      */
-    public function setDireccion($direccion)
+    public function setCity($city)
     {
-        $this->direccion = $direccion;
+        $this->city = $city;
+
+        return $this;
     }
 
     /**
+     * Get city
+     *
      * @return string
      */
-    public function getCiudad()
+    public function getCity()
     {
-        return $this->ciudad;
+        return $this->city;
     }
 
     /**
-     * @param string $ciudad
+     * Set province
+     *
+     * @param string $province
+     *
+     * @return University
      */
-    public function setCiudad($ciudad)
+    public function setProvince($province)
     {
-        $this->ciudad = $ciudad;
+        $this->province = $province;
+
+        return $this;
     }
 
     /**
+     * Get province
+     *
      * @return string
      */
-    public function getProvincia()
+    public function getProvince()
     {
-        return $this->provincia;
+        return $this->province;
     }
 
     /**
-     * @param string $provincia
+     * Set postcode
+     *
+     * @param integer $postcode
+     *
+     * @return University
      */
-    public function setProvincia($provincia)
+    public function setPostcode($postcode)
     {
-        $this->provincia = $provincia;
+        $this->postcode = $postcode;
+
+        return $this;
     }
 
     /**
-     * @return int
+     * Get postcode
+     *
+     * @return integer
      */
-    public function getCodPostal()
+    public function getPostcode()
     {
-        return $this->cod_postal;
+        return $this->postcode;
     }
 
     /**
-     * @param int $cod_postal
+     * Set phone
+     *
+     * @param integer $phone
+     *
+     * @return University
      */
-    public function setCodPostal($cod_postal)
+    public function setPhone($phone)
     {
-        $this->cod_postal = $cod_postal;
+        $this->phone = $phone;
+
+        return $this;
     }
 
     /**
-     * @return int
+     * Get phone
+     *
+     * @return integer
      */
-    public function getTelefono()
+    public function getPhone()
     {
-        return $this->telefono;
+        return $this->phone;
     }
 
     /**
-     * @param int $telefono
+     * Set fax
+     *
+     * @param integer $fax
+     *
+     * @return University
      */
-    public function setTelefono($telefono)
+    public function setFax($fax)
     {
-        $this->telefono = $telefono;
+        $this->fax = $fax;
+
+        return $this;
     }
 
     /**
-     * @return int
+     * Get fax
+     *
+     * @return integer
      */
     public function getFax()
     {
@@ -222,14 +303,22 @@ class University {
     }
 
     /**
-     * @param int $fax
+     * Set web
+     *
+     * @param string $web
+     *
+     * @return University
      */
-    public function setFax($fax)
+    public function setWeb($web)
     {
-        $this->fax = $fax;
+        $this->web = $web;
+
+        return $this;
     }
 
     /**
+     * Get web
+     *
      * @return string
      */
     public function getWeb()
@@ -238,14 +327,22 @@ class University {
     }
 
     /**
-     * @param string $web
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return University
      */
-    public function setWeb($web)
+    public function setEmail($email)
     {
-        $this->web = $web;
+        $this->email = $email;
+
+        return $this;
     }
 
     /**
+     * Get email
+     *
      * @return string
      */
     public function getEmail()
@@ -254,14 +351,22 @@ class University {
     }
 
     /**
-     * @param string $email
+     * Set twitter
+     *
+     * @param string $twitter
+     *
+     * @return University
      */
-    public function setEmail($email)
+    public function setTwitter($twitter)
     {
-        $this->email = $email;
+        $this->twitter = $twitter;
+
+        return $this;
     }
 
     /**
+     * Get twitter
+     *
      * @return string
      */
     public function getTwitter()
@@ -270,14 +375,22 @@ class University {
     }
 
     /**
-     * @param string $twitter
+     * Set facebook
+     *
+     * @param string $facebook
+     *
+     * @return University
      */
-    public function setTwitter($twitter)
+    public function setFacebook($facebook)
     {
-        $this->twitter = $twitter;
+        $this->facebook = $facebook;
+
+        return $this;
     }
 
     /**
+     * Get facebook
+     *
      * @return string
      */
     public function getFacebook()
@@ -286,14 +399,22 @@ class University {
     }
 
     /**
-     * @param string $facebook
+     * Set cif
+     *
+     * @param string $cif
+     *
+     * @return University
      */
-    public function setFacebook($facebook)
+    public function setCif($cif)
     {
-        $this->facebook = $facebook;
+        $this->cif = $cif;
+
+        return $this;
     }
 
     /**
+     * Get cif
+     *
      * @return string
      */
     public function getCif()
@@ -302,30 +423,46 @@ class University {
     }
 
     /**
-     * @param string $cif
+     * Set typo
+     *
+     * @param string $typo
+     *
+     * @return University
      */
-    public function setCif($cif)
+    public function setTypo($typo)
     {
-        $this->cif = $cif;
+        $this->typo = $typo;
+
+        return $this;
     }
 
     /**
+     * Get typo
+     *
      * @return string
      */
-    public function getTipo()
+    public function getTypo()
     {
-        return $this->tipo;
+        return $this->typo;
     }
 
     /**
-     * @param string $tipo
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return University
      */
-    public function setTipo($tipo)
+    public function setSlug($slug)
     {
-        $this->tipo = $tipo;
+        $this->slug = $slug;
+
+        return $this;
     }
 
     /**
+     * Get slug
+     *
      * @return string
      */
     public function getSlug()
@@ -334,12 +471,60 @@ class University {
     }
 
     /**
-     * @param string $slug
+     * Add college
+     *
+     * @param \AppBundle\Entity\College $college
+     *
+     * @return University
      */
-    public function setSlug($slug)
+    public function addCollege(\AppBundle\Entity\College $college)
     {
-        $this->slug = $slug;
+        $this->colleges[] = $college;
+
+        return $this;
     }
 
+    /**
+     * Remove college
+     *
+     * @param \AppBundle\Entity\College $college
+     */
+    public function removeCollege(\AppBundle\Entity\College $college)
+    {
+        $this->colleges->removeElement($college);
+    }
 
+    /**
+     * Get colleges
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getColleges()
+    {
+        return $this->colleges;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return University
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 }

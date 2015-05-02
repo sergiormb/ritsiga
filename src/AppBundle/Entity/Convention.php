@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Convention
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\ConventionRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\ConventionRepository")
  */
 class Convention
 {
@@ -255,5 +255,61 @@ class Convention
     public function __toString()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->registrations = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->administrators = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add registration
+     *
+     * @param \AppBundle\Entity\Registration $registration
+     *
+     * @return Convention
+     */
+    public function addRegistration(\AppBundle\Entity\Registration $registration)
+    {
+        $this->registrations[] = $registration;
+
+        return $this;
+    }
+
+    /**
+     * Remove registration
+     *
+     * @param \AppBundle\Entity\Registration $registration
+     */
+    public function removeRegistration(\AppBundle\Entity\Registration $registration)
+    {
+        $this->registrations->removeElement($registration);
+    }
+
+    /**
+     * Add administrator
+     *
+     * @param \AppBundle\Entity\User $administrator
+     *
+     * @return Convention
+     */
+    public function addAdministrator(\AppBundle\Entity\User $administrator)
+    {
+        $this->administrators[] = $administrator;
+
+        return $this;
+    }
+
+    /**
+     * Remove administrator
+     *
+     * @param \AppBundle\Entity\User $administrator
+     */
+    public function removeAdministrator(\AppBundle\Entity\User $administrator)
+    {
+        $this->administrators->removeElement($administrator);
     }
 }

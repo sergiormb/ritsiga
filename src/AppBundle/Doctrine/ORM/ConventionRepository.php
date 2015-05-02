@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Doctrine\ORM;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -23,6 +23,4 @@ class ConventionRepository extends EntityRepository
 
         return $consulta->getResult();
     }
-
-
 }

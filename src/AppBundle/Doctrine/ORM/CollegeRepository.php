@@ -2,21 +2,22 @@
 /**
  * Created by PhpStorm.
  * User: tfg
- * Date: 30/04/15
- * Time: 21:57
+ * Date: 2/05/15
+ * Time: 12:46
  */
 
-namespace AppBundle\Entity;
+namespace AppBundle\Doctrine\ORM;
+use Doctrine\ORM\EntityRepository;
 
 
-class StudentDelegationRepository extends \Doctrine\ORM\EntityRepository
+class CollegeRepository extends EntityRepository
 {
-    public function findStudentDelegation($word)
+    public function findUniversity($word)
     {
         $em=$this->getEntityManager();
         $query=$em->createQuery('
         SELECT o
-        FROM AppBundle:StudentDelegation o
+        FROM AppBundle:College o
         WHERE o.name LIKE :word');
 
         $query->setParameter('word','%'.$word.'%');

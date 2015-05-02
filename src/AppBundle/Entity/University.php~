@@ -3,21 +3,19 @@
  * Created by PhpStorm.
  * User: tfg
  * Date: 22/04/15
- * Time: 12:45
+ * Time: 12:43
  */
 
 namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
- * College
+ * University
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\Doctrine\ORM\CollegeRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\UniversityRepository")
  */
-class College
-{
+class University {
     /**
      * @var integer
      *
@@ -92,7 +90,18 @@ class College
      * @ORM\Column(name="facebook", type="text", nullable=true)
      */
     private $facebook;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cif", type="string", length=9)
+     */
+    private $cif;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type",  type="string", length=100)
+     */
+    private $type;
     /**
      * @var string
      *
@@ -101,31 +110,18 @@ class College
     private $slug;
 
     /**
-     * @var University
-     *
-     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\University", inversedBy="colleges")
-     */
-    private $university;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\AcademicDegree", mappedBy="colleges")
-     */
-    private $academic_degrees;
-
-    /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="College", mappedBy="college")
+     * @ORM\OneToMany(targetEntity="College",mappedBy="university")
      */
-    private $students_delegations;
-
+    private $colleges;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->academic_degrees = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->colleges = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -143,7 +139,7 @@ class College
      *
      * @param string $name
      *
-     * @return College
+     * @return University
      */
     public function setName($name)
     {
@@ -167,7 +163,7 @@ class College
      *
      * @param string $address
      *
-     * @return College
+     * @return University
      */
     public function setAddress($address)
     {
@@ -191,7 +187,7 @@ class College
      *
      * @param string $city
      *
-     * @return College
+     * @return University
      */
     public function setCity($city)
     {
@@ -215,7 +211,7 @@ class College
      *
      * @param string $province
      *
-     * @return College
+     * @return University
      */
     public function setProvince($province)
     {
@@ -239,7 +235,7 @@ class College
      *
      * @param integer $postcode
      *
-     * @return College
+     * @return University
      */
     public function setPostcode($postcode)
     {
@@ -263,7 +259,7 @@ class College
      *
      * @param integer $phone
      *
-     * @return College
+     * @return University
      */
     public function setPhone($phone)
     {
@@ -287,7 +283,7 @@ class College
      *
      * @param integer $fax
      *
-     * @return College
+     * @return University
      */
     public function setFax($fax)
     {
@@ -311,7 +307,7 @@ class College
      *
      * @param string $web
      *
-     * @return College
+     * @return University
      */
     public function setWeb($web)
     {
@@ -335,7 +331,7 @@ class College
      *
      * @param string $email
      *
-     * @return College
+     * @return University
      */
     public function setEmail($email)
     {
@@ -359,7 +355,7 @@ class College
      *
      * @param string $twitter
      *
-     * @return College
+     * @return University
      */
     public function setTwitter($twitter)
     {
@@ -383,7 +379,7 @@ class College
      *
      * @param string $facebook
      *
-     * @return College
+     * @return University
      */
     public function setFacebook($facebook)
     {
@@ -403,11 +399,59 @@ class College
     }
 
     /**
+     * Set cif
+     *
+     * @param string $cif
+     *
+     * @return University
+     */
+    public function setCif($cif)
+    {
+        $this->cif = $cif;
+
+        return $this;
+    }
+
+    /**
+     * Get cif
+     *
+     * @return string
+     */
+    public function getCif()
+    {
+        return $this->cif;
+    }
+
+    /**
+     * Set typo
+     *
+     * @param string $typo
+     *
+     * @return University
+     */
+    public function setTypo($typo)
+    {
+        $this->typo = $typo;
+
+        return $this;
+    }
+
+    /**
+     * Get typo
+     *
+     * @return string
+     */
+    public function getTypo()
+    {
+        return $this->typo;
+    }
+
+    /**
      * Set slug
      *
      * @param string $slug
      *
-     * @return College
+     * @return University
      */
     public function setSlug($slug)
     {
@@ -427,94 +471,36 @@ class College
     }
 
     /**
-     * Set university
+     * Add college
      *
-     * @param \AppBundle\Entity\University $university
+     * @param \AppBundle\Entity\College $college
      *
-     * @return College
+     * @return University
      */
-    public function setUniversity(\AppBundle\Entity\University $university = null)
+    public function addCollege(\AppBundle\Entity\College $college)
     {
-        $this->university = $university;
+        $this->colleges[] = $college;
 
         return $this;
     }
 
     /**
-     * Get university
+     * Remove college
      *
-     * @return \AppBundle\Entity\University
+     * @param \AppBundle\Entity\College $college
      */
-    public function getUniversity()
+    public function removeCollege(\AppBundle\Entity\College $college)
     {
-        return $this->university;
+        $this->colleges->removeElement($college);
     }
 
     /**
-     * Add academicDegree
-     *
-     * @param \AppBundle\Entity\AcademicDegree $academicDegree
-     *
-     * @return College
-     */
-    public function addAcademicDegree(\AppBundle\Entity\AcademicDegree $academicDegree)
-    {
-        $this->academic_degrees[] = $academicDegree;
-
-        return $this;
-    }
-
-    /**
-     * Remove academicDegree
-     *
-     * @param \AppBundle\Entity\AcademicDegree $academicDegree
-     */
-    public function removeAcademicDegree(\AppBundle\Entity\AcademicDegree $academicDegree)
-    {
-        $this->academic_degrees->removeElement($academicDegree);
-    }
-
-    /**
-     * Get academicDegrees
+     * Get colleges
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAcademicDegrees()
+    public function getColleges()
     {
-        return $this->academic_degrees;
-    }
-
-    /**
-     * Add studentsDelegation
-     *
-     * @param \AppBundle\Entity\College $studentsDelegation
-     *
-     * @return College
-     */
-    public function addStudentsDelegation(\AppBundle\Entity\College $studentsDelegation)
-    {
-        $this->students_delegations[] = $studentsDelegation;
-
-        return $this;
-    }
-
-    /**
-     * Remove studentsDelegation
-     *
-     * @param \AppBundle\Entity\College $studentsDelegation
-     */
-    public function removeStudentsDelegation(\AppBundle\Entity\College $studentsDelegation)
-    {
-        $this->students_delegations->removeElement($studentsDelegation);
-    }
-
-    /**
-     * Get studentsDelegations
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getStudentsDelegations()
-    {
-        return $this->students_delegations;
+        return $this->colleges;
     }
 }
