@@ -7,8 +7,14 @@
  */
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
-
+/**
+ * Registration
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="Participant")
+ */
 class Participant {
 
     /**
@@ -23,16 +29,16 @@ class Participant {
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100)
+     * @ORM\Column(name="name", type="string", length=100)
      */
-    private $nombre;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="apellidos", type="string", length=255)
+     * @ORM\Column(name="last_name", type="string", length=255)
      */
-    private $apellidos;
+    private $last_name;
 
     /**
      * @var string
@@ -44,23 +50,17 @@ class Participant {
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="text")
+     * @ORM\Column(name="address", type="text")
      */
-    private $direccion;
+    private $address;
+
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_alta", type="datetime")
+     * @ORM\Column(name="birthday", type="datetime")
      */
-    private $fechaAlta;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="fecha_nacimiento", type="datetime")
-     */
-    private $fechaNacimiento;
+    private $birthday;
 
     /**
      * @var string
@@ -69,8 +69,216 @@ class Participant {
      */
     private $dni;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=20)
+     */
+    private $type;
 
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Registration", inversedBy="participants") */
     private $registration;
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Participant
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return Participant
+     */
+    public function setLastName($lastName)
+    {
+        $this->last_name = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Participant
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return Participant
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param \DateTime $birthday
+     *
+     * @return Participant
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return \DateTime
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set dni
+     *
+     * @param string $dni
+     *
+     * @return Participant
+     */
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
+
+        return $this;
+    }
+
+    /**
+     * Get dni
+     *
+     * @return string
+     */
+    public function getDni()
+    {
+        return $this->dni;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Participant
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set registration
+     *
+     * @param \AppBundle\Entity\Registration $registration
+     *
+     * @return Participant
+     */
+    public function setRegistration(\AppBundle\Entity\Registration $registration = null)
+    {
+        $this->registration = $registration;
+
+        return $this;
+    }
+
+    /**
+     * Get registration
+     *
+     * @return \AppBundle\Entity\Registration
+     */
+    public function getRegistration()
+    {
+        return $this->registration;
+    }
 }

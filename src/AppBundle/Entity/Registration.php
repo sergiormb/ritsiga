@@ -26,13 +26,32 @@ class Registration {
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=140)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="position", type="string", length=100)
+     */
+    private $position;
+
+
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\User", inversedBy="registrations") */
     private $user;
 
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Convention", inversedBy="registrations") */
     private $convention;
 
-
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Participant",mappedBy="registration")
+     */
+    private $participants;
 
     /**
      * Get id
@@ -90,5 +109,94 @@ class Registration {
     public function getConvention()
     {
         return $this->convention;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->participants = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Registration
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set position
+     *
+     * @param string $position
+     *
+     * @return Registration
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return string
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Add participant
+     *
+     * @param \AppBundle\Entity\Participant $participant
+     *
+     * @return Registration
+     */
+    public function addParticipant(\AppBundle\Entity\Participant $participant)
+    {
+        $this->participants[] = $participant;
+
+        return $this;
+    }
+
+    /**
+     * Remove participant
+     *
+     * @param \AppBundle\Entity\Participant $participant
+     */
+    public function removeParticipant(\AppBundle\Entity\Participant $participant)
+    {
+        $this->participants->removeElement($participant);
+    }
+
+    /**
+     * Get participants
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getParticipants()
+    {
+        return $this->participants;
     }
 }

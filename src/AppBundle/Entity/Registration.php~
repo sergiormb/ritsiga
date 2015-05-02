@@ -26,13 +26,32 @@ class Registration {
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=140)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="position", type="string", length=100)
+     */
+    private $position;
+
+
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\User", inversedBy="registrations") */
     private $user;
 
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Convention", inversedBy="registrations") */
     private $convention;
 
-
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Participant",mappedBy="registration")
+     */
+    private $participants;
 
     /**
      * Get id
