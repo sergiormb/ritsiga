@@ -18,11 +18,11 @@ class CollegeAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('nombre')
-            ->add('ciudad')
-            ->add('provincia')
-            ->add('cod_postal')
-            ->add('telefono')
+            ->add('name')
+            ->add('city')
+            ->add('province')
+            ->add('postcode')
+            ->add('phone')
         ;
     }
 
@@ -30,11 +30,11 @@ class CollegeAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('nombre')
-            ->add('ciudad')
-            ->add('provincia')
-            ->add('cod_postal')
-            ->add('telefono')
+            ->add('name')
+            ->add('city')
+            ->add('province')
+            ->add('postcode')
+            ->add('phone')
         ;
     }
 
@@ -42,11 +42,11 @@ class CollegeAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('nombre')
-            ->add('ciudad')
-            ->add('provincia')
-            ->add('cod_postal')
-            ->add('telefono')
+            ->add('name')
+            ->add('city')
+            ->add('province')
+            ->add('postcode')
+            ->add('phone')
         ;
     }
 }

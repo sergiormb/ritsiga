@@ -38,12 +38,9 @@ class RegistrationAdmin extends Admin
     {
         $formMapper
             ->add('convention')
-            ->add('student_delegation')
-            ->add('nombre')
-            ->add('apellidos')
-            ->add('email')
-            ->add('direccion')
-            ->add('dni')
+            ->add('name')
+            ->add('position')
+            ->add('participants')
         ;
     }
 
@@ -52,12 +49,9 @@ class RegistrationAdmin extends Admin
     {
         $datagridMapper
             ->add('convention')
-            ->add('student_delegation')
-            ->add('nombre')
-            ->add('apellidos')
-            ->add('email')
-            ->add('direccion')
-            ->add('dni')
+            ->add('name')
+            ->add('position')
+            ->add('participants')
         ;
     }
 
@@ -66,13 +60,9 @@ class RegistrationAdmin extends Admin
     {
         $listMapper
             ->add('convention')
-            ->add('student_delegation')
-            ->add('nombre')
-            ->add('apellidos')
-            ->add('email')
-            ->add('direccion')
-            ->add('dni')
-            ->add('fechaAlta')
+            ->add('name')
+            ->add('position')
+            ->add('participants')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

@@ -6,10 +6,10 @@
  * Time: 21:09
  */
 
-namespace AppBundle\Entity;
+namespace AppBundle\Doctrine\ORM;
+use Doctrine\ORM\EntityRepository;
 
-
-class UniversityRepository extends \Doctrine\ORM\EntityRepository
+class UniversityRepository extends EntityRepository
 {
     public function findUniversity($word)
     {

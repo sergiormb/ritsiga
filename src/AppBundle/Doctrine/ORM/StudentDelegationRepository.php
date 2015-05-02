@@ -6,10 +6,11 @@
  * Time: 21:57
  */
 
-namespace AppBundle\Entity;
+namespace AppBundle\Doctrine\ORM;
+use Doctrine\ORM\EntityRepository;
 
 
-class StudentDelegationRepository extends \Doctrine\ORM\EntityRepository
+class StudentDelegationRepository extends EntityRepository
 {
     public function findStudentDelegation($word)
     {
