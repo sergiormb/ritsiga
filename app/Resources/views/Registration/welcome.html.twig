@@ -1,12 +1,19 @@
-{%  extends "base.html.twig" %}
+{%  extends "::step.html.twig" %}
 
-{% block content %}
+{% block titlestep %}
     <h1> Iniciar inscripción</h1>
+
+{% endblock %}
+{% block descriptionstep %}
     <div>Antes de proceder con su inscripción, acepta las siguientes condiciones:</div>
     <p>1. Que Vd es representante legal de la asocicación/delegación/consejo de estudiantes del siguiente centro: </p>
     <p>2. Que cuenta con autorización para realizar este proceso </p>
     <p>3. Que todos los datos que va a indicar son auténticos </p>
-
-    <a href="{{ path('homepage') }}" class="btn btn-success"><i class="icon-backward icon-white"></i> Cancelar</a>
-    <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': 'welcome'}) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
+{{ context }}
 {% endblock %}
+    {% block buttonsstep %}
+        <div class="form-actions">
+            <a href="{{ path('homepage') }} class="btn btn-lg btn-default">Volver</a> &nbsp;
+            <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': context.currentStep.name }) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
+        </div>
+    {% endblock %}

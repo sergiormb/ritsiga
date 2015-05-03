@@ -1,0 +1,37 @@
+{%  extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="process">
+        <div class="process-row">
+            <div class="process-step">
+                <button type="button" class="btn btn-success btn-circle" disabled="enabled"><i class="fa fa-check fa-3x"></i></button>
+                <p>Iniciar Inscripción</p>
+            </div>
+            <div class="process-step">
+                <button type="button" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-university fa-3x"></i></button>
+                <p>Universidad</p>
+            </div>
+            <div class="process-step">
+                <button type="button" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-book fa-3x"></i></button>
+                <p>Centro</p>
+            </div>
+            <div class="process-step">
+                <button type="button" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-users fa-3x"></i></button>
+                <p>Delegación</p>
+            </div>
+            <div class="process-step">
+                <button type="button" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-user fa-3x"></i></button>
+                <p>Responsable</p>
+            </div>
+        </div>
+    </div>
+    {% block titlestep %}{% endblock %}
+    {% block descriptionstep %}{% endblock %}
+    {% block formstep %}{% endblock %}
+    {% block buttonsstep %}
+        <div class="form-actions">
+            <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': context.previousStep.name }) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
+            <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': context.currentStep.name }) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
+        </div>
+    {% endblock %}
+{% endblock %}

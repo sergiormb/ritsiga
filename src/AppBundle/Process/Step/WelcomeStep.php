@@ -21,7 +21,6 @@ class WelcomeStep extends ControllerStep
         $convention = $siteManager->getCurrentSite();
         $student_delegation = $user->getStudentDelegation();
 
-
         return $this->render(':Registration:welcome.html.twig', array(
             'convention' => $convention,
             'user' => $user,
