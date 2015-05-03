@@ -85,6 +85,11 @@ services:
              - AppBundle\Entity\Registration
              - ~
 
+     ritsiGA.block.service.rss:
+         class: AppBundle\Admin\BlockRegistration
+         tags:
+             - { name: sonata.block }
+
 ## FORMULARIOS ###
 
      ritsiga.profile.form.type:
@@ -92,3 +97,12 @@ services:
          arguments: [%fos_user.model.user.class%]
          tags:
              - { name: form.type, alias: ritsiga_user_profile }
+
+## TWIG
+
+     ritsiGA.twig.conventionextension:
+         class: AppBundle\Twig\ConventionExtension
+         arguments: [ @request_stack ]
+         public: false
+         tags:
+             - { name: twig.extension }

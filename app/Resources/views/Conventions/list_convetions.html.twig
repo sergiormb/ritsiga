@@ -2,20 +2,15 @@
 
 {% block content %}
     <div class="container" >
-        {% if is_granted("ROLE_USER") %}
-            <div class="username"  id="username"  name="username">
-                {{ user.username }}
-            </div>
-        {% endif %}
+
     {% for convention in conventions %}
-    <div class="panel panel-default" id="convention_{{ convention.name }}">
         <div class="convention row">
-            <div class="col-md-10"><h3>{{ convention.name }}</h3> <h5>Fecha: {{ convention.startsAt|date('d-m-Y') }} - {{ convention.endsAt|date('d-m-Y') }}</h5></div>
-            <div class="col-md-2"><button type="button" class="btn btn-danger" align="right">Inscribirse</button></div>
+            <div class="col-md-4"><h4>{{ convention.name }}</h4></div>
+            <div class="col-md-2"><a class="btn btn-default btn-block" href="{{ convention_url(convention) }}">Inscribirse</a></div>
         </div>
-    </div>
     {% else %}
         <h3>No hay asambleas</h3>
+
     {% endfor %}
     </div>
 
