@@ -129,11 +129,12 @@
         <!-- Main content -->
         <section class="content">
             {% for message in app.session.flashbag.get('info') %}
-                <div class="alert alert-info alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
+                <div class="callout callout-info" role="alert">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+            {% for message in app.session.flashbag.get('success') %}
+                <div class="callout callout-success" role="alert">
                     <p>{{ message }}</p>
                 </div>
             {% endfor %}

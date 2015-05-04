@@ -9,6 +9,8 @@
 {% endblock %}
 
 {% block formstep %}
-    {{ form(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_rest(form) }}
 {% endblock %}
 

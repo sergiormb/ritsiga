@@ -4,5 +4,7 @@
     <h1>Su Centro</h1>
 {% endblock %}
 {% block formstep %}
-    {{ form(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_rest(form) }}
 {% endblock %}

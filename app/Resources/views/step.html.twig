@@ -27,11 +27,17 @@
     </div>
     {% block titlestep %}{% endblock %}
     {% block descriptionstep %}{% endblock %}
+<form action="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': context.currentStep.name}) }}" method="post">
     {% block formstep %}{% endblock %}
+    <div class="form-actions">
+        {% if context.firstStep!=1  %}
+        <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': context.previousStep.name }) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
+        {% endif %}
+            <button class="btn btn-lg btn-primary" type="submit">Aceptar <i class="icon-forward icon-white"></i></button>
+    </div>
+</form>
     {% block buttonsstep %}
-        <div class="form-actions">
-            <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': context.previousStep.name }) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
-            <a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': context.currentStep.name }) }}" class="btn btn-success">Aceptar <i class="icon-forward icon-white"></i></a>
-        </div>
+
+
     {% endblock %}
 {% endblock %}
