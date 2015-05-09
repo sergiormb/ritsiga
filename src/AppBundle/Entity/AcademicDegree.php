@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AcademicDegree
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\Doctrine\ORM\AcademicDegreeRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\AcademicDegreeRepository")
  */
 class AcademicDegree
 {

@@ -6,7 +6,7 @@
  * Time: 11:25
  */
 
-namespace AppBundle\Entity;
+namespace AppBundle\Doctrine\ORM;
 use Doctrine\ORM\EntityRepository;
 
 class AcademicDegreeRepository extends EntityRepository

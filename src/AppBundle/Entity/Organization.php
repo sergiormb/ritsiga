@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Convention
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="\AppBundle\Doctrine\ORM\OrganizationRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\OrganizationRepository")
  */
 class Organization
 {
@@ -176,5 +176,10 @@ class Organization
     public function removeConvention(\AppBundle\Entity\Convention $convention)
     {
         $this->conventions->removeElement($convention);
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }
