@@ -8,6 +8,7 @@
 
 namespace AppBundle\Process\Step;
 
+use AppBundle\Entity\Participant;
 use AppBundle\Entity\Registration;
 use AppBundle\Form\RegistrationType;
 use Sylius\Bundle\FlowBundle\Process\Context\ProcessContextInterface;
@@ -21,9 +22,14 @@ class ResponsibleStep extends ControllerStep
         $request = $context->getRequest();
         $siteManager = $this->container->get('ritsiga.site.manager');
         $convention = $siteManager->getCurrentSite();
+        $participant = new Participant();
+        $participant->setType('invitado');
+
+
         $registration= new Registration();
         $registration->setConvention($convention);
         $registration->setUser($user);
+        $registration->getParticipants()->add($participant);
         $form = $this->createForm(new RegistrationType(), $registration);
 
 

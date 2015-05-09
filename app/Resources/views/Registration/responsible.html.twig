@@ -4,5 +4,10 @@
     <h1>Responsable</h1>
 {% endblock %}
 {% block formstep %}
-    {{ form(form) }}
+    {{ form_start(form) }}
+
+    <h3>Participantes</h3>
+<ul class="participants" data-prototype="&lt;div&gt;&lt;div id=&quot;task_participants___name__&quot;&gt;&lt;div&gt;&lt;label for=&quot;task_participants___name___name&quot; class=&quot; required&quot;&gt;Name&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;task_participants___name___name&quot; name=&quot;task[participants][__name__][name]&quot; required=&quot;required&quot; maxlength=&quot;255&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;">
+</ul>
+
 {% endblock %}
