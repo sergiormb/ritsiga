@@ -4,8 +4,48 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "720a31f43662cba3247cad894fc6f82b",
+    "hash": "65a2708de9405564f8ce65ff84d9522b",
     "packages": [
+        {
+            "name": "behat/transliterator",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2014-05-15 22:08:22"
+        },
         {
             "name": "cocur/slugify",
             "version": "v1.1",
@@ -975,18 +1015,96 @@
             "time": "2014-09-04 12:28:43"
         },
         {
+            "name": "gedmo/doctrine-extensions",
+            "version": "v2.3.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
+                "shasum": ""
+            },
+            "require": {
+                "behat/transliterator": "~1.0",
+                "doctrine/common": "~2.4",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": ">=1.0.0-BETA11",
+                "doctrine/orm": "~2.4",
+                "phpunit/phpunit": "~4.4",
+                "phpunit/phpunit-mock-objects": "~2.3",
+                "symfony/yaml": "~2.3"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
+                "doctrine/orm": "to use the extensions with the ORM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Gedmo\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Buchmann",
+                    "email": "david@liip.ch"
+                },
+                {
+                    "name": "Gediminas Morkevicius",
+                    "email": "gediminas.morkevicius@gmail.com"
+                },
+                {
+                    "name": "Gustavo Falco",
+                    "email": "comfortablynumb84@gmail.com"
+                }
+            ],
+            "description": "Doctrine2 behavioral extensions",
+            "homepage": "http://gediminasm.org/",
+            "keywords": [
+                "Blameable",
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree",
+                "uploadable"
+            ],
+            "time": "2015-02-24 21:41:37"
+        },
+        {
             "name": "hwi/oauth-bundle",
             "version": "dev-master",
             "target-dir": "HWI/Bundle/OAuthBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hwi/HWIOAuthBundle.git",
-                "reference": "a9f88f394e4680d5383b9a129f0e21fc74ca187f"
+                "reference": "c3790c23dbb32bd270da99fa00b42e2c086f906f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/a9f88f394e4680d5383b9a129f0e21fc74ca187f",
-                "reference": "a9f88f394e4680d5383b9a129f0e21fc74ca187f",
+                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/c3790c23dbb32bd270da99fa00b42e2c086f906f",
+                "reference": "c3790c23dbb32bd270da99fa00b42e2c086f906f",
                 "shasum": ""
             },
             "require": {
@@ -1087,7 +1205,7 @@
                 "yahoo",
                 "yandex"
             ],
-            "time": "2015-01-09 16:46:23"
+            "time": "2015-04-29 06:30:49"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2063,17 +2181,17 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v3.0.21",
+            "version": "v3.0.22",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "da23c78093676a823a1ff43a214987ea3fbf83c8"
+                "reference": "0fe4ec86db57c232becb694e01cdabe3c4d9af7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/da23c78093676a823a1ff43a214987ea3fbf83c8",
-                "reference": "da23c78093676a823a1ff43a214987ea3fbf83c8",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/0fe4ec86db57c232becb694e01cdabe3c4d9af7c",
+                "reference": "0fe4ec86db57c232becb694e01cdabe3c4d9af7c",
                 "shasum": ""
             },
             "require": {
@@ -2119,7 +2237,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2015-04-10 06:20:46"
+            "time": "2015-05-02 16:23:08"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2275,12 +2393,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "a516465b0c0460ce815e98ce152e033fb86c6c98"
+                "reference": "1a4c53d0da0aab9a945a53b7c7f415c4cec41b7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/a516465b0c0460ce815e98ce152e033fb86c6c98",
-                "reference": "a516465b0c0460ce815e98ce152e033fb86c6c98",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/1a4c53d0da0aab9a945a53b7c7f415c4cec41b7b",
+                "reference": "1a4c53d0da0aab9a945a53b7c7f415c4cec41b7b",
                 "shasum": ""
             },
             "require": {
@@ -2351,7 +2469,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-04-21 13:49:29"
+            "time": "2015-05-06 09:17:40"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2886,12 +3004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "34a9a7f1020daba1b292ceab2379a762ef167b46"
+                "reference": "eccfe2def49df4a9c69cdc03e674dd338d6587cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/34a9a7f1020daba1b292ceab2379a762ef167b46",
-                "reference": "34a9a7f1020daba1b292ceab2379a762ef167b46",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/eccfe2def49df4a9c69cdc03e674dd338d6587cb",
+                "reference": "eccfe2def49df4a9c69cdc03e674dd338d6587cb",
                 "shasum": ""
             },
             "require": {
@@ -2951,7 +3069,69 @@
                 "sonata",
                 "user"
             ],
-            "time": "2015-04-20 21:23:21"
+            "time": "2015-05-05 13:26:33"
+        },
+        {
+            "name": "stof/doctrine-extensions-bundle",
+            "version": "v1.1.0",
+            "target-dir": "Stof/DoctrineExtensionsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle.git",
+                "reference": "0aa21137bcae43241ffa047946bbdd46b91a2b0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/0aa21137bcae43241ffa047946bbdd46b91a2b0a",
+                "reference": "0aa21137bcae43241ffa047946bbdd46b91a2b0a",
+                "shasum": ""
+            },
+            "require": {
+                "gedmo/doctrine-extensions": "2.3.*",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "to use the ORM extensions",
+                "doctrine/mongodb-odm-bundle": "to use the MongoDB ODM extensions"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stof\\DoctrineExtensionsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                }
+            ],
+            "description": "Integration of the gedmo/doctrine-extensions with Symfony2",
+            "homepage": "https://github.com/stof/StofDoctrineExtensionsBundle",
+            "keywords": [
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree"
+            ],
+            "time": "2013-06-23 16:53:41"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3936,16 +4116,16 @@
         },
         {
             "name": "winzou/state-machine",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/winzou/state-machine.git",
-                "reference": "cfc791b8f1dbb68e0aebbe279b680664d525b8c5"
+                "reference": "aa54434dac9e0e41f3d1bead53f7e45b5df8a86d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/winzou/state-machine/zipball/cfc791b8f1dbb68e0aebbe279b680664d525b8c5",
-                "reference": "cfc791b8f1dbb68e0aebbe279b680664d525b8c5",
+                "url": "https://api.github.com/repos/winzou/state-machine/zipball/aa54434dac9e0e41f3d1bead53f7e45b5df8a86d",
+                "reference": "aa54434dac9e0e41f3d1bead53f7e45b5df8a86d",
                 "shasum": ""
             },
             "require": {
@@ -3982,7 +4162,7 @@
                 "state",
                 "statemachine"
             ],
-            "time": "2014-11-27 07:10:26"
+            "time": "2014-12-05 02:14:37"
         }
     ],
     "packages-dev": [
@@ -4411,46 +4591,6 @@
                 "symfony"
             ],
             "time": "2014-09-04 22:10:45"
-        },
-        {
-            "name": "behat/transliterator",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
-                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Transliterator": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Artistic-1.0"
-            ],
-            "description": "String transliterator",
-            "keywords": [
-                "i18n",
-                "slug",
-                "transliterator"
-            ],
-            "time": "2014-05-15 22:08:22"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -5218,7 +5358,8 @@
         "hwi/oauth-bundle": 20,
         "sonata-project/admin-bundle": 20,
         "sonata-project/datagrid-bundle": 20,
-        "sonata-project/user-bundle": 20
+        "sonata-project/user-bundle": 20,
+        "stof/doctrine-extensions-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

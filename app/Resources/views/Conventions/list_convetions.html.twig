@@ -5,6 +5,7 @@
 
     {% for convention in conventions %}
         <div class="convention row">
+            <div><img src="{{ asset('/images/' ~ convention.image) }}"></div>
             <div class="col-md-4"><h4>{{ convention.name }}</h4></div>
             <div class="col-md-2"><a class="btn btn-default btn-block" href="{{ convention_url(convention) }}">Inscribirse</a></div>
         </div>

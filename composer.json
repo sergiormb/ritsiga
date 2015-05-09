@@ -25,6 +25,7 @@
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
         "sonata-project/easy-extends-bundle": "~2.1",
         "sonata-project/user-bundle": "~2.3@dev",
+        "stof/doctrine-extensions-bundle": "1.1.*@dev",
         "sylius/resource-bundle":                       "0.12.*",
         "sylius/flow-bundle": "0.13.*"
     },

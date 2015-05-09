@@ -2,7 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    #  Sonata Bundles
     - { resource: sonata.yml }
+    # StoF Bundles
+    - { resource: stof/stof_doctrine.yml }
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }

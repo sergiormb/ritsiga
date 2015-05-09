@@ -3,15 +3,18 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Convention
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\ConventionRepository")
+ * @Gedmo\Uploadable(filenameGenerator="SHA1", path="../web/images")
  */
 class Convention
 {
+
     /**
      * @var integer
      *
@@ -41,6 +44,26 @@ class Convention
      * @ORM\Column(name="web", type="string", length=255, nullable=true)
      */
     private $web;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     * @Gedmo\UploadableFileName
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(name="mime_type", type="string")
+     * @Gedmo\UploadableFileMimeType
+     */
+    private $mimeType;
+
+    /**
+     * @ORM\Column(name="path", type="string", length=255)
+     * @Gedmo\UploadableFilePath
+     */
+    private $path;
 
     /**
      * @var \DateTime
@@ -239,6 +262,22 @@ class Convention
     /**
      * @return string
      */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
     public function getDomain()
     {
         return $this->domain;
@@ -311,5 +350,37 @@ class Convention
     public function removeAdministrator(\AppBundle\Entity\User $administrator)
     {
         $this->administrators->removeElement($administrator);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMimeType()
+    {
+        return $this->mimeType;
+    }
+
+    /**
+     * @param mixed $mimeType
+     */
+    public function setMimeType($mimeType)
+    {
+        $this->mimeType = $mimeType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param mixed $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
     }
 }

@@ -48,6 +48,10 @@ class ConventionAdmin extends Admin
             ->add('startsAt', 'date', array('label' => 'Start Date'))
             ->add('endsAt', 'date', array('label' => 'End Date'))
             ->add('email', 'email', array('label' => 'Email'))
+            ->add('image', 'file', array(
+                'data_class' => null,
+                'attr' => ['class' => 'filestyle']
+            ))
         ;
     }
 
@@ -75,11 +79,24 @@ class ConventionAdmin extends Admin
             ->add('email')
             ->add('web')
             ->add('domain')
+            ->add('image',null,array(
+                'template' => 'image/image.html.twig',
+            ))
             ->add('_action', 'actions', array(
             'actions' => array(
                 'edit' => array(),
                 'show' => array(),
             )))
         ;
+    }
+
+    public function prePersist($object)
+    {
+        $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+    }
+
+    public function preUpdate($object)
+    {
+        $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
     }
 }
