@@ -23,4 +23,16 @@ class StudentDelegationRepository extends EntityRepository
         $query->setParameter('word','%'.$word.'%');
         return $query->getResult();
     }
+
+    public function findStudentDelegationByCollege($college)
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('
+        SELECT o.id, o.name
+        FROM AppBundle:StudentDelegation o
+        WHERE o.college = :college');
+
+        $query->setParameter('college',$college->getId());
+        return $query->getResult();
+    }
 }

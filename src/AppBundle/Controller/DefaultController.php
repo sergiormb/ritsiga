@@ -2,9 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\College;
+use AppBundle\Entity\University;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -17,5 +20,28 @@ class DefaultController extends Controller
         $conventions = $this->getDoctrine()->getRepository('AppBundle:Convention')->findConventionsAvailables();
 	    return $this->render('Conventions/list_convetions.html.twig', array('conventions' => $conventions,
         'user'=> $user,));
+    }
+
+    /**
+     * @Route("/facultades/{id}", name="colleges_list")
+     */
+    public function getColleges(University $university)
+    {
+        $response = $this->getDoctrine()->getRepository('AppBundle:College')->findCollegeByUniversity($university);
+        return new Response(json_encode($response), 200, array(
+            'Content-Type' => 'application/json'
+        ));
+    }
+
+    /**
+     * @Route("/delegaciones/{id}", name="students_delegations_list")
+     */
+    public function getStudentsDelegations(College $college)
+    {
+        $response = $this->getDoctrine()->getRepository('AppBundle:StudentDelegation')->findStudentDelegationByCollege($college);
+
+        return new Response(json_encode($response), 200, array(
+            'Content-Type' => 'application/json'
+        ));
     }
 }

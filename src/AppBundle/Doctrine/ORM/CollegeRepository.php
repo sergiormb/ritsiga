@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
 
 class CollegeRepository extends EntityRepository
 {
-    public function findUniversity($word)
+    public function findCollege($word)
     {
         $em=$this->getEntityManager();
         $query=$em->createQuery('
@@ -21,6 +21,18 @@ class CollegeRepository extends EntityRepository
         WHERE o.name LIKE :word');
 
         $query->setParameter('word','%'.$word.'%');
+        return $query->getResult();
+    }
+
+    public function findCollegeByUniversity($university)
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('
+        SELECT o.id, o.name
+        FROM AppBundle:College o
+        WHERE o.university = :university');
+
+        $query->setParameter('university',$university->getId());
         return $query->getResult();
     }
 }
