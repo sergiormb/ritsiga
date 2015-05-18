@@ -41,16 +41,16 @@
                                 </tr>
                                 <tr>
                                     <td>Delegación de estudiantes:</td>
-                                    <td></td>
+                                    <td>{{ user.getStudentDelegation }}</td>
                                 </tr>
 
                                 </tr>
 
                                 </tbody>
                             </table>
-                            <a href="{{ path('sonata_user_profile_edit')}}" class="btn btn-primary">Cambiar Contraseña</a>
-                            <a href="{{ path('sonata_user_profile_edit')}}" class="btn btn-primary">Editar Perfil</a>
-                            <a href="{{ path('sonata_user_security_logout')}}" class="btn btn-primary">Cerrar Sesión</a>
+                            <a href="{{ path('fos_user_profile_edit')}}" class="btn btn-primary">Cambiar Contraseña</a>
+                            <a href="{{ path('fos_user_profile_edit')}}" class="btn btn-primary">Editar Perfil</a>
+                            <a href="{{ path('fos_user_security_logout')}}" class="btn btn-primary">Cerrar Sesión</a>
                         </div>
                     </div>
                 </div>

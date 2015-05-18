@@ -1,6 +1,7 @@
 {%  extends "::step.html.twig" %}
 
 {% block titlestep %}
+
 <h1>Su Universidad</h1>
 {% endblock %}
 {% block descriptionstep %}
@@ -12,5 +13,10 @@
     {{ form_errors(form) }}
 
     {{ form_rest(form) }}
+    <script>
+        $( document ).ready(function() {
+            $("#step_university").addClass( "btn-success" );
+        });
+    </script>
 {% endblock %}
 
