@@ -33,7 +33,9 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     form:
-        resources:  ['bootstrap_3_layout.html.twig']
+        resources:
+          - 'bootstrap_3_layout.html.twig'
+          - 'SonataCoreBundle:Form:datepicker.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -94,7 +96,7 @@ fos_user:
     profile:  # Authentication Form
         form:
             type:               ritsiga_user_profile
-            handler:            fos_user.profile.form.handler.default
+            handler:            ritsiga.profile.form.handler
             name:               fos_user_profile_form
             validation_groups:  [Authentication] # Please note : this is not the default value
 
