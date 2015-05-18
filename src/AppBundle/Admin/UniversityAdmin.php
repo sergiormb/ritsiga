@@ -11,6 +11,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class UniversityAdmin extends Admin
 {
@@ -19,11 +20,32 @@ class UniversityAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('address')
             ->add('city')
             ->add('province')
             ->add('postcode')
             ->add('phone')
-        ;
+            ->add('fax')
+            ->add('web')
+            ->add('cif')
+            ->add('type')
+            ->add('slug');
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('name')
+            ->add('address')
+            ->add('city')
+            ->add('province')
+            ->add('postcode')
+            ->add('phone')
+            ->add('fax')
+            ->add('web')
+            ->add('cif')
+            ->add('type')
+            ->add('slug');
     }
 
     // Fields to be shown on filter forms
@@ -33,8 +55,6 @@ class UniversityAdmin extends Admin
             ->add('name')
             ->add('city')
             ->add('province')
-            ->add('postcode')
-            ->add('phone')
         ;
     }
 
@@ -44,9 +64,11 @@ class UniversityAdmin extends Admin
         $listMapper
             ->add('name')
             ->add('city')
-            ->add('province')
-            ->add('postcode')
-            ->add('phone')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                    'show' => array(),
+                )))
         ;
     }
 }

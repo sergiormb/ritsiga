@@ -11,6 +11,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class StudentDelegationAdmin extends Admin
 {
@@ -19,9 +20,24 @@ class StudentDelegationAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('address')
             ->add('city')
             ->add('province')
-        ;
+            ->add('postcode')
+            ->add('college')
+            ->add('slug');
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('name')
+            ->add('address')
+            ->add('city')
+            ->add('province')
+            ->add('postcode')
+            ->add('college')
+            ->add('slug');
     }
 
     // Fields to be shown on filter forms
@@ -39,8 +55,12 @@ class StudentDelegationAdmin extends Admin
     {
         $listMapper
             ->add('name')
-            ->add('city')
-            ->add('province')
+            ->add('college')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                    'show' => array(),
+                )))
         ;
     }
 }

@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class ConventionAdmin extends Admin
 {
@@ -45,12 +46,26 @@ class ConventionAdmin extends Admin
                 'required' => true,
             ))
             ->add('name', 'text', array('label' => 'Name'))
-            ->add('startsAt', 'date', array('label' => 'Start Date'))
-            ->add('endsAt', 'date', array('label' => 'End Date'))
+            ->add('startsAt', 'sonata_type_date_picker')
+            ->add('endsAt', 'sonata_type_date_picker')
             ->add('email', 'email', array('label' => 'Email'))
             ->add('image', 'file', array(
                 'data_class' => null,
                 'attr' => ['class' => 'filestyle']
+            ))
+        ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('organization')
+            ->add('name')
+            ->add('startsAt')
+            ->add('endsAt')
+            ->add('email')
+            ->add('image',null,array(
+                'template' => 'image/image.html.twig',
             ))
         ;
     }
@@ -70,18 +85,9 @@ class ConventionAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('organization.name', null, array(
-                'label' => 'Organization'
-            ))
             ->add('name')
             ->add('startsAt')
             ->add('endsAt')
-            ->add('email')
-            ->add('web')
-            ->add('domain')
-            ->add('image',null,array(
-                'template' => 'image/image.html.twig',
-            ))
             ->add('_action', 'actions', array(
             'actions' => array(
                 'edit' => array(),
