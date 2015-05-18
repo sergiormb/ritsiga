@@ -29,6 +29,12 @@ class User extends BaseUser
      */
     private $admin_conventions;
 
+    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\University", inversedBy="users") */
+    private $university;
+
+    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\College", inversedBy="users") */
+    private $college;
+
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\StudentDelegation", inversedBy="users") */
     private $student_delegation;
 

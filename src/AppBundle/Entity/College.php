@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * College
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\Doctrine\ORM\CollegeRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\CollegeRepository")
  */
 class College
 {
@@ -516,5 +516,10 @@ class College
     public function getStudentsDelegations()
     {
         return $this->students_delegations;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }
