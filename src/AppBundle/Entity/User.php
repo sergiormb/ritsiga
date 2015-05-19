@@ -38,6 +38,23 @@ class User extends BaseUser
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\StudentDelegation", inversedBy="users") */
     private $student_delegation;
 
+
+    /**
+     * @return mixed
+     */
+    public function getCollege()
+    {
+        return $this->getStudentDelegation()->getCollege();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUniversity()
+    {
+        return $this->getStudentDelegation()->getCollege()->getUniversity();
+    }
+
     /**
      * @return mixed
      */
