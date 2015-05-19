@@ -1,57 +1,56 @@
-// setup an "add a participant" link
-var $addparticipantLink = $('<a href="#" class="add_participant_link">Add a participant</a>');
-var $newLinkLi = $('<li></li>').append($addparticipantLink);
+/*jslint vars: false, browser: true */
+/*global jQuery */
 
-jQuery(document).ready(function() {
-    // Get the ul that holds the collection of participants
-    var $collectionHolder = $('ul.participants');
+var connection_display_field = function(field, entidad, concepts) {
+    $.ajax({
+        url: field + "/"+ entidad,
+        type: 'GET',
+        cache: false,
+        async: true,
+        dataType: 'json',
+        success: function (response) {
+            concepts.find('option').remove().end().append('<option value="0">---------</option>');
+            $.each(response, function() {
+                concepts.append($("<option />").val(this.id).text(this.name));
+            });
+        }
 
-    // add the "add a participant" anchor and li to the participants ul
-    $collectionHolder.append($newLinkLi);
-
-    // count the current form inputs we have (e.g. 2), use that as the new
-    // index when inserting a new item (e.g. 2)
-    $collectionHolder.data('index', $collectionHolder.find(':input').length);
-
-    $addparticipantLink.on('click', function(e) {
-        // prevent the link from creating a "#" on the URL
-        e.preventDefault();
-
-        // add a new participant form (see code block below)
-        addparticipantForm($collectionHolder, $newLinkLi);
     });
+};
 
 
+var display_field = function(visible, element) {
+    var display = visible == false ? "none" : "block";
+    element.parent().css("display", display);
+    element.disabled = visible;
+};
+
+(function ($) {
+    "use strict";
+    $.fn.requestForm = function () {
+        return this.each(function () {
+            var $university = $("#fos_user_profile_form_university"),
+                $college = $("#fos_user_profile_form_college"),
+                $student_delegation = $("#fos_user_profile_form_student_delegation");
+
+                $university.change(function () {
+                    var option = $('option:selected', this).attr('value');
+                    connection_display_field('facultades', option, $college);
+                    display_field(false, $student_delegation);
+                });
+
+                $college.change(function () {
+                    var option = $('option:selected', this).attr('value');
+                    connection_display_field('delegaciones', option, $student_delegation);
+                    display_field(true, $student_delegation);
+                });
+
+        });
+
+    };
+
+$(document).ready(function () {
+    $("form").requestForm();
 });
 
-function addparticipantForm($collectionHolder, $newLinkLi) {
-    // Get the data-prototype explained earlier
-    var prototype = $collectionHolder.data('prototype');
-
-    // get the new index
-    var index = $collectionHolder.data('index');
-
-    // Replace '$$name$$' in the prototype's HTML to
-    // instead be a number based on how many items we have
-    var newForm = prototype.replace(/__name__/g, index);
-
-    // increase the index with one for the next item
-    $collectionHolder.data('index', index + 1);
-
-    // Display the form in the page in an li, before the "Add a participant" link li
-    var $newFormLi = $('<li></li>').append(newForm);
-
-    // also add a remove button, just for this example
-    $newFormLi.append('<a href="#" class="remove-participant">x</a>');
-
-    $newLinkLi.before($newFormLi);
-
-    // handle the removal, just for this example
-    $('.remove-participant').click(function(e) {
-        e.preventDefault();
-
-        $(this).parent().remove();
-
-        return false;
-    });
-}
+}(jQuery));

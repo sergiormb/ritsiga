@@ -23,7 +23,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/facultades/{id}", name="colleges_list")
+     * @Route("/profile/facultades/{id}", name="colleges_list")
      */
     public function getColleges(University $university)
     {
@@ -34,7 +34,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/delegaciones/{id}", name="students_delegations_list")
+     * @Route("/profile/delegaciones/{id}", name="students_delegations_list")
      */
     public function getStudentsDelegations(College $college)
     {
