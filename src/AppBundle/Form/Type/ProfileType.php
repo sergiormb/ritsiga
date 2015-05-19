@@ -17,6 +17,8 @@ class ProfileType extends BaseType
     {
         parent::buildUserForm($builder, $options);
 
+        $builder->add('university');
+        $builder->add('college');
         $builder->add('student_delegation');
     }
 
