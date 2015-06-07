@@ -2,42 +2,23 @@
 /**
  * Created by PhpStorm.
  * User: tfg
- * Date: 20/04/15
- * Time: 21:55
+ * Date: 4/06/15
+ * Time: 13:37
  */
 
 namespace AppBundle\Form;
-
-
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class RegistrationType extends AbstractType
+class ResponsibleType extends AbstractType
 {
-    /**
-     * @var ParticipantType
-     */
-    private $participantType;
-
-    function __construct(ParticipantType $participantType)
-    {
-        $this->participantType = $participantType;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('participants', 'collection',
-                array(
-                    'type' => $this->participantType,
-                    'allow_add'    => true,
-                )
-            )
-        ;
+            ->add('name')
+            ->add('position');
     }
-
-
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
