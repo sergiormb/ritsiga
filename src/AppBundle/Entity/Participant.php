@@ -69,16 +69,11 @@ class Participant {
      */
     private $dni;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=20)
-     */
-    private $type;
-
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Registration", inversedBy="participants") */
     private $registration;
 
+    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\ParticipantType", inversedBy="participants_types") */
+    private $participant_type;
 
     /**
      * Get id
@@ -235,30 +230,6 @@ class Participant {
     }
 
     /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Participant
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
      * Set registration
      *
      * @param \AppBundle\Entity\Registration $registration
@@ -280,5 +251,21 @@ class Participant {
     public function getRegistration()
     {
         return $this->registration;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getParticipantType()
+    {
+        return $this->participant_type;
+    }
+
+    /**
+     * @param mixed $participant_type
+     */
+    public function setParticipantType($participant_type)
+    {
+        $this->participant_type = $participant_type;
     }
 }
