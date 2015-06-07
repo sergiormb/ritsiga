@@ -1,0 +1,8 @@
+\AppBundle\Entity\ParticipantType:
+    participationtype{1..5}:
+        name: <word()>
+        description: <sentence($nbWords = 6)>
+        startDate: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+        endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+        price: <randomDigitNotNull()>
+        num_participants: <numberBetween($min = 0, $max = 20)>

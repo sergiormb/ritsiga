@@ -15,6 +15,6 @@ $set->addFile(__DIR__ . '/colleges.yml', 'yaml');
 $set->addFile(__DIR__ . '/academicdegree.yml', 'yaml');
 $set->addFile(__DIR__ . '/studentdelegation.yml', 'yaml');
 $set->addFile(__DIR__ . '/users.yml', 'yaml');
-
+$set->addFile(__DIR__ . '/participantstypes.yml', 'yaml');
 
 return $set;
