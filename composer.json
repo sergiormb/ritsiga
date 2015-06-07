@@ -20,6 +20,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "hwi/oauth-bundle":                     "~0.4@dev",
         "friendsofsymfony/rest-bundle":                 "~1.5",
+        "knplabs/knp-snappy-bundle": "dev-master",
         "sonata-project/admin-bundle": "~2.4@dev",
         "sonata-project/datagrid-bundle": "~2.2@dev",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
