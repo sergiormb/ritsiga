@@ -1,10 +1,8 @@
 {%  extends "::step.html.twig" %}
 
 {% block titlestep %}
-<h3 class="box-title"> Su Centro</h3>
+    <h3 class="box-title"> Factura</h3>
 {% endblock %}
 {% block formstep %}
-    {{ form_errors(form) }}
-
-    {{ form_rest(form) }}
+    {% include ':Registration:invoice-print.html.twig' %}
 {% endblock %}

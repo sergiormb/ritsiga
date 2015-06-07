@@ -1,43 +1,114 @@
 {%  extends "::base.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        $('#step_welcome').removeClass( "btn-default" ).addClass( "btn-warning" );
+        if ('{{ context.currentStep.name }}' == "university")
+        {
+            $('#step_university').removeClass( "btn-default" ).addClass( "btn-warning" );
+        }
+        if ('{{ context.currentStep.name }}' == 'college')
+        {
+            $('#step_university').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_college').removeClass( "btn-default" ).addClass( "btn-warning" );
+        }
+        if ('{{ context.currentStep.name }}' == 'student_delegation')
+        {
+            $('#step_university').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_college').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_student').removeClass( "btn-default" ).addClass( "btn-warning" );
+        }
+        if ('{{ context.currentStep.name }}' == 'responsible')
+        {
+            $('#step_university').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_college').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_student').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_responsible').removeClass( "btn-default" ).addClass( "btn-warning" );
+        }
+        if ('{{ context.currentStep.name }}' == 'participants')
+        {
+            $('#step_university').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_college').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_student').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_responsible').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_participants').removeClass( "btn-default" ).addClass( "btn-warning" );
+        }
+        if ('{{ context.currentStep.name }}' == 'invoice')
+        {
+            $('#step_university').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_college').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_student').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_responsible').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#step_participants').removeClass( "btn-default" ).addClass( "btn-warning" );
+            $('#left_column').removeClass( "col-md-3" ).addClass( "col-md-1" );
+            $('#center_column').removeClass( "col-md-6" ).addClass( "col-md-9" );
+            $('#right_column').removeClass( "col-md-3" ).addClass( "col-md-1" );
 
+        }
+
+    </script>
+{% endblock %}
 {% block content %}
-    <div class="process">
-        <div class="process-row">
-            <div class="process-step">
-                <button type="button" id="step_welcome" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-check fa-3x"></i></button>
-                <p>Iniciar Inscripción</p>
-            </div>
-            <div class="process-step">
-                <button type="button" id="step_university" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-university fa-3x"></i></button>
-                <p>Universidad</p>
-            </div>
-            <div class="process-step">
-                <button type="button" id="step_college" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-book fa-3x"></i></button>
-                <p>Centro</p>
-            </div>
-            <div class="process-step">
-                <button type="button" id="step_student" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-users fa-3x"></i></button>
-                <p>Delegación</p>
-            </div>
-            <div class="process-step">
-                <button type="button" id="step_responsible" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-user fa-3x"></i></button>
-                <p>Responsable</p>
+    <div class="footer-process">
+    <div class="box box-danger">
+        <div class="box-body">
+        <div class="process">
+            <div class="process-row">
+                <div class="process-step">
+                    <button type="button" id="step_welcome" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-check fa-2x"></i></button>
+                </div>
+                <div class="process-step">
+                   <button type="button" id="step_university" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-university fa-2x"></i></button>
+                </div>
+                <div class="process-step">
+                    <button type="button" id="step_college" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-book fa-2x"></i></button>
+                </div>
+                <div class="process-step">
+                    <button type="button" id="step_student" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-users fa-2x"></i></button>
+                </div>
+                <div class="process-step">
+                    <button type="button" id="step_responsible" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-user fa-2x"></i></button>
+                </div>
+                <div class="process-step">
+                    <button type="button" id="step_participants" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-user-plus fa-2x"></i></button>
+                </div>
+                <div class="process-step">
+                    <button type="button" id="step_responsible" class="btn btn-default btn-circle" disabled="enabled"><i class="fa fa-user fa-2x"></i></button>
+                </div>
             </div>
         </div>
+        </div>
     </div>
+    </div>
+    <div class="row">
+    <div class="col-md-3" id="left_column"></div>
+    <div class="col-md-6" id="center_column">
+    <div class="box box-warning">
+<div class ="box-header ui-sortable-handle">
     {% block titlestep %}{% endblock %}
-    {% block descriptionstep %}{% endblock %}
+</div>
+
+        <div class="box-body">
+            {% block descriptionstep %}{% endblock %}
 <form action="{{ path('sylius_flow_forward', {'scenarioAlias': 'asamblea', 'stepName': context.currentStep.name}) }}" method="post">
     {% block formstep %}{% endblock %}
-    <div class="form-actions">
-        {% if context.firstStep!=1  %}
-        <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': context.previousStep.name }) }}" class="btn btn-lg btn-default">Volver</a> &nbsp;
-        {% endif %}
-            <button class="btn btn-lg btn-primary" type="submit">Aceptar <i class="icon-forward icon-white"></i></button>
-    </div>
-</form>
+        </div>
+        <div class="box-footer clearfix" align="center">
+                {% if context.firstStep!=1  %}
+                    <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': context.previousStep.name }) }}" class="btn btn-default">Volver</a> &nbsp;
+                {% endif %}
+                <button class="btn btn-warning" type="submit">Aceptar <i class="icon-forward icon-white"></i></button>
+            </form>
     {% block buttonsstep %}
-
-
     {% endblock %}
+        </div>
+    </div>
+        <div class="col-md-3" id="right_column"></div>
+    </div>
+
+    </div><div class="row" id="participants"></div>
+
+    </div>
+
+
 {% endblock %}
