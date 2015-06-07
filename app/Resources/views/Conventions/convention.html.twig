@@ -1,65 +1,130 @@
 {%  extends "base.html.twig" %}
 {% block title_page %}
-<div class="row">
-    <div class="col-md-12">
-        <div class="box box-danger">
-    {% if is_granted("ROLE_USER") %}
-        <div class="username"  id="username"  name="username">
-            </div>
-            {% endif %}
-            <div class="box-header">
-                <h3 class="box-title">{{ convention.name }}</h3>
-            </div>
-            <div class="box-body pad table-responsive">
-                <img src="{{ asset('/images/' ~ convention.image) }}"><br>
-                Del  {{ convention.startsAt|date('d-m-Y') }} al  {{ convention.endsAt|date('d-m-Y') }}
-            </div><!-- /.box -->
-        </div>
-    </div><!-- /.col -->
-</div>
     <div class="row">
-        <div class="col-md-8">
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                </div><!-- /.box-body -->
-            </div><!-- /.box -->
-        </div><!-- /.col -->
-
-        <div class="col-md-4">
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                   Información
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                    <p><i class="fa fa-desktop"></i> <a href="{{ convention.web }}" target="_blank">{{ convention.web }}</a></p>
-                    <p><i class="fa fa-envelope-o"></i>  {{ convention.email }}</p>
-                </div>
+    <img class="cabecera" src="{{ asset('/images/' ~ convention.image) }}">
+        <div class="title-convention">
+            <div class="col-md-3">
             </div>
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                    En las redes
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                    <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-                    <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
-                    <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
-                    <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="box box-solid">
-                <div class="box-body">
-                    {% if is_granted("ROLE_USER") %}
-                        <a href="{{ url('sylius_flow_start', {'scenarioAlias': 'asamblea'}) }}" class="btn btn-block btn-warning">Inscribirse</a></center>
+            <div class="col-md-6">
+                <center><h1>{{ convention.name }}</h1>
+            {% if is_granted("ROLE_USER") %}
+                        <a href="{{ url('sylius_flow_start', {'scenarioAlias': 'asamblea'}) }}" class="btn btn-warning">Inscribirse</a></center>
                         {% else %}
-                        Debe de estar logueado para inscribirse
-                    {% endif %}
-
-                </div>
+               <a href="{{ url('fos_user_security_login') }}" class="btn btn-warning">Iniciar Sesión</a></center>
+            {% endif %}
+                </center>
+            </div>
+            <div class="col-md-3">
             </div>
         </div>
+    </div>
+        {% endblock %}
+{% block content %}
+<div class="row">
+    <div  class="col-md-3">
+    <div class="box box-danger">
+        <div class="box-header with-border">
+            <h3 class="box-title">Últimas inscripciones</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body no-padding">
+            <ul class="users-list clearfix">
+                <li>
+                    <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-02.jpg" alt="User Image">
+                    <a class="users-list-name" href="#">Alexander Pierce</a>
+                    <span class="users-list-date">Today</span>
+                </li>
+                <li>
+                    <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-04.jpg" alt="User Image">
+                    <a class="users-list-name" href="#">Norman</a>
+                    <span class="users-list-date">Yesterday</span>
+                </li>
+                <li>
+                    <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-06.jpg" alt="User Image">
+                    <a class="users-list-name" href="#">Jane</a>
+                    <span class="users-list-date">12 Jan</span>
+                </li>
+                <li>
+                    <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-03.jpg" alt="User Image">
+                    <a class="users-list-name" href="#">John</a>
+                    <span class="users-list-date">12 Jan</span>
+                </li>
+                <li>
+                    <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-05.jpg" alt="User Image">
+                    <a class="users-list-name" href="#">Alexander</a>
+                    <span class="users-list-date">13 Jan</span>
+                </li>
 
+            </ul><!-- /.users-list -->
+        </div><!-- /.box-body -->
+    </div>
+    </div>
+    <div  class="col-md-3">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">Últimas inscripciones</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body no-padding">
+                <ul class="users-list clearfix">
+                    <li>
+                        <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-02.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                    </li>
+                    <li>
+                        <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-04.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                    </li>
+                    <li>
+                        <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-06.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Jane</a>
+                        <span class="users-list-date">12 Jan</span>
+                    </li>
+                    <li>
+                        <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-03.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">John</a>
+                        <span class="users-list-date">12 Jan</span>
+                    </li>
+                    <li>
+                        <img src="http://themes.pixelwars.org/photographer/wp-content/uploads/2015/01/testo-05.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander</a>
+                        <span class="users-list-date">13 Jan</span>
+                    </li>
 
-    </div><!-- /.row -->
+                </ul><!-- /.users-list -->
+            </div><!-- /.box-body -->
+        </div>
+    </div>
+    <div  class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                Información
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <p><i class="fa fa-desktop"></i> <a href="{{ convention.web }}" target="_blank">{{ convention.web }}</a></p>
+                <p><i class="fa fa-envelope-o"></i>  {{ convention.email }}</p>
+                <p><i class="fa fa-calendar"></i>  Del {{ convention.startsAt|date('d-m-Y') }} al {{ convention.endsAt|date('d-m-Y') }} </p>
+            </div>
+        </div>
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                En las redes
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+                <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+                <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,3 +1,23 @@
+.cabecera{
+    min-width: 100%;
+    margin-top: -15px;
+    height: 350px;
+
+}
+.footer-process{
+    position:fixed;
+    right:0;
+    min-width: 5%;
+    z-index: 1;
+}
+.title-convention{
+    position: absolute;
+    top: 70%;
+    min-width: 100%;
+    background-color: rgba(0, 0 , 0 , 0.5);
+    color: white;
+}
+
 .user-row {
     margin-bottom: 14px;
 }
@@ -55,21 +75,21 @@
 }
 
 .process-row:before {
-    top: 50px;
     bottom: 0;
+    left: 50%;
     position: absolute;
     content: " ";
-    width: 100%;
-    height: 1px;
+    width: 1px;
+    height: 100%;
     background-color: #ccc;
     z-order: 0;
 
 }
 
 .process-step {
-    display: table-cell;
     text-align: center;
     position: relative;
+    margin-bottom: 25px;
 }
 
 .process-step p {
@@ -78,11 +98,11 @@
 }
 
 .btn-circle {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     padding: 6px 0;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.428571429;
     border-radius: 15px;
 }

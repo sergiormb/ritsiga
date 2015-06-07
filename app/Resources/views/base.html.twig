@@ -59,13 +59,13 @@
                         <!-- User Account Menu -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="http://site.sanepar.com.br/sites/site.sanepar.com.br/files/icon_perfil_1.png" class="user-image" alt="User Image"/>
+                                <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/0ab/2d3/05b311f.jpg" class="user-image" alt="User Image"/>
                                 <span class="hidden-xs">Alexander Pierce</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="http://site.sanepar.com.br/sites/site.sanepar.com.br/files/icon_perfil_1.png" class="img-circle" alt="User Image" />
+                                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/0ab/2d3/05b311f.jpg" class="img-circle" alt="User Image" />
                                     <p>
                                         Alexander Pierce - Web Developer
                                         <small>Member since Nov. 2012</small>
@@ -148,6 +148,7 @@
 
         <!-- Main content -->
         <section class="content">
+
             {% for message in app.session.flashbag.get('info') %}
                 <div class="callout callout-info" role="alert">
                     <p>{{ message }}</p>
@@ -159,6 +160,7 @@
                 </div>
             {% endfor %}
             {% block content %}
+
             {% endblock %}
             <!-- Your Page Content Here -->
 
