@@ -44,7 +44,7 @@ class CollegeStep extends ControllerStep
         if ($form->isSubmitted() && $form->isValid()) {
             $em->persist($college);
             $em->flush();
-            $this->addFlash('success', $this->get('translator')->trans( 'Your college has been successfully updated'));
+            $this->addFlash('warning', $this->get('translator')->trans( 'Your college has been successfully updated'));
         }
         return $this->complete();
     }

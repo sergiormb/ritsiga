@@ -26,12 +26,13 @@ class ConventionController extends Controller
         $siteManager = $this->container->get('ritsiga.site.manager');
         $convention = $siteManager->getCurrentSite();
         $user = $this->get('security.token_storage')->getToken()->getUser();
-
-
+        $registrations = $convention->getRegistrations();
+        $inscriptions = count($registrations);
 
         return $this->render('Conventions/convention.html.twig', array(
             'convention' => $convention,
             'user'=> $user,
+            'inscriptions' => $inscriptions,
         ));
     }
 

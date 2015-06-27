@@ -3,27 +3,30 @@
  * Created by PhpStorm.
  * User: tfg
  * Date: 4/06/15
- * Time: 12:39
+ * Time: 13:40
  */
 
 namespace AppBundle\Process\Step;
+use AppBundle\Entity\Registration;
+use AppBundle\Form\ResponsibleType;
 use Sylius\Bundle\FlowBundle\Process\Context\ProcessContextInterface;
 use Sylius\Bundle\FlowBundle\Process\Step\ControllerStep;
 
-use AppBundle\Form\StudentDelegationType;
-
-class StudentDelegationStep extends ControllerStep
+class ResponsibleStep extends ControllerStep
 {
     public function displayAction(ProcessContextInterface $context)
     {
+
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $request = $context->getRequest();
         $siteManager = $this->container->get('ritsiga.site.manager');
         $convention = $siteManager->getCurrentSite();
-        $student=$user->getStudentDelegation();
-        $form = $this->createForm(new StudentDelegationType(), $student);
 
-        return $this->render(':Registration:student_delegation.html.twig', array(
+        $registration=new Registration();
+        $registration->setConvention($convention);
+        $form = $this->createForm(new ResponsibleType(), $registration);
+
+        return $this->render(':Registration:responsible.html.twig', array(
             'convention' => $convention,
             'form' => $form->createView(),
             'user' => $user,
@@ -35,19 +38,20 @@ class StudentDelegationStep extends ControllerStep
     {
         $request = $this->container->get('request_stack')->getCurrentRequest();
         $user = $this->get('security.token_storage')->getToken()->getUser();
+        $siteManager = $this->container->get('ritsiga.site.manager');
+        $convention = $siteManager->getCurrentSite();
         $em = $this->getDoctrine()->getManager();
-        $student=$user->getStudentDelegation();
-
-        $form = $this->createForm(new StudentDelegationType(), $student);
+        $registration=new Registration();
+        $registration->setConvention($convention);
+        $form = $this->createForm(new ResponsibleType(), $registration);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($student);
+            $em->persist($registration);
             $em->flush();
-            $this->addFlash('warning', $this->get('translator')->trans( 'Your student delegation has been successfully updated'));
+            $this->addFlash('warning', $this->get('translator')->trans( 'Your responsible has been successfully updated'));
         }
         return $this->complete();
     }
-
 }
