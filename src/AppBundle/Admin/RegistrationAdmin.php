@@ -40,7 +40,6 @@ class RegistrationAdmin extends Admin
             ->add('convention')
             ->add('name')
             ->add('position')
-            ->add('participants')
         ;
     }
 
@@ -51,7 +50,6 @@ class RegistrationAdmin extends Admin
             ->add('convention')
             ->add('name')
             ->add('position')
-            ->add('participants')
         ;
     }
 
@@ -62,7 +60,6 @@ class RegistrationAdmin extends Admin
             ->add('convention')
             ->add('name')
             ->add('position')
-            ->add('participants')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

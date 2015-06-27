@@ -46,6 +46,7 @@ class ConventionAdmin extends Admin
                 'required' => true,
             ))
             ->add('name', 'text', array('label' => 'Name'))
+            ->add('description', null, array('required' => false, 'attr' => array('class' => 'ckeditor')))
             ->add('startsAt', 'sonata_type_date_picker')
             ->add('endsAt', 'sonata_type_date_picker')
             ->add('email', 'email', array('label' => 'Email'))
