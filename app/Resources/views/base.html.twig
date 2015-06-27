@@ -16,6 +16,7 @@
             "vendor/admin-lte/dist/css/skins/skin-red.css"
             "vendor/admin-lte/plugins/iCheck/square/red.css"
             "bundles/app/css/style.css"
+            "bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
         %}
         <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
@@ -154,6 +155,11 @@
                     <p>{{ message }}</p>
                 </div>
             {% endfor %}
+            {% for message in app.session.flashbag.get('warning') %}
+                <div class="callout callout-warning" role="alert">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
             {% for message in app.session.flashbag.get('success') %}
                 <div class="callout callout-success" role="alert">
                     <p>{{ message }}</p>
@@ -190,8 +196,12 @@
         "vendor/admin-lte/dist/js/app.js"
         "bundles/app/js/ritsiGA.js"
         "bundles/syliusresource/js/form-collection.js"
+        "bundles/sonatacore/vendor/moment/moment.js"
+        "bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"
+        "vendor/admin-lte/plugins/ckeditor/ckeditor.js"
     %}
         <script src="{{ asset_url }}"></script>
+
     {% endjavascripts %}
 {% endblock %}
 </body>
