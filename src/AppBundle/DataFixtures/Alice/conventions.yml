@@ -1,6 +1,7 @@
 \AppBundle\Entity\Convention:
   convention{cordoba2013, cadiz2014, navarra2015}:
     name: <company()>
+    description: <paragraph($nbSentences = 5)>
     startsAt: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
     endsAt: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
     email: <email()>
