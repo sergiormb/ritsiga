@@ -4,18 +4,25 @@
     height: 350px;
 
 }
+#control-label{
+    font-size: 11px !important;
+    color: #9E9E9E !important;
+    margin-bottom: 0px;
+}
 .footer-process{
     position:fixed;
     right:0;
     min-width: 5%;
     z-index: 1;
+    top: 80px;
 }
 .title-convention{
     position: absolute;
-    top: 70%;
+    top: 68%;
     min-width: 100%;
     background-color: rgba(0, 0 , 0 , 0.5);
     color: white;
+    padding-bottom: 10px;
 }
 
 .user-row {
