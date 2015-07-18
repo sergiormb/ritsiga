@@ -8,7 +8,8 @@
 
 namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
-
+use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Registration
@@ -17,6 +18,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Registration")
  */
 class Registration {
+    const STATUS_OPEN= 'open';
+    const STATUS_CONFIRMED = 'confirmed';
+    const STATUS_PAID = 'paid';
+    const STATUS_CANCELLED = 'cancelled';
+
     /**
      * @var integer
      *
@@ -52,6 +58,15 @@ class Registration {
      * @ORM\OneToMany(targetEntity="Participant",mappedBy="registration")
      */
     private $participants;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=45, nullable=false)
+     * @Assert\Choice(choices={"open", "confirmed", "paid", "canceled"})
+     * @Serializer\Exclude
+     */
+    private $status;
 
     /**
      * Get id
@@ -116,6 +131,7 @@ class Registration {
     public function __construct()
     {
         $this->participants = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->status = self::STATUS_OPEN;
     }
 
     /**
@@ -199,4 +215,35 @@ class Registration {
     {
         return $this->participants;
     }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        if (!in_array($status, self::getStatuses())) {
+            throw new \InvalidArgumentException('Wrong status type supplied.');
+        }
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Get all status values
+     *
+     * @return array
+     */
+    public static function getStatuses()
+    {
+        return array(self::STATUS_APPROVED, self::STATUS_CHECK, self::STATUS_DENIED, self::STATUS_PENDING);
+    }
+
 }

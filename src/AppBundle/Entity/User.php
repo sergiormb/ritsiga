@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Sonata\UserBundle\Entity\BaseUser;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\UserRepository")
+ * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser

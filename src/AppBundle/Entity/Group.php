@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Sonata\UserBundle\Entity\BaseGroup;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\GroupRepository")
+ * @ORM\Entity
  * @ORM\Table(name="fos_group")
  */
 class Group extends BaseGroup
