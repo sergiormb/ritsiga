@@ -48,10 +48,12 @@ class ResponsibleStep extends ControllerStep
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $registration->setUser($user);
             $em->persist($registration);
             $em->flush();
             $this->addFlash('warning', $this->get('translator')->trans( 'Your responsible has been successfully updated'));
+            return $this->complete();
         }
-        return $this->complete();
+
     }
 }

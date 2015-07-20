@@ -45,6 +45,9 @@ class ParticipantType extends AbstractType
             'class' => 'AppBundle\Entity\ParticipantType',
             'query_builder' => $this->participant->getParticipationsTypesAvailables($this->siteManager->getCurrentSite())
         ));
+        $builder->add('save', 'submit', array(
+            'attr' => array('class' => 'btn btn-primary'),
+        ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
