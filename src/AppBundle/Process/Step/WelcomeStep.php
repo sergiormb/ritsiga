@@ -20,6 +20,11 @@ class WelcomeStep extends ControllerStep
         $siteManager = $this->container->get('ritsiga.site.manager');
         $convention = $siteManager->getCurrentSite();
         $student_delegation = $user->getStudentDelegation();
+        $registration = $this->getDoctrine()->getRepository('AppBundle:Registration')->findOneBy(array('user' => $user, 'convention' => $convention));
+        if ($registration)
+        {
+            return $this->redirectToRoute('registration_complete');
+        }
 
         return $this->render(':Registration:welcome.html.twig', array(
             'convention' => $convention,

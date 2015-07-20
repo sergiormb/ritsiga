@@ -61,13 +61,13 @@ class Convention
     private $image;
 
     /**
-     * @ORM\Column(name="mime_type", type="string")
+     * @ORM\Column(name="mime_type", type="string", nullable=true)
      * @Gedmo\UploadableFileMimeType
      */
     private $mimeType;
 
     /**
-     * @ORM\Column(name="path", type="string", length=255)
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
      * @Gedmo\UploadableFilePath
      */
     private $path;

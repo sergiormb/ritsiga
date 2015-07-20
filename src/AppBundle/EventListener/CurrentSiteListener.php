@@ -54,7 +54,6 @@ class CurrentSiteListener {
                     $domain
                 ));
             }
-
             $this->siteManager->setCurrentSite($site);
         }
     }
