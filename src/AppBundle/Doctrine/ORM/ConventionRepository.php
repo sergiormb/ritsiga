@@ -18,6 +18,7 @@ class ConventionRepository extends EntityRepository
             SELECT o
             FROM AppBundle:Convention o
             WHERE :today < o.endsAt
+            AND o.maintenance = FALSE
             ORDER BY o.endsAt DESC
         ')->setParameter('today', new \DateTime());
 

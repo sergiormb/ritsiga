@@ -47,10 +47,25 @@ class Registration {
     private $position;
 
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\User", inversedBy="registrations") */
+    /**
+     * @ORM\ManyToOne(
+     *   targetEntity="\AppBundle\Entity\User",
+     *   inversedBy="registrations"
+     * )
+     * @ORM\JoinColumn(
+     *   nullable=false
+     * )
+     */
     private $user;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Convention", inversedBy="registrations") */
+    /** @ORM\ManyToOne(
+     *   targetEntity="\AppBundle\Entity\Convention",
+     *   inversedBy="registrations"
+     * )
+     * @ORM\JoinColumn(
+     *   nullable=false
+     * )
+     */
     private $convention;
 
     /**

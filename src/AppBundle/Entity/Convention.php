@@ -93,6 +93,13 @@ class Convention
      */
     private $email;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="maintenance", type="boolean", nullable=false)
+     */
+    private $maintenance;
+
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Organization", inversedBy="conventions") */
     private $organization;
 
@@ -405,5 +412,21 @@ class Convention
     public function setPath($path)
     {
         $this->path = $path;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isMaintenance()
+    {
+        return $this->maintenance;
+    }
+
+    /**
+     * @param boolean $maintenance
+     */
+    public function setMaintenance($maintenance)
+    {
+        $this->maintenance = $maintenance;
     }
 }
