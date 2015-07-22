@@ -50,9 +50,15 @@ class ConventionAdmin extends Admin
             ->add('startsAt', 'sonata_type_date_picker')
             ->add('endsAt', 'sonata_type_date_picker')
             ->add('email', 'email', array('label' => 'Email'))
+            ->add('administrators', null, array('label' => 'Administrators'))
             ->add('image', 'file', array(
                 'data_class' => null,
-                'attr' => ['class' => 'filestyle']
+                'attr' => ['class' => 'filestyle'],
+                'required' => false,
+            ))
+            ->add('maintenance', null, array(
+                'label' => 'label.maintenance',
+                'required' => false,
             ))
         ;
     }
@@ -79,6 +85,7 @@ class ConventionAdmin extends Admin
             ->add('startsAt', null, array('label' => 'label.startsAt'))
             ->add('endsAt', null, array('label' => 'label.endsAt'))
             ->add('email', null, array('label' => 'label.email'))
+            ->add('maintenance', null, array('label' => 'label.maintenance'))
         ;
     }
 
@@ -99,11 +106,15 @@ class ConventionAdmin extends Admin
 
     public function prePersist($object)
     {
-        $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+        if ($object->getImage()) {
+            $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+        }
     }
 
     public function preUpdate($object)
     {
-        $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+        if ($object->getImage()) {
+            $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+        }
     }
 }
