@@ -10,3 +10,4 @@
     path: <image('./web/images/', 970, 200, 'technics')>
     image: <(basename($path))>
     mimeType: 'image/jpeg'
+    maintenance: false

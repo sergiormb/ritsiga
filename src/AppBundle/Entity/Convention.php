@@ -98,26 +98,15 @@ class Convention
      *
      * @ORM\Column(name="maintenance", type="boolean", nullable=false)
      */
-    private $maintenance;
+    private $maintenance = true;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Organization", inversedBy="conventions") */
+    /**
+     * @ORM\ManyToOne(
+     *  targetEntity="\AppBundle\Entity\Organization",
+     *  inversedBy="conventions")
+     */
     private $organization;
 
-    /**
-     * @return string
-     */
-    public function getRegistrations()
-    {
-        return $this->registrations;
-    }
-
-    /**
-     * @param string $registrations
-     */
-    public function setRegistrations($registrations)
-    {
-        $this->registrations = $registrations;
-    }
 
     /**
      * @var string
@@ -127,30 +116,49 @@ class Convention
     private $registrations;
 
     /**
-     * @return mixed
-     */
-    public function getAdministrators()
-    {
-        return $this->administrators;
-    }
-
-    /**
-     * @param mixed $administrators
-     */
-    public function setAdministrators($administrators)
-    {
-        $this->administrators = $administrators;
-    }
-
-    /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="admin_conventions")
+     * @ORM\ManyToMany(
+     *  targetEntity="User",
+     *  inversedBy="admin_conventions"
+     * )
+     * @ORM\JoinTable(
+     *  name="ConventionAdministrators",
+     *  joinColumns={
+     *      @ORM\JoinColumn(
+     *          name="convention_id",
+     *          referencedColumnName="id",
+     *          nullable=false
+     *      )
+     *  },
+     *  inverseJoinColumns={
+     *      @ORM\JoinColumn(
+     *          name="user_id",
+     *          referencedColumnName="id",
+     *          nullable=false
+     *      )
+     *  }
+     * )
      */
     private $administrators;
+
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->registrations = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->administrators = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -161,6 +169,7 @@ class Convention
      * Set name
      *
      * @param string $name
+     *
      * @return Convention
      */
     public function setName($name)
@@ -173,7 +182,7 @@ class Convention
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -181,6 +190,22 @@ class Convention
     }
 
     /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Convention
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
      * @return string
      */
     public function getDescription()
@@ -189,17 +214,130 @@ class Convention
     }
 
     /**
-     * @param string $description
+     * Set domain
+     *
+     * @param string $domain
+     *
+     * @return Convention
      */
-    public function setDescription($description)
+    public function setDomain($domain)
     {
-        $this->description = $description;
+        $this->domain = $domain;
+
+        return $this;
+    }
+
+    /**
+     * Get domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * Set web
+     *
+     * @param string $web
+     *
+     * @return Convention
+     */
+    public function setWeb($web)
+    {
+        $this->web = $web;
+
+        return $this;
+    }
+
+    /**
+     * Get web
+     *
+     * @return string
+     */
+    public function getWeb()
+    {
+        return $this->web;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Convention
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set mimeType
+     *
+     * @param string $mimeType
+     *
+     * @return Convention
+     */
+    public function setMimeType($mimeType)
+    {
+        $this->mimeType = $mimeType;
+
+        return $this;
+    }
+
+    /**
+     * Get mimeType
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->mimeType;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return Convention
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 
     /**
      * Set startsAt
      *
      * @param \DateTime $startsAt
+     *
      * @return Convention
      */
     public function setStartsAt($startsAt)
@@ -212,7 +350,7 @@ class Convention
     /**
      * Get startsAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getStartsAt()
     {
@@ -223,6 +361,7 @@ class Convention
      * Set endsAt
      *
      * @param \DateTime $endsAt
+     *
      * @return Convention
      */
     public function setEndsAt($endsAt)
@@ -235,7 +374,7 @@ class Convention
     /**
      * Get endsAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEndsAt()
     {
@@ -246,6 +385,7 @@ class Convention
      * Set email
      *
      * @param string $email
+     *
      * @return Convention
      */
     public function setEmail($email)
@@ -265,73 +405,52 @@ class Convention
         return $this->email;
     }
 
-    public function setOrganization(\AppBundle\Entity\Organization $organization) {
+    /**
+     * Set maintenance
+     *
+     * @param boolean $maintenance
+     *
+     * @return Convention
+     */
+    public function setMaintenance($maintenance)
+    {
+        $this->maintenance = $maintenance;
+
+        return $this;
+    }
+
+    /**
+     * Get maintenance
+     *
+     * @return boolean
+     */
+    public function getMaintenance()
+    {
+        return $this->maintenance;
+    }
+
+    /**
+     * Set organization
+     *
+     * @param \AppBundle\Entity\Organization $organization
+     *
+     * @return Convention
+     */
+    public function setOrganization(\AppBundle\Entity\Organization $organization = null)
+    {
         $this->organization = $organization;
+
+        return $this;
     }
 
-    public function getOrganization() {
+    /**
+     * Get organization
+     *
+     * @return \AppBundle\Entity\Organization
+     */
+    public function getOrganization()
+    {
         return $this->organization;
-    }
-
-    /**
-     * @return string
-     */
-    public function getWeb()
-    {
-        return $this->web;
-    }
-
-    /**
-     * @param string $web
-     */
-    public function setWeb($web)
-    {
-        $this->web = $web;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param string $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDomain()
-    {
-        return $this->domain;
-    }
-
-    /**
-     * @param string $domain
-     */
-    public function setDomain($domain)
-    {
-        $this->domain = $domain;
-    }
-
-    public function __toString()
-    {
-        return $this->name;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->registrations = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->administrators = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -359,6 +478,16 @@ class Convention
     }
 
     /**
+     * Get registrations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRegistrations()
+    {
+        return $this->registrations;
+    }
+
+    /**
      * Add administrator
      *
      * @param \AppBundle\Entity\User $administrator
@@ -383,50 +512,12 @@ class Convention
     }
 
     /**
-     * @return mixed
+     * Get administrators
+     *
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMimeType()
+    public function getAdministrators()
     {
-        return $this->mimeType;
-    }
-
-    /**
-     * @param mixed $mimeType
-     */
-    public function setMimeType($mimeType)
-    {
-        $this->mimeType = $mimeType;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
-     * @param mixed $path
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isMaintenance()
-    {
-        return $this->maintenance;
-    }
-
-    /**
-     * @param boolean $maintenance
-     */
-    public function setMaintenance($maintenance)
-    {
-        $this->maintenance = $maintenance;
+        return $this->administrators;
     }
 }

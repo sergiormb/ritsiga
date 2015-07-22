@@ -8,10 +8,10 @@
 
 namespace AppBundle\EventListener;
 use AppBundle\Site\SiteManager;
-use Sonata\CoreBundle\Model\ManagerInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 class MaintenanceListener
 {
@@ -25,19 +25,22 @@ class MaintenanceListener
      */
     private $routerInterface;
 
-    public function __construct(SiteManager $siteManager, RouterInterface $routerInterface)
+    public function __construct(SiteManager $siteManager, ContainerInterface $container)
     {
         $this->siteManager = $siteManager;
-        $this->routerInterface = $routerInterface;
+        $this->container = $container;
     }
 
     public function onKernelRequest(GetResponseEvent $event)
     {
         $convention = $this->siteManager->getCurrentSite();
-        if ($convention && $convention->isMaintenance())
+        $hoy = date("d-m-Y");
+        if ($convention && ($convention->getMaintenance()==true || $hoy > $convention->getEndsAt()))
         {
+            $engine = $this->container->get('templating');
+            $content = $engine->render(':Conventions:maintenance.html.twig');
+            $event->setResponse(new Response($content, 503));
             $event->stopPropagation();
-            $event->setResponse(new RedirectResponse($this->routerInterface->generate('homepage')));
         }
 
     }
