@@ -10,15 +10,35 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Registration;
 use AppBundle\Entity\Participant;
+use AppBundle\Event\RegistrationEvent;
+use AppBundle\Event\RegistrationEvents;
 use AppBundle\Form\ParticipantType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 
 class RegistrationController extends Controller
 {
+    private function getRegistration()
+    {
+        $siteManager = $this->container->get('ritsiga.site.manager');
+        $convention = $siteManager->getCurrentSite();
+        $user = $this->getUser();
+        $registration = $this->getDoctrine()->getRepository('AppBundle:Registration')->findOneBy(array('user' => $user, 'convention' => $convention));
+        return $registration;
+    }
+
+    private function setRegistrationStatus(Registration $registration, $status)
+    {
+        $registration->setStatus($status);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($registration);
+        $em->flush();
+    }
+
     /**
      * @Route("/inscripciones", name="registration_list")
      * @Template("Registration/my_registrations.html.twig")
@@ -26,8 +46,7 @@ class RegistrationController extends Controller
      */
     public function showRegistrations()
     {
-
-        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $user = $this->getUser();
         $registrations_open = $this->getDoctrine()->getRepository('AppBundle:Registration')->findAll();
         return [
             'user'=> $user,
@@ -36,17 +55,48 @@ class RegistrationController extends Controller
     }
 
     /**
-     * @Route("/completar_registro/", name="registration_complete")
-     * @Template("Registration/registration.html.twig")
-     * Muestra todas las inscripciones del usuario
+     * @Route("/confirmar_registro", name="registration_confirmed")
+     * Manda el evento para confirmar el registro
+     */
+    public function confirmedRegistrationAction(Request $request)
+    {
+        $registration = $this->getRegistration();
+        if ($registration->getStatus()==Registration::STATUS_OPEN)
+        {
+            $this->setRegistrationStatus($registration, Registration::STATUS_CONFIRMED);
+            $this->container->get('event_dispatcher')->dispatch(RegistrationEvents::CONFIRMED, new RegistrationEvent($registration));
+        }
+
+
+        return $this->redirectToRoute('registration');
+    }
+
+    /**
+     * @Route("/abrir_registro", name="registration_open")
+     * Manda el evento para abrir el registro
+     */
+    public function openRegistrationAction(Request $request)
+    {
+        $registration = $this->getRegistration();
+        if ($registration->getStatus()==Registration::STATUS_CONFIRMED)
+        {
+            $this->setRegistrationStatus($registration, Registration::STATUS_OPEN);
+            $this->container->get('event_dispatcher')->dispatch(RegistrationEvents::OPEN, new RegistrationEvent($registration));
+        }
+        return $this->redirectToRoute('registration');
+    }
+
+    /**
+     * @Route("/registro", name="registration")
+     * Muestra pantalla de edición del registro
      */
     public function registrationAction(Request $request)
     {
-        $user = $this->get('security.token_storage')->getToken()->getUser();
-
         $siteManager = $this->container->get('ritsiga.site.manager');
         $convention = $siteManager->getCurrentSite();
-        $registration = $this->getDoctrine()->getRepository('AppBundle:Registration')->findOneBy(array('user' => $user, 'convention' => $convention));
+        $registration = $this->getRegistration();
+        $user = $this->getUser();
+
         if (!$registration)
         {
             return $this->redirectToRoute('sylius_flow_start', array('scenarioAlias' => 'asamblea'));
@@ -60,15 +110,38 @@ class RegistrationController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($participant);
-            $em->flush();
+            $participant_type = $this->getDoctrine()->getRepository('AppBundle:ParticipantType')->findOneBy(array('id' => $form["participant_type"]->getData()));
+            $num_participants = $this->getDoctrine()->getRepository('AppBundle:Participant')->getNumParticipationsTypesAvailables($registration,$participant_type);
+            if ($participant_type && ($participant_type->getNumParticipants() > $num_participants))
+            {
+                $participant->setParticipantType($participant_type);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($participant);
+                $em->flush();
+            }
+            else
+            {
+                $this->addFlash('warning', $this->get('translator')->trans( 'Sorry, the seats are already occupied'));
+            }
+
         }
-        return [
-            'user'=> $user,
-            'registration' => $registration,
-            'types' => $types,
-            'form'=> $form->createView(),
-        ];
+        if ($registration->getStatus()==Registration::STATUS_OPEN)
+        {
+            return $this->render(':Registration:registration_open.html.twig', array(
+                'user'=> $user,
+                'registration' => $registration,
+                'types' => $types,
+                'form'=> $form->createView(),
+            ));
+        }
+        if ($registration->getStatus()==Registration::STATUS_CONFIRMED)
+        {
+            return $this->render(':Registration:registration_confirmed.html.twig', array(
+                'user'=> $user,
+                'registration' => $registration,
+            ));
+        }
+
     }
+
 }
