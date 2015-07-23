@@ -141,7 +141,13 @@ class RegistrationController extends Controller
                 'registration' => $registration,
             ));
         }
-
+        if ($registration->getStatus()==Registration::STATUS_CANCELLED)
+        {
+            return $this->render(':Registration:registration_cancelled.html.twig', array(
+                'user'=> $user,
+                'registration' => $registration,
+            ));
+        }
     }
 
 }
