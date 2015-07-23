@@ -39,12 +39,9 @@ class ParticipantType extends AbstractType
         $builder->add('last_name');
         $builder->add('email');
         $builder->add('address');
-        $builder->add('birthday', 'sonata_type_date_picker');
+        $builder->add('birthday');
         $builder->add('dni');
-        $builder->add('participant_type', 'entity', array(
-            'class' => 'AppBundle\Entity\ParticipantType',
-            'query_builder' => $this->participant->getParticipationsTypesAvailables($this->siteManager->getCurrentSite())
-        ));
+        $builder->add('participant_type', 'hidden');
         $builder->add('save', 'submit', array(
             'attr' => array('class' => 'btn btn-primary'),
         ));

@@ -1,3 +1,14 @@
+.convention-cancelled{
+    position: absolute;
+    height: 80%;
+    width: 81%;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.8;
+    color: white;
+    padding-top: 10%;
+    padding-left: 30%;
+}
 .cabecera{
     min-width: 100%;
     margin-top: -15px;

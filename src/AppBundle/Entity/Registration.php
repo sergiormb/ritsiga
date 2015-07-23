@@ -78,7 +78,7 @@ class Registration {
      * @var string
      *
      * @ORM\Column(name="status", type="string", length=45, nullable=false)
-     * @Assert\Choice(choices={"open", "confirmed", "paid", "canceled"})
+     * @Assert\Choice(choices={"open", "confirmed", "paid", "cancelled"})
      * @Serializer\Exclude
      */
     private $status;
