@@ -61,7 +61,7 @@ class RegistrationController extends Controller
     public function confirmedRegistrationAction(Request $request)
     {
         $registration = $this->getRegistration();
-        if ($registration->getStatus()==Registration::STATUS_OPEN)
+        if ($registration->getStatus()==Registration::STATUS_OPEN && $registration->getParticipants()->isEmpty()==false)
         {
             $this->setRegistrationStatus($registration, Registration::STATUS_CONFIRMED);
             $this->container->get('event_dispatcher')->dispatch(RegistrationEvents::CONFIRMED, new RegistrationEvent($registration));
