@@ -258,7 +258,7 @@ class Registration {
      */
     public static function getStatuses()
     {
-        return array(self::STATUS_APPROVED, self::STATUS_CHECK, self::STATUS_DENIED, self::STATUS_PENDING);
+        return array(self::STATUS_OPEN, self::STATUS_PAID, self::STATUS_CONFIRMED, self::STATUS_CANCELLED);
     }
 
 }

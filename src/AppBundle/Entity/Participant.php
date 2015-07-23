@@ -50,7 +50,7 @@ class Participant {
     /**
      * @var string
      *
-     * @ORM\Column(name="address", type="text")
+     * @ORM\Column(name="address", type="string", length=255)
      */
     private $address;
 

@@ -69,25 +69,25 @@ class University {
     /**
      * @var string
      *
-     * @ORM\Column(name="web", type="text", nullable=true)
+     * @ORM\Column(name="web", type="string", length=255, nullable=true)
      */
     private $web;
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="text", nullable=true)
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
     /**
      * @var string
      *
-     * @ORM\Column(name="twitter", type="text", nullable=true)
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
      */
     private $twitter;
     /**
      * @var string
      *
-     * @ORM\Column(name="facebook", type="text", nullable=true)
+     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
      */
     private $facebook;
     /**
