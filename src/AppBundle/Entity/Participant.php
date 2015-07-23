@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity
  * @ORM\Table(name="Participant")
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\ParticipantRepository")
  */
 class Participant {
 
