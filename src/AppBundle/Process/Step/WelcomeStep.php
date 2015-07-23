@@ -23,7 +23,7 @@ class WelcomeStep extends ControllerStep
         $registration = $this->getDoctrine()->getRepository('AppBundle:Registration')->findOneBy(array('user' => $user, 'convention' => $convention));
         if ($registration)
         {
-            return $this->redirectToRoute('registration_complete');
+            return $this->redirectToRoute('registration');
         }
 
         return $this->render(':Registration:welcome.html.twig', array(
