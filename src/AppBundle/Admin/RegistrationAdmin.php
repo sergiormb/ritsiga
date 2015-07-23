@@ -41,6 +41,7 @@ class RegistrationAdmin extends Admin
             ->add('convention')
             ->add('name')
             ->add('position')
+            ->add('status')
         ;
     }
 
