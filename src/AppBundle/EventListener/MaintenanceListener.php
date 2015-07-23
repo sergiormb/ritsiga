@@ -9,7 +9,11 @@
 namespace AppBundle\EventListener;
 use AppBundle\Site\SiteManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -33,15 +37,27 @@ class MaintenanceListener
 
     public function onKernelRequest(GetResponseEvent $event)
     {
+        if ( in_array($this->container->get('kernel')->getEnvironment(), array('test', 'dev')) ) {
+            return;
+        }
+
+        if ($this->container->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
+            return;
+        }
+
+        $route = $this->container->get('router')->getRouteCollection()->get($event->getRequest()->get('_route'));
+        if (preg_match('/^\/admin\/.*/', $route->getPath() ) ) {
+            return;
+        }
+
         $convention = $this->siteManager->getCurrentSite();
         $hoy = date("d-m-Y");
-        if ($convention && ($convention->getMaintenance()==true || $hoy > $convention->getEndsAt()))
+        if ($convention && ($convention->getMaintenance() == true || $hoy > $convention->getEndsAt()))
         {
             $engine = $this->container->get('templating');
             $content = $engine->render(':Conventions:maintenance.html.twig');
             $event->setResponse(new Response($content, 503));
             $event->stopPropagation();
         }
-
     }
 }
