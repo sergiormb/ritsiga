@@ -52,10 +52,15 @@
                 En las redes
             </div><!-- /.box-header -->
             <div class="box-body">
-                <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-                <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
-                <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
-                <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                {% if convention.facebook %}
+                <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/{{ convention.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                {% endif %}
+                {% if convention.instagram %}
+                <a class="btn btn-social-icon btn-instagram" href="http://www.instagram.com/{{ convention.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
+                {% endif %}
+                {% if convention.twitter %}
+                <a class="btn btn-social-icon btn-twitter" href="http://www.twitter.com/{{ convention.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                {% endif %}
             </div>
         </div>
     </div>

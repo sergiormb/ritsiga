@@ -18,12 +18,13 @@
         <div class="row">
             <div class="col-xs-8">
                 <div class="checkbox icheck">
-                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    <label>
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                    </label>
                 </div>
             </div><!-- /.col -->
             <div class="col-xs-4">
-                <input type="submit" id="_submit" name="_submit" class="btn btn-primary btn-block btn-flat" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                <button type="submit" class="btn btn-primary btn-block btn-flat" id="_submit" name="_submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
             </div><!-- /.col -->
         </div>
     </form>

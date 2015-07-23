@@ -11,3 +11,6 @@
     image: <(basename($path))>
     mimeType: 'image/jpeg'
     maintenance: false
+    twitter: <word()>
+    instagram: <word()>
+    facebook: <word()>

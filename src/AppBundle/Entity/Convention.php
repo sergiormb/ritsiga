@@ -140,6 +140,24 @@ class Convention
      */
     private $administrators;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
+     */
+    private $twitter;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
+     */
+    private $facebook;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instagram", type="string", length=255, nullable=true)
+     */
+    private $instagram;
 
     public function __toString()
     {
@@ -519,5 +537,53 @@ class Convention
     public function getAdministrators()
     {
         return $this->administrators;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * @param string $twitter
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param string $facebook
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInstagram()
+    {
+        return $this->instagram;
+    }
+
+    /**
+     * @param string $instagram
+     */
+    public function setInstagram($instagram)
+    {
+        $this->instagram = $instagram;
     }
 }

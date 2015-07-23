@@ -29,7 +29,7 @@
     <header class="main-header">
         {% block header %}
             <!-- Logo -->
-            <a href="index2.html" class="logo"><b>RITSI</b>GA</a>
+            <a href="{{ url('homepage') }}" class="logo"><b>RITSI</b>GA</a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -58,15 +58,16 @@
 
                         </li>
                         <!-- User Account Menu -->
+                        {% if is_granted("ROLE_USER") %}
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/0ab/2d3/05b311f.jpg" class="user-image" alt="User Image"/>
+                                <img src="https://m2.behance.net/rendition/pm/11494245/disp/729ebe0c689023040b7eb03fe48e7792.png" class="user-image" alt="User Image"/>
                                 <span class="hidden-xs">Alexander Pierce</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/0ab/2d3/05b311f.jpg" class="img-circle" alt="User Image" />
+                                    <img src="https://m2.behance.net/rendition/pm/11494245/disp/729ebe0c689023040b7eb03fe48e7792.png" class="img-circle" alt="User Image" />
                                     <p>
                                         Alexander Pierce - Web Developer
                                         <small>Member since Nov. 2012</small>
@@ -87,14 +88,22 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="{{ url('fos_user_profile_show') }}" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="{{ url('fos_user_security_logout') }}" class="btn btn-default btn-flat">Cerrar Sesión</a>
                                     </div>
                                 </li>
                             </ul>
                         </li>
+                            {% else %}
+                        <li><a href="{{ url('fos_user_security_login') }}" >
+                                Iniciar Sesión
+                            </a>
+                        </li>
+
+
+                        {% endif %}
 
                     </ul>
                 </div>
