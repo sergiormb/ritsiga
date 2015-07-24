@@ -164,6 +164,14 @@ class RegistrationController extends Controller
                 'registration' => $registration,
             ));
         }
+        if ($registration->getStatus()==Registration::STATUS_PAID)
+        {
+            $this->addFlash('info', $this->get('translator')->trans( 'El registro se encuentra pagado y confirmado'));
+            return $this->render(':Registration:registration_paid.html.twig', array(
+                'user'=> $user,
+                'registration' => $registration,
+            ));
+        }
     }
 
 }
