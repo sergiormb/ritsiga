@@ -87,6 +87,22 @@ class RegistrationController extends Controller
     }
 
     /**
+    * @Route("/borrar_inscripcion/{id}", name="participant_delete")
+    * Borra la inscripción enviada por argumento
+    */
+    public function deleteParticipantAction(Participant $participant)
+    {
+        $registration = $this->getRegistration();
+        if ($registration->getStatus()==Registration::STATUS_OPEN && $participant->getRegistration() == $registration)
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($participant);
+            $em->flush();
+        }
+        return $this->redirectToRoute('registration');
+    }
+
+    /**
      * @Route("/registro", name="registration")
      * Muestra pantalla de edición del registro
      */
