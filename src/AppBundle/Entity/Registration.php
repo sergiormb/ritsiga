@@ -261,4 +261,20 @@ class Registration {
         return array(self::STATUS_OPEN, self::STATUS_PAID, self::STATUS_CONFIRMED, self::STATUS_CANCELLED);
     }
 
+    /**
+     * Get amount
+     *
+     * @return float
+     */
+    public function getAmount()
+    {
+        $participants = $this->getParticipants();
+        $amount = 0;
+        foreach($participants as $participant)
+        {
+            $amount+= $participant->getParticipantType()->getPrice();
+        }
+        return $amount;
+    }
+
 }
