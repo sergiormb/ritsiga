@@ -47,12 +47,13 @@ services:
          #this is the place where the properties are passed to the UserProvider - see config.yml
          arguments: [@fos_user.user_manager,{google: google_id}]
 
+
 ##### SONATA ADMIN ######
 
      ritsiGA.admin.convention:
          class: AppBundle\Admin\ConventionAdmin
          tags:
-             - { name: sonata.admin, manager_type: orm, group: "Asambleas", label: "Conventions" }
+             - { name: sonata.admin, manager_type: orm, group: "Asambleas", label: "Asambleas" }
          arguments:
              - ~
              - AppBundle\Entity\Convention
@@ -70,16 +71,25 @@ services:
      ritsiGA.admin.university:
          class: AppBundle\Admin\UniversityAdmin
          tags:
-             - { name: sonata.admin, manager_type: orm, group: "Entidades", label: "Universities" }
+             - { name: sonata.admin, manager_type: orm, group: "Entidades", label: "Universidades" }
          arguments:
              - ~
              - AppBundle\Entity\University
              - ~
 
+     ritsiGA.admin.participant:
+         class: AppBundle\Admin\ParticipantAdmin
+         tags:
+             - { name: sonata.admin, manager_type: orm, group: "Asambleas", label: "Participantes" }
+         arguments:
+             - ~
+             - AppBundle\Entity\Participant
+             - ~
+
      ritsiGA.admin.college:
          class: AppBundle\Admin\CollegeAdmin
          tags:
-             - { name: sonata.admin, manager_type: orm, group: "Entidades", label: "Colleges" }
+             - { name: sonata.admin, manager_type: orm, group: "Entidades", label: "Facultades" }
          arguments:
              - ~
              - AppBundle\Entity\College
@@ -88,7 +98,7 @@ services:
      ritsiGA.admin.studentdelegation:
          class: AppBundle\Admin\StudentDelegationAdmin
          tags:
-             - { name: sonata.admin, manager_type: orm, group: "Entidades", label: "Students Delegations" }
+             - { name: sonata.admin, manager_type: orm, group: "Entidades", label: "Delegaciones de Estudiantes" }
          arguments:
              - ~
              - AppBundle\Entity\StudentDelegation

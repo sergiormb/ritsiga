@@ -40,11 +40,6 @@ class ConventionAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('organization', null, array(
-                'label' => 'Organization',
-                'help' => 'help.organization',
-                'required' => true,
-            ))
             ->add('name', 'text', array('label' => 'Name'))
             ->add('description', null, array('required' => false, 'attr' => array('class' => 'ckeditor')))
             ->add('startsAt', 'sonata_type_date_picker')
@@ -66,7 +61,6 @@ class ConventionAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('organization')
             ->add('name')
             ->add('startsAt')
             ->add('endsAt')
