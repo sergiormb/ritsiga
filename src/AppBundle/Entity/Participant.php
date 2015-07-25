@@ -49,19 +49,11 @@ class Participant {
     private $email;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="address", type="string", length=255)
+     * @ORM\Column(name="phone", type="integer", length=20, nullable=true)
      */
-    private $address;
-
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="birthday", type="datetime")
-     */
-    private $birthday;
+    private $phone;
 
     /**
      * @var string
@@ -159,54 +151,6 @@ class Participant {
     }
 
     /**
-     * Set address
-     *
-     * @param string $address
-     *
-     * @return Participant
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-
-        return $this;
-    }
-
-    /**
-     * Get address
-     *
-     * @return string
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * Set birthday
-     *
-     * @param \DateTime $birthday
-     *
-     * @return Participant
-     */
-    public function setBirthday($birthday)
-    {
-        $this->birthday = $birthday;
-
-        return $this;
-    }
-
-    /**
-     * Get birthday
-     *
-     * @return \DateTime
-     */
-    public function getBirthday()
-    {
-        return $this->birthday;
-    }
-
-    /**
      * Set dni
      *
      * @param string $dni
@@ -268,5 +212,21 @@ class Participant {
     public function setParticipantType($participant_type)
     {
         $this->participant_type = $participant_type;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param int $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
     }
 }

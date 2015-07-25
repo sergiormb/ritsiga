@@ -38,8 +38,7 @@ class ParticipantType extends AbstractType
         $builder->add('name');
         $builder->add('last_name');
         $builder->add('email');
-        $builder->add('address');
-        $builder->add('birthday');
+        $builder->add('phone');
         $builder->add('dni');
         $builder->add('participant_type', 'hidden');
         $builder->add('save', 'submit', array(
