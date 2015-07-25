@@ -1,0 +1,52 @@
+{%  extends ":Registration:registration.html.twig" %}
+
+{% block right_box %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Añadir Inscripciones</h3>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                {% for type in types %}
+                    <div class="col-md-6" align="center">
+                        <button class="btn btn-warning add_inscription" data-inscription="{{ type.id }}" data-toggle="modal" data-target="#myModal" style="margin-bottom: 10px;">Añadir {{ type.name }}</button>
+                    </div>
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- ./box-body -->
+    </div><!-- /.box -->
+{%  endblock %}
+{% block column_action %}
+                <td><button type="button" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button>
+                    <a href="{{ path('participant_delete', {'id':inscription.id }) }}" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</a></td>
+{% endblock %}
+
+{% block footer_box %}
+    <div class="row">
+        <div class="col-md-12" align="right">
+            <a href="{{ url('registration_confirmed') }}" class="btn btn-warning">Confirmar inscripciones</a>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+{% endblock %}
+
+{% block modal %}
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Añadir Inscripción</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" {{ form_enctype(form) }}>
+
+                        {{ form_widget(form) }}
+                        {{ form_row(form.save) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,14 +1,23 @@
-{%  extends "base.html.twig" %}
+{%  extends "::base.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        $(".add_inscription").click( function()
+        {
+            $("#participant_participant_type").val($(this).data("inscription"));
+            console.log($(this).data("inscription"));
+        });
 
+    </script>
+{% endblock %}
 {% block content %}
-    <div class="convention-cancelled">
-        <h1>Registro Cancelado</h1>
-    </div>
+    {% block options %}
+    {% endblock %}
     <div class="row">
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Resumen Inscripcion</h3>
+                    <h3 class="box-title"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Resumen Inscripción</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -28,16 +37,8 @@
             </div><!-- /.box -->
         </div>
         <div class="col-md-6">
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Resumen Facturación</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                    <div class="row">
-
-                    </div><!-- /.row -->
-                </div><!-- ./box-body -->
-            </div><!-- /.box -->
+            {% block right_box %}
+            {%  endblock %}
         </div>
     </div>
     <div class="row">
@@ -58,7 +59,7 @@
                                     <th>Nombre</th>
                                     <th>Apellidos</th>
                                     <th>DNI</th>
-                                    <th>Fecha de Nacimiento</th>
+                                    <th>Teléfono</th>
                                     <th>Tipo de Inscripción</th>
                                     <th>Acciones</th>
                                 </tr></tbody>
@@ -67,19 +68,26 @@
                                         <td>{{ inscription.name }}</td>
                                         <td>{{ inscription.lastname }}</td>
                                         <td>{{ inscription.dni }}</td>
-                                        <td>{{ inscription.birthday|date('d-m-Y') }}</td>
+                                        <td>{{ inscription.phone }}</td>
                                         <td>{{ inscription.participanttype.name|title }}</td>
-                                        <td><button type="button" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar Acreditación</button>
+                                        {% block column_action %}
+                                       {% endblock %}
                                     </tr>
                                 {% endfor %}
                             </table>
                         </div>
                     </div><!-- /.row -->
                 </div><!-- ./box-body -->
+                <div class="box-footer">
+                    {% block footer_box %}
+                    {% endblock %}
+                </div>
             </div><!-- /.box -->
         </div><!-- /.col -->
-    </div>
 
+    </div>
+    {% block modal %}
+    {% endblock %}
 
 
 {% endblock %}

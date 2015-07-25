@@ -26,7 +26,7 @@ class WelcomeStep extends ControllerStep
             return $this->redirectToRoute('registration');
         }
 
-        return $this->render(':Registration:welcome.html.twig', array(
+        return $this->render(':Registration/Process:welcome.html.twig', array(
             'convention' => $convention,
             'user' => $user,
             'student_delegation' => $student_delegation,

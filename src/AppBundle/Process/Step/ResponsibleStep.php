@@ -26,7 +26,7 @@ class ResponsibleStep extends ControllerStep
         $registration->setConvention($convention);
         $form = $this->createForm(new ResponsibleType(), $registration);
 
-        return $this->render(':Registration:responsible.html.twig', array(
+        return $this->render(':Registration/Process:responsible.html.twig', array(
             'convention' => $convention,
             'form' => $form->createView(),
             'user' => $user,

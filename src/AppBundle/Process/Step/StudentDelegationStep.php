@@ -23,7 +23,7 @@ class StudentDelegationStep extends ControllerStep
         $student=$user->getStudentDelegation();
         $form = $this->createForm(new StudentDelegationType(), $student);
 
-        return $this->render(':Registration:student_delegation.html.twig', array(
+        return $this->render(':Registration/Process:student_delegation.html.twig', array(
             'convention' => $convention,
             'form' => $form->createView(),
             'user' => $user,

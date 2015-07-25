@@ -143,7 +143,7 @@ class RegistrationController extends Controller
         }
         if ($registration->getStatus()==Registration::STATUS_OPEN)
         {
-            return $this->render(':Registration:registration_open.html.twig', array(
+            return $this->render(':Registration/Status:registration_open.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
                 'types' => $types,
@@ -152,14 +152,14 @@ class RegistrationController extends Controller
         }
         if ($registration->getStatus()==Registration::STATUS_CONFIRMED)
         {
-            return $this->render(':Registration:registration_confirmed.html.twig', array(
+            return $this->render(':Registration/Status:registration_confirmed.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
             ));
         }
         if ($registration->getStatus()==Registration::STATUS_CANCELLED)
         {
-            return $this->render(':Registration:registration_cancelled.html.twig', array(
+            return $this->render(':Registration/Status:registration_cancelled.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
             ));
@@ -167,7 +167,7 @@ class RegistrationController extends Controller
         if ($registration->getStatus()==Registration::STATUS_PAID)
         {
             $this->addFlash('info', $this->get('translator')->trans( 'El registro se encuentra pagado y confirmado'));
-            return $this->render(':Registration:registration_paid.html.twig', array(
+            return $this->render(':Registration/Status:registration_paid.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
             ));
