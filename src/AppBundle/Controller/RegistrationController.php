@@ -155,6 +155,10 @@ class RegistrationController extends Controller
             return $this->render(':Registration/Status:registration_confirmed.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
+                'entity_bank' => $this->container->getParameter('entity_bank'),
+                'organization' => $this->container->getParameter('organization'),
+                'iban' => $this->container->getParameter('iban'),
+                'amount' => $registration->getAmount(),
             ));
         }
         if ($registration->getStatus()==Registration::STATUS_CANCELLED)

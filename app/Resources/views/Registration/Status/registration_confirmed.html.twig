@@ -7,13 +7,20 @@
     </div><!-- /.box-header -->
     <div class="box-body">
         <div class="row">
-
+            <div class="col-md-12">
+            <p>Entidad: {{ entity_bank }}</p>
+            <p>IBAN: {{ iban }}</p>
+            <p>Beneficiario: {{ organization }}</p>
+            <p>Concepto: Ref #{{ registration.id }} inscripción {{ registration.convention.name }}</p>
+            <p>Importe: {{ amount }} €</p>
+                <button class="btn btn-primary pull-right" ><i class="fa fa-download"></i> Descargar factura</button>
+            </div>
         </div><!-- /.row -->
     </div><!-- ./box-body -->
 </div><!-- /.box -->
     {% endblock %}
 {% block column_action %}
-        <td><button type="button" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar Acreditación</button></td>
+        <td><button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar Acreditación</button></td>
 {% endblock %}
 {% block footer_box %}
 <div class="row">
