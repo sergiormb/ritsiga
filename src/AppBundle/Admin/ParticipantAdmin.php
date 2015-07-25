@@ -48,7 +48,6 @@ class ParticipantAdmin  extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
             ->add('name')
             ->add('last_name')
             ->add('phone')
@@ -60,7 +59,6 @@ class ParticipantAdmin  extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('name')
             ->add('last_name')
             ->add('phone')
@@ -73,7 +71,6 @@ class ParticipantAdmin  extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('name')
             ->add('last_name')
             ->add('phone')

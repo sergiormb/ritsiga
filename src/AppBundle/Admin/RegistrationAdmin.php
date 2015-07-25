@@ -48,6 +48,7 @@ class RegistrationAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
+            ->add('id')
             ->add('convention')
             ->add('name')
             ->add('position')
@@ -58,6 +59,7 @@ class RegistrationAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('id')
             ->add('convention')
             ->add('name')
             ->add('position')
@@ -69,6 +71,7 @@ class RegistrationAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->add('id')
             ->add('convention')
             ->add('name')
             ->add('position')
