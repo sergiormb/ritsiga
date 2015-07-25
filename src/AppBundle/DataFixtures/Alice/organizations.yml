@@ -1,5 +1,0 @@
-\AppBundle\Entity\Organization:
-    organization{1..5}:
-        name: <company()>
-        email: <email()>
-        web: <url()>

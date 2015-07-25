@@ -101,14 +101,6 @@ class Convention
     private $maintenance = true;
 
     /**
-     * @ORM\ManyToOne(
-     *  targetEntity="\AppBundle\Entity\Organization",
-     *  inversedBy="conventions")
-     */
-    private $organization;
-
-
-    /**
      * @var string
      *
      * @ORM\OneToMany(targetEntity="Registration",mappedBy="convention")
@@ -445,30 +437,6 @@ class Convention
     public function getMaintenance()
     {
         return $this->maintenance;
-    }
-
-    /**
-     * Set organization
-     *
-     * @param \AppBundle\Entity\Organization $organization
-     *
-     * @return Convention
-     */
-    public function setOrganization(\AppBundle\Entity\Organization $organization = null)
-    {
-        $this->organization = $organization;
-
-        return $this;
-    }
-
-    /**
-     * Get organization
-     *
-     * @return \AppBundle\Entity\Organization
-     */
-    public function getOrganization()
-    {
-        return $this->organization;
     }
 
     /**
