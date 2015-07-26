@@ -10,7 +10,7 @@ services:
      ritsiga.site.manager:
          class: AppBundle\Site\SiteManager
 
-     ritsiga.site.listener:
+     ritsiga.listener.site:
          class: AppBundle\EventListener\CurrentSiteListener
          arguments:
              - "@ritsiga.site.manager"
@@ -24,7 +24,20 @@ services:
                  event: kernel.request
                  priority: 10
 
-     acme.listener.maintenance:
+     ritsiga.listener.generatepdf:
+         class: AppBundle\EventListener\GeneratePDFListener
+         arguments:
+             - "@knp_snappy.pdf"
+             - "@twig"
+             - "@kernel"
+         tags:
+             -
+                 name: kernel.event_listener
+                 method: onRegistrationConfirmed
+                 event: registration.confirmed
+                 priority: 0
+
+     ritsiga.listener.maintenance:
          class: AppBundle\EventListener\MaintenanceListener
          arguments:
              - "@ritsiga.site.manager"
