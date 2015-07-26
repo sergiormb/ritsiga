@@ -24,3 +24,6 @@ parameters:
     # Google auth
     google_app_id:      ~
     google_app_secret:  ~
+    entity_bank:  0
+    organization:  Ritsi
+    iban:  1
