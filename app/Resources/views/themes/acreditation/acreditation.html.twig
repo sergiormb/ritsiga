@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AdminLTE 2 | Invoice</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="{{ asset('bundles/app/css/bootstrap.min.css', absolute=true) }}" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body><div class="wrapper">
+    <!-- Main content -->
+    <section class="invoice">
+        <!-- title row -->
+        <div class="row">
+            <div class="col-xs-2">
+                    <img width="100" src="{{ asset('bundles/app/img/logo_ritsi.png', absolute=true) }}">
+            </div><!-- /.col -->
+            <div class="col-xs-10" style="padding-left: 100px;padding-bottom: 20px;">
+                <h2>{{ registration.convention.name }}</h2>
+                <p>  <h3>Del {{ registration.convention.startsAt|date('d-m-Y') }} al {{ registration.convention.endsAt|date('d-m-Y') }} </h3></p>
+            </div><!-- /.col -->
+        </div>
+        <!-- Table row -->
+        <div class="row">
+            <div class="col-xs-2">
+                </div>
+            <div style="align:center;" class="col-xs-8 table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th colspan="2" style="color:white !important;text-align:center;background-color:#8A0808 !important;">Acreditación oficial de {{ registration.convention.name }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Don / Doña:</td>
+                        <td>{{ registration.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>como</td>
+                        <td>{{ registration.position }}</td>
+                    </tr>
+                    <tr>
+                        <td>de</td>
+                        <td>{{ registration.user.studentdelegation }}</td>
+                    </tr>
+                    <tr>
+                        <td>de la</td>
+                        <td>{{ registration.user.college }}</td>
+                    </tr>
+                    <tr>
+                        <td>de la</td>
+                        <td>{{ registration.user.university }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th colspan="2" style="color:white !important;text-align:center;background-color:#8A0808 !important;">ACREDITA QUE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Don / Doña:</td>
+                        <td>{{ participant.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>con DNI</td>
+                        <td>{{ participant.dni }}</td>
+                    </tr>
+                    <tr colspan="2">
+                        <td>representa oficialmente a las siguientes titulaciones que se imparten en nuestra universidad:</td>
+                    </tr>
+                    {% for academic in registration.user.college.academicdegrees %}
+                        <tr>
+                            <td colspan="2">{{academic.name}}</td>
+
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div><!-- /.col -->
+            <div class="col-xs-2">
+            </div>
+        </div><!-- /.row -->
+
+    </section><!-- /.content -->
+</div><!-- ./wrapper -->
+<!-- AdminLTE App -->
+</body>
+</html>

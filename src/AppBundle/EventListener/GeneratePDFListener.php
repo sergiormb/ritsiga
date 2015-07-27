@@ -28,16 +28,34 @@ class GeneratePDFListener
     public function onRegistrationConfirmed(RegistrationEvent $event)
     {
         $registration = $event->getRegistration();
+        $hoy = date("d-m-Y");
         $this->loggableGenerator->generateFromHtml(
             $this->twig_Environment->render(
                 ':themes/invoice:invoice.html.twig',
                 array(
-                    'registration' => $registration
+                    'registration' => $registration,
+                    'amount' => $registration->getAmount(),
+                    'fecha' => $hoy,
                 )
             ),
             $this->kernel->getRootDir().'/private/documents/invoices/'.$registration->getId().'.pdf',array(),
             true
         );
+
+        foreach($registration->getParticipants() as $participant) {
+            $this->loggableGenerator->generateFromHtml(
+                $this->twig_Environment->render(
+                    ':themes/acreditation:acreditation.html.twig',
+                    array(
+                        'participant' => $participant,
+                        'registration' => $registration,
+                    )
+                ),
+                $this->kernel->getRootDir() . '/private/documents/acreditations/' . $participant->getId() . '.pdf', array(),
+                true
+            );
+        }
+
 
     }
 }
