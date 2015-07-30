@@ -2,7 +2,7 @@
   "name": "ritsiGA",
   "private": true,
   "dependencies": {
-    "admin-lte": "~2.0.5",
+    "admin-lte": "~2.2",
     "bootstrap": "~3.3.4",
     "font-awesome": "~4.3.0",
     "ionicons": "~2.0.1",
