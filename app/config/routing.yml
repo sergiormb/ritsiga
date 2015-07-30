@@ -17,30 +17,8 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
-
-admin:
-    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
-
-sonata_user:
-    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
-    prefix: /admin
-
-_sonata_admin:
-    resource: .
-    type: sonata_admin
-    prefix: /admin
-
-sylius_flow:
-    resource: "@SyliusFlowBundle/Resources/config/routing.yml"
-    prefix: /inscription
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 #HWIOAuthBundle routes
+
 hwi_oauth_security:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
     prefix: /login
@@ -55,3 +33,30 @@ hwi_oauth_redirect:
 
 google_login:
     pattern: /login/check-google
+
+# Backend
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /convention/{code}/admin/
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /convention/{code}/admin/
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /convention/{code}/admin/
+
+# Frontend
+
+sylius_flow:
+    resource: "@SyliusFlowBundle/Resources/config/routing.yml"
+    prefix: /convention/{code}/inscription
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

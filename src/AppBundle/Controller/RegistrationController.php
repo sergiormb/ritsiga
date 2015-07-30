@@ -19,7 +19,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-
+/**
+ * Class RegistrationController
+ * @package AppBundle\Controller
+ * @Route(path="/convention/{code}")
+ */
 class RegistrationController extends Controller
 {
     private function getRegistration()

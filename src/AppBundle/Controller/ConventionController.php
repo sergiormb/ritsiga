@@ -15,11 +15,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 
-
+/**
+ * Class ConventionController
+ * @package AppBundle\Controller
+ * @Route(path="/convention/{code}")
+ */
 class ConventionController extends Controller
 {
     /**
-     * @Route("/", name="convention", host="{hostname}.%base_host%")
+     * @Route("/", name="convention")
      */
     public function showConvention()
     {

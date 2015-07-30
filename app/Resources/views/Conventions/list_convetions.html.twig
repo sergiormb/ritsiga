@@ -20,7 +20,7 @@
                             <h5><i class="fa fa-calendar"></i> Del {{ convention.startsAt|date('d-m-Y') }} al {{ convention.endsAt|date('d-m-Y') }} </h5>
                             <p>{{ convention.description | truncate(90, true) }}</p>
                         </div>
-                        <a href="{{ convention_url(convention) }}" class="btn btn-warning btn-block btn-flat">Inscribirse</a>
+                        <a href="{{ path('convention', {'code': convention.domain}) }}" class="btn btn-warning btn-block btn-flat">Inscribirse</a>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div>

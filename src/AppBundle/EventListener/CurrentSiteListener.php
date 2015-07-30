@@ -12,49 +12,54 @@ use Doctrine\ORM\EntityManager;
 use AppBundle\Site\SiteManager;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Routing\RouterInterface;
 
 class CurrentSiteListener {
     private $siteManager;
 
     private $em;
 
-    private $baseHost;
+    private $baseCode;
     /**
      * @var KernelInterface
      */
     private $kernel;
+    /**
+     * @var RouterInterface
+     */
+    private $router;
 
-    public function __construct(SiteManager $siteManager, EntityManager $em, $baseHost, KernelInterface $kernel)
+    public function __construct(SiteManager $siteManager, EntityManager $em, RouterInterface $router, $baseCode)
     {
         $this->siteManager = $siteManager;
         $this->em = $em;
-        $this->baseHost = $baseHost;
-        $this->kernel = $kernel;
+        $this->baseCode = $baseCode;
+        $this->router = $router;
     }
 
     public function onKernelRequest(GetResponseEvent $event)
     {
-        if ("test" !== $this->kernel->getEnvironment()) {
-            $request = $event->getRequest();
+        $context = $this->router->getContext();
+        preg_match('/^\/convention\/([a-z]\w+)/', $context->getPathInfo(), $matches);
+        $code = isset($matches[1]) ? $matches[1] : $this->baseCode;
 
-            $currentHost = $request->getHost();
-            if ($currentHost === $this->baseHost) {
-                return;
-            }
-
-            $domain = str_replace('.' . $this->baseHost, '', $currentHost);
-
-            $site = $this->em
-                ->getRepository('AppBundle:Convention')
-                ->findOneBy(array('domain' => $domain));
-            if (!$site) {
-                throw new NotFoundHttpException(sprintf(
-                    'No site for host "%s", domain "%s"',
-                    $this->baseHost,
-                    $domain
-                ));
-            }
-            $this->siteManager->setCurrentSite($site);
+        if (!$context->hasParameter('code')) {
+            $context->setParameter('code', $code);
         }
+
+        if ($this->baseCode == $code) {
+            return;
+        }
+
+        $site = $this->em
+            ->getRepository('AppBundle:Convention')
+            ->findOneBy(array('domain' => $code));
+        if (!$site) {
+            throw new NotFoundHttpException(sprintf(
+                'No site for code "%s"',
+                $code
+            ));
+        }
+        $this->siteManager->setCurrentSite($site);
     }
 }

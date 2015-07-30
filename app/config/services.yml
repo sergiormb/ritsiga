@@ -15,14 +15,14 @@ services:
          arguments:
              - "@ritsiga.site.manager"
              - "@doctrine.orm.default_entity_manager"
-             - "%base_host%"
-             - "@kernel"
+             - "@router"
+             - "%base_code%"
          tags:
              -
                  name: kernel.event_listener
                  method: onKernelRequest
                  event: kernel.request
-                 priority: 10
+                 priority: 1
 
      ritsiga.listener.generatepdf:
          class: AppBundle\EventListener\GeneratePDFListener
