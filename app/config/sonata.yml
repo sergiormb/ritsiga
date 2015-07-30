@@ -34,6 +34,8 @@ sonata_user:
 sonata_admin:
     title:      ritsiGA
     title_logo: bundles/app/img/logo_ritsi.png
+    security:
+        handler: ritsiGA.security.handler.convention
     dashboard:
         blocks:
             -
@@ -49,4 +51,3 @@ sonata_admin:
                         Bundle, you can create and add new block in these area by configuring
                         the <code>sonata_admin</code> section.</p> <br /> For instance, here
                         a RSS feed parser (<code>sonata.block.service.rss</code>):
-

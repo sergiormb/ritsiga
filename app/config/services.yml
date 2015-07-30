@@ -173,3 +173,16 @@ services:
          public: false
          tags:
              - { name: twig.extension }
+
+## HANDLER
+
+     ritsiGA.security.handler.convention:
+         class: AppBundle\Security\Handler\RoleConventionSecurityHandler
+         arguments: [@security.authorization_checker, ['ROLE_ADMIN'], @ritsiga.site.manager]
+
+## VOTERS
+
+     ritsiGA.security.voter.convention:
+         class: AppBundle\Security\Voter\ConventionVoter
+         tags:
+             - { name: security.voter }
