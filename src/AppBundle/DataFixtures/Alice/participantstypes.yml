@@ -1,9 +1,33 @@
 \AppBundle\Entity\ParticipantType:
-    participationtype{1..5}:
-        name: <word()>
-        convention: @conventionnavarra2015
+    type1:
+        name: Socios acreditados con subvención (primer plazo)
+        convention: @pamplona2015
         description: <sentence($nbWords = 6)>
         startDate: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
         endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
-        price: <randomDigitNotNull()>
-        num_participants: <numberBetween($min = 0, $max = 20)>
+        price: 160
+        num_participants: 3
+    type2:
+        name: Socios acreditados con subvención (segundo plazo)
+        convention: @pamplona2015
+        description: <sentence($nbWords = 6)>
+        startDate: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+        endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+        price: 200
+        num_participants: 3
+    type3:
+        name: Observadores y socios acreditados sin subvención (primer plazo)
+        convention: @pamplona2015
+        description: <sentence($nbWords = 6)>
+        startDate: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+        endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+        price: 200
+        num_participants: 10
+    type4:
+        name: Socios acreditados con subvención (segundo plazo)
+        convention: @pamplona2015
+        description: <sentence($nbWords = 6)>
+        startDate: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+        endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+        price: 240
+        num_participants: 10

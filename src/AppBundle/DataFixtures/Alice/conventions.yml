@@ -1,11 +1,56 @@
 \AppBundle\Entity\Convention:
-  convention{cordoba2013, cadiz2014, navarra2015}:
-    name: <company()>
+  cordoba2014:
+    name: XL Asamblea General de Córdoba
     description: <paragraph($nbSentences = 5)>
     startsAt: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
     endsAt: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
     email: <email()>
-    domain: <current()>
+    domain: cordoba2014
+    web: <url()>
+    path: <image('./web/images/', 970, 200, 'technics')>
+    image: <(basename($path))>
+    mimeType: 'image/jpeg'
+    maintenance: false
+    twitter: <word()>
+    instagram: <word()>
+    facebook: <word()>
+  caceres2014:
+    name: XLI Asamblea General de Cáceres
+    description: <paragraph($nbSentences = 5)>
+    startsAt: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+    endsAt: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+    email: <email()>
+    domain: caceres2014
+    web: <url()>
+    path: <image('./web/images/', 970, 200, 'technics')>
+    image: <(basename($path))>
+    mimeType: 'image/jpeg'
+    maintenance: false
+    twitter: <word()>
+    instagram: <word()>
+    facebook: <word()>
+  cadiz2015:
+    name: XLII Asamblea General de Cádiz
+    description: <paragraph($nbSentences = 5)>
+    startsAt: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+    endsAt: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+    email: <email()>
+    domain: cadiz2015
+    web: <url()>
+    path: <image('./web/images/', 970, 200, 'technics')>
+    image: <(basename($path))>
+    mimeType: 'image/jpeg'
+    maintenance: false
+    twitter: <word()>
+    instagram: <word()>
+    facebook: <word()>
+  pamplona2015:
+    name: XLIII Asamblea General de Pamplona
+    description: <paragraph($nbSentences = 5)>
+    startsAt: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+    endsAt: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+    email: <email()>
+    domain: pamplona2015
     web: <url()>
     path: <image('./web/images/', 970, 200, 'technics')>
     image: <(basename($path))>
