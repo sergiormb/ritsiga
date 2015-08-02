@@ -38,7 +38,7 @@ class GeneratePDFListener
                     'fecha' => $hoy,
                 )
             ),
-            $this->kernel->getRootDir().'/private/documents/invoices/'.$registration->getId().'.pdf',array(),
+            $this->kernel->getRootDir().'/../private/documents/invoices/'.$registration->getId().'.pdf',array(),
             true
         );
 
@@ -51,7 +51,7 @@ class GeneratePDFListener
                         'registration' => $registration,
                     )
                 ),
-                $this->kernel->getRootDir() . '/private/documents/acreditations/' . $participant->getId() . '.pdf', array(),
+                $this->kernel->getRootDir() . '/../private/documents/acreditations/' . $participant->getId() . '.pdf', array(),
                 true
             );
         }
