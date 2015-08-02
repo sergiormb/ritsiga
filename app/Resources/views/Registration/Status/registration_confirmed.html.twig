@@ -13,14 +13,14 @@
             <p>Beneficiario: {{ organization }}</p>
             <p>Concepto: Ref #{{ registration.id }} inscripción {{ registration.convention.name }}</p>
             <p>Importe: {{ amount }} €</p>
-                <button class="btn btn-primary pull-right" ><i class="fa fa-download"></i> Descargar factura</button>
+                <a class="btn btn-primary btn-sm" href="{{ path('invoice_download', {'registration': registration.id})}}" ><i class="glyphicon glyphicon-download"></i> Descargar factura</a>
             </div>
         </div><!-- /.row -->
     </div><!-- ./box-body -->
 </div><!-- /.box -->
     {% endblock %}
 {% block column_action %}
-        <td><button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar Acreditación</button></td>
+        <td><a href="{{ path('acreditation_download', {'participant': inscription.id})}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar Acreditación</button></td>
 {% endblock %}
 {% block footer_box %}
 <div class="row">

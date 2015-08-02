@@ -16,8 +16,10 @@ use AppBundle\Form\ParticipantType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
  * Class RegistrationController
@@ -182,4 +184,39 @@ class RegistrationController extends Controller
         }
     }
 
+    /**
+     * @Route("/descargar_acreditacion/{participant}", name="acreditation_download")
+     */
+    public function downloadAcreditationAction(Participant $participant)
+    {
+        $this->get('kernel')->getRootDir();
+        $fileToDownload = $this->get('kernel')->getRootDir() . '/../private/documents/acreditations/' . $participant->getId() . '.pdf';
+        $response = new BinaryFileResponse($fileToDownload);
+        $response->trustXSendfileTypeHeader();
+        $response->setContentDisposition(
+            ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+            $participant->getName() . $participant->getLastName(). '_acreditacion.pdf',
+            iconv('UTF-8', 'ASCII//TRANSLIT', $participant->getId())
+        );
+
+        return $response;
+    }
+
+    /**
+     * @Route("/descargar_factura/{registration}", name="invoice_download")
+     */
+    public function downloadInvoiceAction(Registration $registration)
+    {
+        $this->get('kernel')->getRootDir();
+        $fileToDownload = $this->get('kernel')->getRootDir() . '/../private/documents/invoices/' . $registration->getId() . '.pdf';
+        $response = new BinaryFileResponse($fileToDownload);
+        $response->trustXSendfileTypeHeader();
+        $response->setContentDisposition(
+            ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+            $registration->getConvention()->getName() . '_factura.pdf',
+            iconv('UTF-8', 'ASCII//TRANSLIT', $registration->getId())
+        );
+
+        return $response;
+    }
 }
