@@ -3,9 +3,9 @@
     <div class="row">
     <img class="cabecera" src="{{ asset('/images/' ~ convention.image) }}">
         <div class="title-convention">
-            <div class="col-md-3">
+            <div class="col-md-2">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <center><h1>{{ convention.name }}</h1>
             {% if is_granted("ROLE_USER") %}
                         <a href="{{ url('sylius_flow_start', {'scenarioAlias': 'asamblea'}) }}" class="btn btn-warning">Inscribirse</a></center>
@@ -14,7 +14,7 @@
             {% endif %}
                 </center>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
             </div>
         </div>
     </div>
