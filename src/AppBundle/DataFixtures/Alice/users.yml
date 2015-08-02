@@ -6,9 +6,9 @@
         student_delegation: @studentdelegation1
         enabled: 1
         roles: ['ROLE_SUPER_ADMIN']
-    users{1..10}:
-        username: <username()>
+    users{sergio,wano,juanan}:
+        username: <current()>
         email: <email()>
         plainPassword: secret
         enabled: 1
-        roles: ['ROLE_USER']
+        roles: ['ROLE_USER','ROLE_ORGANIZER']
