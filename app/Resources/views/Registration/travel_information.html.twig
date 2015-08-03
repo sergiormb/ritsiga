@@ -1,0 +1,26 @@
+{%  extends "::base.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {% block options %}
+    {% endblock %}
+    <div class="row">
+        <div class="col-md-2">
+
+        </div><!-- /.col -->
+        <div class="col-md-8">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div><!-- /.col -->
+        <div class="col-md-2">
+
+        </div><!-- /.col -->
+
+    </div>
+    {% block modal %}
+    {% endblock %}
+
+
+{% endblock %}

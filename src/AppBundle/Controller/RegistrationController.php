@@ -13,6 +13,7 @@ use AppBundle\Entity\Participant;
 use AppBundle\Event\RegistrationEvent;
 use AppBundle\Event\RegistrationEvents;
 use AppBundle\Form\ParticipantType;
+use AppBundle\Form\TravelInformationType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -218,5 +219,26 @@ class RegistrationController extends Controller
         );
 
         return $response;
+    }
+
+    /**
+     * @Route("/informar_viaje", name="travel_information")
+     * Muestra formulario para la información del viaje
+     */
+    public function travelInformationAction(Request $request)
+    {
+        $user = $this->getUser();
+        $registration = $this->getRegistration();
+        if ($registration->getStatus()==Registration::STATUS_OPEN)
+        {
+            return $this->redirectToRoute('registration');
+        }
+        $form = $this->createForm(new TravelInformationType(), $registration);
+
+        return $this->render(':Registration:travel_information.html.twig', array(
+            'user'=> $user,
+            'registration' => $registration,
+            'form'=> $form->createView(),
+        ));
     }
 }

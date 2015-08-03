@@ -84,6 +84,35 @@ class Registration {
     private $status;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="departure_date", type="datetime", nullable=true)
+     */
+    private $departuredate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="arrival_date", type="datetime", nullable=true)
+     */
+    private $arrivaldate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="transport", type="string", length=100, nullable=true)
+     */
+    private $transport;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comentary", type="text", length=100, nullable=true)
+     */
+    private $comentary;
+
+
+    /**
      * Get id
      *
      * @return integer
@@ -276,5 +305,71 @@ class Registration {
         }
         return $amount;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDeparturedate()
+    {
+        return $this->departuredate;
+    }
+
+    /**
+     * @param \DateTime $departuredate
+     */
+    public function setDeparturedate($departuredate)
+    {
+        $this->departuredate = $departuredate;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getArrivaldate()
+    {
+        return $this->arrivaldate;
+    }
+
+    /**
+     * @param \DateTime $arrivaldate
+     */
+    public function setArrivaldate($arrivaldate)
+    {
+        $this->arrivaldate = $arrivaldate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTransport()
+    {
+        return $this->transport;
+    }
+
+    /**
+     * @param string $transport
+     */
+    public function setTransport($transport)
+    {
+        $this->transport = $transport;
+    }
+
+    /**
+     * @return string
+     */
+    public function getComentary()
+    {
+        return $this->comentary;
+    }
+
+    /**
+     * @param string $comentary
+     */
+    public function setComentary($comentary)
+    {
+        $this->comentary = $comentary;
+    }
+
+
 
 }

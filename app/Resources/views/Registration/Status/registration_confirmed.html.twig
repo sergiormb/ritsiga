@@ -24,8 +24,11 @@
 {% endblock %}
 {% block footer_box %}
 <div class="row">
-    <div class="col-md-12" align="left">
+    <div class="col-md-6" align="left">
         <a href="{{ url('registration_open') }}" class="btn btn-warning">Abrir Registro</a>
+    </div><!-- /.col -->
+    <div class="col-md-6" align="right">
+        <a class="btn btn-primary" href="{{ path('travel_information') }}" ><i class="glyphicon glyphicon-road"></i> Información del viaje</a>
     </div><!-- /.col -->
 </div>
 {% endblock %}
