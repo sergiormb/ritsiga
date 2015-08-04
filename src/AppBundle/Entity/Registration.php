@@ -111,6 +111,12 @@ class Registration {
      */
     private $comentary;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="invoice_number", type="string", length=100, nullable=true)
+     */
+    private $invoicenumber;
 
     /**
      * Get id
@@ -368,6 +374,22 @@ class Registration {
     public function setComentary($comentary)
     {
         $this->comentary = $comentary;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInvoicenumber()
+    {
+        return $this->invoicenumber;
+    }
+
+    /**
+     * @param string $invoicenumber
+     */
+    public function setInvoicenumber($invoicenumber)
+    {
+        $this->invoicenumber = $invoicenumber;
     }
 
 

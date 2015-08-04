@@ -42,6 +42,7 @@ class RegistrationAdmin extends Admin
             ->add('name')
             ->add('position')
             ->add('status')
+            ->add('invoicenumber')
         ;
     }
 
@@ -53,6 +54,7 @@ class RegistrationAdmin extends Admin
             ->add('name')
             ->add('position')
             ->add('status')
+            ->add('invoicenumber')
         ;
     }
     // Fields to be shown on filter forms
@@ -64,6 +66,7 @@ class RegistrationAdmin extends Admin
             ->add('name')
             ->add('position')
             ->add('status')
+            ->add('invoicenumber')
         ;
     }
 
