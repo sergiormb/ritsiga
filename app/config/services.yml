@@ -126,12 +126,6 @@ services:
              - AppBundle\Entity\Registration
              - ~
 
-     ritsiGA.block.service.rss:
-         class: AppBundle\Admin\BlockRegistration
-         arguments: [ "ritsiGA.block.service.rss", @templating ]
-         tags:
-             - { name: sonata.block }
-
 ## FORMULARIOS ###
 
      ritsiga.profile.form.type:
