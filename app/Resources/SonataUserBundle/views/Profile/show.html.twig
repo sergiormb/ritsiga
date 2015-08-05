@@ -2,63 +2,104 @@
 {% block content %}
 {% block sonata_profile_content %}
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{ user.firstname }} {{ user.lastname }}</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
-                        <div class=" col-md-9 col-lg-9 ">
-                            <table class="table table-user-information">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                General
+                            </h4>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td>Nombre:</td>
-                                    <td>{{ user.firstname }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Apellidos:</td>
-                                    <td>{{ user.lastname }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nombre de usuario:</td>
+                                    <th class="col-md-2">Nombre de usuario</th>
                                     <td>{{ user.username }}</td>
                                 </tr>
-
                                 <tr>
-                                <tr>
-                                    <td>Email:</td>
+                                    <th>Correo electrónico</th>
                                     <td>{{ user.email }}</td>
                                 </tr>
-                                <tr>
-                                    <td>Universidad:</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Centro de estudios:</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Delegación de estudiantes:</td>
-                                    <td>{{ user.getStudentDelegation }}</td>
-                                </tr>
-
-                                </tr>
-
                                 </tbody>
                             </table>
-                            <a href="{{ path('fos_user_profile_edit')}}" class="btn btn-primary">Cambiar Contraseña</a>
-                            <a href="{{ path('fos_user_profile_edit')}}" class="btn btn-primary">Editar Perfil</a>
-                            <a href="{{ path('fos_user_security_logout')}}" class="btn btn-primary">Cerrar Sesión</a>
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer">
-                </div>
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                Datos Universitarios
+                            </h4>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table">
+                                <tbody>
+                                <tr>
 
-            </div>
-        </div>
+                                    <th class="col-md-2">Universidad</th>
+                                    <td>
+                                        {{ user.university }}
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th>Facultad</th>
+                                    <td>
+                                        {{ user.college }}
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th>Delegación de Estudios</th>
+                                    <td>
+                                        {{ user.studentdelegation }}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                Profile
+                            </h4>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th class="col-md-2">Fecha de nacimiento</th>
+                                    <td>{{ user.dateOfBirth }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <td>{{ user.firstname }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Apellido</th>
+                                    <td>{{ user.lastname }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sitio web</th>
+                                    <td>{{ user.website }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sexo</th>
+                                    <td>{{ user.gender }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Teléfono</th>
+                                    <td>{{ user.phone }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
     </div>
 {% endblock %}
 {% endblock %}

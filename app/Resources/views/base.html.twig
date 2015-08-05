@@ -40,70 +40,43 @@
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
-                            <!-- Menu toggle button -->
-
-                            <ul class="dropdown-menu">
-
-                            </ul>
-                        </li><!-- /.messages-menu -->
-
-                        <!-- Notifications Menu -->
-                        <li class="dropdown notifications-menu">
-
-                        </li>
-                        <!-- Tasks Menu -->
-                        <li class="dropdown tasks-menu">
-
-                        </li>
+                    {% if not app.user %}
+                    <li class="tasks-menu">
+                        <a href="{{ url('fos_user_security_login') }}"><i class="fa fa-sign-in"></i> {{ 'Login' | trans }}</a>
+                    </li>
+                    {% else %}
                         <!-- User Account Menu -->
-                        {% if is_granted("ROLE_USER") %}
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="https://m2.behance.net/rendition/pm/11494245/disp/729ebe0c689023040b7eb03fe48e7792.png" class="user-image" alt="User Image"/>
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <img src="" class="user-image" alt="User Image"/>
+                                <span class="hidden-xs">{{ app.user.username }}</span>
+                                {% endif %}
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="https://m2.behance.net/rendition/pm/11494245/disp/729ebe0c689023040b7eb03fe48e7792.png" class="img-circle" alt="User Image" />
-                                    <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
+                                    {% if app.user %}
+                                        <img src="" class="img-circle" alt="User Image"/>
+                                        <p>
+                                            {{ app.user }}
+                                        </p>
+                                    {% endif %}
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="{{ url('fos_user_profile_show') }}" class="btn btn-default btn-flat">Perfil</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="{{ url('fos_user_security_logout') }}" class="btn btn-default btn-flat">Cerrar Sesión</a>
-                                    </div>
+                                    {% if app.user %}
+                                        <div class="pull-left">
+                                            <a href="{{ url('fos_user_profile_show') }}" class="btn btn-default btn-flat">{{ 'Profile' | trans }}</a>
+                                        </div>
+
+                                        <div class="pull-right">
+                                            <a href="{{ url('fos_user_security_logout') }}" class="btn btn-default btn-flat"> {{ 'Logout' | trans }}</a>
+                                        </div>
+
+                                    {% endif %}
                                 </li>
                             </ul>
                         </li>
-                            {% else %}
-                        <li><a href="{{ url('fos_user_security_login') }}" >
-                                Iniciar Sesión
-                            </a>
-                        </li>
-
-
-                        {% endif %}
 
                     </ul>
                 </div>
