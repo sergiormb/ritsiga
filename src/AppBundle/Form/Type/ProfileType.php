@@ -17,9 +17,15 @@ class ProfileType extends BaseType
     {
         parent::buildUserForm($builder, $options);
 
-        $builder->add('university');
-        $builder->add('college');
-        $builder->add('student_delegation');
+        $builder->add('firstname');
+        $builder->add('lastname');
+        $builder->add('university','entity', array('class' => 'AppBundle\Entity\University'));
+        $builder->add('college','entity', array('class' => 'AppBundle\Entity\College'));
+        $builder->add('studentdelegation','entity', array('class' => 'AppBundle\Entity\StudentDelegation'));
+        $builder->add('email');
+        $builder->add('phone');
+        $builder->add('gender');
+        $builder->add('website');
     }
 
     public function getName()
