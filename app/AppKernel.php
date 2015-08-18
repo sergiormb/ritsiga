@@ -32,6 +32,8 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new SC\DatetimepickerBundle\SCDatetimepickerBundle(),
+            new Hautzi\SystemMailBundle\HautziSystemMailBundle(),
             new AppBundle\AppBundle(),
         );
 

@@ -28,7 +28,9 @@
         "sonata-project/user-bundle": "~2.3@dev",
         "stof/doctrine-extensions-bundle": "1.1.*@dev",
         "sylius/resource-bundle":                       "0.12.*",
-        "sylius/flow-bundle": "0.13.*"
+        "sylius/flow-bundle": "0.13.*",
+        "stephanecollot/datetimepicker-bundle": "dev-master",
+        "hautzi/system-mail-bundle": "~0.1"
     },
     "require-dev": {
         "sensio/generator-bundle":              "~2.4",

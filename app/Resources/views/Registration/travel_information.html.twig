@@ -1,21 +1,55 @@
 {%  extends "::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+
+    {{ form_stylesheet(form) }}
+{% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    {{ form_javascript(form) }}
+
 {% endblock %}
 {% block content %}
     {% block options %}
     {% endblock %}
     <div class="row">
-        <div class="col-md-2">
-
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <div class="row">
+                        <div class="col-md-1"><i class="fa fa-bullhorn"></i></div>
+                        <div class="col-md-10"><h3 class="box-title">Información del Viaje</h3></div>
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <p>Esta información ayudará a los organizadores de la asamblea para gestionar
+                        las llegadas de todos los visitantes desde los diferentes puntos de España
+                    </p>
+                    <p>
+                        Rellena este formulario con la fecha y hora de salida desde tu ciudad, el medio de
+                        transporte que utilizaras para llegar al destino y la hora aproximada de llegada.
+                    </p>
+                    <p>
+                        Además si necesitas especificar algo más del viaje puedes hacerlo en el Comentario
+                        ¡¡BUEN VIAJE!!
+                    </p>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
         </div><!-- /.col -->
-        <div class="col-md-8">
+        <div class="col-md-6">
+            <div class="box box-info">
+            <div class="box-header with-border">
+                <div class="row">
+                    <div class="col-md-1"><i class="fa fa-bullhorn"></i></div>
+                    <div class="col-md-10"><h3 class="box-title">Formulario</h3></div>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
             {{ form_start(form) }}
             {{ form_widget(form) }}
             {{ form_end(form) }}
-        </div><!-- /.col -->
-        <div class="col-md-2">
-
+            </div><!-- /.box-body -->
+            </div><!-- /.box -->
         </div><!-- /.col -->
 
     </div>

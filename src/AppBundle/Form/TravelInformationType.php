@@ -17,10 +17,11 @@ class TravelInformationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('departuredate')
-            ->add('arrivaldate')
-            ->add('transport')
-            ->add('comentary');
+            ->add('departuredate', 'collot_datetime', array('label' => 'label.departuredate'))
+            ->add('arrivaldate', 'collot_datetime', array('label' => 'label.arrivaldate'))
+            ->add('transport', null, array('label' => 'label.transport'))
+            ->add('comentary', null, array('label' => 'label.comentary'))
+            ->add('save', 'submit', array('label' => 'save'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
