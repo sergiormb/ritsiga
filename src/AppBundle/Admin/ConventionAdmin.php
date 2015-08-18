@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Show\ShowMapper;
 
 class ConventionAdmin extends Admin
@@ -94,6 +95,12 @@ class ConventionAdmin extends Admin
             'actions' => array(
                 'edit' => array(),
                 'show' => array(),
+                'download_acreditation' => array(
+                    'template' => 'CRUD/list__action_acreditation.html.twig'
+                ),
+                'download_invoice' => array(
+                    'template' => 'CRUD/list__action_invoice.html.twig'
+                )
             )))
         ;
     }
@@ -110,5 +117,11 @@ class ConventionAdmin extends Admin
         if ($object->getImage()) {
             $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
         }
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->add('acreditation', $this->getRouterIdParameter().'/acreditations');
+        $collection->add('invoice', $this->getRouterIdParameter().'/invoices');
     }
 }
