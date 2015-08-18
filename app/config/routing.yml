@@ -42,7 +42,7 @@ admin:
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
-    prefix: /convention/{code}/admin/
+    prefix: /
 
 _sonata_admin:
     resource: .
