@@ -62,5 +62,5 @@ web_profiler_extra:
         enabled:        true
         display_in_wdt: true
 
-#swiftmailer:
-#    delivery_address: me@example.com
+swiftmailer:
+    delivery_address: me@example.com

@@ -127,3 +127,25 @@ knp_snappy:
         enabled:    true
         binary:     /usr/local/bin/wkhtmltopdf
         options:    []
+
+sc_datetimepicker:
+    picker: ~
+
+hautzi_system_mail:
+    # defaults that are set for each mail, use blank
+    # if you don't want to set this
+    defaults:
+        subject:   ~
+        replyTo:   ~
+        from:
+            email: ~
+            name:  ~
+        to:
+            email: ~
+            name:  ~
+        cc:
+            email: ~
+            name:  ~
+        bcc:
+            email: ~
+            name:  ~
