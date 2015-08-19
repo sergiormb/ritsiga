@@ -94,22 +94,6 @@ class RegistrationController extends Controller
     }
 
     /**
-    * @Route("/borrar_inscripcion/{id}", name="participant_delete")
-    * Borra la inscripción enviada por argumento
-    */
-    public function deleteParticipantAction(Participant $participant)
-    {
-        $registration = $this->getRegistration();
-        if ($registration->getStatus()==Registration::STATUS_OPEN && $participant->getRegistration() == $registration)
-        {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($participant);
-            $em->flush();
-        }
-        return $this->redirectToRoute('registration');
-    }
-
-    /**
      * @Route("/registro", name="registration")
      * Muestra pantalla de edición del registro
      */
@@ -248,5 +232,118 @@ class RegistrationController extends Controller
             'registration' => $registration,
             'form'=> $form->createView(),
         ));
+    }
+
+
+    /**
+     * @Route("/nueva-inscripcion/{participanttype}", name="participant_new")
+     * Muestra pantalla de nueva inscripción
+     */
+    public function newParticipantAction(Request $request, \AppBundle\Entity\ParticipantType $participanttype)
+    {
+        $registration = $this->getRegistration();
+        $user = $this->getUser();
+
+        if (!$registration)
+        {
+            return $this->redirectToRoute('sylius_flow_start', array('scenarioAlias' => 'asamblea'));
+        }
+        if ($registration->getStatus()!=Registration::STATUS_OPEN)
+        {
+            return $this->redirectToRoute('registration');
+        }
+
+        $participant = new Participant();
+
+        $participant->setRegistration($registration);
+        $form = $this->createForm($this->get('ritsiga.participant.form.type'), $participant);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $num_participants = $this->getDoctrine()->getRepository('AppBundle:Participant')->getNumParticipationsTypesAvailables($registration,$participanttype);
+            if ($participanttype && ($participanttype->getNumParticipants() > $num_participants))
+            {
+                $participant->setParticipantType($participanttype);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($participant);
+                $em->flush();
+                return $this->redirectToRoute('registration');
+            }
+            else
+            {
+                $this->addFlash('warning', $this->get('translator')->trans( 'Sorry, the seats are already occupied'));
+                return $this->redirectToRoute('registration');
+            }
+
+        }
+        return $this->render(':Registration:participant.html.twig', array(
+            'user'=> $user,
+            'registration' => $registration,
+            'form'=> $form->createView(),
+        ));
+
+    }
+
+
+    /**
+     * @Route("/editar-inscripcion/{id}", name="participant_edit")
+     * Muestra pantalla de edición de un participante
+     */
+    public function editParticipantAction(Request $request, Participant $participant)
+    {
+        $siteManager = $this->container->get('ritsiga.site.manager');
+        $registration = $this->getRegistration();
+        $user = $this->getUser();
+
+        if (!$registration)
+        {
+            return $this->redirectToRoute('sylius_flow_start', array('scenarioAlias' => 'asamblea'));
+        }
+        if ($registration->getStatus()!=Registration::STATUS_OPEN || $participant->getRegistration() != $registration)
+        {
+            return $this->redirectToRoute('registration');
+        }
+        $form = $this->createForm($this->get('ritsiga.participant.form.type'), $participant);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $num_participants = $this->getDoctrine()->getRepository('AppBundle:Participant')->getNumParticipationsTypesAvailables($registration,$participanttype);
+            if ($participanttype && ($participanttype->getNumParticipants() > $num_participants))
+            {
+                $participant->setParticipantType($participanttype);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($participant);
+                $em->flush();
+                return $this->redirectToRoute('registration');
+            }
+            else
+            {
+                $this->addFlash('warning', $this->get('translator')->trans( 'Sorry, the seats are already occupied'));
+                return $this->redirectToRoute('registration');
+            }
+
+        }
+        return $this->render(':Registration:participant.html.twig', array(
+            'user'=> $user,
+            'registration' => $registration,
+            'form'=> $form->createView(),
+        ));
+
+    }
+
+
+    /**
+     * @Route("/borrar_inscripcion/{id}", name="participant_delete")
+     * Borra la inscripción enviada por argumento
+     */
+    public function deleteParticipantAction(Participant $participant)
+    {
+        $registration = $this->getRegistration();
+        if ($registration->getStatus()==Registration::STATUS_OPEN && $participant->getRegistration() == $registration)
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($participant);
+            $em->flush();
+        }
+        return $this->redirectToRoute('registration');
     }
 }

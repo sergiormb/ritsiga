@@ -1,0 +1,27 @@
+{%  extends "::base.html.twig" %}
+{% block content %}
+    {% block options %}
+    {% endblock %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <div class="row">
+                        <div class="col-md-1"><i class="fa fa-bullhorn"></i></div>
+                        <div class="col-md-10"><h3 class="box-title">Completa los siguientes datos</h3></div>
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+
+    </div>
+    {% block modal %}
+    {% endblock %}
+
+
+{% endblock %}

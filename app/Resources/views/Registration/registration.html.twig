@@ -1,15 +1,4 @@
 {%  extends "::base.html.twig" %}
-{% block javascripts %}
-    {{ parent() }}
-    <script type="application/javascript">
-        $(".add_inscription").click( function()
-        {
-            $("#participant_participant_type").val($(this).data("inscription"));
-            console.log($(this).data("inscription"));
-        });
-
-    </script>
-{% endblock %}
 {% block content %}
     {% block options %}
     {% endblock %}
@@ -86,8 +75,6 @@
         </div><!-- /.col -->
 
     </div>
-    {% block modal %}
-    {% endblock %}
 
 
 {% endblock %}

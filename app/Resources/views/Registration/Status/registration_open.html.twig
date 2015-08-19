@@ -20,7 +20,7 @@
                         <td><h6>{{ type.name }}</h6></td>
                         <td><h6>{{ type.endDate|date('d-m-Y') }}</h6></td>
                         <td><h6>{{ type.price }} €</h6></td>
-                        <td><button class="btn btn-warning add_inscription btn-xs" data-inscription="{{ type.id }}" data-toggle="modal" data-target="#myModal" style="margin-bottom: 10px;">Añadir</button>
+                        <td><a href="{{ path('participant_new', {'participanttype': type.id}) }}" class="btn btn-warning add_inscription btn-xs" style="margin-bottom: 10px;">Añadir</a>
                         </td>
                     </tr>
 
@@ -32,7 +32,7 @@
     </div><!-- /.box -->
 {%  endblock %}
 {% block column_action %}
-                <td><button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button>
+                <td><a href="{{ path('participant_edit', {'id':inscription.id }) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
                     <a href="{{ path('participant_delete', {'id':inscription.id }) }}" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</a></td>
 {% endblock %}
 
@@ -42,26 +42,4 @@
             <a href="{{ url('registration_confirmed') }}" class="btn btn-warning">Confirmar inscripciones</a>
         </div><!-- /.col -->
     </div><!-- /.row -->
-{% endblock %}
-
-{% block modal %}
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Añadir Inscripción</h4>
-                </div>
-                <div class="modal-body">
-                    <form method="POST" {{ form_enctype(form) }}>
-
-                        {{ form_widget(form) }}
-                        {{ form_row(form.save) }}
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 {% endblock %}
