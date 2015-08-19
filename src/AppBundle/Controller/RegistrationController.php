@@ -54,10 +54,12 @@ class RegistrationController extends Controller
     public function showRegistrations()
     {
         $user = $this->getUser();
-        $registrations_open = $this->getDoctrine()->getRepository('AppBundle:Registration')->findAll();
+        $registrations_open = $this->getDoctrine()->getRepository('AppBundle:Registration')->findBy(array('status' => Registration::STATUS_CONFIRMED));
+        $registrations_paid = $this->getDoctrine()->getRepository('AppBundle:Registration')->findBy(array('status' => Registration::STATUS_PAID));
         return [
             'user'=> $user,
             'registrations_open'=> $registrations_open,
+            'registrations_paid'=> $registrations_paid,
         ];
     }
 
@@ -165,6 +167,10 @@ class RegistrationController extends Controller
             return $this->render(':Registration/Status:registration_paid.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
+                'entity_bank' => $this->container->getParameter('entity_bank'),
+                'organization' => $this->container->getParameter('organization'),
+                'iban' => $this->container->getParameter('iban'),
+                'amount' => $registration->getAmount(),
             ));
         }
     }
