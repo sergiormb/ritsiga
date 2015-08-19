@@ -17,15 +17,16 @@ class ProfileType extends BaseType
     {
         parent::buildUserForm($builder, $options);
 
-        $builder->add('firstname');
-        $builder->add('lastname');
-        $builder->add('university','entity', array('class' => 'AppBundle\Entity\University'));
-        $builder->add('college','entity', array('class' => 'AppBundle\Entity\College'));
-        $builder->add('studentdelegation','entity', array('class' => 'AppBundle\Entity\StudentDelegation'));
+        $builder->add('firstname', null, array('label' => 'label.name'));
+        $builder->add('lastname', null, array('label' => 'label.last_name'));
+        $builder->add('university','entity', array('class' => 'AppBundle\Entity\University', 'label' => 'label.university'));
+        $builder->add('college','entity', array('class' => 'AppBundle\Entity\College', 'label' => 'label.college'));
+        $builder->add('studentdelegation','entity', array('class' => 'AppBundle\Entity\StudentDelegation', 'label' => 'label.student_delegation'));
         $builder->add('email');
-        $builder->add('phone');
-        $builder->add('gender');
-        $builder->add('website');
+        $builder->add('phone', null, array('label' => 'label.phone'));
+        $builder->add('gender', 'choice', array('label' => 'label.gender', 'choices'  => array('H' => 'Hombre', 'M' => 'Mujer'),
+            'required' => true));
+        $builder->add('website', null, array('label' => 'label.website'));
     }
 
     public function getName()
