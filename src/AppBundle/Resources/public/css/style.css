@@ -124,3 +124,19 @@
     line-height: 1.428571429;
     border-radius: 15px;
 }
+
+.card{
+    transition: .2s ease;
+}
+
+.card a {
+    color: #444;
+}
+
+.card:hover{
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 20px rgba(0,0,0,.3);
+    cursor: pointer;
+    transition: .2s ease;
+}
+

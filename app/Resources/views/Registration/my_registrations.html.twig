@@ -13,7 +13,12 @@
                         </div>
                     </div><!-- /.box-header -->
                     <div class="box-body">
+                        {% if not registrations_open %}
+                            No se encuentra ninguna inscripción confirmada
+                        {% endif %}
                         {% for open in registrations_open %}
+                            <div class="card">
+                                <a href="{{ path('registration', {'code': open.convention.domain}) }}">
                         <div class="row">
                             <img class="col-md-12" src="{{ asset('/images/' ~ open.convention.image) }}">
                         </div>
@@ -22,6 +27,8 @@
                             Del {{ open.convention.startsAt|date('d-m-Y') }} al {{ open.convention.endsAt|date('d-m-Y') }}
                             <h6>{{ open.name }} - {{ open.position }}<h6>
                         </div>
+                                </a>
+                            </div>
                         {%  endfor %}
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
@@ -35,10 +42,23 @@
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                    <div class="row">
-                    </div>
-                    <div class="callout">
-                    </div>
+                    {% if not registrations_paid %}
+                        No se encuentra ninguna inscripción pagada
+                    {% endif %}
+                    {% for open in registrations_paid %}
+                        <div class="card">
+                            <a href="{{ path('registration', {'code': open.convention.domain}) }}">
+                                <div class="row">
+                                    <img class="col-md-12" src="{{ asset('/images/' ~ open.convention.image) }}">
+                                </div>
+                                <div class="callout">
+                                    <h4>{{ open.convention }}</h4>
+                                    Del {{ open.convention.startsAt|date('d-m-Y') }} al {{ open.convention.endsAt|date('d-m-Y') }}
+                                    <h6>{{ open.name }} - {{ open.position }}<h6>
+                                </div>
+                            </a>
+                        </div>
+                    {%  endfor %}
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>

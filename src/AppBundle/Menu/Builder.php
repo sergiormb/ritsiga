@@ -18,8 +18,8 @@ class Builder extends ContainerAware
         $menu->setChildrenAttributes(array('class' => 'sidebar-menu'));
 
         $menu->addChild('Inicio', array('route' => 'homepage'));
-        $menu->addChild('Mi Perfil', array('route' => 'fos_user_profile_show'));
-        $menu->addChild('Mis inscripciones', array('route' => 'registration_list'));
+        $menu->addChild('Mi Perfil', array('route' => 'fos_user_profile_edit', 'route' => 'fos_user_profile_show', ));
+        $menu->addChild('Mis inscripciones', array('route' => 'registration', 'route' => 'registration_list'));
 
         return $menu;
     }

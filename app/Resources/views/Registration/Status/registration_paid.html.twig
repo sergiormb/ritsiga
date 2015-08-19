@@ -7,7 +7,14 @@
         </div><!-- /.box-header -->
         <div class="box-body">
             <div class="row">
-
+                <div class="col-md-12">
+                    <p>Entidad: {{ entity_bank }}</p>
+                    <p>IBAN: {{ iban }}</p>
+                    <p>Beneficiario: {{ organization }}</p>
+                    <p>Concepto: Ref #{{ registration.id }} inscripción {{ registration.convention.name }}</p>
+                    <p>Importe: {{ amount }} €</p>
+                    <a class="btn btn-primary btn-sm" href="{{ path('invoice_download', {'registration': registration.id})}}" ><i class="glyphicon glyphicon-download"></i> Descargar factura</a>
+                </div>
             </div><!-- /.row -->
         </div><!-- ./box-body -->
     </div><!-- /.box -->
