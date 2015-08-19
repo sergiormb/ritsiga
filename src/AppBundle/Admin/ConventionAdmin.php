@@ -41,18 +41,19 @@ class ConventionAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text', array('label' => 'Name'))
-            ->add('description', null, array('required' => false, 'attr' => array('class' => 'ckeditor')))
-            ->add('startsAt', 'sonata_type_date_picker')
-            ->add('endsAt', 'sonata_type_date_picker')
+            ->add('name', 'text', array('label' => 'label.name'))
+            ->add('description', null, array('label' => 'Descripción', 'required' => false, 'attr' => array('class' => 'ckeditor')))
+            ->add('startsAt', 'sonata_type_date_picker', array('label' => 'label.startsAt'))
+            ->add('endsAt', 'sonata_type_date_picker', array('label' => 'label.endsAt'))
             ->add('email', 'email', array('label' => 'Email'))
-            ->add('administrators', null, array('label' => 'Administrators'))
+            ->add('administrators', null, array('label' => 'Administradores'))
             ->add('image', 'file', array(
+                'label' => 'Imagen',
                 'data_class' => null,
                 'attr' => ['class' => 'filestyle'],
                 'required' => false,
             ))
-            ->add('maintenance', null, array(
+            ->add('maintenance', 'checkbox', array(
                 'label' => 'label.maintenance',
                 'required' => false,
             ))
@@ -62,12 +63,13 @@ class ConventionAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name')
-            ->add('startsAt')
-            ->add('endsAt')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('startsAt', null, array('label' => 'label.startsAt'))
+            ->add('endsAt', null, array('label' => 'label.endsAt'))
             ->add('email')
             ->add('image',null,array(
                 'template' => 'image/image.html.twig',
+                'label' => 'Imagen'
             ))
         ;
     }

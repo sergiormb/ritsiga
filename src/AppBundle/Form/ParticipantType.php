@@ -17,32 +17,17 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ParticipantType extends AbstractType
 {
-    /**
-     * @var SiteManager
-     */
-    private $siteManager;
-    /**
-     * @var ParticipationTypeRepository
-     */
-    private $participant;
-
-    function __construct(SiteManager $siteManager, ParticipationTypeRepository $participant)
-    {
-        $this->siteManager = $siteManager;
-        $this->participant = $participant;
-    }
-
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name');
-        $builder->add('last_name');
+        $builder->add('name', null, array('label' => 'label.name'));
+        $builder->add('last_name', null, array('label' => 'label.last_name'));
         $builder->add('email');
-        $builder->add('phone');
+        $builder->add('phone', null, array('label' => 'label.phone'));
         $builder->add('dni');
         $builder->add('participant_type', 'hidden');
         $builder->add('save', 'submit', array(
-            'attr' => array('class' => 'btn btn-primary'),
+            'attr' => array('class' => 'btn btn-primary'), 'label'=> 'save'
         ));
     }
 

@@ -16,17 +16,17 @@ class StudentDelegationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('city')
-            ->add('province')
-            ->add('address')
-            ->add('postcode')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('city', null, array('label' => 'label.city'))
+            ->add('province', null, array('label' => 'label.province'))
+            ->add('address', null, array('label' => 'label.address'))
+            ->add('postcode', null, array('label' => 'label.postcode'))
             ->add('web')
             ->add('fax')
-            ->add('phone')
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('facebook')
             ->add('twitter')
-            ->add('cif');
+            ->add('cif', null, array('label' => 'label.cif'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

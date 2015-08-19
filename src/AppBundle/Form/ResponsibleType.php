@@ -16,8 +16,8 @@ class ResponsibleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('position');
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('position', null, array('label' => 'label.position'));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

@@ -23,14 +23,6 @@ class ParticipantAdmin  extends Admin
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);
-        $alias = current($query->getRootAliases());
-        $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
-        if($convention != '')
-        {
-            $query->andWhere($query->expr()->eq( $alias . '.convention', $convention->getId() ));
-        }
-        /** @var QueryBuilder $query */
-
 
         return $query;
     }
@@ -48,22 +40,22 @@ class ParticipantAdmin  extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name')
-            ->add('last_name')
-            ->add('phone')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('last_name', null, array('label' => 'label.last_name'))
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('dni')
-            ->add('registration.convention')
+            ->add('registration.convention', null, array('label' => 'label.convention'))
         ;
     }
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-            ->add('last_name')
-            ->add('phone')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('last_name', null, array('label' => 'label.last_name'))
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('dni')
-            ->add('registration.convention')
+            ->add('registration.convention', null, array('label' => 'label.convention'))
         ;
     }
 
@@ -71,16 +63,16 @@ class ParticipantAdmin  extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name')
-            ->add('last_name')
-            ->add('phone')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('last_name', null, array('label' => 'label.last_name'))
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('dni')
-            ->add('registration.convention')
+            ->add('registration.convention', null, array('label' => 'label.convention'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
                     'show' => array(),
-                )))
+                ), 'label' => 'label.actions'))
         ;
     }
 }

@@ -51,7 +51,7 @@ class ResponsibleStep extends ControllerStep
             $registration->setUser($user);
             $em->persist($registration);
             $em->flush();
-            $this->addFlash('warning', $this->get('translator')->trans( 'Your responsible has been successfully updated'));
+            $this->addFlash('warning', $this->get('translator')->trans( 'Your registration has been saved, you can now add registrations'));
             return $this->complete();
         }
 

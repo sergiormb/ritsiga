@@ -18,6 +18,130 @@
                 <source>label.email</source>
                 <target>Email</target>
             </trans-unit>
+            <trans-unit id="4">
+                <source>label.convention</source>
+                <target>Asamblea</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>label.university</source>
+                <target>Universidad</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>label.college</source>
+                <target>Facultad</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>label.student_delegation</source>
+                <target>Consejo de Estudiantes</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>label.maintenance</source>
+                <target>Asamblea en mantenimiento</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>label.departuredate</source>
+                <target>Fecha de salida</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>label.arrivaldate</source>
+                <target>Fecha de llegada</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>label.transport</source>
+                <target>Transporte</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>label.comentary</source>
+                <target>Comentario</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>save</source>
+                <target>Guardar</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>label.last_name</source>
+                <target>Apellidos</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>label.phone</source>
+                <target>Teléfono</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Profile</source>
+                <target>Perfil</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Logout</source>
+                <target>Salir</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Your travel information has been successfully updated</source>
+                <target>Su información de viaje se ha actualizado correctamente</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>label.city</source>
+                <target>Ciudad</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>label.province</source>
+                <target>Provincia</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>label.address</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>label.postcode</source>
+                <target>Código Postal</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>label.cif</source>
+                <target>CIF</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Your university has been successfully updated</source>
+                <target>Su Universidad ha sido actualizada correctamente</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>label.academic_degrees</source>
+                <target>Titulaciones impartidas</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>Your college has been successfully updated</source>
+                <target>Su Facultad ha sido actualizada correctamente</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>Your student delegation has been successfully updated</source>
+                <target>Su Delegación de Estudiantes ha sido actualizada correctamente</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>label.position</source>
+                <target>Cargo</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>Your registration has been saved, you can now add registrations</source>
+                <target>Su inscripción se ha guardado correctamente, ahora puede añadir inscripciones</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>label.actions</source>
+                <target>Acciones</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>label.price</source>
+                <target>Precio</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>label.numparticipants</source>
+                <target>Número de participantes</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>label.gender</source>
+                <target>Género</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>label.website</source>
+                <target>Página Web</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
