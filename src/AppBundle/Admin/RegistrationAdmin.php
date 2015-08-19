@@ -8,6 +8,8 @@
 
 namespace AppBundle\Admin;
 
+use AppBundle\Entity\Registration;
+use AppBundle\Event\RegistrationEvents;
 use Doctrine\ORM\QueryBuilder;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -38,11 +40,12 @@ class RegistrationAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('convention')
-            ->add('name')
-            ->add('position')
-            ->add('status')
-            ->add('invoicenumber')
+            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('position', null, array('label' => 'label.position'))
+            ->add('status', 'choice', array('label' => 'label.status', 'choices'  => array(Registration::STATUS_OPEN => 'Abierta', Registration::STATUS_CONFIRMED  => 'Confirmada', Registration::STATUS_CANCELLED => 'Cancelada', Registration::STATUS_PAID => 'Pagada'),
+        'required' => true))
+            ->add('invoicenumber', null, array('label' => 'label.invoicenumber'))
         ;
     }
 
@@ -50,11 +53,11 @@ class RegistrationAdmin extends Admin
     {
         $showMapper
             ->add('id')
-            ->add('convention')
-            ->add('name')
-            ->add('position')
-            ->add('status')
-            ->add('invoicenumber')
+            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('position', null, array('label' => 'label.position'))
+            ->add('status', null, array('label' => 'label.status'))
+            ->add('invoicenumber', null, array('label' => 'label.invoicenumber'))
         ;
     }
     // Fields to be shown on filter forms
@@ -62,11 +65,11 @@ class RegistrationAdmin extends Admin
     {
         $datagridMapper
             ->add('id')
-            ->add('convention')
-            ->add('name')
-            ->add('position')
-            ->add('status')
-            ->add('invoicenumber')
+            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('position', null, array('label' => 'label.position'))
+            ->add('status', null, array('label' => 'label.status'))
+            ->add('invoicenumber', null, array('label' => 'label.invoicenumber'))
         ;
     }
 
@@ -75,10 +78,10 @@ class RegistrationAdmin extends Admin
     {
         $listMapper
             ->add('id')
-            ->add('convention')
-            ->add('name')
-            ->add('position')
-            ->add('status')
+            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('position', null, array('label' => 'label.position'))
+            ->add('status', null, array('label' => 'label.status'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
