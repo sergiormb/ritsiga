@@ -109,7 +109,7 @@ class College
     private $university;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\AcademicDegree", mappedBy="colleges")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\AcademicDegree", inversedBy="colleges")
      */
     private $academic_degrees;
 

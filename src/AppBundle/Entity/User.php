@@ -49,7 +49,11 @@ class User extends BaseUser
      */
     public function getCollege()
     {
-        return $this->getStudentDelegation()->getCollege();
+        if ($this->getStudentDelegation())
+        {
+            return $this->getStudentDelegation()->getCollege();
+        }
+        return;
     }
 
     /**

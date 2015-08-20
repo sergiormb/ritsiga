@@ -45,7 +45,7 @@ class AcademicDegree
     private $slug;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\College", inversedBy="academic_degrees")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\College", mappedBy="academic_degrees")
      */
     private $colleges;
 
