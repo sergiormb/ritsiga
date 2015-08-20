@@ -7,6 +7,7 @@
  */
 
 namespace AppBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -115,7 +116,7 @@ class College
     /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="College", mappedBy="college")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\StudentDelegation", mappedBy="college")
      */
     private $students_delegations;
 
@@ -126,6 +127,7 @@ class College
     public function __construct()
     {
         $this->academic_degrees = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->students_delegations = new ArrayCollection();
     }
 
     /**

@@ -119,20 +119,11 @@ class StudentDelegation {
     private $users;
 
     /**
-     * @var string
-     *
-     * @ORM\OneToMany(targetEntity="Registration",mappedBy="student_delegation")
-     */
-    private $students;
-
-  
-    /**
      * Constructor
      */
     public function __construct()
     {
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->students = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -523,37 +514,4 @@ class StudentDelegation {
         return $this->users;
     }
 
-    /**
-     * Add student
-     *
-     * @param \AppBundle\Entity\Registration $student
-     *
-     * @return StudentDelegation
-     */
-    public function addStudent(\AppBundle\Entity\Registration $student)
-    {
-        $this->students[] = $student;
-
-        return $this;
-    }
-
-    /**
-     * Remove student
-     *
-     * @param \AppBundle\Entity\Registration $student
-     */
-    public function removeStudent(\AppBundle\Entity\Registration $student)
-    {
-        $this->students->removeElement($student);
-    }
-
-    /**
-     * Get students
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getStudents()
-    {
-        return $this->students;
-    }
 }

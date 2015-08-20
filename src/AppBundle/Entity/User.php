@@ -8,6 +8,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Sonata\UserBundle\Entity\BaseUser;
 
@@ -23,15 +24,24 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
+    /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
+    protected $google_id;
+    /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
+    protected $google_access_token;
     /**
      * @ORM\ManyToMany(targetEntity="Convention", mappedBy="administrators")
      */
     private $admin_conventions;
-
-
     /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\StudentDelegation", inversedBy="users") */
     private $student_delegation;
+    /** @ORM\OneToMany(targetEntity="\AppBundle\Entity\Registration", mappedBy="user") */
+    private $registrations;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->registrations = new ArrayCollection();
+    }
 
 
     /**
@@ -40,14 +50,6 @@ class User extends BaseUser
     public function getCollege()
     {
         return $this->getStudentDelegation()->getCollege();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUniversity()
-    {
-        return $this->getStudentDelegation()->getCollege()->getUniversity();
     }
 
     /**
@@ -64,6 +66,18 @@ class User extends BaseUser
     public function setStudentDelegation($student_delegation)
     {
         $this->student_delegation = $student_delegation;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUniversity()
+    {
+        if ($this->getStudentDelegation())
+        {
+            return $this->getStudentDelegation()->getCollege()->getUniversity();
+        }
+        return;
     }
 
     /**
@@ -97,12 +111,6 @@ class User extends BaseUser
     {
         $this->id = $id;
     }
-
-    /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
-    protected $google_id;
-
-    /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
-    protected $google_access_token;
 
     /**
      * @return mixed
@@ -184,5 +192,40 @@ class User extends BaseUser
             $url .= ' />';
         }
         return $url;
+    }
+
+
+    /**
+     * Add registration
+     *
+     * @param \AppBundle\Entity\Registration $registration
+     *
+     * @return User
+     */
+    public function addRegistration(\AppBundle\Entity\Registration $registration)
+    {
+        $this->registrations[] = $registration;
+
+        return $this;
+    }
+
+    /**
+     * Remove registration
+     *
+     * @param \AppBundle\Entity\Registration $registration
+     */
+    public function removeRegistration(\AppBundle\Entity\Registration $registration)
+    {
+        $this->registrations->removeElement($registration);
+    }
+
+    /**
+     * Get registrations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRegistrations()
+    {
+        return $this->registrations;
     }
 }
