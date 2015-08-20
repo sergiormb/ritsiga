@@ -16,6 +16,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class NotificationListener implements EventSubscriberInterface
 {
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
+
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
@@ -63,6 +68,6 @@ class NotificationListener implements EventSubscriberInterface
         return array(
             RegistrationEvents::CONFIRMED => 'onRegistrationConfirmed',
             RegistrationEvents::PAID => 'onRegistrationPaid',
-            );
+        );
     }
 }
