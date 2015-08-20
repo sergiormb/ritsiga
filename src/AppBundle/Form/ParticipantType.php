@@ -25,7 +25,6 @@ class ParticipantType extends AbstractType
         $builder->add('email');
         $builder->add('phone', null, array('label' => 'label.phone'));
         $builder->add('dni');
-        $builder->add('participant_type', 'hidden');
         $builder->add('save', 'submit', array(
             'attr' => array('class' => 'btn btn-primary'), 'label'=> 'save'
         ));
