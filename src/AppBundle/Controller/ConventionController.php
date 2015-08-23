@@ -33,7 +33,7 @@ class ConventionController extends Controller
         $registrations = $convention->getRegistrations();
         $inscriptions = count($registrations);
 
-        return $this->render('Conventions/convention.html.twig', array(
+        return $this->render(':frontend/conventions:convention.html.twig', array(
             'convention' => $convention,
             'user'=> $user,
             'inscriptions' => $inscriptions,

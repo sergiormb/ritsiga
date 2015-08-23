@@ -176,7 +176,12 @@
         "bundles/sonatacore/vendor/moment/moment.js"
     %}
         <script src="{{ asset_url }}"></script>
+<script>
+    $(document).ready(function() {
+        $('select').select2({});
+    });
 
+</script>
     {% endjavascripts %}
 {% endblock %}
 </body>

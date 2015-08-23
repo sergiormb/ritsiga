@@ -18,7 +18,7 @@ class DefaultController extends Controller
     {
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $conventions = $this->getDoctrine()->getRepository('AppBundle:Convention')->findConventionsAvailables();
-	    return $this->render('Conventions/list_convetions.html.twig', array('conventions' => $conventions,
+	    return $this->render(':frontend/conventions:list_convetions.html.twig', array('conventions' => $conventions,
         'user'=> $user,));
     }
 

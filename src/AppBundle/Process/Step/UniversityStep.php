@@ -25,7 +25,7 @@ class UniversityStep extends ControllerStep
         $form = $this->createForm(new UniversityType(), $university);
 
 
-        return $this->render(':Registration/Process:university.html.twig', array(
+        return $this->render(':frontend/registration/process:university.html.twig', array(
             'convention' => $convention,
             'form' => $form->createView(),
             'user' => $user,

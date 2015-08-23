@@ -21,12 +21,17 @@ class WelcomeStep extends ControllerStep
         $convention = $siteManager->getCurrentSite();
         $student_delegation = $user->getStudentDelegation();
         $registration = $this->getDoctrine()->getRepository('AppBundle:Registration')->findOneBy(array('user' => $user, 'convention' => $convention));
+        if ($user->getUniversity() == null || $user->getCollege() == null || $user->getStudentDelegation() == null)
+        {
+            $this->addFlash('warning', $this->get('translator')->trans( 'Debe completar su perfil para inscribirse en una asamblea'));
+            return $this->redirectToRoute('fos_user_profile_edit');
+        }
         if ($registration)
         {
             return $this->redirectToRoute('registration');
         }
 
-        return $this->render(':Registration/Process:welcome.html.twig', array(
+        return $this->render(':frontend/registration/process:welcome.html.twig', array(
             'convention' => $convention,
             'user' => $user,
             'student_delegation' => $student_delegation,

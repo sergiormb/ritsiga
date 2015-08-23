@@ -1,4 +1,4 @@
-{% extends "::base.html.twig"  %}
+{% extends ":frontend:base.html.twig"  %}
 {% block content %}
 {% block sonata_profile_content %}
     <div class="row">
@@ -92,10 +92,6 @@
                                 <tr>
                                     <th>Sitio web</th>
                                     <td>{{ user.website }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Sexo</th>
-                                    <td>{{ user.gender }}</td>
                                 </tr>
                                 <tr>
                                     <th>Teléfono</th>
