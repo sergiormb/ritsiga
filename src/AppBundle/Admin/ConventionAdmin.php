@@ -27,7 +27,7 @@ class ConventionAdmin extends Admin
         $query = parent::createQuery($context);
         $alias = current($query->getRootAliases());
         $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
-        if($convention != '')
+        if($convention->getId())
         {
             $query->andWhere($query->expr()->eq( $alias . '.id', $convention->getId() ));
         }
@@ -68,7 +68,7 @@ class ConventionAdmin extends Admin
             ->add('endsAt', null, array('label' => 'label.endsAt'))
             ->add('email')
             ->add('image',null,array(
-                'template' => 'image/image.html.twig',
+                'template' => 'backend/image/image.html.twig',
                 'label' => 'Imagen'
             ))
         ;
