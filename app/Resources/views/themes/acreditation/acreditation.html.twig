@@ -22,8 +22,8 @@
     <section class="invoice">
         <!-- title row -->
         <div class="row">
-            <div class="col-xs-2">
-                <img width="100" src="/Users/sergio/Developer/ritsiGA/web/bundles/app/img/logo_ritsi.png">
+            <div class="col-xs-2" align="right">
+                <img width="100" src="{{ kernelRootDir }}/../web/bundles/app/img/logo_ritsi.png">
             </div><!-- /.col -->
             <div class="col-xs-10" style="padding-left: 100px;padding-bottom: 20px;">
                 <h2>{{ registration.convention.name }}</h2>
@@ -89,6 +89,15 @@
 
                         </tr>
                     {% endfor %}
+                    <tr colspan="2">
+                        <td>Y para que así conste firmo y sello el presente documento:</td>
+                    </tr>
+                    <tr>
+                        <td>Firma y nombre</td>
+                        <td>Sello del Consejo/Delegación</td>
+                    </tr>
+
+
 
                     </tbody>
                 </table>
