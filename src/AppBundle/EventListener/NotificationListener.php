@@ -31,7 +31,7 @@ class NotificationListener implements EventSubscriberInterface
         $registration = $event->getRegistration();
         $user = $registration->getUser();
         $systemMailer = $this->container->get('system_mailer');
-        $systemMailer->send('App:confirmed_registration', ['user' => $user], 'es');
+        $systemMailer->send('App:confirmed_registration', ['user' => $user, 'registration' => $registration], 'es');
 
     }
 
@@ -40,7 +40,7 @@ class NotificationListener implements EventSubscriberInterface
         $registration = $event->getRegistration();
         $user = $registration->getUser();
         $systemMailer = $this->container->get('system_mailer');
-        $systemMailer->send('App:confirmed_registration', ['user' => $user], 'es');
+        $systemMailer->send('App:confirmed_registration', ['user' => $user, 'registration' => $registration], 'es');
     }
 
     /**
