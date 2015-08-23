@@ -7,6 +7,7 @@
  */
 
 namespace AppBundle\EventListener;
+use AppBundle\Entity\Convention;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\ORM\EntityManager;
 use AppBundle\Site\SiteManager;
@@ -48,6 +49,7 @@ class CurrentSiteListener {
         }
 
         if ($this->baseCode == $code) {
+            $this->siteManager->setCurrentSite(new Convention());
             return;
         }
 
