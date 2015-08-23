@@ -2,12 +2,13 @@
 <email xmlns="http://christoph-hautzinger.de/schema/system-mail-bundle"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://christoph-hautzinger.de/schema/system-mail-bundle http://christoph-hautzinger.de/schema/system-mail-bundle/email-1.0.xsd">
+    <from>{{ user.email }}</from>
     <to name="{{ user.firstname }}">{{ user.email }}</to>
-    <subject locale="es">Hola {{ user.firstname }}</subject>
+    <subject locale="es">[ritsiGA] Inscripción Confirmada</subject>
     <subject locale="en">Hello {{ user.firstname }}</subject>
     <messageHtml locale="es"><![CDATA[
-        Hallo {{ user.firstname }},
-        >please click this link
+        Hola {{ user.firstname }},
+        su inscripción en {{ registration.convention }} ha sido confirmada
         ]]></messageHtml>
     <messageText locale="es" removeIndent="true">
         Hello {{ user.firstname }},
