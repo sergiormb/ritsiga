@@ -31,7 +31,7 @@ var display_field = function(visible, element) {
         return this.each(function () {
             var $university = $("#fos_user_profile_form_university"),
                 $college = $("#fos_user_profile_form_college"),
-                $student_delegation = $("#fos_user_profile_form_student_delegation");
+                $student_delegation = $("#fos_user_profile_form_studentdelegation");
 
                 $university.change(function () {
                     var option = $('option:selected', this).attr('value');
@@ -40,6 +40,7 @@ var display_field = function(visible, element) {
                 });
 
                 $college.change(function () {
+                    console.log("entra");
                     var option = $('option:selected', this).attr('value');
                     connection_display_field('delegaciones', option, $student_delegation);
                     display_field(true, $student_delegation);
