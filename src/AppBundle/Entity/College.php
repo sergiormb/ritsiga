@@ -7,6 +7,7 @@
  */
 
 namespace AppBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -79,6 +80,7 @@ class College
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     * @Assert\Email()
      */
     private $email;
     /**
