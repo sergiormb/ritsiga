@@ -9,6 +9,7 @@
 namespace AppBundle\Behat;
 
 use AppBundle\Entity\User;
+use AppBundle\Entity\StudentDelegation;
 use Behat\Gherkin\Node\TableNode;
 use Sylius\Bundle\ResourceBundle\Behat\DefaultContext;
 
@@ -24,6 +25,9 @@ class UserContext  extends DefaultContext
             $user->setUsername($userHash['username']);
             $user->setEmail($userHash['email']);
             $user->setPlainPassword($userHash['plainPassword']);
+            $student_delegation=$this->getEntityManager()->getRepository('AppBundle:StudentDelegation')->findOneBy(['name' => $userHash['student_delegation']]);
+            var_dump($student_delegation);
+            $user->setStudentDelegation($student_delegation);
             $this->getEntityManager()->persist($user);
         }
         $this->getEntityManager()->flush();

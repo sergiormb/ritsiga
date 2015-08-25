@@ -29,6 +29,7 @@ default:
                 - AppBundle\Behat\CoreContext
                 - AppBundle\Behat\UserContext
                 - AppBundle\Behat\WebContext
+                - AppBundle\Behat\StudentDelegationContext
             filters:
                 tags: "@usuarios"
         login:
@@ -36,6 +37,7 @@ default:
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\CoreContext
                 - AppBundle\Behat\UserContext
+                - AppBundle\Behat\BrowserContext
             filters:
                 tags: "@login"
 javascript:

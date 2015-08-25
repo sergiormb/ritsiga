@@ -27,12 +27,13 @@ class CoreContext extends DefaultContext
      */
     public function iAmOnConventionSite($domain)
     {
-        $siteManager = $this->getContainer()->get('ritsiga.site.manager');
-        $site = $this->getEntityManager()->getRepository('AppBundle:Convention')->findOneBy(['domain' => $domain]);
-        if (false === $site instanceof Convention) {
-            throw new \Exception("Site not found: $domain");
-        }
-        $siteManager->setCurrentSite($site);
+//        $siteManager = $this->getContainer()->get('ritsiga.site.manager');
+//        $site = $this->getEntityManager()->getRepository('AppBundle:Convention')->findOneBy(['domain' => $domain]);
+//        if (false === $site instanceof Convention) {
+//            throw new \Exception("Site not found: $domain");
+//        }
+//        $siteManager->setCurrentSite($site);
+//        $this->setMinkParameter('base_url', 'http://');
     }
 
     /**
