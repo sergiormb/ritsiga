@@ -110,14 +110,14 @@ class ConventionAdmin extends Admin
     public function prePersist($object)
     {
         if ($object->getImage()) {
-            $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+            $this->getConfigurationPool()->getContainer()->get('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
         }
     }
 
     public function preUpdate($object)
     {
         if ($object->getImage()) {
-            $this->getService('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
+            $this->getConfigurationPool()->getContainer()->get('stof_doctrine_extensions.uploadable.manager')->markEntityToUpload($object, $object->getImage());
         }
     }
 
