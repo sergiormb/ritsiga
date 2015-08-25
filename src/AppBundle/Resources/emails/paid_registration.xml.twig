@@ -3,10 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://christoph-hautzinger.de/schema/system-mail-bundle http://christoph-hautzinger.de/schema/system-mail-bundle/email-1.0.xsd">
     <to name="{{ user.firstname }}">{{ user.email }}</to>
-    <subject locale="es">Hola {{ user.firstname }}</subject>
+    <subject locale="es">[ritsiGA] Inscripción Pagadda</subject>
     <subject locale="en">Hello {{ user.firstname }}</subject>
-    <messageHtml locale="es"><![CDATA[
-        Hola {{ user.firstname }}, su registro ha sido pagado        ]]></messageHtml>
+    <messageHtml locale="es">
+        Hola {{ user.firstname }}, su registro {{ registration.convention }} ha sido pagado</messageHtml>
     <messageText locale="es" removeIndent="true">
         Hello {{ user.firstname }},
         please click this link:
