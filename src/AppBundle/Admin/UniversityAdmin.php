@@ -19,32 +19,32 @@ class UniversityAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('address')
-            ->add('city')
-            ->add('province')
-            ->add('postcode')
-            ->add('phone')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('address', null, array('label' => 'label.address'))
+            ->add('city', null, array('label' => 'label.city'))
+            ->add('province', null, array('label' => 'label.province'))
+            ->add('postcode', null, array('label' => 'label.postcode'))
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('fax')
             ->add('web')
             ->add('cif')
-            ->add('type')
+            ->add('type', null, array('label' => 'label.type'))
             ->add('slug');
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name')
-            ->add('address')
-            ->add('city')
-            ->add('province')
-            ->add('postcode')
-            ->add('phone')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('address', null, array('label' => 'label.address'))
+            ->add('city', null, array('label' => 'label.city'))
+            ->add('province', null, array('label' => 'label.province'))
+            ->add('postcode', null, array('label' => 'label.postcode'))
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('fax')
             ->add('web')
             ->add('cif')
-            ->add('type')
+            ->add('type', null, array('label' => 'label.type'))
             ->add('slug');
     }
 
@@ -52,9 +52,9 @@ class UniversityAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-            ->add('city')
-            ->add('province')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('province', null, array('label' => 'label.province'))
+            ->add('city', null, array('label' => 'label.city'))
         ;
     }
 
@@ -62,9 +62,10 @@ class UniversityAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name')
-            ->add('city')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('city', null, array('label' => 'label.city'))
             ->add('_action', 'actions', array(
+                'label' => 'label.action',
                 'actions' => array(
                     'edit' => array(),
                     'show' => array(),
