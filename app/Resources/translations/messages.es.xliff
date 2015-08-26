@@ -150,6 +150,18 @@
                 <source>label.invoicenumber</source>
                 <target>Número de Factura</target>
             </trans-unit>
+            <trans-unit id="37">
+                <source>label.domain</source>
+                <target>Dominio</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>label.type</source>
+                <target>Tipo</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>label.action</source>
+                <target>Acciones</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
