@@ -28,18 +28,10 @@ class ConventionContext extends DefaultContext
             $convention->setStartsAt(new \DateTime( $conventionHash['fechaInicio'] ));
             $convention->setEndsAt(new \DateTime( $conventionHash['fechaFin'] ));
             $convention->setDomain($conventionHash['dominio']);
-            $convention->setWeb($this->faker->url);
             $convention->setEmail($this->faker->email);
             $this->getEntityManager()->persist($convention);
         }
         $this->getEntityManager()->flush();
     }
 
-    /**
-     * @Then debería ver :number asamblea(s)
-     */
-    public function iShouldSeeConvention($number)
-    {
-        $this->assertSession()->elementsCount('css', '.convention', $number);
-    }
 }

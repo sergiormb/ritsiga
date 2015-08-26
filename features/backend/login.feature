@@ -1,5 +1,5 @@
 #language: es
-@backend @login
+@backend
 Característica: Comprobar login
     Para iniciar sesión en el panel de administración
     Como usuario autentificado
@@ -25,16 +25,24 @@ Característica: Comprobar login
             |   admin  |    test    | Bad credentials |
 
     Escenario: Comprobar logout de usuario
-        Dado estoy conectado con "admin" y "admin" en "/login"
+        Dado que estoy autenticado como administrador
         Cuando voy a "convention/ritsi/admin/dashboard"
         Y voy a "logout"
         Entonces debo ver "Inicio"
 
     Esquema del escenario: Comprobar elementos en el menu
-        Dado estoy conectado con "admin" y "admin" en "/login"
+        Dado que estoy autenticado como administrador
         Cuando voy a "convention/ritsi/admin/dashboard"
         Entonces la respuesta debe contener "<message>"
 
         Ejemplos:
             | message |
             |   User  |
+
+
+    Escenario: Comprobar inicio sesión correcto
+        Dado que estoy autenticado como administrador
+        Cuando voy a "convention/ritsi/admin/dashboard"
+        Entonces debo ver "Asambleas"
+        Y debo ver "Entidades"
+        Y debo ver "Usuario"

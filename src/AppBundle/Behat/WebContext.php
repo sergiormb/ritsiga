@@ -39,4 +39,35 @@ class WebContext extends DefaultContext
         $this->iClickNear($action, $block);
 
     }
+
+    /**
+     * @Given /^que estoy en la página (principal|creación) de (.*)$/
+     */
+    public function iAmOnActionResource($action, $resource)
+    {
+        $page = sprintf("ritsiga_%s_%s", $this->translate[$resource], $this->actions[$action]);
+        $this->iAmOnPage($page);
+    }
+
+    /**
+     * @When presiono :button junto a :value
+     */
+    public function iClickNear($button, $value)
+    {
+        $tr = $this->assertSession()->elementExists('css', sprintf('table tbody tr:contains("%s")', $value));
+        $locator = sprintf('button:contains("%s")', $button);
+        if ($tr->has('css', $locator)) {
+            $tr->find('css', $locator)->press();
+        } else {
+            $tr->clickLink($button);
+        }
+    }
+
+    /**
+     * @Then /^debería ver (\d+) (.*) en la lista$/
+     */
+    public function iShouldSeeNumItems($num)
+    {
+        $this->assertSession()->pageTextContains(sprintf("%d %s", $num, $num == 1 ? "resultado" : "resultados"));
+    }
 }

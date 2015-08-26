@@ -14,22 +14,14 @@ use Sylius\Bundle\ResourceBundle\Behat\DefaultContext;
 class BrowserContext extends DefaultContext
 {
     /**
-     * First, force logout, then go to the login page, fill the informations and finally go to requested page
-     *
-     * @Given /^estoy conectado con "([^"]*)" y "([^"]*)" en "([^"]*)"$/
-     *
-     * @param string $login
-     * @param string $rawPassword
-     * @param string $url
+     * @Given estoy autenticado como :username con :password
      */
-    public function iAmConnectedWithOn($login, $rawPassword, $url)
+    public function iAmAuthenticated($username, $password)
     {
-        $this->getSession()->visit('logout');
-        $this->getSession()->visit('login');
-        $this->fillField('_username', $login);
-        $this->fillField('_password', $rawPassword);
+        $this->getSession()->visit($this->generateUrl('fos_user_security_login', [], true));
+        $this->fillField('_username', $username);
+        $this->fillField('_password', $password);
         $this->pressButton('_submit');
-        $this->getSession()->visit($url);
     }
 
 }

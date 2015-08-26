@@ -1,14 +1,45 @@
 #language: es
-@backend @login
+@backend
 Característica: Comprobar asambleas en el backend
 
-    Escenario: Comprobar listado de asambleas cuando no esta conectado
-        Cuando voy a "convention/ritsi/admin/app/convention/list"
-        Entonces el código de estado de la respuesta debe ser 200
-        Y debo ver "Iniciar Sesión"
+Antecedentes:
+    Dado que estoy autenticado como administrador
+    Y que existen los siguientes usuarios:
+    | username  |     email     |   plainPassword   |  enabled  |  role             |
+    |   user1   | user1@uco.es  | secret1           |   1       |  ROLE_ORGANIZER   |
+    |   admin   | user2@uco.es  | admin             |   1       |  ROLE_ADMIN       |
+    Y existen las asambleas:
+    | nombre  | fechaInicio | fechaFin       |   dominio      |   email        |
+    | Cádiz   | now         | +3 days        |   cadiz2014    |   1@riti.com   |
+    | Málaga  | now         | +3 days        |   malaga2016   |   2@riti.com   |
+    | Córdoba | -3 days     | -1 days        |   cordoba2013  |   3@riti.com   |
 
-Escenario: Comprobar listado de asambleas cuando estoy conectado
-        Dado estoy conectado con "admin" y "admin" en "/login"
-        Cuando voy a "convention/ritsi/admin/app/convention/list"
-        Entonces el código de estado de la respuesta debe ser 200
-        Y debo ver "Iniciar Sesión"
+    Escenario: Ver listado de todas las asambleas
+        Cuando voy a "convention/ritsi/admin/dashboard"
+        Y voy a "/convention/ritsi/admin/app/convention/list"
+        Entonces debo ver "3 resultados"
+
+    Escenario: Enviar formulario de asamblea vacío
+        Cuando voy a "/convention/ritsi/admin/app/convention/create"
+        Y presiono "Crear y editar"
+        Entonces debo ver "Se ha producido un error durante la creación del elemento"
+
+    Escenario: Crear asamblea
+        Cuando voy a "/convention/ritsi/admin/app/convention/create"
+        Y relleno lo siguiente:
+        | Nombre                 | Prueba           |
+        | Fecha de comienzo      | 4/8/2015         |
+        | Fecha de finalización  | 4/9/2015         |
+        | Email                  | ejemplo@gmail.com|
+        | Dominio                | prueba           |
+        Y presiono "Crear y regresar al listado"
+        Entonces debo ver "Elemento creado satisfactoriamente"
+
+    Escenario: Borrar asamblea desde el listado
+        Cuando voy a "/convention/ritsi/admin/app/convention/create"
+        Y presiono "Borrar" junto a "Cádiz"
+        Entonces debo ver "¿Está seguro de que quiere borrar el elemento seleccionado?"
+        Cuando presiono "Sí, borrar"
+        Entonces debería estar en "/convention/ritsi/admin/app/convention/create"
+        Y debo ver "Elemento eliminado satisfactoriamente."
+        Pero no debo ver "Cordoba"

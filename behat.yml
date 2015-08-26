@@ -32,14 +32,16 @@ default:
                 - AppBundle\Behat\StudentDelegationContext
             filters:
                 tags: "@usuarios"
-        login:
+        backend:
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\CoreContext
                 - AppBundle\Behat\UserContext
                 - AppBundle\Behat\BrowserContext
+                - AppBundle\Behat\ConventionContext
+                - AppBundle\Behat\EntityContext
             filters:
-                tags: "@login"
+                tags: "@backend"
 javascript:
     gherkin:
         filters:
