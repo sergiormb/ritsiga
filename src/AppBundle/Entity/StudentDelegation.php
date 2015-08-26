@@ -30,6 +30,7 @@ class StudentDelegation {
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $name;
     /**
@@ -42,12 +43,14 @@ class StudentDelegation {
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $city;
     /**
      * @var string
      *
      * @ORM\Column(name="province", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $province;
     /**

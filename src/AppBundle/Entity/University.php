@@ -29,6 +29,7 @@ class University {
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $name;
     /**
@@ -41,12 +42,14 @@ class University {
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $city;
     /**
      * @var string
      *
      * @ORM\Column(name="province", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $province;
     /**
@@ -96,6 +99,7 @@ class University {
      * @var string
      *
      * @ORM\Column(name="cif", type="string", length=9)
+     * @Assert\NotBlank
      */
     private $cif;
     /**

@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Convention
@@ -28,6 +29,7 @@ class Convention
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=512)
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -42,6 +44,7 @@ class Convention
      * @var string
      *
      * @ORM\Column(name="domain", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $domain;
 
@@ -76,6 +79,7 @@ class Convention
      * @var \DateTime
      *
      * @ORM\Column(name="starts_at", type="datetime")
+     * @Assert\NotBlank
      */
     private $startsAt;
 
@@ -83,6 +87,7 @@ class Convention
      * @var \DateTime
      *
      * @ORM\Column(name="ends_at", type="datetime")
+     * @Assert\NotBlank
      */
     private $endsAt;
 
@@ -90,6 +95,7 @@ class Convention
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $email;
 
