@@ -132,6 +132,9 @@ services:
              - AppBundle\Entity\Registration
              - ~
 
+     sonata.user.admin.group:
+         abstract: true
+         public: false
 
 ## FORMULARIOS ###
 
