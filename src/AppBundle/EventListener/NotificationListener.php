@@ -9,8 +9,10 @@
 namespace AppBundle\EventListener;
 
 
+use AppBundle\Entity\Registration;
 use AppBundle\Event\RegistrationEvent;
 use AppBundle\Event\RegistrationEvents;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -69,5 +71,18 @@ class NotificationListener implements EventSubscriberInterface
             RegistrationEvents::CONFIRMED => 'onRegistrationConfirmed',
             RegistrationEvents::PAID => 'onRegistrationPaid',
         );
+    }
+
+    public function preUpdate(PreUpdateEventArgs $eventArgs)
+    {
+        if ($eventArgs->getEntity() instanceof Registration) {
+            if ($eventArgs->hasChangedField('status') && $eventArgs->getNewValue('status') == 'paid') {
+                $registration = $eventArgs->getEntity();
+                $user = $registration->getUser();
+                $systemMailer = $this->container->get('system_mailer');
+                $systemMailer->send('App:paid_registration', ['user' => $user, 'registration' => $registration], 'es');
+
+            }
+        }
     }
 }
