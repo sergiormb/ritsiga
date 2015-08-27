@@ -162,6 +162,18 @@
                 <source>label.action</source>
                 <target>Acciones</target>
             </trans-unit>
+            <trans-unit id="40">
+                <source>label.registration</source>
+                <target>Inscripción</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>label.user</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>label.description</source>
+                <target>Descripción</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

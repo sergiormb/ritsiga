@@ -91,9 +91,9 @@ class ConventionAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name')
-            ->add('startsAt')
-            ->add('endsAt')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('startsAt', null, array('label' => 'label.startsAt'))
+            ->add('endsAt', null, array('label' => 'label.endsAt'))
             ->add('_action', 'actions', array(
                 'label' => 'label.action',
             'actions' => array(

@@ -45,37 +45,38 @@ class ParticipantTypeAdmin  extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('convention')
-            ->add('name')
-            ->add('description')
-            ->add('startDate', 'sonata_type_datetime_picker')
-            ->add('endDate', 'sonata_type_datetime_picker')
-            ->add('price')
-            ->add('num_participants');
+            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('description', null, array('label' => 'label.description'))
+            ->add('startDate', 'sonata_type_datetime_picker', array('label' => 'label.startsAt'))
+            ->add('endDate', 'sonata_type_datetime_picker', array('label' => 'label.endsAt'))
+            ->add('price', null, array('label' => 'label.price'))
+            ->add('num_participants', null, array('label' => 'label.numparticipants'));
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-            ->add('description')
-            ->add('startDate')
-            ->add('endDate')
-            ->add('price')
-            ->add('num_participants');
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('description', null, array('label' => 'label.description'))
+            ->add('startDate', null, array('label' => 'label.startsAt'))
+            ->add('endDate', null, array('label' => 'label.endsAt'))
+            ->add('price', null, array('label' => 'label.price'))
+            ->add('num_participants', null, array('label' => 'label.numparticipants'));
     }
 
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name')
-            ->add('startDate')
-            ->add('endDate')
-            ->add('price')
-            ->add('num_participants')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('startDate', null, array('label' => 'label.startsAt'))
+            ->add('endDate', null, array('label' => 'label.endsAt'))
+            ->add('price', null, array('label' => 'label.price'))
+            ->add('num_participants', null, array('label' => 'label.numparticipants'))
             ->add('_action', 'actions', array(
+                'label' => 'label.actions',
                 'actions' => array(
                     'edit' => array(),
                     'show' => array(),
@@ -85,13 +86,13 @@ class ParticipantTypeAdmin  extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name')
-            ->add('convention')
-            ->add('description')
-            ->add('startDate')
-            ->add('endDate')
-            ->add('price')
-            ->add('num_participants')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('description', null, array('label' => 'label.description'))
+            ->add('startDate', null, array('label' => 'label.startsAt'))
+            ->add('endDate', null, array('label' => 'label.endsAt'))
+            ->add('price', null, array('label' => 'label.price'))
+            ->add('num_participants', null, array('label' => 'label.numparticipants'))
         ;
     }
 }

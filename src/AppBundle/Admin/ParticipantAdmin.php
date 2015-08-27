@@ -30,9 +30,10 @@ class ParticipantAdmin  extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('last_name')
-            ->add('phone')
+            ->add('registration', 'choice', array('label' => 'label.registration'))
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('last_name', null, array('label' => 'label.last_name'))
+            ->add('phone', null, array('label' => 'label.phone'))
             ->add('dni')
         ;
     }
@@ -40,6 +41,7 @@ class ParticipantAdmin  extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
+            ->add('registration', null, array('label' => 'label.registration'))
             ->add('name', null, array('label' => 'label.name'))
             ->add('last_name', null, array('label' => 'label.last_name'))
             ->add('phone', null, array('label' => 'label.phone'))

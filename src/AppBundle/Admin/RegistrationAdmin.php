@@ -41,6 +41,7 @@ class RegistrationAdmin extends Admin
     {
         $formMapper
             ->add('convention', null, array('label' => 'label.convention'))
+            ->add('user', null, array('label' => 'label.user'))
             ->add('name', null, array('label' => 'label.name'))
             ->add('position', null, array('label' => 'label.position'))
             ->add('status', 'choice', array('label' => 'label.status', 'choices'  => array(Registration::STATUS_OPEN => 'Abierta', Registration::STATUS_CONFIRMED  => 'Confirmada', Registration::STATUS_CANCELLED => 'Cancelada', Registration::STATUS_PAID => 'Pagada'),
