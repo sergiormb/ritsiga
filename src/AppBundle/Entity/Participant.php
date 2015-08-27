@@ -32,6 +32,7 @@ class Participant {
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -39,6 +40,7 @@ class Participant {
      * @var string
      *
      * @ORM\Column(name="last_name", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $last_name;
 
@@ -61,13 +63,16 @@ class Participant {
      * @var string
      *
      * @ORM\Column(name="dni", type="string", length=9)
+     * @Assert\NotBlank
      */
     private $dni;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Registration", inversedBy="participants") */
+    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Registration", inversedBy="participants")
+     */
     private $registration;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\ParticipantType", inversedBy="participants_types") */
+    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\ParticipantType", inversedBy="participants_types")
+     */
     private $participant_type;
 
     /**
