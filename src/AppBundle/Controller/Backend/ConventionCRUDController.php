@@ -6,7 +6,7 @@
  * Time: 17:12
  */
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Backend;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +18,6 @@ use Symfony\Component\BrowserKit\Response;
 
 class ConventionCRUDController extends Controller
 {
-
     public function acreditationAction(Convention $convention, Request $request)
     {
         $registrations = $convention->getRegistrations();

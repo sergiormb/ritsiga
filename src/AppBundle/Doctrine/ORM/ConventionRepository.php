@@ -2,6 +2,7 @@
 
 namespace AppBundle\Doctrine\ORM;
 
+use AppBundle\Entity\Convention;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -25,4 +26,11 @@ class ConventionRepository extends EntityRepository
         return $consulta->getResult();
     }
 
+    public function getQueryConvention(Convention $convention)
+    {
+        $qb = $this->createQueryBuilder('convention');
+
+        return $qb->where('convention.id=:id')
+            ->setParameter('id', $convention->getId());
+    }
 }

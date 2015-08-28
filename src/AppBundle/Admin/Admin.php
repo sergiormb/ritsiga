@@ -25,4 +25,8 @@ class Admin extends BaseAdmin
         return $this->getConfigurationPool()->getContainer()->get('ritsiGA.repository.' . $repository);
     }
 
+    protected  function getCurrentConvention()
+    {
+        return $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
+    }
 }
