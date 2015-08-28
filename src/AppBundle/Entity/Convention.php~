@@ -3,15 +3,19 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Convention
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\ConventionRepository")
+ * @Gedmo\Uploadable(filenameGenerator="SHA1", path="../web/images")
  */
 class Convention
 {
+
     /**
      * @var integer
      *
@@ -25,13 +29,22 @@ class Convention
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=512)
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @var string
      *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="domain", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $domain;
 
@@ -43,9 +56,30 @@ class Convention
     private $web;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     * @Gedmo\UploadableFileName
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(name="mime_type", type="string", nullable=true)
+     * @Gedmo\UploadableFileMimeType
+     */
+    private $mimeType;
+
+    /**
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     * @Gedmo\UploadableFilePath
+     */
+    private $path;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="starts_at", type="datetime")
+     * @Assert\NotBlank
      */
     private $startsAt;
 
@@ -53,6 +87,7 @@ class Convention
      * @var \DateTime
      *
      * @ORM\Column(name="ends_at", type="datetime")
+     * @Assert\NotBlank
      */
     private $endsAt;
 
@@ -60,27 +95,16 @@ class Convention
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $email;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Organization", inversedBy="conventions") */
-    private $organization;
-
     /**
-     * @return string
+     * @var boolean
+     *
+     * @ORM\Column(name="maintenance", type="boolean", nullable=false)
      */
-    public function getRegistrations()
-    {
-        return $this->registrations;
-    }
-
-    /**
-     * @param string $registrations
-     */
-    public function setRegistrations($registrations)
-    {
-        $this->registrations = $registrations;
-    }
+    private $maintenance = true;
 
     /**
      * @var string
@@ -90,30 +114,75 @@ class Convention
     private $registrations;
 
     /**
-     * @return mixed
-     */
-    public function getAdministrators()
-    {
-        return $this->administrators;
-    }
-
-    /**
-     * @param mixed $administrators
-     */
-    public function setAdministrators($administrators)
-    {
-        $this->administrators = $administrators;
-    }
-
-    /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="admin_conventions")
+     * @ORM\ManyToMany(
+     *  targetEntity="User",
+     *  inversedBy="admin_conventions"
+     * )
+     * @ORM\JoinTable(
+     *  name="ConventionAdministrators",
+     *  joinColumns={
+     *      @ORM\JoinColumn(
+     *          name="convention_id",
+     *          referencedColumnName="id",
+     *          nullable=false
+     *      )
+     *  },
+     *  inverseJoinColumns={
+     *      @ORM\JoinColumn(
+     *          name="user_id",
+     *          referencedColumnName="id",
+     *          nullable=false
+     *      )
+     *  }
+     * )
      */
     private $administrators;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
+     */
+    private $twitter;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
+     */
+    private $facebook;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instagram", type="string", length=255, nullable=true)
+     */
+    private $instagram;
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ParticipantType", mappedBy="convention")
+     */
+    private $participants_types;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->registrations = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->administrators = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->participants_types = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+
+    /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -124,6 +193,7 @@ class Convention
      * Set name
      *
      * @param string $name
+     *
      * @return Convention
      */
     public function setName($name)
@@ -136,7 +206,7 @@ class Convention
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -144,9 +214,154 @@ class Convention
     }
 
     /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Convention
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set domain
+     *
+     * @param string $domain
+     *
+     * @return Convention
+     */
+    public function setDomain($domain)
+    {
+        $this->domain = $domain;
+
+        return $this;
+    }
+
+    /**
+     * Get domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * Set web
+     *
+     * @param string $web
+     *
+     * @return Convention
+     */
+    public function setWeb($web)
+    {
+        $this->web = $web;
+
+        return $this;
+    }
+
+    /**
+     * Get web
+     *
+     * @return string
+     */
+    public function getWeb()
+    {
+        return $this->web;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Convention
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set mimeType
+     *
+     * @param string $mimeType
+     *
+     * @return Convention
+     */
+    public function setMimeType($mimeType)
+    {
+        $this->mimeType = $mimeType;
+
+        return $this;
+    }
+
+    /**
+     * Get mimeType
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->mimeType;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return Convention
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
      * Set startsAt
      *
      * @param \DateTime $startsAt
+     *
      * @return Convention
      */
     public function setStartsAt($startsAt)
@@ -159,7 +374,7 @@ class Convention
     /**
      * Get startsAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getStartsAt()
     {
@@ -170,6 +385,7 @@ class Convention
      * Set endsAt
      *
      * @param \DateTime $endsAt
+     *
      * @return Convention
      */
     public function setEndsAt($endsAt)
@@ -182,7 +398,7 @@ class Convention
     /**
      * Get endsAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEndsAt()
     {
@@ -193,6 +409,7 @@ class Convention
      * Set email
      *
      * @param string $email
+     *
      * @return Convention
      */
     public function setEmail($email)
@@ -212,57 +429,28 @@ class Convention
         return $this->email;
     }
 
-    public function setOrganization(\AppBundle\Entity\Organization $organization) {
-        $this->organization = $organization;
-    }
+    /**
+     * Set maintenance
+     *
+     * @param boolean $maintenance
+     *
+     * @return Convention
+     */
+    public function setMaintenance($maintenance)
+    {
+        $this->maintenance = $maintenance;
 
-    public function getOrganization() {
-        return $this->organization;
+        return $this;
     }
 
     /**
-     * @return string
+     * Get maintenance
+     *
+     * @return boolean
      */
-    public function getWeb()
+    public function getMaintenance()
     {
-        return $this->web;
-    }
-
-    /**
-     * @param string $web
-     */
-    public function setWeb($web)
-    {
-        $this->web = $web;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDomain()
-    {
-        return $this->domain;
-    }
-
-    /**
-     * @param string $domain
-     */
-    public function setDomain($domain)
-    {
-        $this->domain = $domain;
-    }
-
-    public function __toString()
-    {
-        return $this->name;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->registrations = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->administrators = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->maintenance;
     }
 
     /**
@@ -290,6 +478,16 @@ class Convention
     }
 
     /**
+     * Get registrations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRegistrations()
+    {
+        return $this->registrations;
+    }
+
+    /**
      * Add administrator
      *
      * @param \AppBundle\Entity\User $administrator
@@ -312,4 +510,64 @@ class Convention
     {
         $this->administrators->removeElement($administrator);
     }
+
+    /**
+     * Get administrators
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAdministrators()
+    {
+        return $this->administrators;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * @param string $twitter
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param string $facebook
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInstagram()
+    {
+        return $this->instagram;
+    }
+
+    /**
+     * @param string $instagram
+     */
+    public function setInstagram($instagram)
+    {
+        $this->instagram = $instagram;
+    }
+
+
 }

@@ -157,6 +157,13 @@ class Convention
      */
     private $instagram;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ParticipantType", mappedBy="convention")
+     */
+    private $participants_types;
+
     public function __toString()
     {
         return $this->name;
@@ -168,6 +175,7 @@ class Convention
     {
         $this->registrations = new \Doctrine\Common\Collections\ArrayCollection();
         $this->administrators = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->participants_types = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
 
@@ -559,5 +567,41 @@ class Convention
     public function setInstagram($instagram)
     {
         $this->instagram = $instagram;
+    }
+
+
+
+    /**
+     * Add participantsType
+     *
+     * @param \AppBundle\Entity\ParticipantType $participantsType
+     *
+     * @return Convention
+     */
+    public function addParticipantsType(\AppBundle\Entity\ParticipantType $participantsType)
+    {
+        $this->participants_types[] = $participantsType;
+
+        return $this;
+    }
+
+    /**
+     * Remove participantsType
+     *
+     * @param \AppBundle\Entity\ParticipantType $participantsType
+     */
+    public function removeParticipantsType(\AppBundle\Entity\ParticipantType $participantsType)
+    {
+        $this->participants_types->removeElement($participantsType);
+    }
+
+    /**
+     * Get participantsTypes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getParticipantsTypes()
+    {
+        return $this->participants_types;
     }
 }

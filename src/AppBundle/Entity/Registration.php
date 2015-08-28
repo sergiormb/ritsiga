@@ -392,6 +392,10 @@ class Registration {
         $this->invoicenumber = $invoicenumber;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
 
 
 }

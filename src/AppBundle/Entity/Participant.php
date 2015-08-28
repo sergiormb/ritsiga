@@ -71,7 +71,10 @@ class Participant {
      */
     private $registration;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\ParticipantType", inversedBy="participants_types")
+    /** @ORM\ManyToOne(
+     * targetEntity="\AppBundle\Entity\ParticipantType",
+     * inversedBy="participants"
+     * )
      */
     private $participant_type;
 
