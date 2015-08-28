@@ -9,7 +9,6 @@
 namespace AppBundle\Admin;
 
 use Doctrine\ORM\QueryBuilder;
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -22,7 +21,15 @@ class ParticipantAdmin  extends Admin
      */
     public function createQuery($context = 'list')
     {
+        /** @var QueryBuilder $query */
         $query = parent::createQuery($context);
+        $alias = current($query->getRootAliases());
+        $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
+
+        if ($convention->getId()) {
+            $query->leftJoin($alias.'.registration', 'registration');
+            $query->andWhere($query->expr()->eq('registration.convention', $convention->getId()));
+        }
 
         return $query;
     }
@@ -30,8 +37,9 @@ class ParticipantAdmin  extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('registration', 'choice', array('label' => 'label.registration'))
+            ->add('registration', null, array('label' => 'label.registration'))
             ->add('name', null, array('label' => 'label.name'))
+            ->add('participant_type', null, array('label' => 'label.participanttype'))
             ->add('last_name', null, array('label' => 'label.last_name'))
             ->add('phone', null, array('label' => 'label.phone'))
             ->add('dni')

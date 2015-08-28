@@ -9,9 +9,7 @@
 namespace AppBundle\Admin;
 
 use AppBundle\Entity\Registration;
-use AppBundle\Event\RegistrationEvents;
 use Doctrine\ORM\QueryBuilder;
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -24,15 +22,14 @@ class RegistrationAdmin extends Admin
      */
     public function createQuery($context = 'list')
     {
+        /** @var QueryBuilder $query */
         $query = parent::createQuery($context);
         $alias = current($query->getRootAliases());
         $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
-        if($convention->getId())
-        {
+
+        if($convention->getId()) {
             $query->andWhere($query->expr()->eq( $alias . '.convention', $convention->getId() ));
         }
-        /** @var QueryBuilder $query */
-
 
         return $query;
     }
@@ -40,8 +37,10 @@ class RegistrationAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('convention', null, array('label' => 'label.convention'))
-            ->add('user', null, array('label' => 'label.user'))
+            ->add('convention', null, [
+                'query_builder' => $this->getRepository('convention')->getQueryConvention($this->getCurrentConvention()),
+                'required' => true,
+            ])            ->add('user', null, array('label' => 'label.user'))
             ->add('name', null, array('label' => 'label.name'))
             ->add('position', null, array('label' => 'label.position'))
             ->add('status', 'choice', array('label' => 'label.status', 'choices'  => array(Registration::STATUS_OPEN => 'Abierta', Registration::STATUS_CONFIRMED  => 'Confirmada', Registration::STATUS_CANCELLED => 'Cancelada', Registration::STATUS_PAID => 'Pagada'),

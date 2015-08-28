@@ -6,11 +6,9 @@
  * Time: 11:13
  */
 
-
 namespace AppBundle\Admin;
 
 use Doctrine\ORM\QueryBuilder;
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -24,15 +22,14 @@ class ConventionAdmin extends Admin
      */
     public function createQuery($context = 'list')
     {
+        /** @var QueryBuilder $query */
         $query = parent::createQuery($context);
         $alias = current($query->getRootAliases());
         $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
-        if($convention->getId())
-        {
+
+        if($convention->getId()) {
             $query->andWhere($query->expr()->eq( $alias . '.id', $convention->getId() ));
         }
-        /** @var QueryBuilder $query */
-
 
         return $query;
     }
@@ -99,7 +96,9 @@ class ConventionAdmin extends Admin
             'actions' => array(
                 'delete' => array(),
                 'edit' => array(),
-                'show' => array(),
+                'show' => array(
+                    'template' => 'CRUD/list__show_convention.html.twig',
+                ),
                 'download_acreditation' => array(
                     'template' => 'CRUD/list__action_acreditation.html.twig'
                 ),

@@ -8,9 +8,7 @@
 
 namespace AppBundle\Admin;
 
-use AppBundle\Entity\ParticipantType;
 use Doctrine\ORM\QueryBuilder;
-use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -23,15 +21,14 @@ class ParticipantTypeAdmin  extends Admin
      */
     public function createQuery($context = 'list')
     {
+        /** @var QueryBuilder $query */
         $query = parent::createQuery($context);
         $alias = current($query->getRootAliases());
         $convention = $this->getConfigurationPool()->getContainer()->get('ritsiga.site.manager')->getCurrentSite();
-        if($convention->getId())
-        {
+
+        if ($convention->getId()) {
             $query->andWhere($query->expr()->eq($alias . '.convention', $convention->getId()));
         }
-        /** @var QueryBuilder $query */
-
 
         return $query;
     }
@@ -45,7 +42,10 @@ class ParticipantTypeAdmin  extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('convention', null, array('label' => 'label.convention'))
+            ->add('convention', null, [
+                'query_builder' => $this->getRepository('convention')->getQueryConvention($this->getCurrentConvention()),
+                'required' => true,
+            ])
             ->add('name', null, array('label' => 'label.name'))
             ->add('description', null, array('label' => 'label.description'))
             ->add('startDate', 'sonata_type_datetime_picker', array('label' => 'label.startsAt'))
