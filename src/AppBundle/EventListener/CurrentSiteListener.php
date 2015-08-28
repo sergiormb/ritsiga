@@ -49,7 +49,9 @@ class CurrentSiteListener {
         }
 
         if ($this->baseCode == $code) {
-            $this->siteManager->setCurrentSite(new Convention());
+            $site = new Convention();
+            $site->setDomain('ritsi');
+            $this->siteManager->setCurrentSite($site);
             return;
         }
 

@@ -31,10 +31,10 @@ class RoleConventionSecurityHandler extends RoleSecurityHandler
     {
         $is_auth = parent::isGranted($admin, $attributes, $object);
 
-        if($is_auth)
-        {
-            $is_auth = $this->authorizationChecker->isGranted('ORGANIZE', $this->siteManager->getCurrentSite());
-        }
+//        if($is_auth)
+//        {
+//            $is_auth = $this->authorizationChecker->isGranted('ORGANIZE', $object);
+//        }
 
         return $is_auth;
     }

@@ -1,28 +1,30 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: tfg
- * Date: 30/07/15
- * Time: 18:05
+ * User: sergio
+ * Date: 22/08/15
+ * Time: 01:31
  */
 
 namespace AppBundle\Security\Voter;
 
 
+use AppBundle\Entity\ParticipantType;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
-class ConventionVoter extends AbstractOrganizationVoter
+class ParticipantTypeVoter extends AbstractOrganizationVoter
 {
+
     function getClass()
     {
-        return 'AppBundle\Entity\Convention';
+        return 'AppBundle\Entity\ParticipantType';
     }
 
     public function vote(TokenInterface $token, $object, array $attributes)
     {
         $vote = parent::vote($token, $object, $attributes);
 
-        if ($vote === self::ACCESS_GRANTED && $this->siteManager->getCurrentSite() != $object) {
+        if ($vote === self::ACCESS_GRANTED && $object->getConvention() != $this->siteManager->getCurrentSite()) {
             $vote = self::ACCESS_DENIED;
         }
 
