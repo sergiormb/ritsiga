@@ -140,3 +140,60 @@
     transition: .2s ease;
 }
 
+/* Social Buttons */
+
+/* Google */
+.btn-google {
+    color: #ffffff;
+    background-color: #dd4b39;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-google:hover,
+.btn-google:focus,
+.btn-google.focus,
+.btn-google:active,
+.btn-google.active,
+.open > .dropdown-toggle.btn-google {
+    color: #ffffff;
+    background-color: #c23321;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-google:active,
+.btn-google.active,
+.open > .dropdown-toggle.btn-google {
+    background-image: none;
+}
+.btn-google .badge {
+    color: #dd4b39;
+    background-color: #ffffff;
+}
+
+/* SIR */
+.btn-sir {
+    color: #ffffff;
+    background-color: #1a7f84;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-sir:hover,
+.btn-sir:focus,
+.btn-sir.focus,
+.btn-sir:active,
+.btn-sir.active,
+.open > .dropdown-toggle.btn-sir {
+    color: #ffffff;
+    background-color: #185055;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-sir:active,
+.btn-sir.active,
+.open > .dropdown-toggle.btn-sir {
+    background-image: none;
+}
+.btn-sir .badge {
+    color: #1a7f84;
+    background-color: #ffffff;
+}
+
+.fa-sir:before {
+    content: "\f19b";
+}
