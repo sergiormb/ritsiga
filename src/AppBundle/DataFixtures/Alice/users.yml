@@ -1,15 +1,22 @@
 \AppBundle\Entity\User:
+    superadmin:
+        username: superadmin
+        email: superadmin@localhost.local
+        plainPassword: superadmin
+        student_delegation: @studentdelegation1
+        enabled: 1
+        roles: ['ROLE_SUPER_ADMIN']
     admin:
         username: admin
         email: admin@localhost.local
         plainPassword: admin
         student_delegation: @studentdelegation1
         enabled: 1
-        roles: ['ROLE_SUPER_ADMIN']
+        roles: ['ROLE_ADMIN']
     users{sergio,wano,juanan}:
         username: <current()>
         email: <email()>
         plainPassword: secret
         student_delegation: @studentdelegation1
         enabled: 1
-        roles: ['ROLE_USER','ROLE_ORGANIZER']
+
