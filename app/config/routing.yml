@@ -34,6 +34,10 @@ hwi_oauth_redirect:
 google_login:
     pattern: /login/check-google
 
+sir_login:
+    pattern: /login/check-sir
+
+
 # Backend
 
 admin:
