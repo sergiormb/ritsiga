@@ -8,6 +8,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Security\Core\Role\OrganizerRole;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Sonata\UserBundle\Entity\BaseUser;
@@ -24,9 +25,21 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
+    /**
+     * @ORM\Column(name="sir_id", type="string", length=255, nullable=true)
+     */
+    protected $sir_id;
+    /**
+     * @ORM\Column(name="sir_access_token", type="string", length=255, nullable=true)
+     */
+    protected $sir_access_token;
+    /**
+     * @ORM\Column(name="google_id", type="string", length=255, nullable=true)
+     */
     protected $google_id;
-    /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
+    /**
+     * @ORM\Column(name="google_access_token", type="string", length=255, nullable=true)
+     */
     protected $google_access_token;
     /**
      * @ORM\ManyToMany(targetEntity="Convention", mappedBy="administrators")
@@ -43,14 +56,12 @@ class User extends BaseUser
         $this->registrations = new ArrayCollection();
     }
 
-
     /**
      * @return mixed
      */
     public function getCollege()
     {
-        if ($this->getStudentDelegation())
-        {
+        if ($this->getStudentDelegation()) {
             return $this->getStudentDelegation()->getCollege();
         }
         return;
@@ -119,6 +130,22 @@ class User extends BaseUser
     /**
      * @return mixed
      */
+    public function getSirId()
+    {
+        return $this->sir_id;
+    }
+
+    /**
+     * @param mixed $sir_id
+     */
+    public function setSirId($sir_id)
+    {
+        $this->sir_id = $sir_id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getGoogleId()
     {
         return $this->google_id;
@@ -148,7 +175,21 @@ class User extends BaseUser
         $this->google_access_token = $google_access_token;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSirAccessToken()
+    {
+        return $this->sir_access_token;
+    }
 
+    /**
+     * @param mixed $sir_access_token
+     */
+    public function setSirAccessToken($sir_access_token)
+    {
+        $this->sir_access_token = $sir_access_token;
+    }
 
     /**
      * Add adminConvention
@@ -231,5 +272,21 @@ class User extends BaseUser
     public function getRegistrations()
     {
         return $this->registrations;
+    }
+
+    public function getRoles()
+    {
+        $roles = ['ROLE_USER'];
+
+        if ($this->getAdminConventions()) {
+            $roles[] = 'ROLE_ORGANIZER';
+
+            foreach ($this->getAdminConventions() as $convention) {
+                $role = new OrganizerRole($convention);
+                $roles[] = $role->getRole();
+            }
+        }
+
+        return parent::getRoles() + $roles;
     }
 }
