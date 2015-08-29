@@ -7,6 +7,7 @@
  */
 
 namespace AppBundle\Twig;
+use AppBundle\Site\SiteManager;
 use Symfony\Component\HttpFoundation\RequestStack;
 use AppBundle\Entity\Convention;
 
@@ -17,12 +18,17 @@ class ConventionExtension extends \Twig_Extension
      */
     private $requestStack;
 
+    /**
+     * @var SiteManager
+     */
+    private $siteManager;
 
     /**
      * @param RequestStack $requestStack
      */
-    function __construct($requestStack)
+    function __construct($requestStack, SiteManager $siteManager)
     {
+        $this->siteManager = $siteManager;
         $this->requestStack = $requestStack;
     }
 
@@ -33,6 +39,7 @@ class ConventionExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFunction('convention_url',[$this, 'conventionURL']),
+            new \Twig_SimpleFunction('convention_domain',[$this, 'conventionDomain']),
         ];
     }
 
@@ -50,6 +57,17 @@ class ConventionExtension extends \Twig_Extension
         $url = str_replace('http://', '', $request->getUri());
         $url_complete = "http://" . $domain . "." . $url;
         return $url_complete;
+    }
+
+    /**
+     * Returns code domain
+     *
+     * @return string
+     */
+    public function conventionDomain()
+    {
+        $convention = $this->siteManager->getCurrentSite();
+        return $convention->getDomain();
     }
 
     /**

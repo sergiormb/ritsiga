@@ -146,7 +146,7 @@ services:
 
      ritsiga.participant.form.type:
          class: AppBundle\Form\ParticipantType
-         arguments: [@ritsiga.site.manager, @ritsiga.participanttype.repository]
+         arguments: [@ritsiga.site.manager, @ritsiga.repository.participanttype]
          tags:
              - { name: form.type, alias: participant }
 
@@ -163,22 +163,29 @@ services:
          public: false
 
 ## REPOSITORY
-     ritsiga.participanttype.repository:
-         class: AppBundle\Doctrine\ORM\ParticipationTypeRepository
-         factory_service: doctrine.orm.entity_manager
-         factory_method: getRepository
-         arguments: ['AppBundle\Entity\ParticipantType']
-
      ritsiga.repository.convention:
          class: AppBundle\Doctrine\ORM\ConventionRepository
          factory_service: doctrine.orm.entity_manager
          factory_method: getRepository
          arguments: ['AppBundle\Entity\Convention']
+
+     ritsiga.repository.participanttype:
+         class: AppBundle\Doctrine\ORM\ParticipationTypeRepository
+         factory_service: doctrine.orm.entity_manager
+         factory_method: getRepository
+         arguments: ['AppBundle\Entity\ParticipantType']
+
+     ritsiga.repository.registration:
+         class: AppBundle\Doctrine\ORM\RegistrationRepository
+         factory_service: doctrine.orm.entity_manager
+         factory_method: getRepository
+         arguments: ['AppBundle\Entity\Registration']
+
 ## TWIG
 
      ritsiGA.twig.conventionextension:
          class: AppBundle\Twig\ConventionExtension
-         arguments: [ @request_stack ]
+         arguments: [ @request_stack, @ritsiga.site.manager ]
          public: false
          tags:
              - { name: twig.extension }
