@@ -22,7 +22,7 @@ class Admin extends BaseAdmin
      */
     protected function getRepository($repository)
     {
-        return $this->getConfigurationPool()->getContainer()->get('ritsiGA.repository.' . $repository);
+        return $this->getConfigurationPool()->getContainer()->get('ritsiga.repository.' . $repository);
     }
 
     protected  function getCurrentConvention()

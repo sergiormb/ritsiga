@@ -18,24 +18,24 @@ class StudentDelegationAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('address')
-            ->add('city')
-            ->add('province')
-            ->add('postcode')
-            ->add('college')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('address', null, array('label' => 'label.address'))
+            ->add('city', null, array('label' => 'label.city'))
+            ->add('province', null, array('label' => 'label.province'))
+            ->add('postcode', null, array('label' => 'label.postcode'))
+            ->add('college', null, array('label' => 'label.college'))
             ->add('slug');
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name')
-            ->add('address')
-            ->add('city')
-            ->add('province')
-            ->add('postcode')
-            ->add('college')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('address', null, array('label' => 'label.address'))
+            ->add('city', null, array('label' => 'label.city'))
+            ->add('province', null, array('label' => 'label.province'))
+            ->add('postcode', null, array('label' => 'label.postcode'))
+            ->add('college', null, array('label' => 'label.college'))
             ->add('slug');
     }
 
@@ -43,9 +43,9 @@ class StudentDelegationAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-            ->add('city')
-            ->add('province')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('city', null, array('label' => 'label.city'))
+            ->add('province', null, array('label' => 'label.province'))
         ;
     }
 
@@ -53,9 +53,10 @@ class StudentDelegationAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name')
-            ->add('college')
+            ->add('name', null, array('label' => 'label.name'))
+            ->add('college', null, array('label' => 'label.college'))
             ->add('_action', 'actions', array(
+                'label' => 'label.actions',
                 'actions' => array(
                     'edit' => array(),
                     'show' => array(),

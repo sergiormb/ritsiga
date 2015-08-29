@@ -34,6 +34,8 @@ sonata_user:
 sonata_admin:
     title:      ritsiGA
     title_logo: bundles/app/img/logo_ritsi.png
+    templates:
+        layout: backend/standard_layout.html.twig
     options:
         html5_validate:       false
     security:

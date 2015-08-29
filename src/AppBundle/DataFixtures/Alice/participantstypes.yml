@@ -31,3 +31,11 @@
         endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
         price: 240
         num_participants: 10
+    type5:
+        name: Invitados
+        convention: @cordoba2014
+        description: <sentence($nbWords = 6)>
+        startDate: <dateTimeBetween($startDate='-5 days', $endDate='-2 days')>
+        endDate: <dateTimeBetween($startDate='-1 days', $endDate='+1 days')>
+        price: 240
+        num_participants: 10

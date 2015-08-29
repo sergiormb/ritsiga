@@ -64,7 +64,7 @@ class UniversityAdmin extends Admin
             ->add('name', null, array('label' => 'label.name'))
             ->add('city', null, array('label' => 'label.city'))
             ->add('_action', 'actions', array(
-                'label' => 'label.action',
+                'label' => 'label.actions',
                 'actions' => array(
                     'edit' => array(),
                     'show' => array(),

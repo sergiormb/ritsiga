@@ -45,6 +45,7 @@ class ParticipantTypeAdmin  extends Admin
             ->add('convention', null, [
                 'query_builder' => $this->getRepository('convention')->getQueryConvention($this->getCurrentConvention()),
                 'required' => true,
+                'label' => 'label.convention',
             ])
             ->add('name', null, array('label' => 'label.name'))
             ->add('description', null, array('label' => 'label.description'))

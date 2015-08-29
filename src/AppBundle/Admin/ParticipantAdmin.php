@@ -37,9 +37,17 @@ class ParticipantAdmin  extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('registration', null, array('label' => 'label.registration'))
+            ->add('registration', null, [
+                'query_builder' => $this->getRepository('registration')->getQueryRegistration($this->getCurrentConvention()),
+                'required' => true,
+                'label' => 'label.registration',
+            ])
             ->add('name', null, array('label' => 'label.name'))
-            ->add('participant_type', null, array('label' => 'label.participanttype'))
+            ->add('participant_type', null, [
+                'query_builder' => $this->getRepository('participanttype')->getParticipationsTypesAvailables($this->getCurrentConvention()),
+                'required' => true,
+                'label' => 'label.participanttype',
+            ])
             ->add('last_name', null, array('label' => 'label.last_name'))
             ->add('phone', null, array('label' => 'label.phone'))
             ->add('dni')

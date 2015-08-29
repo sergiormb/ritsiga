@@ -15,6 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Registration
  *
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Doctrine\ORM\RegistrationRepository")
  * @ORM\Table(name="Registration")
  */
 class Registration {
