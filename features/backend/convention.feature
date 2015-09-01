@@ -34,12 +34,3 @@ Antecedentes:
         | Dominio                | prueba           |
         Y presiono "Crear y regresar al listado"
         Entonces debo ver "Elemento creado satisfactoriamente"
-
-    Escenario: Borrar asamblea desde el listado
-        Cuando voy a "/convention/ritsi/admin/app/convention/create"
-        Y presiono "Borrar" junto a "Cádiz"
-        Entonces debo ver "¿Está seguro de que quiere borrar el elemento seleccionado?"
-        Cuando presiono "Sí, borrar"
-        Entonces debería estar en "/convention/ritsi/admin/app/convention/create"
-        Y debo ver "Elemento eliminado satisfactoriamente."
-        Pero no debo ver "Cordoba"

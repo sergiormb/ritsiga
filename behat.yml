@@ -42,6 +42,17 @@ default:
                 - AppBundle\Behat\EntityContext
             filters:
                 tags: "@backend"
+        frontend:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\CoreContext
+                - AppBundle\Behat\UserContext
+                - AppBundle\Behat\BrowserContext
+                - AppBundle\Behat\ConventionContext
+                - AppBundle\Behat\EntityContext
+                - AppBundle\Behat\RegistrationContext
+            filters:
+                tags: "@frontend"
 javascript:
     gherkin:
         filters:

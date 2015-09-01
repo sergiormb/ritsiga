@@ -117,7 +117,6 @@ class University {
 
     /**
      * @var string
-     *
      * @ORM\OneToMany(targetEntity="College",mappedBy="university")
      */
     private $colleges;
@@ -426,30 +425,6 @@ class University {
     public function getCif()
     {
         return $this->cif;
-    }
-
-    /**
-     * Set typo
-     *
-     * @param string $typo
-     *
-     * @return University
-     */
-    public function setTypo($typo)
-    {
-        $this->typo = $typo;
-
-        return $this;
-    }
-
-    /**
-     * Get typo
-     *
-     * @return string
-     */
-    public function getTypo()
-    {
-        return $this->typo;
     }
 
     /**

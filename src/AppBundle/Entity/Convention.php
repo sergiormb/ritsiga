@@ -124,14 +124,14 @@ class Convention
      *      @ORM\JoinColumn(
      *          name="convention_id",
      *          referencedColumnName="id",
-     *          nullable=false
+     *          nullable=false,
      *      )
      *  },
      *  inverseJoinColumns={
      *      @ORM\JoinColumn(
      *          name="user_id",
      *          referencedColumnName="id",
-     *          nullable=false
+     *          nullable=false,
      *      )
      *  }
      * )

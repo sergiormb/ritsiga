@@ -46,7 +46,7 @@ class RegistrationController extends Controller
 
     /**
      * @Route("/inscripciones", name="registration_list")
-     * @Template("Registration/my_registrations.html.twig")
+     * @Template("frontend/registration/my_registrations.html.twig")
      * Muestra todas las inscripciones del usuario
      */
     public function showRegistrations()

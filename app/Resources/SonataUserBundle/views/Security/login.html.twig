@@ -8,7 +8,7 @@
     <form action="{{ path("fos_user_security_check") }}" method="post">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         <div class="form-group has-feedback">
-            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Nombre de Usuario"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
@@ -30,11 +30,9 @@
     </form>
 
     <div class="social-auth-links text-center">
-        <p>- OR -</p>
         {% render(controller('HWIOAuthBundle:Connect:connect')) %}
     </div><!-- /.social-auth-links -->
 
-    <a href="#">I forgot my password</a><br>
-    <a href="{{ url('fos_user_registration_register')}}" class="text-center">Register a new membership</a>
+    <a href="{{ url('fos_user_registration_register')}}" class="text-center">¿Eres nuevo? Regístrate</a>
 
 {% endblock fos_user_content %}

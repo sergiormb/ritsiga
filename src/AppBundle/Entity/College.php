@@ -108,7 +108,10 @@ class College
 
     /**
      * @var University
-     *
+     * @ORM\JoinColumn(
+     *     nullable=false,
+     *     onDelete="CASCADE",
+     * )
      * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\University", inversedBy="colleges")
      */
     private $university;
@@ -498,7 +501,7 @@ class College
      *
      * @return College
      */
-    public function addStudentsDelegation(\AppBundle\Entity\College $studentsDelegation)
+    public function addStudentsDelegation(\AppBundle\Entity\StudentDelegation $studentsDelegation)
     {
         $this->students_delegations[] = $studentsDelegation;
 
@@ -510,7 +513,7 @@ class College
      *
      * @param \AppBundle\Entity\College $studentsDelegation
      */
-    public function removeStudentsDelegation(\AppBundle\Entity\College $studentsDelegation)
+    public function removeStudentsDelegation(\AppBundle\Entity\StudentDelegation $studentsDelegation)
     {
         $this->students_delegations->removeElement($studentsDelegation);
     }

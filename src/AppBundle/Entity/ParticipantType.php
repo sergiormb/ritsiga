@@ -27,7 +27,12 @@ class ParticipantType {
      */
     private $id;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Convention", inversedBy="participants_types") */
+    /**
+     * @ORM\JoinColumn(
+     *     nullable=false,
+     *     onDelete="CASCADE",
+     * )
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Convention", inversedBy="participants_types") */
     private $convention;
 
     /**

@@ -31,14 +31,36 @@ Característica: Comprobar universidades en el backend
         | Tipo           | publica          |
         | Slug           | prub             |
 
-Y presiono "Crear y regresar al listado"
+    Y presiono "Crear y regresar al listado"
         Entonces debo ver "Elemento creado satisfactoriamente"
 
+    Escenario: Exportar archivos a JSON
+        Cuando voy a "/convention/ritsi/admin/app/university/list"
+        Y sigo "JSON"
+        Entonces el código de estado de la respuesta debe ser 200
+
+    Escenario: Exportar archivos a XML
+        Cuando voy a "/convention/ritsi/admin/app/university/list"
+        Y sigo "XML"
+        Entonces el código de estado de la respuesta debe ser 200
+
+    Escenario: Exportar archivos a CSV
+        Cuando voy a "/convention/ritsi/admin/app/university/list"
+        Y sigo "CSV"
+        Entonces el código de estado de la respuesta debe ser 200
+
+    Escenario: Exportar archivos a XLS
+        Cuando voy a "/convention/ritsi/admin/app/university/list"
+        Y sigo "XLS"
+        Entonces el código de estado de la respuesta debe ser 200
+
     Escenario: Borrar universidad desde el listado
-        Cuando voy a "/convention/ritsi/admin/app/convention/create"
-        Y presiono "Borrar" junto a "Cádiz"
-        Entonces debo ver "¿Está seguro de que quiere borrar el elemento seleccionado?"
-        Cuando presiono "Sí, borrar"
-        Entonces debería estar en "/convention/ritsi/admin/app/convention/create"
+        Cuando voy a "/convention/ritsi/admin/app/university/list"
+        Y relleno "filter_name_value" con "UCO"
+        Y presiono "Filtrar"
+        Y sigo "Editar"
+        Y sigo "Borrar"
+        Entonces presiono " Sí, borrar" con clase "btn btn-danger"
+        Y debo estar en "/convention/ritsi/admin/app/university/list"
         Y debo ver "Elemento eliminado satisfactoriamente."
-        Pero no debo ver "Cordoba"
+        Pero no debo ver "UCO"

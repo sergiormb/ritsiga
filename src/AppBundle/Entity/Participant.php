@@ -67,13 +67,22 @@ class Participant {
      */
     private $dni;
 
-    /** @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Registration", inversedBy="participants")
+    /**
+     * @ORM\JoinColumn(
+     *     nullable=false,
+     *     onDelete="CASCADE",
+     * )
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Registration", inversedBy="participants")
      */
     private $registration;
 
     /** @ORM\ManyToOne(
      * targetEntity="\AppBundle\Entity\ParticipantType",
      * inversedBy="participants"
+     * )
+     * @ORM\JoinColumn(
+     *     nullable=false,
+     *     onDelete="CASCADE",
      * )
      */
     private $participant_type;

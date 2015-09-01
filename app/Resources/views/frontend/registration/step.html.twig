@@ -91,7 +91,7 @@
                 {% if context.firstStep!=1  %}
                     <a href="{{ path('sylius_flow_display', {'scenarioAlias': 'asamblea', 'stepName': context.previousStep.name }) }}" class="btn btn-default">Volver</a> &nbsp;
                 {% endif %}
-                <button class="btn btn-warning" type="submit">Aceptar <i class="icon-forward icon-white"></i></button>
+                <button class="btn btn-warning" type="submit" id="aceptar">Aceptar <i class="icon-forward icon-white"></i></button>
             </form>
     {% block buttonsstep %}
     {% endblock %}

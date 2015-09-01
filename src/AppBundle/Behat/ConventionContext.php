@@ -21,12 +21,11 @@ class ConventionContext extends DefaultContext
      */
     public function thereAreConventions(TableNode $tableNode)
     {
-        foreach($tableNode->getHash() as $conventionHash)
-        {
+        foreach ($tableNode->getHash() as $conventionHash) {
             $convention = new Convention();
             $convention->setName($conventionHash['nombre']);
-            $convention->setStartsAt(new \DateTime( $conventionHash['fechaInicio'] ));
-            $convention->setEndsAt(new \DateTime( $conventionHash['fechaFin'] ));
+            $convention->setStartsAt(new \DateTime($conventionHash['fechaInicio']));
+            $convention->setEndsAt(new \DateTime($conventionHash['fechaFin']));
             $convention->setDomain($conventionHash['dominio']);
             $convention->setEmail($this->faker->email);
             $this->getEntityManager()->persist($convention);
@@ -34,4 +33,11 @@ class ConventionContext extends DefaultContext
         $this->getEntityManager()->flush();
     }
 
+    /**
+     * @Then debería ver :number asamblea(s)
+     */
+    public function iShouldSeeConvention($number)
+    {
+        $this->assertSession()->elementsCount('css', '.convention', $number);
+    }
 }

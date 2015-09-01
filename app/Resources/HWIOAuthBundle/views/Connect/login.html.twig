@@ -9,7 +9,7 @@
     {% endif %}
     {% for owner in hwi_oauth_resource_owners() %}
         <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-block btn-social btn-{{ owner }} btn-flat">
-            <i class="fa fa-{{ owner }}"></i> Sign in using {{ owner | trans({}, 'HWIOAuthBundle') }}
+            <i class="fa fa-{{ owner }}"></i> Iniciar sesión con {{ owner | trans({}, 'HWIOAuthBundle') }}
         </a>
     {% endfor %}
 {% endblock hwi_oauth_content %}

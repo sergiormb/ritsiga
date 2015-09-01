@@ -21,6 +21,7 @@ class WelcomeStep extends ControllerStep
         $convention = $siteManager->getCurrentSite();
         $student_delegation = $user->getStudentDelegation();
         $registration = $this->getDoctrine()->getRepository('AppBundle:Registration')->findOneBy(array('user' => $user, 'convention' => $convention));
+        var_dump($user->getUniversity());
         if ($user->getUniversity() == null || $user->getCollege() == null || $user->getStudentDelegation() == null)
         {
             $this->addFlash('warning', $this->get('translator')->trans( 'Debe completar su perfil para inscribirse en una asamblea'));

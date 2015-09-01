@@ -24,4 +24,20 @@ class BrowserContext extends DefaultContext
         $this->pressButton('_submit');
     }
 
+    /**
+     * @Then /^presiono "([^"]*)" con clase "([^"]*)"$/
+     *
+     * @param string $text
+     * @param string $class
+     */
+    public function iFollowLinkWithClass($text, $class)
+    {
+        $link = $this->getSession()->getPage()->find(
+            'xpath', sprintf("//*[@class='%s' and contains(., '%s')]", $class, $text)
+        );
+        if (!$link) {
+            throw new ExpectationException(sprintf('Unable to follow the link with class: %s and text: %s', $class, $text), $this->getSession());
+        }
+        $link->click();
+    }
 }

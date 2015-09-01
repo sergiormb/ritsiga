@@ -54,7 +54,8 @@ class Registration {
      *   inversedBy="registrations"
      * )
      * @ORM\JoinColumn(
-     *   nullable=false
+     *     nullable=false,
+     *     onDelete="CASCADE",
      * )
      */
     private $user;
@@ -64,7 +65,8 @@ class Registration {
      *   inversedBy="registrations"
      * )
      * @ORM\JoinColumn(
-     *   nullable=false
+     *     nullable=false,
+     *     onDelete="CASCADE",
      * )
      */
     private $convention;

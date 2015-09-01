@@ -111,7 +111,10 @@ class StudentDelegation {
 
     /**
      * @var College
-     *
+     * @ORM\JoinColumn(
+     *     nullable=false,
+     *     onDelete="CASCADE",
+     * )
      * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\College", inversedBy="students_delegations")
      */
     private $college;
