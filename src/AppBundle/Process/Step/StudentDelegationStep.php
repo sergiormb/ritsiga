@@ -46,8 +46,9 @@ class StudentDelegationStep extends ControllerStep
             $em->persist($student);
             $em->flush();
             $this->addFlash('warning', $this->get('translator')->trans( 'Your student delegation has been successfully updated'));
+            return $this->complete();
         }
-        return $this->complete();
+
     }
 
 }

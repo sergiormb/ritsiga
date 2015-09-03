@@ -45,8 +45,8 @@ class CollegeStep extends ControllerStep
             $em->persist($college);
             $em->flush();
             $this->addFlash('warning', $this->get('translator')->trans( 'Your college has been successfully updated'));
+            return $this->complete();
         }
-        return $this->complete();
     }
 
 
