@@ -19,7 +19,7 @@ class StudentDelegationType extends AbstractType
             ->add('name', null, array('label' => 'label.name'))
             ->add('city', null, array('label' => 'label.city'))
             ->add('province', null, array('label' => 'label.province'))
-            ->add('address', null, array('label' => 'label.address'))
+            ->add('address', 'textarea', array('label' => 'label.address'))
             ->add('postcode', null, array('label' => 'label.postcode'))
             ->add('web')
             ->add('fax')
