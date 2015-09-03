@@ -150,6 +150,7 @@ class AcademicDegree
      */
     public function addCollege(\AppBundle\Entity\College $college)
     {
+        $college->addAcademicDegree($this);
         $this->colleges[] = $college;
 
         return $this;
