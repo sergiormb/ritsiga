@@ -111,6 +111,20 @@ class RegistrationController extends Controller
         $participant = new Participant();
 
         $types = $this->getDoctrine()->getRepository('AppBundle:ParticipantType')->findParticipationsTypesAvailables($convention);
+        $types_availables = array();
+        if ($types)
+        {
+            foreach ( $types as $type)
+            {
+                $num_participants = $this->getDoctrine()->getRepository('AppBundle:Participant')->getNumParticipationsTypesAvailables($registration,$type);
+                if ($type && ($type->getNumParticipants() > $num_participants))
+                {
+                    array_push($types_availables, $type);
+                }
+
+            }
+        }
+        
         $participant = new Participant();
         $participant->setRegistration($registration);
         $form = $this->createForm($this->get('ritsiga.participant.form.type'), $participant);
@@ -137,7 +151,7 @@ class RegistrationController extends Controller
             return $this->render(':frontend/registration/status:registration_open.html.twig', array(
                 'user'=> $user,
                 'registration' => $registration,
-                'types' => $types,
+                'types' => $types_availables,
                 'form'=> $form->createView(),
             ));
         }
