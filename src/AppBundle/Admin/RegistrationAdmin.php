@@ -80,9 +80,12 @@ class RegistrationAdmin extends Admin
     {
         $listMapper
             ->add('id')
-            ->add('convention', null, array('label' => 'label.convention'))
-            ->add('name', null, array('label' => 'label.name'))
-            ->add('position', null, array('label' => 'label.position'))
+            ->add('user.university', null, array(
+                'label' => 'label.university'
+            ))
+            ->add('user.college', null, array(
+                'label' => 'label.college'
+            ))
             ->add('status', null, array('label' => 'label.status'))
             ->add('_action', 'actions', array(
                 'actions' => array(

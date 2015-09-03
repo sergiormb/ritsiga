@@ -84,8 +84,12 @@ class ParticipantAdmin  extends Admin
             ->add('name', null, array('label' => 'label.name'))
             ->add('last_name', null, array('label' => 'label.last_name'))
             ->add('phone', null, array('label' => 'label.phone'))
-            ->add('dni')
-            ->add('registration.convention', null, array('label' => 'label.convention'))
+            ->add('registration.user.university', null, array(
+                'label' => 'label.university'
+            ))
+            ->add('registration.user.college', null, array(
+                'label' => 'label.college'
+            ))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
