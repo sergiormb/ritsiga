@@ -35,15 +35,17 @@ var display_field = function(visible, element) {
 
                 $university.change(function () {
                     var option = $('option:selected', this).attr('value');
+                    $college.select2("val", "");
+                    $student_delegation.select2("val", "");
                     connection_display_field('facultades', option, $college);
-                    display_field(false, $student_delegation);
+
                 });
 
                 $college.change(function () {
                     console.log("entra");
                     var option = $('option:selected', this).attr('value');
+                    $student_delegation.select2("val", "");
                     connection_display_field('delegaciones', option, $student_delegation);
-                    display_field(true, $student_delegation);
                 });
 
         });

@@ -8,6 +8,7 @@
 
 namespace AppBundle\Form\Type;
 use FOS\UserBundle\Form\Type\ProfileFormType as BaseType;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\FormBuilderInterface;
 
 
@@ -27,8 +28,10 @@ class ProfileType extends BaseType
                 'class' => 'AppBundle\Entity\University',
                 'label' => 'label.university',
                 'placeholder' => 'Selecciona tu Universidad',
+                'query_builder' => function(EntityRepository $er) {
+                    return $er->createQueryBuilder('u')->orderBy('u.name', 'ASC');
+                },
                 'mapped' => false,
-                'data' => 'getUniversity',
             ))
             ->add('college','entity', array(
                 'class' => 'AppBundle\Entity\College',
