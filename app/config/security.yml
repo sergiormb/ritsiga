@@ -118,4 +118,5 @@ security:
         # This config requires being logged for the whole site and having the admin role for the admin part.
         # Change these rules to adapt them to your needs
         - { path: ^/convention/[\w\d]+/admin/, role: [ROLE_SONATA_ADMIN] }
+        - { path: ^/convention/[\w\d]+/.*/, role: [ROLE_USER] }
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
