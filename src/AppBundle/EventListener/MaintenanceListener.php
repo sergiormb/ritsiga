@@ -46,16 +46,16 @@ class MaintenanceListener
         }
 
         $route = $this->container->get('router')->getRouteCollection()->get($event->getRequest()->get('_route'));
-        if (preg_match('/^\/admin\/.*/', $route->getPath() ) ) {
+        if (route && preg_match('/^\/admin\/.*/', $route->getPath() ) ) {
             return;
         }
 
         $convention = $this->siteManager->getCurrentSite();
         $hoy = date("d-m-Y");
-        if ($convention && ($convention->getMaintenance() == true || $hoy > $convention->getEndsAt()))
+        if ($convention && $convention->getDomain() !== 'ritsi' && ($convention->getMaintenance() == true || $hoy > $convention->getEndsAt()))
         {
             $engine = $this->container->get('templating');
-            $content = $engine->render(':Conventions:maintenance.html.twig');
+            $content = $engine->render('/frontend/conventions/maintenance.html.twig');
             $event->setResponse(new Response($content, 503));
             $event->stopPropagation();
         }
