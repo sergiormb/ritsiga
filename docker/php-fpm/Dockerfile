@@ -13,6 +13,7 @@ ADD deploy.sh /etc/my_init.d/deploy.sh
 RUN mkdir -p /etc/service/phpfpm
 ADD phpfpm.sh /etc/service/phpfpm/run
 RUN cd /usr/bin && curl -sS https://getcomposer.org/installer | php
+ADD wkhtmltopdf.wrapper /usr/bin/wkhtmltopdf.wrapper
 
 # PHP+Symfony Configuration
 ADD symfony.ini /etc/php5/fpm/conf.d/
