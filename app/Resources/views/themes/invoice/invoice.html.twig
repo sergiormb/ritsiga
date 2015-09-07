@@ -1,138 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>AdminLTE 2 | Invoice</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <link href="{{ kernelRootDir }}/../web/vendor/admin-lte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="{{ kernelRootDir }}/../web/vendor/admin-lte/dist/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <![endif]-->
-  </head>
-  <body>
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-4">
-              <h1>
-                  <img width="100" src="{{ kernelRootDir }}/../web/bundles/app/img/logo_ritsi.png">
-              </h1>
-          </div>
-          <div class="col-xs-8 text-right">
-              <h1>{{ registration.convention.name }}</h1>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-xs-5">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4>From: <a href="#">RitsiGA</a></h4>
-                  </div>
-                  <div class="panel-body">
-                      <p>
-                          Dirección <br>
-                          Detalles <br>
-                          Más <br>
-                      </p>
-                  </div>
-              </div>
-          </div>
-          <div class="col-xs-5 col-xs-offset-2 text-right">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4>To : <a href="#">Cliente</a></h4>
-                  </div>
-                  <div class="panel-body">
-                      <p>
-                          Dirección <br>
-                          Detalles <br>
-                          Más <br>
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- / end client details section -->
-      <table class="table table-bordered">
-          <thead>
-          <tr>
-              <th><h4>Id</h4></th>
-              <th><h4>Nombre</h4></th>
-              <th><h4>Apellidos</h4></th>
-              <th><h4>DNI</h4></th>
-              <th><h4>Inscripción</h4></th>
-              <th><h4>Subtotal</h4></th>
-          </tr>
-          </thead>
-          <tbody>
-          {% for participant in registration.participants %}
-              <tr>
-                  <td>{{ participant.id }}</td>
-                  <td>{{ participant.name }}</td>
-                  <td>{{ participant.lastname }}</td>
-                  <td>{{ participant.dni }}</td>
-                  <td>{{ participant.participanttype }}</td>
-                  <td>{{ participant.participanttype.price }} €</td>
-              </tr>
-          {% endfor %}
-          </tbody>
-      </table>
-      <div class="row text-right">
-          <div class="col-xs-2 col-xs-offset-8">
-              <p>
-                  <strong>
-                      Sub Total : <br>
-                      IVA : <br>
-                      Total : <br>
-                  </strong>
-              </p>
-          </div>
-          <div class="col-xs-2">
-              <strong>
-                  {{ amount }} €<br>
-                  0 % <br>
-                  {{ amount }} €<br>
-              </strong>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-xs-5">
-              <div class="panel panel-danger">
-                  <div class="panel-heading">
-                      <h4>Detalles Entidad Bancaria</h4>
-                  </div>
-                  <div class="panel-body">
-                      <p>RitsiGA</p>
-                      <p>Nombre Banco</p>
-                      <p>Ref #{{ registration.id }} inscripcion {{ registration.convention.name }}</p>
-                  </div>
-              </div>
-          </div>
-          <div class="col-xs-7">
-              <div class="span7">
-                  <div class="panel panel-danger">
-                      <div class="panel-heading">
-                          <h4>Detalles de Contacto</h4>
-                      </div>
-                      <div class="panel-body">
-                          <p>
-                              Email : you@example.com <br><br>
-                              Teléfono : -------- <br> <br>
-                              Twitter : @ritsiGA
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/pdf.css', absolute=true) }}" media="all" />
+</head>
+<body>
+<header class="clearfix">
+    <div id="logo">
+        <img src="{{ asset('bundles/app/img/logo_ritsi.png', absolute=true) }}">
+    </div>
+    <div id="company">
+        <h2 class="name">Asociación RITSI</h2>
+        <div>CIF: G83299487</div>
+        <div>Área de Tesorería</div>
+        <div><a href="mailto:tesorero@ritsi.org">tesorero@ritsi.org</a></div>
+    </div>
+    </div>
+</header>
+<main>
+    <div id="details" class="clearfix">
+        <div id="client">
+            <div class="to">Datos del socio:</div>
+            <h2 class="name">{{ registration.user.university }}</h2>
+            <div class="address">{{ registration.user.studentDelegation }}</div>
+            <div class="cif">{{ registration.user.university.cif }}</div>
+        </div>
+        <div id="invoice">
+            <h1>Factura Proforma</h1>
+            <div class="date">Fecha: {{ "now"|date("d/m/Y")  }}</div>
+        </div>
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th class="no">#</th>
+            <th class="desc">DESCRIPCIÓN</th>
+            <th class="unit">PRECIO</th>
+            <th class="total">TOTAL</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for participant in registration.participants %}
+        <tr>
+            <td class="no">{{ loop.index }}</td>
+            <td class="desc">
+                <h3>{{ participant.participantType }}</h3>
+                A la {{ registration.convention }}, a favor de:<br/> {{ participant }}
+            </td>
+            <td class="unit">{{ participant.participantType.price|number_format(2, ',') }}€</td>
+            <td class="total">{{ participant.participantType.price|number_format(2, ',') }}€</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="1">SUBTOTAL</td>
+            <td>{{ amount|number_format(2, ',') }}€</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="1">IVA 0%</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="1">TOTAL</td>
+            <td>{{ amount|number_format(2, ',') }}€</td>
+        </tr>
+        </tfoot>
+    </table>
+    <div id="notices">
+        <div>FORMA DE PAGO: TRANSFERENCIA</div>
+        <dl class="notice">
+            <dt>Entidad bancaria</dt><dd>BANCO SANTANDER, S.A.</dd>
+            <dt>IBAN</dt><dd>ES10 0049 6560 3226 1603 9311</dd>
+            <dt>Beneficiario</dt><dd>Asociación RITSI</dd>
+            <dt>Concepto</dt><dd>Referencia #{{ registration.id }} {{ registration.convention.domain | upper }}</dd>
+            <dt>Importe</dt><dd>{{ amount|number_format(2, ',') }}€</dd>
+        </dl>
+    </div>
+</main>
+<footer>
+    Asociación registrada en el Ministerio del Interior el 18 de Septiembre de 2002.
+    Número Nacional 169687 de la Sección 1.
+</footer>
+</body>
 </html>

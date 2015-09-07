@@ -1,113 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AdminLTE 2 | Invoice</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <link href="{{ kernelRootDir }}/../web/vendor/admin-lte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <![endif]-->
+    <meta charset="utf-8">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/pdf.css', absolute=true) }}" media="all" />
 </head>
-<body><div class="wrapper">
-    <!-- Main content -->
-    <section class="invoice">
-        <!-- title row -->
-        <div class="row">
-            <div class="col-xs-2" align="right">
-                <img width="100" src="{{ kernelRootDir }}/../web/bundles/app/img/logo_ritsi.png">
-            </div><!-- /.col -->
-            <div class="col-xs-10" style="padding-left: 100px;padding-bottom: 20px;">
-                <h2>{{ registration.convention.name }}</h2>
-                <p>  <h3>Del {{ registration.convention.startsAt|date('d-m-Y') }} al {{ registration.convention.endsAt|date('d-m-Y') }} </h3></p>
-            </div><!-- /.col -->
+<body>
+<header class="clearfix">
+    <div id="logo">
+        <img src="{{ asset('bundles/app/img/logo_ritsi.png', absolute=true) }}">
+    </div>
+    <div id="company">
+        <h2 class="name">Asociación RITSI</h2>
+        <div>CIF: G83299487</div>
+        <div>Área de Secretaría</div>
+        <div><a href="mailto:secretario@ritsi.org">secretario@ritsi.org</a></div>
+    </div>
+    </div>
+</header>
+<main>
+    <div id="details" class="clearfix">
+        <div id="client">
+            <div class="to">Datos del socio:</div>
+            <h2 class="name">{{ registration.user.university }}</h2>
+            <div class="address">{{ registration.user.studentDelegation }}</div>
+            <div class="cif">{{ registration.user.university.cif }}</div>
         </div>
-        <!-- Table row -->
-        <div class="row">
-            <div class="col-xs-2">
-                </div>
-            <div style="align:center;" class="col-xs-8 table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th colspan="2" style="color:white !important;text-align:center;background-color:#8A0808 !important;">Acreditación oficial de {{ registration.convention.name }}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Don / Doña:</td>
-                        <td>{{ registration.name }}</td>
-                    </tr>
-                    <tr>
-                        <td>como</td>
-                        <td>{{ registration.position }}</td>
-                    </tr>
-                    <tr>
-                        <td>de</td>
-                        <td>{{ registration.user.studentdelegation }}</td>
-                    </tr>
-                    <tr>
-                        <td>de la</td>
-                        <td>{{ registration.user.college }}</td>
-                    </tr>
-                    <tr>
-                        <td>de la</td>
-                        <td>{{ registration.user.university }}</td>
-                    </tr>
+        <div id="invoice">
+            <h1>Acreditación</h1>
+            <div class="date">Fecha: {{ "now"|date("d/m/Y")  }}</div>
+        </div>
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th class="no" colspan="2">{{ registration.convention }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="desc notice" colspan="2">
+                <dl>
+                    <dt>Don/Doña</dt><dd>{{ registration.name }}</dd>
+                    <dt>en calidad de</dt><dd>{{ registration.position }}</dd>
+                    <dt>Universidad</dt><dd>{{ registration.user.university }}</dd>
+                    <dt>Centro</dt><dd>{{ registration.user.college }}</dd>
+                    <dt>Delegación</dt><dd>{{ registration.user.studentDelegation }}</dd>
+                </dl>
+            </td>
+        </tr>
+        <tr>
+            <th class="no" colspan="2">Acredita que</th>
+        </tr>
+        <tr>
+            <td class="desc notice" colspan="2">
+                <dl>
+                    <dt>Don/Doña</dt><dd>{{ participant }}</dd>
+                    <dt>DNI</dt><dd>{{ participant.dni }}</dd>
+                </dl>
+                representa oficialmente a las siguientes titulaciones que se imparten en nuestra universidad:
+            </td>
+        </tr>
+        <tr>
+            <th class="no" colspan="2">Titulaciones</th>
+        </tr>
+        {% for degree in registration.user.college.academicdegrees %}
+        <tr>
+            <td class="grade" colspan="2">
+                {{ degree }}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2">
+                Y para que así conste firmo y sello el presente documento:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Firma y nombre
+            </td>
+            <td>
+                Sello del Consejo/Delegación
+            </td>
+        </tr>
 
-                    </tbody>
-                </table>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th colspan="2" style="color:white !important;text-align:center;background-color:#8A0808 !important;">ACREDITA QUE</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Don / Doña:</td>
-                        <td>{{ participant.name }}</td>
-                    </tr>
-                    <tr>
-                        <td>con DNI</td>
-                        <td>{{ participant.dni }}</td>
-                    </tr>
-                    <tr colspan="2">
-                        <td>representa oficialmente a las siguientes titulaciones que se imparten en nuestra universidad:</td>
-                    </tr>
-                    {% for academic in registration.user.college.academicdegrees %}
-                        <tr>
-                            <td colspan="2">{{academic.name}}</td>
-
-                        </tr>
-                    {% endfor %}
-                    <tr colspan="2">
-                        <td>Y para que así conste firmo y sello el presente documento:</td>
-                    </tr>
-                    <tr>
-                        <td>Firma y nombre</td>
-                        <td>Sello del Consejo/Delegación</td>
-                    </tr>
+        </tfoot>
+    </table>
 
 
-
-                    </tbody>
-                </table>
-            </div><!-- /.col -->
-            <div class="col-xs-2">
-            </div>
-        </div><!-- /.row -->
-
-    </section><!-- /.content -->
-</div><!-- ./wrapper -->
-<!-- AdminLTE App -->
+</main>
+<footer>
+    Asociación registrada en el Ministerio del Interior el 18 de Septiembre de 2002.
+    Número Nacional 169687 de la Sección 1.
+</footer>
 </body>
 </html>

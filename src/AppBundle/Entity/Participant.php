@@ -248,4 +248,15 @@ class Participant {
     {
         $this->phone = $phone;
     }
+
+    /**
+     * To String
+     * @return string
+     */
+    function __toString()
+    {
+        return sprintf("%s %s", $this->getName(), $this->getLastName());
+    }
+
+
 }
